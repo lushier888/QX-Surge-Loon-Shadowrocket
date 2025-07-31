@@ -79,6 +79,7 @@ https://raw.githubusercontent.com/tugepaopao/Image-Storage/master/other/Cute.jso
 mini Color
 https://raw.githubusercontent.com/Orz-3/mini/master/miniColor.json
 
+
 Qure Color
 https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor.json
 
