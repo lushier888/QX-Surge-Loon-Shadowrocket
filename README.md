@@ -11,7 +11,7 @@ Loon配置
 https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Loon
 
 以下收集一些Surge、Loon、Quantumult X通用订阅图标合集
-图标数据合集
+图标数据合集，所有图标通用
 https://velvetcodeloom.github.io/icloud/icons.json
 拿她练技术
 https://raw.githubusercontent.com/LovedGM/Quantumult-X-TuBiao/main/zishi-cs.json
