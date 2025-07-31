@@ -74,7 +74,6 @@ Catcat
 https://raw.githubusercontent.com/Yuanxsxs/QtumultX/master/Icon/Catcat.json
 
 Cute
-
 https://raw.githubusercontent.com/tugepaopao/Image-Storage/master/other/Cute.json
 
 mini Color
