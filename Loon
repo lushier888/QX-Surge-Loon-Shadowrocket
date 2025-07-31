@@ -1,0 +1,770 @@
+# 本人自用在可莉Loon最小配置基础上自行修改
+# 删除原有策略组和分流自行添加，添加插件以及脚本
+# 自定义策略组和分流，自行添加不少本地订阅Task
+# Date: 2025-02-28 20:43:37
+# Author: https://t.me/iKeLee
+# 更多的插件可以前往此处安装 https://github.com/luestr/ProxyResource/blob/main/README.md
+
+[General]
+ipv6-vif = auto
+ip-mode = prefer-v6
+# 解析器
+resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
+#代理测速
+proxy-test-url = http://www.gstatic.com/generate_204
+internet-test-url = http://wifi.vivo.com.cn/generate_204
+#测速超时 (s)
+test-timeout = 5
+# IPv6 支持
+ipv6 = false
+# GeoIP 数据库
+geoip-url = https://github.com/Masaiki/GeoIP2-CN/raw/release/Country.mmdb
+# DNS
+dns-server = system,119.29.29.29,223.5.5.5,162.159.195.1
+# DoH
+doh-server = https://dns.alidns.com/dns-query,https://doh.pub/dns-query
+# 跳过代理
+skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,17.0.0.0/8,*.local,*.crashlytics.com,seed-sequoia.siri.apple.com,localhost,sequoia.apple.com,www.abchina.com.cn
+# 旁路隧道
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,239.255.255.250/32,255.255.255.255/32
+# 允许 Wi-Fi 访问
+allow-udp-proxy = true
+allow-wifi-access = true
+wifi-access-http-port = 5208
+wifi-access-socks5-port = 5206
+# 将dns请求发往目标dns服务器
+real-ip = msftconnecttest.com,msftncsi.com,*.msftconnecttest.com,*.msftncsi.com,*.srv.nintendo.net,*.stun.playstation.net,*.apple.com,*apple.com,xbox.*.microsoft.com,*.xboxlive.com,*.battlenet.com.cn,*.battlenet.com,*.blzstatic.cn,*.battle.net
+# 接口模式
+interface-mode = auto
+# 失败后切换节点次数
+switch-node-after-failure-times = 3
+# 策略切换时关闭链接
+disconnect-on-policy-change = true
+# udp端口禁用
+disable-stun = true
+disable-udp-ports = 443
+# ssid-trigger参数，用于指定SSID下流量模式切换，（default表示默认，cellular表示蜂窝，目前支持三种值：rule，direct，proxy） 
+# ssid-trigger = "default":rule, "cellular":rule,"ASUS_5G":direct
+
+[Proxy]
+
+[Remote Proxy]
+# 节点订阅
+
+
+[Remote Filter]
+香港A = NameRegex, FilterKey = "(?i)(🇭🇰|Hong)"
+# 节点创建筛选
+美国A = NameRegex, FilterKey = "(?i)(🇺🇸|USA)"
+日本A = NameRegex, FilterKey = "(?i)(🇯🇵| Japan)"
+台湾A = NameRegex, FilterKey = "(?i)(🇨🇳| Taiwan)"
+新加坡A = NameRegex, FilterKey = "🇸🇬新加坡"
+韩国A = NameRegex, FilterKey = "🇰🇷韩国"
+香港B = NameRegex,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾, FilterKey = "香港"
+美国B = NameRegex,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾, FilterKey = "美国"
+日本B = NameRegex,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾, FilterKey = "日本"
+台湾B = NameRegex,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾, FilterKey = "台湾"
+新加坡B = NameRegex,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾, FilterKey = "新加坡"
+韩国B = NameRegex,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾, FilterKey = "韩国"
+
+[Proxy Group]
+🛜国内直连 = url-test,DIRECT,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png
+# 策略组位置
+# 手动策略组
+🕹手动选择 = select,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available_1.png
+# 国际服务策略组
+# 𝑨𝒑𝒑𝒍𝒆（苹果服务）
+🍎𝑨𝒑𝒑𝒍𝒆 = select,🛜国内直连,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Apple_Classic.png
+
+# 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕（微软服务）
+💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+
+# 𝑮𝒐𝒐𝒈𝒍𝒆（谷歌服务）
+🌏𝑮𝒐𝒐𝒈𝒍𝒆 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Google.png
+
+# 𝑯𝑩𝑶~𝑫𝒊𝒔𝒏𝒆𝒚+
+🎬𝑯𝑩𝑶~𝑫𝒊𝒔𝒏𝒆𝒚+ = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/softlyx/Odyssey.png
+
+# 社交App策略组
+# 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
+📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/telegram(1).png
+
+# 𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)
+📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿) = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/twitter.png
+
+# 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎
+📷𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Instagram.png
+
+# 𝑹𝒆𝒅𝒅𝒊𝒕
+📖𝑹𝒆𝒅𝒅𝒊𝒕 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/reddit(1).png
+
+# 𝑫𝒊𝒔𝒄𝒐𝒓𝒅
+🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/discord.png
+
+# 游戏与工具策略组
+# 𝑷𝒊𝒙𝒊𝒗
+🍄𝑷𝒊𝒙𝒊𝒗 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/plus-emby.png
+
+# 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
+🤖𝑪𝒉𝒂𝒕𝑮𝑷𝑻 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/ChatGPT-green.png
+
+# 𝑺𝒕𝒆𝒂𝒎
+🎮𝑺𝒕𝒆𝒂𝒎 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png
+
+# 影音短与视频策略组
+# 𝑺𝒑𝒐𝒕𝒊𝒇𝒚
+🎧𝑺𝒑𝒐𝒕𝒊𝒇𝒚 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/spotify(green).png
+# 𝑬𝒎𝒃𝒚
+🎞️𝑬𝒎𝒃𝒚 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/emby.png
+
+# 𝑵𝒆𝒕𝒇𝒍𝒊𝒙
+🎥𝑵𝒆𝒕𝒇𝒍𝒊𝒙 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/netflix(red).png
+
+# 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+
+# 𝑻𝒊𝒌𝑻𝒐𝒌
+📽𝑻𝒊𝒌𝑻𝒐𝒌 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/chxm1023/TikTok_1.png
+
+# 𝑻𝒘𝒊𝒕𝒄𝒉
+🖥𝑻𝒘𝒊𝒕𝒄𝒉 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/twitch.png
+
+# 𝑩𝒂𝒉𝒂𝒎𝒖𝒕𝐭（动画疯）
+🧸𝑩𝒂𝒉𝒂𝒎𝒖𝒕 = select,🇭🇰香港𝑨,🇨🇳台湾𝑨,🇭🇰香港𝑩,🇨🇳台湾𝑩,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/bahamute.png
+
+# 国内策略组
+# 𝑩𝒊𝒍𝒊𝒃𝒊𝒍𝒊（哔哩哔哩）
+📺𝒃𝒊𝒍𝒊𝒃𝒊𝒍𝒊 = select,🛜国内直连,🇨🇳台湾𝑨,🇭🇰香港𝑩,🇨🇳台湾𝑩,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BiliBili.png
+
+# 𝑾𝒆𝒊𝒃𝒐（微博）
+🚾𝑾𝒆𝒊𝒃𝒐 = select,🛜国内直连,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Weibo-00.png
+
+# 最后请求网络策略组
+# 𝑭𝑰𝑵𝑨𝑳（兜底分流）
+♻️𝑭𝑰𝑵𝑨𝑳 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Script-Hub.png
+
+# 网络对应节点自动策略组
+# 🇭🇰香港𝑨
+🇭🇰香港𝑨 = url-test,香港A,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+
+# 🇺🇸美国𝑨
+🇺🇸美国𝑨 = url-test,美国A,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+
+# 🇯🇵日本𝑨
+🇯🇵日本𝑨 = url-test,日本A,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+
+# 🇨🇳台湾𝑨
+🇨🇳台湾𝑨 = url-test,台湾A,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
+
+# 🇸🇬新加坡𝑨
+🇸🇬新加波𝑨 = url-test,新加坡A,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+
+# 🇰🇷韩国𝑨
+🇰🇷韩国𝑨 = url-test,韩国A,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+# 🇭🇰香港𝑩
+🇭🇰香港𝑩 = url-test,香港B,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+
+# 🇺🇸美国𝑩
+🇺🇸美国𝑩 = url-test,美国B,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+
+# 🇯🇵日本𝑩
+🇯🇵日本𝑩 = url-test,日本B,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+
+# 🇨🇳台湾𝑩
+🇨🇳台湾𝑩 = url-test,台湾B,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
+
+# 🇸🇬新加坡𝑩
+🇸🇬新加坡𝑩 = url-test,新加坡B,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+
+# 🇰🇷韩国𝑩
+🇰🇷韩国𝑩 = url-test,韩国B,interval = 600,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/Korea(1).png
+# --------------------------------
+
+[Rule]
+IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve
+DOMAIN-SUFFIX,rr5---sn-i3bssn7e.googlevideo.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+DOMAIN-SUFFIX,youtubei.googleapis.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+# Local Rule
+# Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR,IP-CIDR6,IP-ASN
+# Strategy:DIRECT,Proxy,REJECT
+# Options:no-resolve(no-resolve(only for cidr))
+# IP-CIDR,192.168.0.0/16,DIRECT
+# IP-CIDR,10.0.0.0/8,DIRECT
+# IP-CIDR,172.16.0.0/12,DIRECT
+# IP-CIDR,127.0.0.0/8,DIRECT
+# 配置文件已自带远程GEOIP,cn,DIRECT规则，请勿在此添加
+# 请勿修改远程CN REGION规则的排序甚至删除
+FINAL,♻️𝑭𝑰𝑵𝑨𝑳
+
+[Remote Rule]
+https://adrules.top/adrules.list, policy=REJECT, tag=adrules.list, enabled=true
+http://script.hub/file/_start_/https://limbopro.com/Adblock4limbo.list/_end_/Adblock4limbo.list?type=rule-set&target=loon-rule-set&del=true&jqEnabled=true, policy=REJECT, tag=毒奶网页去广告, enabled=true
+# 分流规则
+# 去广告规则
+# 𝑹𝒆𝒋𝒆𝒌𝒕
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Reject.list, policy=REJECT, tag=𝑹𝒆𝒋𝒆𝒌𝒕去广告, enabled=true
+
+# 𝑨𝑫_𝑫𝒊𝑫𝒊𝑪𝒉𝒖𝑿𝒊𝒏𝒈
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/DDCX.snippet, policy=REJECT, tag=𝑨𝑫_𝑫𝒊𝑫𝒊𝑪𝒉𝒖𝑿𝒊𝒏𝒈, enabled=true
+
+# 𝑨𝒅𝒗𝒆𝒓𝒕𝒊𝒔𝒊𝒏𝒈𝑳𝒊𝒕𝒆去广告
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/AdvertisingLite/AdvertisingLite.list, policy=REJECT, tag=𝑨𝒅𝒗𝒆𝒓𝒕𝒊𝒔𝒊𝒏𝒈𝑳𝒊𝒕𝒆去广告, enabled=true
+
+# 𝑨𝒅𝒗𝒆𝒓𝒕𝒊𝒔𝒊𝒏𝒈去广告
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Advertising/Advertising.list, policy=REJECT, tag=𝑨𝒅𝒗𝒆𝒓𝒕𝒊𝒔𝒊𝒏𝒈去广告, enabled=true
+
+# 反劫持
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Hijacking/Hijacking.list, policy=REJECT, tag=反劫持, enabled=true
+
+# 隐私保护
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Privacy/Privacy.list, policy=REJECT, tag=隐私保护, enabled=true
+
+# 国际服务分流规则
+# 𝑨𝒑𝒑𝒍𝒆（苹果服务）
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Apple/Apple.list, policy=🍎𝑨𝒑𝒑𝒍𝒆, tag=𝑨𝒑𝒑𝒍𝒆（苹果服务）, enabled=true
+
+# 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕（微软服务）
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Microsoft/Microsoft.list, policy=💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕, tag=𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕（微软服务）, enabled=true
+
+# 𝑮𝒐𝒐𝒈𝒍𝒆（谷歌服务）
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Google/Google.list, policy=🌏𝑮𝒐𝒐𝒈𝒍𝒆, tag=𝑮𝒐𝒐𝒈𝒍𝒆（谷歌服务）, enabled=true
+
+# 𝑮𝒊𝒕𝑯𝒖𝒃
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/GitHub/GitHub.list, policy=💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕, tag=𝑮𝒊𝒕𝑯𝒖𝒃, enabled=true
+
+# 𝑶𝒏𝒆𝑫𝒓𝒊𝒗𝒆
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/OneDrive/OneDrive.list, policy=💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕, tag=𝑶𝒏𝒆𝑫𝒓𝒊𝒗𝒆, enabled=true
+
+# 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Telegram/Telegram.list, policy=📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎, tag=𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎, enabled=true
+
+# 社交分流规则
+# 𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Twitter/Twitter.list, policy=📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿), tag=𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿), enabled=true
+
+# 𝑻𝒆𝒔𝒕𝑭𝒍𝒊𝒈𝒉𝒕
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/TestFlight/TestFlight.list, policy=♻️𝑭𝑰𝑵𝑨𝑳, tag=𝑻𝒆𝒔𝒕𝑭𝒍𝒊𝒈𝒉𝒕, enabled=true
+
+# 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Instagram/Instagram.list, policy=📷𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎, tag=𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎, enabled=true
+
+# 𝑹𝒆𝒅𝒅𝒊𝒕
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Reddit/Reddit.list, policy=📖𝑹𝒆𝒅𝒅𝒊𝒕, tag=𝑹𝒆𝒅𝒅𝒊𝒕, enabled=true
+
+# 𝑫𝒊𝒔𝒄𝒐𝒓𝒅
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Discord/Discord.list, policy=🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅, tag=𝑫𝒊𝒔𝒄𝒐𝒓𝒅, enabled=true
+
+# 游戏与工具分流规则
+# 𝑷𝒊𝒙𝒊𝒗
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Pixiv/Pixiv.list, policy=🍄𝑷𝒊𝒙𝒊𝒗, tag=𝑷𝒊𝒙𝒊𝒗, enabled=true
+
+# 𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Pinterest/Pinterest.list, policy=🍄𝑷𝒊𝒙𝒊𝒗, tag=𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕, enabled=true
+
+# 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/OpenAI/OpenAI.list, policy=🤖𝑪𝒉𝒂𝒕𝑮𝑷𝑻, tag=𝑪𝒉𝒂𝒕𝑮𝑷𝑻, enabled=true
+
+# 𝑺𝒕𝒆𝒂𝒎
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Steam/Steam.list, policy=🎮𝑺𝒕𝒆𝒂𝒎, tag=𝑺𝒕𝒆𝒂𝒎, enabled=true
+
+# 𝑺𝒕𝒆𝒂𝒎 𝑪𝑵
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/SteamCN/SteamCN.list, policy=🎮𝑺𝒕𝒆𝒂𝒎, tag=𝑺𝒕𝒆𝒂𝒎 𝑪𝑵, enabled=true
+
+# 𝑬𝒑𝒊𝒄
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Epic/Epic.list, policy=🎮𝑺𝒕𝒆𝒂𝒎, tag=𝑬𝒑𝒊𝒄, enabled=true
+
+# 国外媒体分流规则
+# 𝑻𝒘𝒊𝒕𝒄𝒉
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Twitch/Twitch.list, policy=🖥𝑻𝒘𝒊𝒕𝒄𝒉, tag=𝑻𝒘𝒊𝒕𝒄𝒉, enabled=true
+
+# 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/YouTube/YouTube.list, policy=📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆, tag=𝒀𝒐𝒖𝑻𝒖𝒃𝒆, enabled=true
+
+# 𝑺𝒑𝒐𝒕𝒊𝒇𝒚
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Spotify/Spotify.list, policy=🎧𝑺𝒑𝒐𝒕𝒊𝒇𝒚, tag=𝑺𝒑𝒐𝒕𝒊𝒇𝒚, enabled=true
+
+# 𝑻𝒊𝒌𝑻𝒐𝒌
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/TikTok/TikTok.list, policy=📽𝑻𝒊𝒌𝑻𝒐𝒌, tag=𝑻𝒊𝒌𝑻𝒐𝒌, enabled=true
+
+# 𝑩𝒂𝒉𝒂𝒎𝒖𝒕（动画疯）
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Bahamut/Bahamut.list, policy=🧸𝑩𝒂𝒉𝒂𝒎𝒖𝒕, tag=𝑩𝒂𝒉𝒂𝒎𝒖𝒕（动画疯）, enabled=true
+
+# 𝑵𝒆𝒕𝒇𝒍𝒊𝒙
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Netflix/Netflix.list, policy=🎥𝑵𝒆𝒕𝒇𝒍𝒊𝒙, tag=𝑵𝒆𝒕𝒇𝒍𝒊𝒙, enabled=true
+
+# 𝑷𝒓𝒊𝒎𝒆𝑽𝒊𝒅𝒆𝒐
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/PrimeVideo/PrimeVideo.list, policy=🎬𝑯𝑩𝑶~𝑫𝒊𝒔𝒏𝒆𝒚+, tag=𝑷𝒓𝒊𝒎𝒆𝑽𝒊𝒅𝒆𝒐, enabled=true
+
+# 𝑯𝑩𝑶
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/HBO/HBO.list, policy=🎬𝑯𝑩𝑶~𝑫𝒊𝒔𝒏𝒆𝒚+, tag=𝑯𝑩𝑶, enabled=true
+
+# 𝑬𝒎𝒃𝒚
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Emby/Emby.list, policy=🎞️𝑬𝒎𝒃𝒚, tag=𝑬𝒎𝒃𝒚, enabled=true
+
+# 国内直连分流规则
+# 𝑵𝑮𝑨玩家社区
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/NGA/NGA.list, policy=DIRECT, tag=𝑵𝑮𝑨玩家社区, enabled=true
+# 京东
+https://whatshub.top/rule/JingDong.list, policy=DIRECT, tag=京东, enabled=true
+
+# 拼多多
+https://whatshub.top/rule/Pinduoduo.list, policy=DIRECT, tag=拼多多, enabled=true
+
+# 招商银行
+https://whatshub.top/rule/CMB.list, policy=DIRECT, tag=招商银行, enabled=true
+
+# 美图
+https://whatshub.top/rule/MeiTu.list, policy=DIRECT, tag=美图, enabled=true
+
+# 迅雷
+https://whatshub.top/rule/Xunlei.list, policy=DIRECT, tag=迅雷, enabled=true
+
+# 中国联通
+https://whatshub.top/rule/ChinaUnicom.list, policy=DIRECT, tag=中国联通, enabled=true
+
+# 美团
+https://whatshub.top/rule/MeiTuan.list, policy=DIRECT, tag=美团, enabled=true
+
+# 高德地图
+https://whatshub.top/rule/GaoDe.list, policy=DIRECT, tag=高德地图, enabled=true
+
+# 知乎
+https://whatshub.top/rule/Zhihu.list, policy=DIRECT, tag=知乎, enabled=true
+
+# 12306
+https://whatshub.top/rule/12306.list, policy=DIRECT, tag=12306, enabled=true
+
+# 网易云音乐
+https://whatshub.top/rule/NetEaseMusic.list, policy=DIRECT, tag=网易云音乐, enabled=true
+
+# 微信
+https://whatshub.top/rule/WeChat.list, policy=DIRECT, tag=微信, enabled=true
+
+# 𝑩𝒊𝒍𝒊𝒃𝒊𝒍𝒊（哔哩哔哩）
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/BiliBili/BiliBili.list, policy=📺𝒃𝒊𝒍𝒊𝒃𝒊𝒍𝒊, tag=𝑩𝒊𝒍𝒊𝒃𝒊𝒍𝒊（哔哩哔哩）, enabled=true
+
+# 𝑾𝒆𝒊𝒃𝒐（微博）
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Weibo/Weibo.list, policy=🚾𝑾𝒆𝒊𝒃𝒐, tag=𝑾𝒆𝒊𝒃𝒐（微博）, enabled=true
+
+# 其它全球多分流规则合集
+# 全球规则
+
+# 全球规则
+
+# 全球直连
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/China/China.list, policy=DIRECT, tag=全球直连, enabled=true
+
+# 𝑳𝑨𝑵
+https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER, policy=DIRECT, tag=𝑳𝑨𝑵, enabled=true
+
+# 𝑪𝑵 𝑹𝑬𝑮𝑰𝑶𝑵
+https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER, policy=DIRECT, tag=𝑪𝑵 𝑹𝑬𝑮𝑰𝑶𝑵, enabled=true
+
+[Host]
+
+[Rewrite]
+# 解决github速率限制返回429问题
+^https:\/\/(raw|gist)\.githubusercontent\.com\/ header-replace Accept-Language en-us
+^https:\/\/github\.com\/ header-replace Accept-Language en-us
+[Script]
+cron "0 7 * * *" script-path=https://gist.githubusercontent.com/blackmatrix7/cebabe7a385fc6a9ad32e2f7a35851dc/raw/1363d8720c92267d0a97fcd8eb98673760891fc9/tieba_min.js, timeout=300, tag=百度贴吧(客户端), img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba.png
+# 本地订阅Task脚本
+# 签到脚本
+# 晓晓优选每日任务
+cron "17 7 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xxyx/xxyx_signin.js, timeout=300, tag=晓晓优选每日任务
+# Bili漫画签到
+cron "0 7 * * *" script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/Manga.js, timeout=60, tag=Bili漫画签到, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili.png
+# 喜马拉雅签到
+cron "0 7 * * *" script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/xmlySign.js, timeout=60, tag=喜马拉雅签到, img-url=https://raw.githubusercontent.com/HuiDoY/Icon/main/mini/Color/ximalaya.png
+# 百度贴吧签到
+# 高德地图打车签到
+cron "0 7 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=60, tag=高德地图打车签到, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Gddt.png
+# 达美乐披萨签到
+cron "0 7 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, timeout=60, tag=达美乐披萨签到, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Dlm.png
+# 蜜雪冰城每日签到
+cron "0 7 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, timeout=60, tag=蜜雪冰城每日签到, img-url=https://raw.githubusercontent.com/sliverkiss/QuantumultX/main/icon/mxbc.png
+# 奈雪的茶每日签到
+cron "0 7 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/4d0e9572b99530b7cb0e7298622aa2a9/raw/naixue.js, timeout=60, tag=奈雪每日签到, img-url=https://raw.githubusercontent.com/sliverkiss/QuantumultX/main/icon/naixue.png
+# 小蚕霸王餐签到
+cron "0 7 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js, timeout=60, tag=小蚕霸王餐, img-url=https://raw.githubusercontent.com/sliverkiss/QuantumultX/main/icon/xcbwc.png
+# 柠季签到
+cron "0 7 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/ningji/ningji.js, timeout=60, tag=柠季签到, img-url=https://raw.githubusercontent.com/leiyiyan/resource/main/icons/ningji.png
+# 奶茶多号签到
+cron "0 7 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, timeout=60, tag=奶茶多号签到, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/teaMilk.png
+# 动画疯签到
+cron "0 7 * * *" script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutDailyBonus.js, timeout=300, tag=动画疯 [签到], img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/bahamute.png
+# 𝐙𝐈𝐏𝐏𝐎会员中心签到
+cron "0 7 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/zippo.js, timeout=10, tag=𝐙𝐈𝐏𝐏𝐎会员中心签到, img-url=https://raw.githubusercontent.com/Yuheng0101/X/main/Assets/zippo.jpg
+# 热门内容推送
+# 黑料不打烊
+cron "0 9,15 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/hlbdy.js, timeout=60, tag=黑料不打烊, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/heiliao.png
+# 𝐉𝐀𝐕𝐃𝐚𝐲每日推荐
+# 热映电影
+cron "9 9 * * *" script-path=https://whatshub.top/plugin/movie.js, timeout=60, tag=热映电影
+# 电视热门榜
+cron "14 14 * * *" script-path=https://raw.githubusercontent.com/deezertidal/private/main/tv.js, timeout=60, tag=电视热门榜
+# Billboard Hot100
+cron "0 0 12 ? * WED" script-path=https://raw.githubusercontent.com/deezertidal/private/main/bb100.js, timeout=60, tag=Billboard Hot100, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Music_Enhance.png
+# 今日平台热榜
+cron "16 16 * * *" script-path=https://raw.githubusercontent.com/deezertidal/private/main/hotoday.js, timeout=60, tag=今日平台热榜, img-url=https://raw.githubusercontent.com/58xinian/icon/master/hot.png
+# 历史上的今天
+cron "13 13 * * *" script-path=https://raw.githubusercontent.com/deezertidal/private/main/histoday.js, timeout=60, tag=历史上的今天, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/goodnotes.png
+# 网易云热歌
+cron "20 20 * * *" script-path=https://raw.githubusercontent.com/deezertidal/private/main/nm.js, timeout=60, tag=网易云热歌, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netease_Music.png
+# 每天60秒读懂世界
+cron "30 9 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, timeout=60, tag=每天60秒读懂世界, img-url=https://raw.githubusercontent.com/Yuheng0101/X/main/Assets/60s.png
+# 今日油价
+cron "12 12 * * *" script-path=oil.js, timeout=60, tag=今日油价, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
+
+# 节点检测脚本
+# WARP · INFO
+generic script-path=https://raw.githubusercontent.com/VirgilClyne/Cloudflare/main/js/1.1.1.1.panel.js, timeout=60, tag=WARP · INFO, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/iCloud.png
+# 代理链路检测
+generic script-path=https://kelee.one/Resource/JavaScript/NodeLinkCheck/NodeLinkCheck.js, timeout=60, tag=代理链路检测, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Stack.png
+# 地理位置查询
+generic script-path=https://kelee.one/Resource/JavaScript/Node_detection_tool/LocationDetection.js, timeout=60, tag=地理位置查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
+# 入口落地查询
+generic script-path=https://kelee.one/Resource/JavaScript/Node_detection_tool/NetworkEntryAndExitQueries.js, timeout=60, tag=入口落地查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Area.png
+# 流媒体-解锁查询
+generic script-path=https://kelee.one/Resource/JavaScript/Node_detection_tool/NodeUnlockDetection.js, timeout=60, tag=流媒体-解锁查询, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/GMedia.png
+# Sub-Store
+cron "0 2 * * *" script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/cron-sync-artifacts.min.js, timeout=60, tag=Sub-Store, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/SubStore.png
+enable = false
+
+
+[Remote Script]
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/script/tasks.scripts, tag=fmz200定时任务合集, enabled=false
+Https://gist.githubusercontent.com/Sliverkiss/2b5acc2c4960dd06618c6912302c2c7f/raw/nodeseek.js, tag=nodeseek.js, enabled=false
+https://raw.githubusercontent.com/NobyDa/Script/master/Loon/Loon_Daily_bonus.plugin, tag=Task, enabled=false
+# 订阅Task合集
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Fake_Vip.conf, tag=Fake-VIP, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Cookie.conf, tag=Cookie.获取完一定要关闭, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Task.conf, tag=Task, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Script.conf, tag=Script, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/JD.conf, tag=JD, enabled=false
+[Plugin]
+# ————去广告拦截插件分类————
+# 广告平台拦截
+https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, tag=广告平台拦截器, enabled=true
+# 可莉广告过滤器
+https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx, tag=可莉广告过滤器, enabled=true
+# HTTPDNS拦截
+https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/plugin/HTTPDNS.Block.plugin, enabled=false
+# 墨鱼去广告2.0
+http://script.hub/file/_start_/https://gist.githubusercontent.com/ddgksf2013/12ef6aad209155e7eb62c5b00c11b9dd/raw/StartUpAds.conf/_end_/StartUpAds.plugin?n=%E5%A2%A8%E9%B1%BC%E5%8E%BB%E5%BC%80%E5%B1%8F%E5%B9%BF%E5%91%8A2.0&type=qx-rewrite&target=loon-plugin&del=true, tag=墨鱼去开屏广告2.0, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Ads.png, enabled=true
+# 墨鱼去广告插件
+http://script.hub/file/_start_/https://raw.githubusercontent.com/ddgksf2013/Modules/main/Adblock.sgmodule/_end_/Adblock.plugin?n=%E5%A2%A8%E9%B1%BC%E5%8E%BB%E5%B9%BF%E5%91%8A%E6%8F%92%E4%BB%B6%2B%E8%9E%8D%E5%90%88%E7%89%88%5B%E7%94%B1GithubAction%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%5D%EF%BC%8C%E5%8C%85%E6%8B%AC%E5%A2%A8%E9%B1%BC%E5%8E%BB%E5%BC%80%E5%B1%8F2.0%E3%80%81%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85%E3%80%81%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E3%80%81%E5%BE%AE%E5%8D%9A%E3%80%81KEEP%E3%80%81%E7%9F%A5%E4%B9%8E%E3%80%81%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E3%80%81%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE%E3%80%81%E5%B0%8F%E7%BA%A2%E4%B9%A6%E3%80%81%E7%BD%91%E6%98%93%E4%BA%91%E3%80%81%E4%BB%80%E4%B9%88%E5%80%BC%E5%BE%97%E4%B9%B0%E3%80%81%E8%8F%9C%E9%B8%9F%E3%80%81%E5%BD%A9%E4%BA%91%E5%A4%A9%E6%B0%94%E3%80%81%E8%B1%86%E7%93%A3%E7%BD%91%E9%A1%B5&type=surge-module&target=loon-plugin&del=true, tag=墨鱼去广告插件, enabled=true
+# 毒奶网页去广告
+http://script.hub/file/_start_/https://limbopro.com/Adblock4limbo.conf/_end_/Adblock4limbo.plugin?n=%E6%AF%92%E5%A5%B6%E7%BD%91%E9%A1%B5%E5%8E%BB%E5%B9%BF%E5%91%8A%2B%E6%AF%92%E5%A5%B6%E5%8E%BB%E7%BD%91%E9%A1%B5%E5%B9%BF%E5%91%8A%E8%AE%A1%E5%88%92%E7%94%A8%E6%88%B7%E8%84%9A%E6%9C%AC%20For%20Quantumult%20X%20%26%20Surge%20%26%20Shadowrocket%20%26%20Loon%20%26%20Stash%20%26%20%E6%B2%B9%E7%8C%B4%20%EF%BC%9B1.%E6%96%B0%E5%A2%9E%E9%A1%B5%E9%9D%A2%E5%8F%B3%E4%B8%8B%E8%A7%92%E5%AF%BC%E8%88%AA%EF%BC%9B2.%E9%80%9A%E8%BF%87%20JavaScript%20%E7%A7%BB%E9%99%A4%E7%89%B9%E5%AE%9A%E7%BD%91%E7%AB%99%E7%BD%91%E9%A1%B5%E5%B9%BF%E5%91%8A%20%E2%80%94%E2%80%94%20%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%EF%BC%88Bing%2FGoogle%EF%BC%89%E5%B9%BF%E5%91%8A%E5%8F%8A%E5%86%85%E5%AE%B9%E5%86%9C%E5%9C%BA%E7%BB%93%E6%9E%9C%E6%B8%85%E9%99%A4%2F%E4%BD%8E%E7%AB%AF%E5%BD%B1%E8%A7%86%2F%E6%AC%A7%E4%B9%90%E5%BD%B1%E9%99%A2%2Fiyf%E7%88%B1%E5%A3%B9%E5%B8%86%2F%E5%93%94%E6%BB%B4%E5%BD%B1%E8%A7%86%2FPornhub%2FJavbus%2FSupjav%2FJable(%E6%94%AF%E6%8C%81%E6%8A%93%E5%8F%96M3U8%E9%93%BE%E6%8E%A5)%2FMissAv%2F91porn(%E6%94%AF%E6%8C%81%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD)%2Fhitomi%2F%E7%B4%B3%E5%A3%AB%E6%BC%AB%E7%95%AB%2F%E7%A6%81%E6%BC%AB%E5%A4%A9%E5%A0%82%2F%E7%AD%89%E8%A7%86%E9%A2%91%26ACG%26%E5%B0%8F%E8%AF%B4%26%E6%BC%AB%E7%94%BB%E7%BD%91%E7%AB%99%E4%B8%8A%E7%9A%84%E5%BC%B9%E7%AA%97%E5%B9%BF%E5%91%8A%26%E8%A7%86%E9%A2%91%E5%B9%BF%E5%91%8A%26Gif%E5%9B%BE%E7%89%87%E5%B9%BF%E5%91%8A%E7%AD%89%EF%BC%8C%E4%BF%9D%E6%8C%81%E7%BD%91%E9%A1%B5%E6%B8%85%E7%88%BD%E5%B9%B2%E5%87%80%E6%97%A0%E6%89%93%E6%89%B0%EF%BC%81%20P.S.%20%E6%AC%A2%E8%BF%8E%E6%8F%90%E4%BA%A4issue&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=毒奶网页去广告, enabled=true
+# 人人视频去广告
+https://whatshub.top/plugin/rrsp.plugin, enabled=true
+# 𝑺𝒑𝒐𝒕𝒊𝒇𝒚去广告
+http://script.hub/file/_start_/https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Module/AD/Spotify.sgmodule/_end_/Spotify.plugin?type=surge-module&target=loon-plugin&del=true&jqEnabled=true, tag=Spotify播放去广告, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/spotify(green).png, enabled=true
+# Spotify去广告
+https://raw.githubusercontent.com/app2smile/rules/master/plugin/spotify.plugin, tag=Spotify去广告, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/spotify(green).png, enabled=false
+# 油管去广告
+http://script.hub/file/_start_/https://github.com/Maasea/sgmodule/blob/master/YouTube.Enhance.sgmodule?raw=true/_end_/YouTube.plugin?type=surge-module&target=loon-plugin&del=true&jqEnabled=true, tag=YouTube去广告, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/youtube.png, enabled=true
+# 微博去广告
+http://script.hub/file/_start_/https://raw.githubusercontent.com/neishe321/My_Scripts/refs/heads/main/Surge/Module/weibo.sgmodule/_end_/weibo.plugin?n=%E5%BE%AE%E5%8D%9A%E5%8E%BB%E5%B9%BF%E5%91%8A%2B%20%E5%8E%BB%E9%99%A4%E5%BE%AE%E5%8D%9A%E5%B9%BF%E5%91%8A%EF%BC%8C%E7%A7%BB%E9%99%A4%E9%9D%9E%E5%BF%85%E8%A6%81%E6%A8%A1%E5%9D%97&type=surge-module&target=loon-plugin&del=true&jqEnabled=true, tag=微博去广告, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Weibo-00.png, enabled=true
+http://script.hub/file/_start_/https://github.com/fmz200/wool_scripts/raw/main/Surge/module/weibo.module/_end_/weibo.plugin?n=%E5%A5%B6%E6%80%9D%E5%BE%AE%E5%8D%9A%E5%8E%BB%E5%B9%BF%E5%91%8A%2B%E5%8E%BB%E9%99%A4%E5%B8%B8%E8%A7%81%E7%9A%84%E5%B9%BF%E5%91%8A%E5%92%8C%E9%83%A8%E5%88%86%E5%A4%9A%E4%BD%99%E7%9A%84%E6%A8%A1%E5%9D%97&type=surge-module&target=loon-plugin&del=true&jqEnabled=true, tag=奶思微博去广告, enabled=true
+# NoAd广告屏蔽
+# 去广告净化合集
+https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/blockAds.plugin, tag=去广告净化合集, enabled=false
+# App去广告合集
+http://script.hub/file/_start_/https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt/_end_/chongxie.plugin?type=qx-rewrite&target=loon-plugin&del=true, tag=App去广告合集, enabled=false
+# 网易云音乐去广告
+https://kelee.one/Tool/Loon/Lpx/NeteaseCloudMusic_remove_ads.lpx, tag=网易云音乐去广告, enabled=true
+# 巴哈姆特动画疯（屏蔽视频广告）
+https://raw.githubusercontent.com/NobyDa/Script/master/Loon/Loon_Bahamut_ADS.plugin, tag=巴哈姆特动画疯, enabled=true
+# 叮咚买菜去广告
+https://kelee.one/Tool/Loon/Lpx/DingdongMaicai_remove_ads.lpx, tag=叮咚买菜去广告, enabled=true
+# 驾考宝典去广告
+https://kelee.one/Tool/Loon/Lpx/JiaKaoBaoDian_remove_ads.lpx, tag=驾考宝典去广告, enabled=true
+# 驾校一点通去广告
+https://kelee.one/Tool/Loon/Lpx/JiaXiaoDrive_remove_ads.lpx, tag=驾校一点通去广告, enabled=true
+# QQ空间广告屏蔽
+https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/Loon/Plugin/QzoneAdBlock.plugin, tag=QQ空间广告屏蔽, enabled=true
+# 无他相机去广告
+https://kelee.one/Tool/Loon/Lpx/WutaCamera_remove_ads.lpx, tag=无他相机去广告, enabled=true
+# 百度网盘去广告
+https://kelee.one/Tool/Loon/Lpx/BaiduNetDisk_remove_ads.lpx, tag=百度网盘去广告, enabled=true
+# 哔哩哔哩漫画去广告
+https://kelee.one/Tool/Loon/Lpx/BiliComic_remove_ads.lpx, tag=哔哩哔哩漫画去广告, enabled=true
+# 汽车之家去广告
+https://kelee.one/Tool/Loon/Lpx/AutoHome_remove_ads.lpx, tag=汽车之家去广告, enabled=true
+# 堆糖去广告
+https://kelee.one/Tool/Loon/Lpx/DuiTang_remove_ads.lpx, tag=堆糖去广告, enabled=true
+# 夸克去广告
+https://kelee.one/Tool/Loon/Lpx/QuarkBrowser_remove_ads.lpx, tag=夸克去广告, enabled=true
+# 小黑盒去广告
+https://kelee.one/Tool/Loon/Lpx/XiaoHeiHe_remove_ads.lpx, tag=小黑盒去广告, enabled=true
+# 转转去广告
+https://kelee.one/Tool/Loon/Lpx/ZhuanZhuan_remove_ads.lpx, tag=转转去广告, enabled=true
+# 朴朴超市去广告
+https://kelee.one/Tool/Loon/Lpx/PuPuMall_remove_ads.lpx, tag=朴朴超市去广告, enabled=true
+# Reddit去广告
+https://kelee.one/Tool/Loon/Lpx/Reddit_remove_ads.lpx, tag=Reddit去广告, enabled=true
+# 12306去广告
+https://kelee.one/Tool/Loon/Lpx/12306_remove_ads.lpx, tag=12306去广告, enabled=true
+# 腾讯视频去广告
+https://kelee.one/Tool/Loon/Lpx/Tencent_Video_remove_ads.lpx, tag=腾讯视频去广告, enabled=true
+# 爱奇艺视频去广告
+https://kelee.one/Tool/Loon/Lpx/iQiYi_Video_remove_ads.lpx, tag=爱奇艺视频去广告, enabled=true
+# 哔哩哔哩去广告
+https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx, tag=哔哩哔哩去广告, enabled=false
+# 高德地图去广告
+https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx, tag=高德地图去广告, enabled=true
+# 微信小程序去广告
+https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx, tag=微信小程序去广告, enabled=true
+# 微信公众号去广告
+https://kelee.one/Tool/Loon/Lpx/Weixin_Official_Accounts_remove_ads.lpx, tag=微信公众号去广告, enabled=true
+# 百度搜索网页去广告
+https://kelee.one/Tool/Loon/Lpx/BaiduSearchWebpage_remove_ads.lpx, tag=百度搜索网页去广告, enabled=true
+# QQ音乐去广告
+https://kelee.one/Tool/Loon/Lpx/QQMusic_remove_ads.lpx, tag=QQ音乐去广告, enabled=true
+# 阿里云盘去广告
+https://kelee.one/Tool/Loon/Lpx/AliYunDrive_remove_ads.lpx, tag=阿里云盘去广告, enabled=true
+# 瑞幸咖啡去广告
+https://kelee.one/Tool/Loon/Lpx/LuckinCoffee_remove_ads.lpx, tag=瑞幸咖啡去广告, enabled=true
+# 彩云天气去广告
+https://kelee.one/Tool/Loon/Lpx/ColorfulClouds_remove_ads.lpx, tag=彩云天气去广告, enabled=true
+# 京东去广告
+https://kelee.one/Tool/Loon/Lpx/JD_remove_ads.lpx, tag=京东去广告, enabled=true
+# 微博去广告
+https://kelee.one/Tool/Loon/Lpx/Weibo_remove_ads.lpx, tag=微博去广告, enabled=false
+# 喜马拉雅去广告
+https://kelee.one/Tool/Loon/Lpx/Himalaya_remove_ads.lpx, tag=喜马拉雅去广告, enabled=true
+# 美颜相机去广告
+https://kelee.one/Tool/Loon/Lpx/MeituMYXJ_remove_ads.lpx, tag=美颜相机去广告, enabled=true
+# 美图秀秀去广告
+https://kelee.one/Tool/Loon/Lpx/MeiTu_remove_ads.lpx, tag=美图秀秀去广告, enabled=true
+# 闲鱼去广告
+https://kelee.one/Tool/Loon/Lpx/FleaMarket_remove_ads.lpx, tag=闲鱼去广告, enabled=true
+# 拼多多去广告
+https://kelee.one/Tool/Loon/Lpx/PinDuoDuo_remove_ads.lpx, tag=拼多多去广告, enabled=true
+# 迅雷去广告
+https://kelee.one/Tool/Loon/Lpx/XunLei_remove_ads.lpx, tag=迅雷去广告, enabled=true
+# 虎扑去广告
+https://kelee.one/Tool/Loon/Lpx/HUPU_remove_ads.lpx, tag=虎扑去广告, enabled=true
+# 淘宝去广告
+https://kelee.one/Tool/Loon/Lpx/Taobao_remove_ads.lpx, tag=淘宝去广告, enabled=true
+# 广告屏蔽
+http://script.hub/file/_start_/https://whatshub.top/rewrite/AdBlock.conf/_end_/AdBlock.plugin?type=qx-rewrite&target=loon-plugin&del=true, tag=广告屏蔽, enabled=true
+# 知乎去广告
+https://whatshub.top/plugin/ZhihuBlock.plugin, tag=知乎去广告, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/zhihu.png, enabled=true
+# 贴吧去广告
+https://kelee.one/Tool/Loon/Lpx/Tieba_remove_ads.lpx, tag=贴吧去广告, enabled=true
+# 百度页面净化
+https://raw.githubusercontent.com/Keywos/rule/main/script/baidu_index/bd.plugin, tag=Baidu 首页, enabled=true
+# 网易云解锁播放
+https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.plugin, tag=网易云音乐, enabled=false
+# Soul去广告
+https://kelee.one/Tool/Loon/Lpx/Soul_remove_ads.lpx, tag=Soul去广告, enabled=true
+# 豆瓣去广告
+https://kelee.one/Tool/Loon/Lpx/DouBan_remove_ads.lpx, tag=豆瓣去广告, enabled=true
+# 小红书去广告
+https://kelee.one/Tool/Loon/Lpx/RedPaper_remove_ads.lpx, tag=小红书去广告, enabled=true
+# 游民星空去广告
+https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E6%B8%B8%E6%B0%91%E6%98%9F%E7%A9%BA%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule, tag=游民星空去广告, enabled=true
+# 有道翻译官去广告
+https://kelee.one/Tool/Loon/Lpx/YoudaoTrans_remove_ads.lpx, tag=有道翻译官去广告, enabled=true
+# 哔哩哔哩增强
+https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/release/loon/plugin/bilibili.plugin, tag=哔哩哔哩增强, enabled=true
+# 微信小程序净化
+http://script.hub/file/_start_/https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/WxPureDominion.snippet/_end_/WxPureDominion.plugin?n=%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%87%80%E5%8C%96%2B%20Wx%E2%9E%A1%EF%B8%8F%E6%88%91%E2%9E%A1%EF%B8%8F%E6%9C%8D%E5%8A%A1%E2%9E%A1%EF%B8%8F%E9%85%92%E5%BA%97%E6%B0%91%E5%AE%BF%EF%BC%8C%E5%90%8C%E7%A8%8B%E6%97%85%E8%A1%8C%20%E7%BE%8E%E5%9B%A2%E5%9B%A2%E8%B4%AD%20%20%20%E7%81%AB%E8%BD%A6%E7%A5%A8%E6%9C%BA%E7%A5%A8%20%E9%A1%B5%E9%9D%A2%E5%87%80%E5%8C%96&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=微信小程序净化, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/wechat(1).png, enabled=true
+# YouTube去广告
+https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, tag=YouTube去广告, enabled=false
+
+# ————LSP插件分类————
+# YDM系列通杀合集
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ydm.js, tag=YDM系列通杀合集, enabled=true
+# Mr先生 + xvideos社区 + 泡芙短视频 + tiktok免费版
+http://script.hub/file/_start_/https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/mr.sgmodule/_end_/mr.plugin?n=Mr%E5%85%88%E7%94%9F%20%20xvideos%E7%A4%BE%E5%8C%BA%20%E6%B3%A1%E8%8A%99%E7%9F%AD%E8%A7%86%E9%A2%91%20%20tiktok%E5%85%8D%E8%B4%B9%E7%89%88%2B%E5%8E%BB%E5%B9%BF%E5%91%8A%E8%A7%A3%E9%94%81%E8%A7%86%E9%A2%91&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=Mr先生 + xvideos社区 + 泡芙短视频 + tiktok免费版, enabled=true
+# 18ak漫画
+http://script.hub/file/_start_/https://gist.githubusercontent.com/Yu9191/919552f4d3358c070e5d995137514748/raw/18kmanhua.js/_end_/18kmanhua.plugin?n=18ak%E6%BC%AB%E7%94%BB%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E9%87%91%E5%B8%81%E4%BB%98%E8%B4%B9%E6%BC%AB%E7%94%BB&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=18ak漫画, enabled=true
+# 漫小肆韓漫
+http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/mxshm.js/_end_/mxshm.plugin?n=%E6%BC%AB%E5%B0%8F%E8%82%86%E9%9F%93%E6%BC%AB%2B%E5%8E%BB%E9%99%A4%E6%B1%A1%E7%A7%BD%E5%B9%BF%E5%91%8A&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=漫小肆韓漫, enabled=true
+# ins社区
+http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/ins.js/_end_/ins.plugin?n=ins%E7%A4%BE%E5%8C%BA%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E9%87%91%E5%B8%81%E4%BB%98%E8%B4%B9%E8%A7%86%E9%A2%91&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=ins社区, enabled=true
+# 字母圈
+http://script.hub/file/_start_/https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/zmq.js/_end_/zmq.plugin?n=%E5%AD%97%E6%AF%8D%E5%9C%88%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E9%87%91%E5%B8%81%E4%BB%98%E8%B4%B9%E8%A7%86%E9%A2%91&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=字母圈, enabled=true
+# Lsp合集
+https://raw.githubusercontent.com/IC58G/vpn_tool/main/Resource/Plugin/baby/Unlock-S.plugin, policy=♻️𝑭𝑰𝑵𝑨𝑳, tag=Lsp合集, enabled=true
+# 通杀
+https://raw.githubusercontent.com/sooyaaabo/Loon/main/Plugin/RevenueCat.plugin, tag=通杀, enabled=true
+# 足控社
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/zks.js, tag=足控社, enabled=true
+# 抖音直播录频
+http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/luping.js/_end_/luping.plugin?n=%E6%8A%96%E9%9F%B3%E7%9B%B4%E6%92%AD%E5%BD%95%E5%B1%8F%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E9%87%91%E5%B8%81%E4%BB%98%E8%B4%B9&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=抖音直播录频, enabled=true
+# 139fm
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/139fm.js/_end_/139fm.plugin?n=139fm%2B%E8%A7%A3%E9%94%81%E4%BB%98%E8%B4%B9%E8%B5%84%E6%BA%90%E6%97%A0%E9%9C%80%E7%99%BB%E5%85%A5&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=139fm, enabled=true
+# 姬漫社
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/jmshe.js/_end_/jmshe.plugin?n=%E5%A7%AC%E6%BC%AB%E7%A4%BE%2B%E8%A7%A3%E9%94%81%E8%A7%86%E9%A2%91%E3%80%81%E6%BC%AB%E7%94%BB%E3%80%81%E5%86%99%E7%9C%9F%E3%80%81%E5%8A%A8%E6%BC%AB%E3%80%82&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=姬漫社, enabled=true
+# Xvideo社区
+http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/xvideos.js/_end_/xvideos.plugin?n=Xvideo%E7%A4%BE%E5%8C%BA%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E8%A7%86%E9%A2%91%EF%BC%8C%E9%87%91%E5%B8%81%E8%A7%86%E9%A2%91%EF%BC%8C%E4%BB%98%E8%B4%B9%E8%A7%86%E9%A2%91&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=Xvideo社区, enabled=true
+# 鲍鱼盒子
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/byhz.js/_end_/byhz.plugin?n=%E9%B2%8D%E9%B1%BC%E7%9B%92%E5%AD%90%2B%E8%A7%A3%E9%94%81VIP%E7%9B%B4%E6%92%AD%E3%80%81%E8%A7%86%E9%A2%91%E3%80%81%E6%BC%AB%E7%94%BB%E3%80%82&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=鲍鱼盒子, enabled=true
+# Mr先生 + xvideos社区 + 泡芙短视频 + tiktok免费版
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/mr.js, tag=Mr先生 + xvideos社区 + 泡芙短视频 + tiktok免费版, enabled=true
+# 红杏视频
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/hongxingshipin.js/_end_/hongxingshipin.plugin?n=%E7%BA%A2%E6%9D%8F%E8%A7%86%E9%A2%91%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E8%A7%86%E9%A2%91%EF%BC%8C%E4%B8%8D%E6%98%BE%E7%A4%BAVIP%E5%9B%BE%E6%A0%87&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=红杏视频, enabled=true
+# 加藤视频
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/JTSP.plugin, tag=加藤视频, enabled=true
+# 老色批通杀VIP 
+http://script.hub/file/_start_/https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ts.js/_end_/ts.plugin?n=%E8%80%81%E8%89%B2%E6%89%B9%E9%80%9A%E6%9D%80VIP%2B%E4%BD%BF%E7%94%A8%E6%AD%A4%E8%84%9A%E6%9C%AC%E4%BC%9A%E6%94%BB%E5%87%BB%E6%89%80%E6%9C%89MitM%E5%9F%9F%E5%90%8D%2C%20%E4%BC%9A%E5%AF%B9iCloud%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%BD%91%E7%BB%9C%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8%E6%97%B6%E5%BC%80%E5%90%AF%E6%A8%A1%E5%9D%97%2C%20%E4%B8%8D%E7%94%A8%E6%97%B6%E5%80%99%E5%85%B3%E9%97%AD%E6%A8%A1%E5%9D%97%E9%81%BF%E5%85%8D%E5%BD%B1%E5%93%8DiCloud%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=老色批通杀VIP, enabled=false
+# uaa有爱爱
+http://script.hub/file/_start_/https://raw.githubusercontent.com/chxm1023/Rewrite/main/uua.js/_end_/uua.plugin?n=uaa%E6%9C%89%E7%88%B1%E7%88%B1%2B%E8%A7%A3%E9%94%81%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=uaa有爱爱, enabled=true
+# 吸游技解锁
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/luolidao.js/_end_/luolidao.plugin?type=qx-rewrite&target=loon-plugin&del=true, tag=吸游技解锁, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/softlyx/Hxd1.png, enabled=true
+# 麻豆社区
+https://raw.githubusercontent.com/LovedGM/Loon/refs/heads/main/mdsq.plugin, tag=麻豆社区, enabled=true
+# 91av
+http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/one2jj.js/_end_/one2jj.plugin?n=91av%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E8%A7%86%E9%A2%91&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=91av, enabled=true
+# ONE
+http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/One.js/_end_/One.plugin?n=ONE%2B%E8%A7%A3%E9%94%81%E9%83%A8%E5%88%86%E4%BB%98%E8%B4%B9%E5%8F%8A%E9%83%A8%E5%88%86%E4%BC%9A%E5%91%98%E8%A7%86%E9%A2%91&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=ONE, enabled=true
+# 麻豆社区去广告
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/mdsp.js, tag=麻豆社区去广告, enabled=true
+# 淫荡猫
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/ydm.plugin, tag=淫荡猫, enabled=true
+# 海角
+http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/haijiao.js/_end_/haijiao.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=海角, enabled=true
+# 海角社区
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/haijiaoshequ.plugin, tag=海角社区, enabled=true
+
+# ————DualSubs插件合集————
+# DualSubs
+https://github.com/DualSubs/Universal/releases/latest/download/DualSubs.Universal.plugin, tag=DualSubs, enabled=true
+# 🍿️ DualSubs: 🎵 Spotify
+https://github.com/DualSubs/Spotify/releases/latest/download/DualSubs.Spotify.plugin, tag=🍿️ DualSubs: 🎵 Spotify, enabled=true
+# 🍿️ DualSubs: 🎵 Spotify Transcripts
+https://github.com/DualSubs/Spotify/raw/main/modules/DualSubs.Spotify.Transcripts.plugin, tag=🍿️ DualSubs: 🎵 Spotify Transcripts, enabled=true
+# 🍿️ DualSubs: ▶️ YouTube
+https://github.com/DualSubs/YouTube/releases/latest/download/DualSubs.YouTube.plugin, tag=🍿️ DualSubs: ▶️ YouTube, enabled=true
+# 🍿️ DualSubs: 🇳 Netflix
+https://github.com/DualSubs/Netflix/releases/latest/download/DualSubs.Netflix.plugin, tag=🍿️ DualSubs: 🇳 Netflix, enabled=true
+# 📺 BiliBili: ⚙️ Enhanced
+https://github.com/BiliUniverse/Enhanced/releases/latest/download/BiliBili.Enhanced.plugin, tag=📺 BiliBili: ⚙️ Enhanced, enabled=true
+# 📺 BiliBili: 🌐 Global
+https://github.com/BiliUniverse/Global/releases/latest/download/BiliBili.Global.plugin, tag=📺 BiliBili: 🌐 Global, enabled=true
+# 📺 BiliBili: 🔀 Redirect
+https://github.com/BiliUniverse/Redirect/releases/latest/download/BiliBili.Redirect.plugin, tag=📺 BiliBili: 🔀 Redirect, enabled=true
+# 📺 BiliBili: 🛡️ ADBlock
+https://github.com/BiliUniverse/ADBlock/releases/latest/download/BiliBili.ADBlock.plugin, tag=📺 BiliBili: 🛡️ ADBlock, enabled=true
+
+# ————京东历史比价插件————
+# 京东助手
+http://script.hub/file/_start_/https://raw.githubusercontent.com/githubdulong/Script/master/Surge/JD_Helper.sgmodule/_end_/JD_Helper.plugin?type=surge-module&target=loon-plugin&del=true&jqEnabled=true, tag=京东助手, enabled=false
+# 京东比价
+https://raw.githubusercontent.com/mw418/Loon/refs/heads/main/plugin/jd_price.plugin, tag=京东比价, enabled=false
+# 京东比价
+http://script.hub/file/_start_/https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js/_end_/jd_price.plugin?n=%E4%BA%AC%E4%B8%9C%E6%AF%94%E4%BB%B7%2B%E6%96%B0%E7%89%88%E6%8E%A5%E5%8F%A3%E6%9B%B4%E6%96%B0&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=京东比价, enabled=false
+# 京东比价
+https://raw.githubusercontent.com/mw418/Loon/main/plugin/jd_price.plugin, tag=京东比价, enabled=false
+# 京东历史价格
+http://script.hub/file/_start_/https://raw.githubusercontent.com/githubdulong/Script/master/Surge/jd_price2.sgmodule/_end_/jd_price2.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=京东历史价格, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/jingdong(2).png, enabled=false
+
+# ————获取ck插件————
+# 获取ck合集
+https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/cookies.plugin, tag=获取ck合集, enabled=false
+# 贴吧ck
+http://script.hub/file/_start_/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.sgmodule/_end_/tieba_signin.plugin?type=surge-module&target=loon-plugin&del=true&jqEnabled=true, tag=贴吧ck, enabled=false
+# 贴吧获取ck
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.sgmodule, tag=贴吧获取ck, enabled=true
+# 小蚕霸王餐签到ck
+http://script.hub/file/_start_/https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js/_end_/xcbwc.plugin?type=qx-rewrite&target=loon-plugin&del=true, tag=小蚕霸王餐签到ck, enabled=false
+# 奶茶多号签到ck
+http://script.hub/file/_start_/https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js/_end_/teaMilk.plugin?type=qx-rewrite&target=loon-plugin&del=true, tag=奶茶多号签到ck, enabled=false
+# Zippo获取ck
+http://script.hub/file/_start_/https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/zippo.js/_end_/zippo.plugin?type=qx-rewrite&target=loon-plugin&del=true, tag=Zippo获取ck, enabled=false
+# 柠季签到ck
+http://script.hub/file/_start_/https://raw.githubusercontent.com/leiyiyan/resource/main/script/ningji/ningji.js/_end_/ningji.plugin?type=qx-rewrite&target=loon-plugin&del=true, tag=柠季签到ck, enabled=false
+# 喜马拉雅签到ck
+http://script.hub/file/_start_/https://raw.githubusercontent.com/ClydeTime/Surge/main/Task/GetCookie.sgmodule/_end_/GetCookie.plugin?type=qx-rewrite&target=loon-plugin&del=true, tag=喜马拉雅签到ck, enabled=false
+# 哔哩哔哩漫画ck
+http://script.hub/file/_start_/https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/Manga.js/_end_/Manga.plugin?type=qx-rewrite&target=loon-plugin&del=true, tag=哔哩哔哩漫画ck, enabled=false
+# 中国联通ck
+http://script.hub/file/_start_/https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.qx.conf/_end_/10010.plugin?type=qx-rewrite&target=loon-plugin&del=true, tag=中国联通ck, enabled=false
+
+
+# ————App解锁插件————
+# 喜马拉雅VIP
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/ximalaya.js/_end_/ximalaya.plugin?n=%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85%2B%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85VIP&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=喜马拉雅VIP, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/ximalaya.png, enabled=true
+# 阿里云盘VIP
+http://script.hub/file/_start_/https://raw.githubusercontent.com/chxm1023/Rewrite/main/alidrive.js/_end_/alidrive.plugin?n=%2B%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98VIP&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=阿里云盘VIP, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/AliYunDrive.png, enabled=true
+# 迅雷VIP
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/xunlei.js/_end_/xunlei.plugin?n=%2B%E8%A7%A3%E9%94%81%E8%BF%85%E9%9B%B7VIP&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=迅雷VIP, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Thunder.png, enabled=true
+# 微信读书VIP
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/wxds.js/_end_/wxds.plugin?n=%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%2B%E8%A7%A3%E9%94%81VIP&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=微信读书VIP, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/wechat(1).png, enabled=true
+# 微信读书无限卡会
+http://script.hub/file/_start_/https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/txwxds.js/_end_/txwxds.plugin?n=%E5%BE%AE%E4%BF%A1%E8%AF%BB%E4%B9%A6%2B%E8%A7%A3%E9%94%81%E6%97%A0%E9%99%90%E5%8D%A1%E4%BC%9A&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=微信图书, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/wechat(1).png, enabled=true
+# APTV解锁
+https://whatshub.top/plugin/aptv.plugin, tag=APTV, enabled=true
+# 美图秀秀VIP
+https://whatshub.top/plugin/meituxx.plugin, tag=美图秀秀VIP, enabled=true
+# ChatbotAI
+http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/main/itunes/chatbotai.js/_end_/chatbotai.plugin?n=ChatbotAI%2B%E8%A7%A3%E9%94%81AI%E6%A8%A1%E5%9E%8B%E9%9D%9E%E4%B8%80%E6%AC%A1%E6%80%A7&type=surge-module&target=loon-plugin&del=true&jqEnabled=true, tag=ChatbotAI, enabled=true
+# 网络摄像机浏览器IPCams 
+http://script.hub/file/_start_/https://gist.githubusercontent.com/Yu9191/45d3784ba323e9d2eac25aa3e0acf3e6/raw/Reven.sgmodule/_end_/Reven.plugin?n=%E7%BD%91%E7%BB%9C%E6%91%84%E5%83%8F%E6%9C%BA%E6%B5%8F%E8%A7%88%E5%99%A8IPCams%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98Pro&type=surge-module&target=loon-plugin&del=true&jqEnabled=true, tag=网络摄像机浏览器IPCams, enabled=true
+# 百度网盘VIP
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/panda.js/_end_/panda.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=百度网盘VIP, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/softlyx/BaiDuYun.png, enabled=true
+
+# ————增强工具插件————
+# 跳过部分代理检测
+https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/Loon/Plugin/SkipProxy.plugin, tag=跳过部分代理检测, enabled=true
+# 网飞迪士尼评分
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Display%20Netflix%20Ratings.plugin, tag=网飞迪士尼评分, enabled=true
+# BiliBili每日等级任务
+https://raw.githubusercontent.com/ClydeTime/BiliBili/master/modules/BiliBiliDailyBonus.plugin, tag=BiliBili每日等级任务, enabled=true
+# WPS每日签到
+https://kelee.one/Tool/Loon/Lpx/WPS_checkin.lpx, tag=WPS每日签到, enabled=true
+# WARP节点查询
+https://kelee.one/Tool/Loon/Lpx/WARP_Node_Query.lpx, tag=WARP节点查询, enabled=false
+# 微信外部链接解锁
+https://kelee.one/Tool/Loon/Lpx/Weixin_external_links_unlock.lpx, tag=微信外部链接解锁, enabled=true
+# TestFlight地区解锁
+https://kelee.one/Tool/Loon/Lpx/TestFlightRegionUnlock.lpx, tag=TestFlight地区解锁, enabled=true
+# 快捷搜索
+https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx, tag=快捷搜索, enabled=true
+# QQ链接解锁
+https://kelee.one/Tool/Loon/Lpx/QQ_Redirect.lpx, tag=QQ链接解锁, enabled=true
+# Google重定向
+https://www.nsloon.com/openloon/import?plugin=https://kelee.one/Tool/Loon/Lpx/Google.lpx, tag=Google重定向, enabled=true
+# GeoLocation
+https://whatshub.top/plugin/GeoLocation.plugin, tag=GeoLocation, enabled=true
+# Spotify注册检测
+https://raw.githubusercontent.com/MCdasheng/Loon/main/Streaming/Spotify.js, tag=Spotify注册检测, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/spotify(green).png, enabled=true
+# ChatGPT查询
+https://raw.githubusercontent.com/MCdasheng/Loon/main/Streaming/ChatGPT.js, tag=ChatGPT查询, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/lige47/ChatGPT-green.png, enabled=true
+# 代理链路检测
+https://kelee.one/Tool/Loon/Lpx/NodeLinkCheck.lpx, tag=代理链路检测, enabled=false
+# 节点检测工具
+https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, tag=节点检测工具, enabled=false
+# 流媒体解锁查询
+https://raw.githubusercontent.com/sooyaaabo/Loon/main/Plugin/StreamingMedia.plugin, tag=流媒体解锁查询, enabled=false
+# Spotify歌词翻译
+https://kelee.one/Tool/Loon/Lpx/Spotify_lyrics_translation.lpx, tag=Spotify歌词翻译, enabled=true
+https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx, tag=YouTube翻译, enabled=true
+# 奈飞双字幕评分
+https://whatshub.top/plugin/Ratings.plugin, tag=Netflix字幕, enabled=true
+# Advertising
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, tag=Advertising, enabled=true
+# General
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Redirect/Redirect.plugin, tag=General, enabled=true
+# 插件仓库
+https://kelee.one/Tool/Loon/Lpx/LoonGallery.lpx, policy=♻️𝑭𝑰𝑵𝑨𝑳, tag=插件仓库, enabled=true
+# TF-Download
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/TF-Download.plugin, tag=TF-Download, enabled=true
+# BoxJs
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.plugin, policy=♻️𝑭𝑰𝑵𝑨𝑳, tag=Boxjs, enabled=true
+# 订阅解析器
+https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin, policy=♻️𝑭𝑰𝑵𝑨𝑳, tag=订阅解析器, enabled=true
+# Script-Hub
+https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/modules/script-hub.loon.plugin, policy=♻️𝑭𝑰𝑵𝑨𝑳, tag=Script-Hub, enabled=true
+
+[Mitm]
+ca-p12 = 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
+ca-passphrase = 0UPV6MMH
+hostname = raw.githubusercontent.com,gist.githubusercontent.com,github.com
+ca-p12=
+ca-passphrase=
+skip-server-cert-verify = false
