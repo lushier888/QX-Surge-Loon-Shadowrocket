@@ -250,7 +250,32 @@ https://aw0702.x5t5d5a4c.work/
 足控社
 https://20521.zks01.shop/#/pages/video/class
 
+ins社区
+https://znbam8k.xyz/ios_portal.html
 
+面具公社更新
+91pro.com
+
+Xvideo社区
+https://dlqrowpypqqsg.cloudfront.net/?dc=LSDH
+
+91淫母
+https://df1dkslnws674.cloudfront.net/
+
+蜜穴逼城
+https://jsj5191.h6b7f5t4n.work/
+
+uu视频
+https://d11rd8m1pg017m.cloudfront.net/
+
+红杏视频
+https://hxxx51.com/
+
+Xvideo社区
+https://xv9.fm/
+
+樱桃plus
+http://taoyms.com/
 
 
 
@@ -304,5 +329,112 @@ https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ydm.js
 
 YDM系列通杀脚本2(支持Shadowrocket 和 Surge) 
 https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ydm.sgmodule
+
+收集的QX色色重写
+
+# LSP破解重写
+
+# 18ak漫画
+https://gist.githubusercontent.com/Yu9191/919552f4d3358c070e5d995137514748/raw/18kmanhua.js, tag=18ak漫画, update-interval=172800, opt-parser=true, enabled=true
+
+# 漫小肆韓漫
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/mxshm.js, tag=漫小肆韓漫, update-interval=172800, opt-parser=true, enabled=true
+
+# ins社区
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/ins.js, tag=ins社区, update-interval=172800, opt-parser=true, enabled=true
+
+# YDM系列通杀合集
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ydm.js, tag=YDM系列通杀合集, update-interval=172800, opt-parser=true, enabled=true
+
+# Mr先生 + xvideos社区 + 泡芙短视频 + tiktok免费版
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/mr.sgmodule, tag=Mr先生 + xvideos社区 + 泡芙短视频 + tiktok免费版, update-interval=172800, opt-parser=true, enabled=true
+
+# 字母圈
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/zmq.js, tag=字母圈, update-interval=172800, opt-parser=true, enabled=true
+
+# 红杏视频
+https://raw.githubusercontent.com/WeiGiegie/666/main/hongxingshipin.js, tag=红杏视频, update-interval=172800, opt-parser=true, enabled=true
+
+# 足控社666版
+https://raw.githubusercontent.com/WeiGiegie/666/main/zukong.js, tag=足控社666版本, update-interval=172800, opt-parser=true, enabled=true
+
+# 足控社小白版
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/zks.js, tag=足控社, update-interval=172800, opt-parser=true, enabled=true
+
+# 18品茶社
+https://raw.githubusercontent.com/WeiGiegie/666/main/18pcs.js, tag=18品茶社, update-interval=172800, opt-parser=true, enabled=true
+
+# Xvideo社区
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/xvideos.js, tag=Xvideo社区, update-interval=172800, opt-parser=true, enabled=true
+
+# 姬漫社
+https://raw.githubusercontent.com/WeiGiegie/666/main/jmshe.js, tag=姬漫社, update-interval=172800, opt-parser=true, enabled=true
+
+# uaa有爱爱
+https://raw.githubusercontent.com/chxm1023/Rewrite/main/uua.js, tag=uaa有爱爱, update-interval=172800, opt-parser=true, enabled=true
+
+# 樱桃plus
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/yangtao.js, tag=樱桃plus, update-interval=172800, opt-parser=true, enabled=true
+
+# 麻豆社区去广告解锁视频
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/mdsp.js, tag=麻豆社区去广告解锁视频, update-interval=172800, opt-parser=true, enabled=true
+
+# 抖音直播录屏
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/luping.js, tag=抖音直播录屏, update-interval=172800, opt-parser=true, enabled=true
+
+# 91av
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/one2jj.js, tag=91av, update-interval=172800, opt-parser=true, enabled=true
+
+# 老色批通杀vip
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ts.js, tag=老色批通杀vip, update-interval=172800, opt-parser=true, enabled=false
+
+# ONE
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/One.js, tag=ONE, update-interval=172800, opt-parser=true, enabled=true
+
+# 65看
+65kan.snippet, tag=65看, update-interval=172800, opt-parser=true, enabled=true
+
+# 65看去广告解锁视频
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/65kan.js, tag=65看去广告解锁视频, update-interval=172800, opt-parser=true, enabled=false
+
+# 65看
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/65kan.js, tag=65看, update-interval=172800, opt-parser=true, enabled=false
+
+# 鲍鱼盒子
+https://raw.githubusercontent.com/WeiGiegie/666/main/byhz.js, tag=鲍鱼盒子, update-interval=172800, opt-parser=true, enabled=true
+
+# Mr.好色
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/mr.js, tag=Mr.好色, update-interval=172800, opt-parser=true, enabled=true
+
+# 加藤视频
+https://raw.githubusercontent.com/Yu9191/Rewrite/main/jtsp.js, tag=加藤视频, update-interval=172800, opt-parser=true, enabled=true
+
+# 淫荡猫
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/ydm.js, tag=淫荡猫, update-interval=172800, opt-parser=true, enabled=true
+
+# 面具
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/lsp/MJGS.js, tag=面具, update-interval=172800, opt-parser=true, enabled=true
+
+# 面具公社
+https://raw.githubusercontent.com/Yu9191/Rewrite/main/lsp/MJGS.js, tag=面具公社, update-interval=172800, opt-parser=true, enabled=true
+
+# 海角
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/haijiao.js, tag=海角, update-interval=172800, opt-parser=true, enabled=true
+
+# 海角社区
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/haijiaoshequ.js, tag=海角社区, update-interval=172800, opt-parser=true, enabled=true
+
+# 黄瓜视频
+https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/peicaise.js, tag=黄瓜视频, update-interval=172800, opt-parser=true, enabled=true
+
+# 七色猫
+https://raw.githubusercontent.com/WeiGiegie/666/main/7semao.js, tag=七色猫, update-interval=172800, opt-parser=true, enabled=true
+
+# 夜艳
+https://raw.githubusercontent.com/WeiGiegie/666/main/yeyan.js, tag=夜艳, update-interval=172800, opt-parser=true, enabled=true
+
+# 吸游技破解
+https://raw.githubusercontent.com/WeiGiegie/666/main/luolidao.js, tag=吸游技破解, update-interval=172800, opt-parser=true, enabled=true
+
 
 
