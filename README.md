@@ -25,7 +25,7 @@ https://raw.githubusercontent.com/Softlyx/Fileball/main/YUAN/tubiao.json
 Emby lcons
 https://raw.githubusercontent.com/Twoandz9/Emby-icons/main/TheRaw.json
 
-Pokemon Go
+神奇宝贝
 https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/PokemonGo.json
 
 多啦爱梦
