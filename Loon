@@ -239,8 +239,10 @@ disable-udp-ports = 443
 # ————本地分流规则————
 # 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎（防止转圈）
 IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve
+
 # 𝒀𝒐𝒖𝑻𝒖𝒃𝒆（分流）
 DOMAIN-SUFFIX,rr5---sn-i3bssn7e.googlevideo.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+
 # 𝒀𝒐𝒖𝑻𝒖𝒃𝒆（分流）
 DOMAIN-SUFFIX,youtubei.googleapis.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
 
@@ -431,9 +433,8 @@ https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER, policy=DIRECT, tag=𝑪𝑵 �
 ^https:\/\/github\.com\/ header-replace Accept-Language en-us
 [Script]
 
-# 本地订阅Task脚本
-# 签到脚本
-
+# ————本地订阅Task脚本————
+# ————签到脚本————
 # 百度贴吧签到
 cron "0 7 * * *" script-path=https://gist.githubusercontent.com/blackmatrix7/cebabe7a385fc6a9ad32e2f7a35851dc/raw/1363d8720c92267d0a97fcd8eb98673760891fc9/tieba_min.js, timeout=300, tag=百度贴吧(客户端), img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba.png
 
