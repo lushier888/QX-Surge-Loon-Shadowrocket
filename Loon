@@ -6,46 +6,62 @@
 # 更新时间: 2025-07-28 20:43:37
 # 更多的插件可以前往此处安装 https://pluginhub.kelee.one
 # 色色插件对应地址请参考 https://github.com/lushier888/QX-Surge-Loon-Shadowrocket
+
+
 [General]
 ipv6-vif = auto
 ip-mode = prefer-v6
+
 # 解析器
 resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
+
 #代理测速
 proxy-test-url = http://www.gstatic.com/generate_204
 internet-test-url = http://wifi.vivo.com.cn/generate_204
 #测速超时 (s)
 test-timeout = 5
+
 # IPv6 支持
 ipv6 = false
 # GeoIP 数据库
 geoip-url = https://github.com/Masaiki/GeoIP2-CN/raw/release/Country.mmdb
+
 # DNS
 dns-server = system,119.29.29.29,223.5.5.5,162.159.195.1
+
 # DoH
 doh-server = https://dns.alidns.com/dns-query,https://doh.pub/dns-query
+
 # 跳过代理
 skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,17.0.0.0/8,*.local,*.crashlytics.com,seed-sequoia.siri.apple.com,localhost,sequoia.apple.com,www.abchina.com.cn
+
 # 旁路隧道
 bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,239.255.255.250/32,255.255.255.255/32
+
 # 允许 Wi-Fi 访问
 allow-udp-proxy = true
 allow-wifi-access = true
 wifi-access-http-port = 5208
 wifi-access-socks5-port = 5206
+
 # 将dns请求发往目标dns服务器
 real-ip = msftconnecttest.com,msftncsi.com,*.msftconnecttest.com,*.msftncsi.com,*.srv.nintendo.net,*.stun.playstation.net,*.apple.com,*apple.com,xbox.*.microsoft.com,*.xboxlive.com,*.battlenet.com.cn,*.battlenet.com,*.blzstatic.cn,*.battle.net
+
 # 接口模式
 interface-mode = auto
+
 # 失败后切换节点次数
 switch-node-after-failure-times = 3
+
 # 策略切换时关闭链接
 disconnect-on-policy-change = true
+
 # udp端口禁用
 disable-stun = true
 disable-udp-ports = 443
 # ssid-trigger参数，用于指定SSID下流量模式切换，（default表示默认，cellular表示蜂窝，目前支持三种值：rule，direct，proxy） 
 # ssid-trigger = "default":rule, "cellular":rule,"ASUS_5G":direct
+
 
 [Proxy]
 
@@ -54,18 +70,41 @@ disable-udp-ports = 443
 
 
 [Remote Filter]
+# ————节点创建筛选————
+# 🇭🇰香港𝑨
 香港A = NameRegex, FilterKey = "(?i)(🇭🇰|Hong)"
-# 节点创建筛选
+
+# 🇺🇸美国𝑨
 美国A = NameRegex, FilterKey = "(?i)(🇺🇸|USA)"
+
+# 🇯🇵日本𝑨
 日本A = NameRegex, FilterKey = "(?i)(🇯🇵| Japan)"
+
+# 🇨🇳台湾𝑨
 台湾A = NameRegex, FilterKey = "(?i)(🇨🇳| Taiwan)"
+
+# 🇸🇬新加坡𝑨
 新加坡A = NameRegex, FilterKey = "🇸🇬新加坡"
+
+# 🇰🇷韩国𝑨
 韩国A = NameRegex, FilterKey = "🇰🇷韩国"
+
+# 🇭🇰香港𝑩
 香港B = NameRegex,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾, FilterKey = "香港"
+
+# 🇺🇸美国
 美国B = NameRegex,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾, FilterKey = "美国"
+
+# 🇯🇵日本
 日本B = NameRegex,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾, FilterKey = "日本"
+
+# 🇨🇳台湾
 台湾B = NameRegex,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾, FilterKey = "台湾"
+
+# 🇸🇬新加坡
 新加坡B = NameRegex,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾, FilterKey = "新加坡"
+
+# 🇰🇷韩国
 韩国B = NameRegex,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾, FilterKey = "韩国"
 
 [Proxy Group]
