@@ -1,11 +1,11 @@
-# 本人自用在可莉Loon最小配置基础上自行修改
+# 本人自用在最小配置基础上自行修改
 # 删除原有无卵用策略组和分流自行添加，添加插件以及脚本
-# 自定义策略组和分流，自行添加不少本地订阅Task
+# 自定义策略组和分流，自行添加不少色色插件本地订阅Task
 # 节点为本人自用机场节点筛选，若与你机场不一致请自行到
   配置筛选节点更改选择为自己的机场
 # 更新时间: 2025-07-28 20:43:37
 # 更多的插件可以前往此处安装 https://pluginhub.kelee.one
-
+# 色色插件对应地址请参考 https://github.com/lushier888/QX-Surge-Loon-Shadowrocket
 [General]
 ipv6-vif = auto
 ip-mode = prefer-v6
