@@ -15,21 +15,23 @@ ip-mode = prefer-v6
 # 解析器
 resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
 
-#代理测速
+# 代理测速
 proxy-test-url = http://www.gstatic.com/generate_204
 internet-test-url = http://wifi.vivo.com.cn/generate_204
-#测速超时 (s)
+
+# 测速超时 (s)
 test-timeout = 5
 
-# IPv6 支持
+# 𝑰𝑷𝒗6 支持
 ipv6 = false
-# GeoIP 数据库
+
+# 𝑮𝒆𝒐𝑰𝑷 数据库
 geoip-url = https://github.com/Masaiki/GeoIP2-CN/raw/release/Country.mmdb
 
-# DNS
+# 𝑫𝑵𝑺
 dns-server = system,119.29.29.29,223.5.5.5,162.159.195.1
 
-# DoH
+# 𝑫𝒐𝑯
 doh-server = https://dns.alidns.com/dns-query,https://doh.pub/dns-query
 
 # 跳过代理
@@ -38,13 +40,13 @@ skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,17.
 # 旁路隧道
 bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,239.255.255.250/32,255.255.255.255/32
 
-# 允许 Wi-Fi 访问
+# 允许 𝑾𝒊-𝑭𝒊 访问
 allow-udp-proxy = true
 allow-wifi-access = true
 wifi-access-http-port = 5208
 wifi-access-socks5-port = 5206
 
-# 将dns请求发往目标dns服务器
+# 将𝒅𝒏𝒔请求发往目标dns服务器
 real-ip = msftconnecttest.com,msftncsi.com,*.msftconnecttest.com,*.msftncsi.com,*.srv.nintendo.net,*.stun.playstation.net,*.apple.com,*apple.com,xbox.*.microsoft.com,*.xboxlive.com,*.battlenet.com.cn,*.battlenet.com,*.blzstatic.cn,*.battle.net
 
 # 接口模式
@@ -56,7 +58,7 @@ switch-node-after-failure-times = 3
 # 策略切换时关闭链接
 disconnect-on-policy-change = true
 
-# udp端口禁用
+# 𝒖𝒅𝒑端口禁用
 disable-stun = true
 disable-udp-ports = 443
 # ssid-trigger参数，用于指定SSID下流量模式切换，（default表示默认，cellular表示蜂窝，目前支持三种值：rule，direct，proxy） 
@@ -64,6 +66,7 @@ disable-udp-ports = 443
 
 
 [Proxy]
+
 
 [Remote Proxy]
 # ————节点订阅————
