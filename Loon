@@ -305,7 +305,6 @@ https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/AppleT
 # 𝑫𝒊𝒔𝒏𝒆𝒚+
 https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Disney/Disney.list, policy=🎬𝑫𝒊𝒔𝒏𝒆𝒚+, tag=𝑫𝒊𝒔𝒏𝒆𝒚+, enabled=true
 
-https://adrules.top/adrules.list, policy=REJECT, tag=adrules.list, enabled=true
 # 𝑵𝒆𝒕𝒇𝒍𝒊𝒙
 https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Netflix/Netflix.list, policy=🎥𝑵𝒆𝒕𝒇𝒍𝒊𝒙, tag=𝑵𝒆𝒕𝒇𝒍𝒊𝒙, enabled=true
 
