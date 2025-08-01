@@ -331,7 +331,7 @@ YDM系列通杀脚本2(支持Shadowrocket 和 Surge)
 https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ydm.sgmodule
 
 
-# ————————————————————————————————
+
 以下收集的Quantumult X色色重写，其它代理用此重写请复制重写链接使用scripthub转换
 https://scripthub.vercel.app/
 
