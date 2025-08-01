@@ -73,7 +73,7 @@ disable-udp-ports = 443
 
 # ————策略组位置————
 # 手动策略组
-🕹手动选择 = select,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available_1.png
+🕹手动选择 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available_1.png
 
 # ————国际服务策略组————
 # 𝑨𝒑𝒑𝒍𝒆（苹果服务）
