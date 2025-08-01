@@ -296,7 +296,7 @@ https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/GitHub
 # 𝑶𝒏𝒆𝑫𝒓𝒊𝒗𝒆
 https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/OneDrive/OneDrive.list, policy=💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕, tag=𝑶𝒏𝒆𝑫𝒓𝒊𝒗𝒆, enabled=true
 
-# 社交分流规则
+# ————社交分流规则————
 # 𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)
 https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Twitter/Twitter.list, policy=📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿), tag=𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿), enabled=true
 
