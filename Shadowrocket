@@ -1,7 +1,6 @@
 # 本配置节点策略组使用节点订阅,请自行更改为自己的机场订阅
-# 使用方法在节点策略组里面删掉非自己的机场然后选择自己订阅机场
 # 节点策略组使用AB分开,AB代表使用两个机场,以此类推
-# 更新时间: 2025-08-02 19:27:19
+# 更新时间: 2025-08-02 23:05:56
 [General]
 bypass-system = true
 skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local
@@ -98,40 +97,40 @@ update-url = https://whatshub.top/config/shadowrocket_basic.conf
 
 # ————节点筛选自动策略组————
 # 香港𝑨
-🇭🇰 香港𝑨 = url-test,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(港|HK|(?i)Hong))^((?!(台湾|日本|新加坡|美国|韩国|狮城|南朝鲜|US|SG|JP|KR|TW|台灣|美國|韓國|獅城)).)*$
+🇭🇰 香港𝑨 = url-test,,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(港|HK|(?i)Hong))^((?!(台湾|日本|新加坡|美国|韩国|狮城|南朝鲜|US|SG|JP|KR|TW|台灣|美國|韓國|獅城)).)*$
 
 # 美国𝑨
-🇺🇸 美国𝑨 = url-test,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(美国|美國|US|洛杉矶|西雅图|(?i)States|American))^((?!(香港|台湾|日本|新加坡|韩国|狮城|南朝鲜|SG|JP|KR|HK|TW|台灣|韓國|獅城)).)*$
+🇺🇸 美国𝑨 = url-test,,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(美国|美國|US|洛杉矶|西雅图|(?i)States|American))^((?!(香港|台湾|日本|新加坡|韩国|狮城|南朝鲜|SG|JP|KR|HK|TW|台灣|韓國|獅城)).)*$
 
 # 日本𝑨
-🇯🇵 日本𝑨 = url-test,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(日本|JP|(?i)Japan))^((?!(香港|台湾|新加坡|美国|韩国|狮城|南朝鲜|US|SG|KR|HK|TW|台灣|美國|韓國|獅城)).)*$
+🇯🇵 日本𝑨 = url-test,,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(日本|JP|(?i)Japan))^((?!(香港|台湾|新加坡|美国|韩国|狮城|南朝鲜|US|SG|KR|HK|TW|台灣|美國|韓國|獅城)).)*$
 
 # 台湾𝑨
-🇨🇳 台湾𝑨 = url-test,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$
+🇨🇳 台湾𝑨 = url-test,,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$
 
 # 新加坡𝑨
-🇸🇬 新加坡𝑨 = url-test,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(新加坡|狮城|SG|(?i)Singapore))^((?!(香港|台湾|日本|美国|韩国|南朝鲜|US|JP|KR|HK|TW|台灣|美國|韓國)).)*$
+🇸🇬 新加坡𝑨 = url-test,,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(新加坡|狮城|SG|(?i)Singapore))^((?!(香港|台湾|日本|美国|韩国|南朝鲜|US|JP|KR|HK|TW|台灣|美國|韓國)).)*$
 
 # 韩国𝑨
-🇰🇷 韩国𝑨 = url-test,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(KR|Korea|KOR|首尔|韩|韓|(?i)Korea))^((?!(香港|台湾|新加坡|美国|狮城|南朝鲜|US|SG|HK|TW|台灣|美國|獅城)).)*$
+🇰🇷 韩国𝑨 = url-test,,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(KR|Korea|KOR|首尔|韩|韓|(?i)Korea))^((?!(香港|台湾|新加坡|美国|狮城|南朝鲜|US|SG|HK|TW|台灣|美國|獅城)).)*$
 
 # 香港𝑩
-🇭🇰 香港𝑩 = url-test,𝑷𝒓𝒐𝒙𝒚👾👾,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=香港
+🇭🇰 香港𝑩 = url-test,,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=香港
 
 # 美国𝑩
-🇺🇸 美国𝑩 = url-test,𝑷𝒓𝒐𝒙𝒚👾👾,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=美国
+🇺🇸 美国𝑩 = url-test,,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=美国
 
 # 日本𝑩
-🇯🇵 日本𝑩 = url-test,𝑷𝒓𝒐𝒙𝒚👾👾,use=true,url=http://www.gstatic.com/generate_204,policy-regex-filter=日本,policy-select-name=日本 01 SOFTBANK,timeout=5,tolerance=100,interval=600
+🇯🇵 日本𝑩 = url-test,,use=true,url=http://www.gstatic.com/generate_204,policy-regex-filter=日本,timeout=5,tolerance=100,interval=600
 
 # 台湾𝑩
-🇨🇳 台湾𝑩 = url-test,𝑷𝒓𝒐𝒙𝒚👾👾,use=true,url=http://www.gstatic.com/generate_204,policy-regex-filter=台湾,policy-select-name=台湾 01 中華電信,timeout=5,tolerance=100,interval=600
+🇨🇳 台湾𝑩 = url-test,,use=true,url=http://www.gstatic.com/generate_204,policy-regex-filter=台湾,timeout=5,tolerance=100,interval=600
 
 # 新加坡𝑩
-🇸🇬 新加坡𝑩 = url-test,𝑷𝒓𝒐𝒙𝒚👾👾,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=新加坡
+🇸🇬 新加坡𝑩 = url-test,,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=新加坡
 
 # 韩国𝑩
-🇰🇷 韩国𝑩 = url-test,𝑷𝒓𝒐𝒙𝒚👾👾,use=true,url=http://www.gstatic.com/generate_204,policy-regex-filter=韩国,policy-select-name=韩国 01 SK电讯,timeout=5,tolerance=100,interval=600
+🇰🇷 韩国𝑩 = url-test,,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=韩国
 
 
 # 该配置策略组可实现特定规则走指定策略或节点；如想让netflix走新加坡节点 那么可以在相应代理分组里勾选新加坡节点；
@@ -256,5 +255,3 @@ DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/ru
 [URL Rewrite]
 ^https?://(www.)?g.cn https://www.google.com 302
 ^https?://(www.)?google.cn https://www.google.com 302
-
-[MITM]
