@@ -255,3 +255,5 @@ DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/ru
 [URL Rewrite]
 ^https?://(www.)?g.cn https://www.google.com 302
 ^https?://(www.)?google.cn https://www.google.com 302
+
+[MITM]
