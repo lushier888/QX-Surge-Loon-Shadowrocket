@@ -1,0 +1,259 @@
+# 本配置节点策略组使用节点订阅,请自行更改为自己的机场订阅
+# 节点策略组使用AB分开,AB代表使用两个机场,以此类推
+# 更新时间: 2025-08-02 19:27:19
+[General]
+bypass-system = true
+skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local
+tun-excluded-routes = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32, 239.255.255.250/32
+dns-server = 119.29.29.29,114.114.114.114,223.5.5.5,system
+fallback-dns-server = system
+ipv6 = false
+prefer-ipv6 = false
+dns-fallback-system = false
+dns-direct-system = false
+icmp-auto-reply = true
+always-reject-url-rewrite = false
+private-ip-answer = false
+update-url = https://whatshub.top/config/shadowrocket_basic.conf
+
+[Proxy Group]
+# ————国际媒体策略组————
+# 𝑨𝒑𝒑𝒍𝒆
+🍎 𝑨𝒑𝒑𝒍𝒆 = select,🛜 国内直连,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇸🇬 新加坡𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩,policy-select-name=🛜国内直连
+
+# 𝑮𝒐𝒐𝒈𝒍𝒆
+🌏 𝑮𝒐𝒐𝒈𝒍𝒆 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇸🇬 新加坡𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩
+💻 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇸🇬 新加坡𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩,policy-select-name=🇭🇰 香港𝑩
+
+# ————国外社交策略组————
+# 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
+📲 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇸🇬 新加坡𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩
+
+# 𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)
+📰 𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿) = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇸🇬 新加坡𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩,policy-select-name=🇭🇰 香港𝑩
+
+# 𝑹𝒆𝒅𝒅𝒊𝒕
+📖 𝑹𝒆𝒅𝒅𝒊𝒕 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇸🇬 新加坡𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩,policy-select-name=🇭🇰 香港𝑩
+
+# 𝑫𝒊𝒔𝒄𝒐𝒓𝒅
+🐦 𝑫𝒊𝒔𝒄𝒐𝒓𝒅 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇸🇬 新加坡𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩
+
+# ————游戏平台AI与插画工具策略组————
+# 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
+🤖️ 𝑪𝒉𝒂𝒕𝑮𝑷𝑻 = select,🇺🇸 美国𝑨,🇭🇰 香港𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇸🇬 新加坡𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩
+
+# 𝑷𝒊𝒙𝒊𝒗
+👾 𝑷𝒊𝒙𝒊𝒗 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇸🇬 新加坡𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩
+
+# 𝑺𝒕𝒆𝒂𝒎
+🎮 𝑺𝒕𝒆𝒂𝒎 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇸🇬 新加坡𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩
+🎞️ 𝑬𝒎𝒃𝒚 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇸🇬 新加坡𝑨,🇰🇷 韩国𝑨,policy-select-name=🇭🇰 香港𝑨
+
+# ————国外流媒体影音与短视频策略组————
+# 𝑨𝒑𝒑𝒍𝒆𝑻𝑽
+💽 𝑨𝒑𝒑𝒍𝒆𝑻𝑽 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇸🇬 新加坡𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩,policy-select-name=🇭🇰 香港𝑩
+
+# 𝑯𝑩𝑶
+💿 𝑯𝑩𝑶 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇸🇬 新加坡𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩,policy-select-name=🇨🇳 台湾𝑩
+
+# 𝑫𝒊𝒔𝒏𝒆𝒚+
+🎬 𝑫𝒊𝒔𝒏𝒆𝒚+ = select,🚀 策略选择,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇸🇬 新加坡𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇬🇧 英国节点,🇰🇷 韩国𝑨,policy-select-name=🚀 策略选择
+
+# 𝑵𝒆𝒕𝒇𝒍𝒊𝒙
+🎥 𝑵𝒆𝒕𝒇𝒍𝒊𝒙 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇸🇬 新加坡𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩
+
+# 𝑺𝒑𝒐𝒕𝒊𝒇𝒚
+🎧 𝑺𝒑𝒐𝒕𝒊𝒇𝒚 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇸🇬 新加坡𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩,policy-select-name=🇺🇸 美国𝑨
+
+# 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+📹 𝒀𝒐𝒖𝑻𝒖𝒃𝒆 = select,🚀 策略选择,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇸🇬 新加坡𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇬🇧 英国节点,🇰🇷 韩国𝑨,policy-select-name=🚀 策略选择
+
+# 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎
+📷 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇸🇬 新加坡𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩,policy-select-name=🇭🇰 香港𝑨
+
+# 𝑻𝒊𝒌𝑻𝒐𝒌
+📽 𝑻𝒊𝒌𝑻𝒐𝒌 = select,🇺🇸 美国𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇸🇬 新加坡𝑨,🇰🇷 韩国𝑨,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩,policy-select-name=🇺🇸 美国𝑨
+
+# 𝑻𝒘𝒊𝒕𝒄𝒉
+🖥 𝑻𝒘𝒊𝒕𝒄𝒉 = select,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇸🇬 新加坡𝑨,🇰🇷 韩国𝑨,🇭🇰 香港𝑩,🇺🇸 美国𝑩,🇯🇵 日本𝑩,🇨🇳 台湾𝑩,🇸🇬 新加坡𝑩,🇰🇷 韩国𝑩
+
+# 𝑩𝒂𝒉𝒂𝒎𝒖𝒕
+🧸 𝑩𝒂𝒉𝒂𝒎𝒖𝒕 = select,🇭🇰 香港𝑨,🇨🇳 台湾𝑨,🇭🇰 香港𝑩,🇨🇳 台湾𝑩
+
+# ————国内社交与流媒体————
+# 𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊
+📺 𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊 = select,🛜 国内直连,🇨🇳 台湾𝑨,🇭🇰 香港𝑩,🇨🇳 台湾𝑩
+
+# 𝑾𝒆𝒊𝒃𝒐
+🚾 𝑾𝒆𝒊𝒃𝒐 = select,🛜 国内直连,🇭🇰 香港𝑨,🇺🇸 美国𝑨,🇸🇬 新加坡𝑨,🇯🇵 日本𝑨,🇨🇳 台湾𝑨,🇰🇷 韩国𝑨
+
+# ————兜底策略组————
+# 𝑭𝑰𝑵𝑨𝑳
+♻️ 𝑭𝑰𝑵𝑨𝑳 = select,policy-select-name=★IPV6节点|美国01|新疆可用|GPT可用★,interval=600,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=.*
+
+# ————国内直连策略组————
+# 国内直连
+🛜 国内直连 = select,DIRECT,policy-select-name=DIRECT
+
+# ————节点筛选自动策略组————
+# 香港𝑨
+🇭🇰 香港𝑨 = url-test,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(港|HK|(?i)Hong))^((?!(台湾|日本|新加坡|美国|韩国|狮城|南朝鲜|US|SG|JP|KR|TW|台灣|美國|韓國|獅城)).)*$
+
+# 美国𝑨
+🇺🇸 美国𝑨 = url-test,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(美国|美國|US|洛杉矶|西雅图|(?i)States|American))^((?!(香港|台湾|日本|新加坡|韩国|狮城|南朝鲜|SG|JP|KR|HK|TW|台灣|韓國|獅城)).)*$
+
+# 日本𝑨
+🇯🇵 日本𝑨 = url-test,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(日本|JP|(?i)Japan))^((?!(香港|台湾|新加坡|美国|韩国|狮城|南朝鲜|US|SG|KR|HK|TW|台灣|美國|韓國|獅城)).)*$
+
+# 台湾𝑨
+🇨🇳 台湾𝑨 = url-test,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$
+
+# 新加坡𝑨
+🇸🇬 新加坡𝑨 = url-test,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(新加坡|狮城|SG|(?i)Singapore))^((?!(香港|台湾|日本|美国|韩国|南朝鲜|US|JP|KR|HK|TW|台灣|美國|韓國)).)*$
+
+# 韩国𝑨
+🇰🇷 韩国𝑨 = url-test,𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=(?=.*(KR|Korea|KOR|首尔|韩|韓|(?i)Korea))^((?!(香港|台湾|新加坡|美国|狮城|南朝鲜|US|SG|HK|TW|台灣|美國|獅城)).)*$
+
+# 香港𝑩
+🇭🇰 香港𝑩 = url-test,𝑷𝒓𝒐𝒙𝒚👾👾,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=香港
+
+# 美国𝑩
+🇺🇸 美国𝑩 = url-test,𝑷𝒓𝒐𝒙𝒚👾👾,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=美国
+
+# 日本𝑩
+🇯🇵 日本𝑩 = url-test,𝑷𝒓𝒐𝒙𝒚👾👾,use=true,url=http://www.gstatic.com/generate_204,policy-regex-filter=日本,policy-select-name=日本 01 SOFTBANK,timeout=5,tolerance=100,interval=600
+
+# 台湾𝑩
+🇨🇳 台湾𝑩 = url-test,𝑷𝒓𝒐𝒙𝒚👾👾,use=true,url=http://www.gstatic.com/generate_204,policy-regex-filter=台湾,policy-select-name=台湾 01 中華電信,timeout=5,tolerance=100,interval=600
+
+# 新加坡𝑩
+🇸🇬 新加坡𝑩 = url-test,𝑷𝒓𝒐𝒙𝒚👾👾,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=新加坡
+
+# 韩国𝑩
+🇰🇷 韩国𝑩 = url-test,𝑷𝒓𝒐𝒙𝒚👾👾,use=true,url=http://www.gstatic.com/generate_204,policy-regex-filter=韩国,policy-select-name=韩国 01 SK电讯,timeout=5,tolerance=100,interval=600
+
+
+# 该配置策略组可实现特定规则走指定策略或节点；如想让netflix走新加坡节点 那么可以在相应代理分组里勾选新加坡节点；
+# 更改代理分组策略的步骤(以🎥 Netflix策略为例)：点击界面底部配置--点击配置文件"ⓘ"符号---代理分组---点击🎥 Netflix策略的"ⓘ"符号---勾选🇸🇬 新加坡节点--保存。(新版小火箭只需首页下拉即可调出代理分组界面）
+
+# ♻️ ALL策略表示对所有节点进行测速并选择延迟最低的节点；测速间隔600秒，容差100ms；
+# 若不想用某些特定节点 可以通过正则排除 例：♻️ ALL = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=100,timeout=5,policy-regex-filter=^(?!.*?(国内|限速|试用)).*$
+# 也可以让指定机场参与测速 比如你的订阅连接的备注名是 YBNET 就套用以下示例：（新版已支持订阅选择）
+# 🚀 策略选择 = select,✈️ 机场选择,🇨🇳 台湾节点,🇬🇧 英国节点,🇯🇵 日本节点,🇭🇰 香港节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇰🇷 韩国节点,🇷🇺 俄罗斯节点,🇮🇳 印度,🇩🇪 德国,🇨🇦 加拿大,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
+# ✈️ 机场选择 = url-test,YBNET,interval=600,tolerance=0,timeout=3,select=0,url=http://www.gstatic.com/generate_204
+
+
+
+
+# 以下国家地区节点筛选 请自行根据机场节点名称修改正则
+
+[Rule]
+# ————去广告分流规则————
+# Advertising去广告
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/advertising/advertising.list,REJECT
+
+# Advertising去广告
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/advertising/advertising.list,REJECT
+
+# AdvertisingLite去广告
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/advertisinglite/advertisinglite.list,REJECT
+
+# 反挟持
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/hijacking/hijacking.list,REJECT
+
+# 隐私保护
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/privacy/privacy.list,REJECT
+
+# ————国际服务分流规则————
+# （苹果服务）
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/apple/apple.list,🍎 𝑨𝒑𝒑𝒍𝒆
+
+# （谷歌服务）
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/google/google.list,🌏 𝑮𝒐𝒐𝒈𝒍𝒆
+
+# （微软服务）
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/microsoft/microsoft.list,💻 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕
+
+# OneDrive
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/onedrive/onedrive.list,💻 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕
+
+# ————国外社交分流规则————
+# 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/telegram/telegram.list,📲 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
+
+# 𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/twitter/twitter.list,📰 𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)
+
+# 𝑹𝒆𝒅𝒅𝒊𝒕
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/reddit/reddit.list,📖 𝑹𝒆𝒅𝒅𝒊𝒕
+
+# 𝑫𝒊𝒔𝒄𝒐𝒓𝒅
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/discord/discord.list,🐦 𝑫𝒊𝒔𝒄𝒐𝒓𝒅
+
+#————游戏平台AI与插画工具分流规则————
+# Pinterest
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/pinterest/pinterest.list,👾 𝑷𝒊𝒙𝒊𝒗
+
+# 𝑷𝒊𝒙𝒊𝒗
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/pixiv/pixiv.list,👾 𝑷𝒊𝒙𝒊𝒗
+
+# 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/openai/openai.list,🤖️ 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
+
+# 𝑺𝒕𝒆𝒂𝒎
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/steam/steam.list,🎮 𝑺𝒕𝒆𝒂𝒎
+
+# Epic
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/epic/epic.list,🎮 𝑺𝒕𝒆𝒂𝒎
+
+# SteamCN
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/steamcn/steamcn.list,🎮 𝑺𝒕𝒆𝒂𝒎
+
+# ————国外流媒体与影音短视频分流规则————
+# 𝑬𝒎𝒃𝒚
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/emby/emby.list,🎞️ 𝑬𝒎𝒃𝒚
+
+# 𝑨𝒑𝒑𝒍𝒆𝑻𝑽
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/appletv/appletv.list,💽 𝑨𝒑𝒑𝒍𝒆𝑻𝑽
+
+# 𝑯𝑩𝑶
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/hbo/hbo.list,💿 𝑯𝑩𝑶
+
+# 𝑫𝒊𝒔𝒏𝒆𝒚+
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/disney/disney.list,🎬 𝑫𝒊𝒔𝒏𝒆𝒚+
+
+# 𝑵𝒆𝒕𝒇𝒍𝒊𝒙
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/netflix/netflix.list,🎥 𝑵𝒆𝒕𝒇𝒍𝒊𝒙
+
+# 𝑺𝒑𝒐𝒕𝒊𝒇𝒚
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/spotify/spotify.list,🎧 𝑺𝒑𝒐𝒕𝒊𝒇𝒚
+
+# 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/youtube/youtube.list,📹 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+
+# 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/instagram/instagram.list,📷 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎
+
+# 𝑻𝒊𝒌𝑻𝒐𝒌
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/tiktok/tiktok.list,📽 𝑻𝒊𝒌𝑻𝒐𝒌
+
+# 𝑻𝒘𝒊𝒕𝒄𝒉
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/twitch/twitch.list,🖥 𝑻𝒘𝒊𝒕𝒄𝒉
+
+# 𝑩𝒂𝒉𝒂𝒎𝒖𝒕
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/bahamut/bahamut.list,🧸 𝑩𝒂𝒉𝒂𝒎𝒖𝒕
+
+# 𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/bilibili/bilibili.list,📺 𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊
+
+# 𝑾𝒆𝒊𝒃𝒐
+DOMAIN-SUFFIX,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/shadowrocket/weibo/weibo.list,🚾 𝑾𝒆𝒊𝒃𝒐
+
+# AntiAD
+#RULE-SET,https://whatshub.top/rule/AntiAD.list,REJECT
+
+[URL Rewrite]
+^https?://(www.)?g.cn https://www.google.com 302
+^https?://(www.)?google.cn https://www.google.com 302
+
+[MITM]
