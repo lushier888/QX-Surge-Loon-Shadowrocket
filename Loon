@@ -478,6 +478,9 @@ cron "0 7 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main
 # 黑料不打烊
 cron "0 9,15 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/hlbdy.js, timeout=60, tag=黑料不打烊, img-url=https://raw.githubusercontent.com/Toperlock/Quantumult/main/icon/heiliao.png
 
+# 𝑶𝑵𝑬每日推荐
+cron "0 21 * * *" script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/one_daily_task.js, timeout=60, tag=𝑶𝑵𝑬每日推荐
+
 # 热映电影
 cron "9 9 * * *" script-path=https://whatshub.top/plugin/movie.js, timeout=60, tag=热映电影
 
