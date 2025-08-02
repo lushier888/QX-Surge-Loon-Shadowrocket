@@ -11,6 +11,9 @@ https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/hea
 Loon配置
 https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Loon
 
+shadowrocket配置
+https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Shadowrocket
+
 Surge模块仓库
 https://surge.qingr.moe/
 
