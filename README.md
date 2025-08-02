@@ -254,7 +254,7 @@ ins社区
 https://znbam8k.xyz/ios_portal.html
 
 面具公社更新
-91pro.com
+https://dd.qbgjkw.com/download/299_0.html
 
 Xvideo社区
 https://dlqrowpypqqsg.cloudfront.net/?dc=LSDH
@@ -277,6 +277,11 @@ https://xv9.fm/
 樱桃plus
 http://taoyms.com/
 
+漫小肆韩漫
+https://www.mxs11.cc/
+
+18ak漫画
+https://18akmanhua.com/
 
 
 
