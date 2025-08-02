@@ -1,6 +1,6 @@
 注意事项：自用配置为进阶省去很多不必要折腾，节点设置为本人机场订阅节点经过正则筛选
 若与你机场节点需求不一致请自行根据自己机场需求添加节点正则
-Surge配置不包含订阅链接节点策略组，请自行创建并添加节点订阅链接
+
 
 Quantumult X配置
 https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Quantumult%20X.conf
