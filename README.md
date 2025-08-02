@@ -11,6 +11,13 @@ https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/hea
 Loon配置
 https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Loon
 
+Surge模块仓库
+https://surge.qingr.moe/
+
+Loon插件仓库
+https://pluginhub.kelee.one/
+
+
 以下收集一些Surge、Loon、Quantumult X通用订阅图标合集
 图标数据合集，所有图标通用
 
