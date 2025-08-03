@@ -179,9 +179,6 @@ https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/mdsp.sgmodule
 加藤视频
 http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/main/jtsp.js/_end_/jtsp.sgmodule?n=%E5%8A%A0%E8%97%A4%E8%A7%86%E9%A2%91%2B%E5%8A%A0%E8%97%A4%E8%A7%86%E9%A2%91vip%E8%A7%A3%E9%94%81%2C%E4%BB%98%E8%B4%B9%E8%A7%86%E9%A2%91%E8%A7%A3%E9%94%81%2C%E4%B8%8B%E8%BD%BD%2C%E4%BC%9A%E5%91%98%E7%BA%BF%E8%B7%AF%2C%E5%8E%BB%E5%B9%BF%E5%91%8A%2B%2B&type=qx-rewrite&target=surge-module&del=true
 
-baby合集
-http://script.hub/file/_start_/https://raw.githubusercontent.com/IC58G/vpn_tool/main/Resource/Plugin/baby/Unlock-S.plugin/_end_/Unlock-S.sgmodule?n=baby%E5%90%88%E9%9B%86%2B%E5%AF%B9%E3%80%90ONE.%E4%B8%80%E4%B8%AA%E3%80%81%E6%B5%B7%E8%A7%92%E7%A4%BE%E5%8C%BA%E3%80%91%E7%AD%89%E5%BA%94%E7%94%A8%E7%9A%84%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E6%8E%A2%E7%B4%A2%3B&type=loon-plugin&target=surge-module&del=true
-
 字母圈
 http://script.hub/file/_start_/https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/zmq.js/_end_/zmq.sgmodule?n=%E5%AD%97%E6%AF%8D%E5%9C%88%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E9%87%91%E5%B8%81%E4%BB%98%E8%B4%B9%E8%A7%86%E9%A2%91&type=qx-rewrite&target=surge-module&del=true
 
@@ -190,6 +187,9 @@ http://script.hub/file/_start_/https://raw.githubusercontent.com/sooyaaabo/Loon/
 
 足控社小白版
 http://script.hub/file/_start_/https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/zks.js/_end_/zks.sgmodule?n=%E8%B6%B3%E6%8E%A7%E7%A4%BE%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE&type=qx-rewrite&target=surge-module&del=true
+
+91porna
+http://script.hub/file/_start_/https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/91porna.js/_end_/91porna.sgmodule?type=qx-rewrite&target=surge-module&del=true
 
 以下为对应的色站地址
 
@@ -293,6 +293,9 @@ https://www.mxs11.cc/
 18ak漫画
 https://18akmanhua.com/
 
+91porna
+https://91porna.com/
+
 
 
 YDM系列   #cloudfront AV 🔞
@@ -349,6 +352,9 @@ https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ydm.sgmodule
 # ————LSP破解重写————
 以下收集的Quantumult X色色重写，其它代理用此重写请复制重写链接使用scripthub转换
 https://scripthub.vercel.app/
+
+91porna
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/91porna.js
 
 # 18ak漫画
 https://gist.githubusercontent.com/Yu9191/919552f4d3358c070e5d995137514748/raw/18kmanhua.js, tag=18ak漫画, update-interval=172800, opt-parser=true, enabled=true
