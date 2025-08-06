@@ -48,7 +48,7 @@ allow-wifi-access = true
 wifi-access-http-port = 5208
 wifi-access-socks5-port = 5206
 
-# 将𝒅𝒏𝒔请求发往目标dns服务器
+# 将𝒅𝒏𝒔请求发往目标𝒅𝒏𝒔服务器
 real-ip = msftconnecttest.com,msftncsi.com,*.msftconnecttest.com,*.msftncsi.com,*.srv.nintendo.net,*.stun.playstation.net,*.apple.com,*apple.com,xbox.*.microsoft.com,*.xboxlive.com,*.battlenet.com.cn,*.battlenet.com,*.blzstatic.cn,*.battle.net
 
 # 接口模式
