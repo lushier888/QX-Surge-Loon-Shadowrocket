@@ -30,6 +30,9 @@ https://velvetcodeloom.github.io/icloud/icons.json
 拿她练技术
 https://raw.githubusercontent.com/LovedGM/Quantumult-X-TuBiao/main/zishi-cs.json
 
+Sakura图标订阅
+https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/sliverkiss.icons.json
+
 Filball lcon
 https://raw.githubusercontent.com/Softlyx/Fileball/main/YUAN/tubiao.json
 
