@@ -235,7 +235,8 @@ disable-udp-ports = 443
 
 # 🇰🇷韩国𝑩
 🇰🇷韩国𝑩 = url-test,韩国B,interval = 600,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/Korea(1).png
-# --------------------------------
+
+
 
 [Rule]
 # ————本地分流规则————
