@@ -63,8 +63,10 @@ disconnect-on-policy-change = true
 # 𝒖𝒅𝒑端口禁用
 disable-stun = true
 disable-udp-ports = 443
-# ssid-trigger参数，用于指定SSID下流量模式切换，（default表示默认，cellular表示蜂窝，目前支持三种值：rule，direct，proxy） 
-# ssid-trigger = "default":rule, "cellular":rule,"ASUS_5G":direct
+
+# 𝒔𝒔𝒊𝒅-𝒕𝒓𝒊𝒈𝒈𝒆𝒓参数，用于指定𝑺𝑺𝑰𝑫下流量模式切换，（𝒅𝒆𝒇𝒂𝒖𝒍𝒕表示默认，𝒄𝒆𝒍𝒍𝒖𝒍𝒂𝒓表示蜂窝，目前支持三种值：𝒓𝒖𝒍𝒆，𝒅𝒊𝒓𝒆𝒄𝒕，𝒑𝒓𝒐𝒙𝒚）
+
+# 𝒔𝒔𝒊𝒅-𝒕𝒓𝒊𝒈𝒈𝒆𝒓 = "𝒅𝒆𝒇𝒂𝒖𝒍𝒕":𝒓𝒖𝒍𝒆, "𝒄𝒆𝒍𝒍𝒖𝒍𝒂𝒓":𝒓𝒖𝒍𝒆,"𝑨𝑺𝑼𝑺_5𝑮":𝒅𝒊𝒓𝒆𝒄𝒕
 
 
 [Proxy]
