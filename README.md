@@ -3,7 +3,7 @@
 
 
 Quantumult X配置
-https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Quantumult%20X.conf
+https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Quantumult%20X
 
 Surge配置
 https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Surge.conf
