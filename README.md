@@ -198,6 +198,7 @@ http://script.hub/file/_start_/https://raw.githubusercontent.com/chmg2025/script
 http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/aiaiwang.js/_end_/aiaiwang.sgmodule?n=%E7%88%B1%E7%88%B1%E7%BD%91%2B%E4%BC%9A%E5%91%98%E8%A7%A3%E9%94%81%E5%8E%BB%E5%B9%BF%E5%91%8A&type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
 
 以下为对应的色站地址
+
 爱爱网
 http://aa5.com/
 
