@@ -22,7 +22,7 @@ network_check_url = http://connectivitycheck.platform.hicloud.com/generate_204
 server_check_timeout = 3000
 
 # 关联配置图标
-profile_img_url = https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/softlyx/ZhiPianRen.png
+profile_img_url = https://s1.imagehub.cc/images/2025/07/22/e2fb09ef7ad704fa486ae024ffd98c27.png
 
 # 节点页面的节点信息展示，可完整自定义展示内容与方式
 geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://github.com/KOP-XIAO/QuantumultX/raw/master/Scripts/IP_API.js
