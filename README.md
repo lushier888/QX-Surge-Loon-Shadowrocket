@@ -194,7 +194,12 @@ http://script.hub/file/_start_/https://raw.githubusercontent.com/chmg2025/script
 91porna
 http://script.hub/file/_start_/https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/91porna.js/_end_/91porna.sgmodule?type=qx-rewrite&target=surge-module&del=true
 
+爱爱网
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/aiaiwang.js/_end_/aiaiwang.sgmodule?n=%E7%88%B1%E7%88%B1%E7%BD%91%2B%E4%BC%9A%E5%91%98%E8%A7%A3%E9%94%81%E5%8E%BB%E5%B9%BF%E5%91%8A&type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
+
 以下为对应的色站地址
+爱爱网
+http://aa5.com/
 
 91TV
 备用APP下载地址：https://aoi7kev.site
@@ -355,6 +360,9 @@ https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ydm.sgmodule
 # ————LSP破解重写————
 以下收集的Quantumult X色色重写，其它代理用此重写请复制重写链接使用scripthub转换
 https://scripthub.vercel.app/
+
+爱爱网
+https://raw.githubusercontent.com/WeiGiegie/666/main/aiaiwang.js
 
 91porna
 https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/91porna.js
