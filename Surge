@@ -329,7 +329,7 @@ FINAL,♻️𝑭𝑰𝑵𝑨𝑳,dns-failed
 
 [MITM]
 
-skip-server-cert-verify = true
+skip-server-cert-verify = false
 
 h2 = true
 
