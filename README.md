@@ -5,6 +5,9 @@
 Quantumult X配置
 https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Quantumult%20X
 
+𝑺𝒖𝒓𝒈𝒆自动𝑺𝒎𝒂𝒓𝒕测试故障自动切换配置
+https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Surge%20AB
+
 Surge配置
 https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Surge
 
