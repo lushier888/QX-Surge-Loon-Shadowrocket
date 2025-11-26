@@ -1,0 +1,418 @@
+[General]
+# > 本配置采用双机场的𝑺𝒎𝒂𝒓𝒕的节点策略包含相同地的节点保证𝑨机场挂了自动切换至𝑩机场不会影响𝑰𝑷
+# > 此配置搭配两个网络速度相同机场使用最优，若无两个机场请使用另一个𝑺𝒖𝒓𝒈𝒆配置
+# > 节点香港𝑨𝑩包含两个机场的所有香港节点以此类推
+# > 𝑨𝒑𝒑策略组采用𝒔𝒆𝒍𝒆𝒄𝒕手动切换+𝑺𝒎𝒂𝒓𝒕保证𝑰𝑷的同时自动测试延迟最低和自动故障切换
+# > 本人使用两个网络速度相同机场，所使用本配置请使用两个网络速度相同机场。
+# > 自行创建分流规则和策略组,添加去广告分流
+# > 添加自用去广告模块、面板、解锁，𝑳𝑺𝑷模块等
+# > 节点设置为本人机场订阅节点经过正则筛选 若与你机场节点需求不一致请自行根据自己机场需求添加节点正则
+# > 节点策略组使用𝑨𝑩分开,𝑨𝑩代表使用两个机场,以此类推
+# > 我的机场𝑨或我的机场𝑩编辑请选择外部代理倒入机场节点订阅链接
+# > 色色模块对应地址请参考 https://github.com/lushier888/QX-Surge-Loon-Shadowrocket
+# > 花体英文字体 https://www.iamwawa.cn/fontchanger.html
+# > 添加自用脚本,修改日期 2025.11.20 时间 08：59
+
+
+# > ————日志级别————
+# > 𝐖𝐢-𝐅𝐢 助理
+wifi-assist = true
+
+# > 𝐈𝐏𝐯𝟔 支持（默认关闭，如无特殊需求不应开启 𝐈𝐏𝐯𝟔，目前网络环境下 𝐈𝐏𝐯𝟔 只会带来问题。）
+ipv6 = true
+
+# > 跳过代理
+skip-proxy = 192.168.0.0/24, 10.0.0.0/8, 172.16.0.0/12, 127.0.0.1, localhost, *.local
+
+# > 排除简单主机名
+exclude-simple-hostnames = true
+
+# > 测试超时（秒）
+test-timeout = 2
+
+# > 𝐈𝐧𝐭𝐞𝐫𝐧𝐞𝐭 测试 𝐔𝐑𝐋
+internet-test-url = http://www.baidu.com
+
+# > 代理测速 𝐔𝐑𝐋
+proxy-test-url = http://www.apple.com/library/test/success.html
+
+# > 𝐆𝐞𝐨𝐈𝐏 数据库
+geoip-maxmind-url = https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
+
+# > 𝐃𝐍𝐒 服务器
+dns-server = 223.5.5.5, 114.114.114.114
+
+# > 𝐃𝐍𝐒 加密服务器（除非当地 𝑰𝑺𝑷 有严重的 𝐃𝐍𝐒 污染问题，否则没必要开启 𝑫𝒐𝑯，传统 𝐃𝐍𝐒 的性能最优，网络异常后恢复速度最快。）
+# encrypted-dns-server = h3://223.5.5.5/dns-query
+
+
+[Proxy Group]
+# > ————节点订阅信息————
+
+# > 𝐂𝐥𝐨𝐮𝐝𝐅𝐢𝐬𝐡𝐞𝐫（渔云）
+我的机场𝑨 = select, update-interval=0, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://s3.bmp.ovh/imgs/2025/07/08/de4707b425f9930e.png, policy-path=这里倒入机场订阅
+
+
+# > 𝒉𝒖𝒐𝒋𝒊𝒂𝒏（小火箭）
+我的机场𝑩 = select, update-interval=0, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://s1.imagehub.cc/images/2025/07/22/e2fb09ef7ad704fa486ae024ffd98c27.png, policy-path=这里倒入机场订阅
+
+
+
+# > ————节点策略组————
+# > 🇭🇰香港𝑨𝑩
+🇭🇰香港𝑨𝑩 = smart, policy-regex-filter=香港, no-alert=0, hidden=1, include-all-proxies=1, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png, include-other-group="我的机场𝑨, 我的机场𝑩"
+
+
+# > 🇺🇸美国𝑨𝑩
+🇺🇸美国𝑨𝑩 = smart, policy-regex-filter=美国, no-alert=0, hidden=1, include-all-proxies=0, include-other-group="我的机场𝑨, 我的机场𝑩", icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+
+
+# > 🇯🇵日本𝑨𝑩
+🇯🇵日本𝑨𝑩 = smart, policy-regex-filter=日本, no-alert=0, hidden=1, include-all-proxies=0, include-other-group="我的机场𝑨, 我的机场𝑩", icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png, persistent=0
+
+
+# > 🇨🇳台湾𝑨𝑩
+🇨🇳台湾𝑨𝑩 = smart, policy-regex-filter=台湾, no-alert=0, hidden=1, include-all-proxies=0, include-other-group="我的机场𝑨, 我的机场𝑩", icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
+
+
+# > 🇸🇬新加坡𝑨𝑩
+🇸🇬新加坡𝑨𝑩 = smart, no-alert=0, hidden=1, include-all-proxies=0, include-other-group="我的机场𝑨, 我的机场𝑩", policy-regex-filter=新加坡, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+
+
+# > 🇰🇷韩国𝑨𝑩
+🇰🇷韩国𝑨𝑩 = smart, policy-regex-filter=韩国, no-alert=0, hidden=1, include-all-proxies=0, include-other-group="我的机场𝑨, 我的机场𝑩", icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+
+
+# > 🇹🇭泰国𝑨𝑩
+🇹🇭泰国𝑨𝑩 = smart, policy-regex-filter=泰国, no-alert=0, hidden=1, include-all-proxies=0, include-other-group="我的机场𝑨, 我的机场𝑩", icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Thailand.png
+
+# > ————单𝒊𝒑机场𝑨————
+# > 🇭🇰香港𝑨
+🇭🇰香港𝑨 = smart, policy-regex-filter=🇭🇰香港, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑨, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+
+
+# > 🇨🇳台湾𝑨
+🇨🇳台湾𝑨 = smart, policy-regex-filter=🇨🇳台湾, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑨, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
+
+
+# > 🇺🇸美国𝑨
+🇺🇸美国𝑨 = smart, policy-regex-filter=🇺🇸美国, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑨, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+
+
+# > 🇯🇵日本𝑨
+🇯🇵日本𝑨 = smart, policy-regex-filter=🇯🇵日本, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑨, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+
+
+# > 🇸🇬新加坡𝑨
+🇸🇬新加坡𝑨 = smart, policy-regex-filter=🇸🇬新加坡, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑨, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+
+
+# > ————单𝒊𝒑机场𝑩————
+# > 🇮🇳印度𝑩
+🇮🇳印度𝑩 = smart, policy-regex-filter=新德里, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑩, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/India.png
+
+
+# > 🇲🇾马来西亚𝑩
+🇲🇾马来西亚𝑩 = smart, policy-regex-filter=马来西亚, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑩, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Malaysia.png
+
+
+# > 🇺🇳解锁节点𝑨𝑩
+🇺🇳𝑨𝑰解锁𝑨𝑩 = smart, no-alert=0, hidden=1, include-all-proxies=0, include-other-group="🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩", icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_Nations.png
+
+
+# > 🌏节点最佳𝑨𝑩
+🌏节点最佳𝑨𝑩 = smart, no-alert=0, hidden=1, include-all-proxies=0, include-other-group="🇭🇰香港𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩", icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/World_Map.png
+
+
+# > 🌏解锁节点 𝑨
+🌏解锁节点 𝑨 = smart, policy-regex-filter=🇭🇰香港|🇺🇸美国|🇨🇳台湾|🇯🇵日本|🇸🇬新加坡|🇰🇷韩国, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑨, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Area.png
+
+
+# > 🛜国内直连策略
+🛜国内直连 = select, DIRECT, no-alert=0, hidden=1, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png
+
+
+
+
+# > ————国际服务与媒体策略组————
+# > 𝑮𝒐𝒐𝒈𝒍𝒆（谷歌服务）
+🌏𝑮𝒐𝒐𝒈𝒍𝒆 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/google(1).png, persistent=0
+
+
+# > 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕（微软服务）
+💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/microsoft.png
+
+
+# > 𝑨𝒑𝒑𝒍𝒆（苹果服务）
+🍎𝑨𝒑𝒑𝒍𝒆 = select, 🛜国内直连, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Apple_Classic.png
+
+
+# > 𝑨𝒑𝒑𝒍𝒆𝑻𝑽
+💽𝑨𝒑𝒑𝒍𝒆𝑻𝑽 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/AppleTV.png
+
+
+# > ————国外社交策略组————
+# > 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
+📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/telegram(1).png
+
+
+# > 𝑻𝒘𝒊𝒕𝒕𝒆𝒓(𝑿)
+📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿) = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png
+
+
+# > 𝑫𝒊𝒔𝒄𝒐𝒓𝒅
+🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Discord.png
+
+
+# > 𝑹𝒆𝒅𝒅𝒊𝒕
+📑𝑹𝒆𝒅𝒅𝒊𝒕 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/reddit(1).png
+
+
+# > ————游戏平台AI工具与插画策略组————
+# > 𝑪𝒉𝒂𝒕𝑮𝑷𝑻+𝑮𝒆𝒎𝒊𝒏𝒊
+🤖𝑨𝑰 = select, 🇺🇳𝑨𝑰解锁𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/chatgpt(white1).png
+
+
+# > 𝑷𝒊𝒙𝒊𝒗
+🍄𝑷𝒊𝒙𝒊𝒗 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/plus-emby.png
+
+
+# > 𝑺𝒕𝒆𝒂𝒎+𝑬𝒑𝒊𝒄
+🎮𝑺𝒕𝒆𝒂𝒎 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png
+
+
+# > ————国外影音流媒体与短视频策略组————
+# > 𝑬𝒎𝒃𝒚
+🎞️𝑬𝒎𝒃𝒚 = select, "🌏解锁节点 𝑨", 🇭🇰香港𝑨, 🇺🇸美国𝑨, 🇯🇵日本𝑨, 🇨🇳台湾𝑨, 🇸🇬新加坡𝑨, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/emby_副本.png
+
+
+# > 𝑯𝑩𝑶
+💿𝑯𝑩𝑶 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/HBO_Max.png
+
+
+# > 𝑫𝒊𝒔𝒏𝒆𝒚+
+🎬𝑫𝒊𝒔𝒏𝒆𝒚+ = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/black2c7/Emby-icons/main/Icons2/ODY999.png
+
+
+# > 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎
+📷𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Instagram.png
+
+
+# > 𝑻𝒊𝒌𝑻𝒐𝒌
+📽𝑻𝒊𝒌𝑻𝒐𝒌 = select, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇹🇭泰国𝑨𝑩, 🇲🇾马来西亚𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/TikTok_1.png
+
+
+# > 𝑺𝒑𝒐𝒕𝒊𝒇𝒚
+🎧𝑺𝒑𝒐𝒕𝒊𝒇𝒚 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/spotify(green).png
+
+
+# > 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, ヾ(=･ﾟ=)ﾉ喵♪, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+
+
+# > 𝑻𝒘𝒊𝒕𝒄𝒉
+🖥️𝑻𝒘𝒊𝒕𝒄𝒉 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇲🇾马来西亚𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/twitch.png
+
+
+# > 𝑵𝒆𝒕𝒇𝒍𝒊𝒙
+🎥𝑵𝒆𝒕𝒇𝒍𝒊𝒙 = select, 🇺🇸美国𝑨𝑩, 🇭🇰香港𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/netflixgc.png
+
+
+# > 𝑩𝒂𝒉𝒂𝒎𝒖𝒕（动画疯）
+🧸𝑩𝒂𝒉𝒂𝒎𝒖𝒕 = select, 🇭🇰香港𝑨𝑩, 🇨🇳台湾𝑨𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/bahamute.png
+
+
+# > ————国内社交和流媒体策略组————
+# > 𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊（哔哩哔哩）
+📺𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊 = select, 🛜国内直连, 🇨🇳台湾𝑨𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BiliBili.png
+
+
+# > 𝑾𝒆𝒊𝒃𝒐（微博）
+🚾𝑾𝒆𝒊𝒃𝒐 = select, 🛜国内直连, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Weibo-00.png
+
+
+# > ————最终网络请求策略组————
+# > 𝑭𝑰𝑵𝑨𝑳（兜底分流）
+♻️𝑭𝑰𝑵𝑨𝑳 = select, 🌏节点最佳𝑨𝑩, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Script-Hub.png, no-alert=1, hidden=0, include-all-proxies=1, policy-regex-filter=🇭🇰香港𝑨
+
+[Rule]
+# > ————本地域名分流规则————
+DOMAIN-SUFFIX,robinfrontend-pa.googleapis.com,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
+DOMAIN-SUFFIX,cn.pornhub.com,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑷𝒐𝒓𝒏𝒉𝒖𝒃
+DOMAIN-SUFFIX,dnsleaktest.com,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑫𝑵𝑺
+DOMAIN-SUFFIX,xp.apple.com,🍎𝑨𝒑𝒑𝒍𝒆 // 𝒙𝒑.𝑨𝒑𝒑𝒍𝒆
+DOMAIN-SUFFIX,api.iturrit.com,📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 // 𝑻𝒖𝒓𝒓𝒊𝒕电报增强
+DOMAIN-SUFFIX,ios.chat.openai.com,🤖𝑨𝑰 // 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
+DOMAIN-SUFFIX,grok-v2.x.ai,"📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)" // 𝑮𝒓𝒐𝒌
+DOMAIN-SUFFIX,youtubei.googleapis.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+DOMAIN-SUFFIX,rr2---sn-a5meknzl.googlevideo.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+DOMAIN-SUFFIX,image.baidu.com,🛜国内直连,extended-matching // 𝑨𝑮𝑬动漫
+DOMAIN-SUFFIX,m.agedm.vip,🛜国内直连,extended-matching // 𝑨𝑮𝑬动漫
+DOMAIN-SUFFIX,api.agedm.vip,🛜国内直连,extended-matching // 𝑨𝑮𝑬动漫
+DOMAIN-SUFFIX,chat.deepseek.com,🛜国内直连 // 𝑫𝒆𝒆𝒑𝒔𝒆𝒆𝒌
+DOMAIN-SUFFIX,wspeed.qq.com,🛜国内直连 // 𝑸𝑸
+DOMAIN-SUFFIX,h5.qzone.qq.com,🛜国内直连 // 𝑸𝑸空间
+DOMAIN-SUFFIX,data.xiaoheihe.cn,🛜国内直连 // 小黑盒
+DOMAIN-SUFFIX,monitor.xiaoheihe.cn,🛜国内直连 // 小黑盒
+DOMAIN-SUFFIX,shouji.sogou.com,🛜国内直连 // 搜狗输入法
+IP-CIDR,95.161.76.100/31,REJECT,pre-matching,no-resolve // 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎防止转圈
+
+# > ————去广告屏蔽分流————
+RULE-SET,"http://script.hub/file/_start_/https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Reject.list/_end_/Reject.list?type=rule-set&target=surge-rule-set&del=true",REJECT // 𝑹𝒆𝒋𝒆𝒌𝒕去广告
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Advertising/Advertising.list,REJECT // 𝑨𝒅𝒗𝒆𝒓𝒕𝒊𝒔𝒊𝒏𝒈（去广告）
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/AdvertisingLite/AdvertisingLite.list,REJECT // 𝑨𝒅𝒗𝒆𝒓𝒕𝒊𝒔𝒊𝒏𝒈𝑳𝒊𝒕𝒆去广告
+RULE-SET,https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo_surge.list,REJECT // 毒奶网页去广告
+RULE-SET,"http://script.hub/file/_start_/https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/rejectAd.list/_end_/rejectAd.list?type=rule-set&target=surge-rule-set&del=true",REJECT // 奶思去广告合集
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Privacy/Privacy.list,REJECT // 隐私保护
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Hijacking/Hijacking.list,REJECT // 反劫持
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/SystemOTA/SystemOTA.list,REJECT // 屏蔽𝒊𝒐𝒔系统升级
+
+# > ————国际服务分流————
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Google/Google.list,🌏𝑮𝒐𝒐𝒈𝒍𝒆,extended-matching // 𝑮𝒐𝒐𝒈𝒍𝒆 谷歌服务
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Microsoft/Microsoft.list,💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 // 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 微软服务
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/GitHub/GitHub.list,💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 // 𝑮𝒊𝒕𝑯𝒖𝒃
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Apple/Apple.list,🍎𝑨𝒑𝒑𝒍𝒆 // 𝑨𝒑𝒑𝒍𝒆 苹果服务
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/AppStore/AppStore.list,🍎𝑨𝒑𝒑𝒍𝒆 // 𝑨𝒑𝒑𝒔𝒕𝒐𝒓𝒆 苹果商店
+
+# > ————国外社交分流分流————
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Telegram/Telegram.list,📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 // 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Twitter/Twitter.list,"📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)" // 𝑻𝒘𝒊𝒕𝒕𝒆𝒓(𝑿)
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Instagram/Instagram.list,📷𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎 // 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Reddit/Reddit.list,📑𝑹𝒆𝒅𝒅𝒊𝒕 // 𝑹𝒆𝒅𝒅𝒊𝒕
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Discord/Discord.list,🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅 // 𝑫𝒊𝒔𝒄𝒐𝒓𝒅
+
+# > ————游戏与AI工具分流————
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Pixiv/Pixiv.list,🍄𝑷𝒊𝒙𝒊𝒗 // 𝑷𝒊𝒙𝒊𝒗
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Pinterest/Pinterest.list,🍄𝑷𝒊𝒙𝒊𝒗 // 𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/OpenAI/OpenAI.list,🤖𝑨𝑰 // 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Speedtest/Speedtest.list,♻️𝑭𝑰𝑵𝑨𝑳 // 𝐒𝐩𝐞𝐞𝐝𝐭𝐞𝐬𝐭
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Steam/Steam.list,🎮𝑺𝒕𝒆𝒂𝒎 // 𝑺𝒕𝒆𝒂𝒎
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Epic/Epic.list,🎮𝑺𝒕𝒆𝒂𝒎 // 𝑬𝒑𝒊𝒄
+
+# > ————流媒体与影音短视频分流————
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/AppleTV/AppleTV.list,💽𝑨𝒑𝒑𝒍𝒆𝑻𝑽 // 𝑨𝒑𝒑𝒍𝒆𝑻𝑽
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/HBO/HBO.list,💿𝑯𝑩𝑶 // 𝑯𝑩𝑶
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Disney/Disney.list,🎬𝑫𝒊𝒔𝒏𝒆𝒚+ // 𝑫𝒊𝒔𝒏𝒆𝒚+
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Netflix/Netflix.list,🎥𝑵𝒆𝒕𝒇𝒍𝒊𝒙 // 𝑵𝒆𝒕𝒇𝒍𝒊𝒙
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Spotify/Spotify.list,🎧𝑺𝒑𝒐𝒕𝒊𝒇𝒚 // 𝑺𝒑𝒐𝒕𝒊𝒇𝒚
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Emby/Emby.list,🎞️𝑬𝒎𝒃𝒚 // 𝑬𝒎𝒃𝒚
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/YouTube/YouTube.list,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/TikTok/TikTok.list,📽𝑻𝒊𝒌𝑻𝒐𝒌 // 𝑻𝒊𝒌𝑻𝒐𝒌
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Twitch/Twitch.list,🖥️𝑻𝒘𝒊𝒕𝒄𝒉,extended-matching // 𝑻𝒘𝒊𝒕𝒄𝒉
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Bahamut/Bahamut.list,🧸𝑩𝒂𝒉𝒂𝒎𝒖𝒕 // 𝑩𝒂𝒉𝒂𝒎𝒖𝒕
+
+# > ————国内媒体与社交分流————
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/BiliBili/BiliBili.list,📺𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊 // 𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Weibo/Weibo.list,🚾𝑾𝒆𝒊𝒃𝒐 // 𝑾𝒆𝒊𝒃𝒐
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/NGA/NGA.list,🛜国内直连 // 𝑵𝑮𝑨玩家社区
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/DouBan/DouBan.list,🛜国内直连 // 豆瓣
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/WeChat/WeChat.list,🛜国内直连 // 微信
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Xunlei/Xunlei.list,🛜国内直连 // 迅雷
+
+# > ————𝐀𝐩𝐩𝐥𝐞 直连分流————
+DOMAIN-SUFFIX,apps.apple.com,🛜国内直连 // 𝑨𝒑𝒑𝒍𝒆
+DOMAIN-SUFFIX,ls.apple.com,🛜国内直连 // 𝑨𝒑𝒑𝒍𝒆 𝑴𝒂𝒑𝒔
+DOMAIN-SUFFIX,store.apple.com,🛜国内直连 // 𝑨𝒑𝒑𝒍𝒆 𝑺𝒕𝒐𝒓𝒆 𝑶𝒏𝒍𝒊𝒏𝒆
+
+# > ——国内直连 以下规则将触发本地 𝐃𝐍𝐒 解析——
+RULE-SET,LAN,🛜国内直连 // 📶局域网
+GEOIP,CN,🛜国内直连 // 🇨🇳国内网络𝑰𝑷直连
+
+# > ————兜底分流————
+FINAL,♻️𝑭𝑰𝑵𝑨𝑳,dns-failed
+
+[MITM]
+
+h2 = true
+
+hostname = h5.xxoo140.org, www.zimuquan13.uk, buy.itunes.apple.com, api.xiuxiu.meitu.com, %APPEND%pos.meituan.com, developer.aliyun.com, api.tuhu.cn, %APPEND% maicai.api.ddxq.mobi, webapi2.qmai.cn, webapi.qmai.cn, qmwebapi.qmai.cn, wx.10099.com.cn
+
+hostname-disabled = buy.itunes.apple.com
+
+
+
+
+[Script]
+
+# > ————签到脚本————
+# > 歪麦霸王餐每日签到
+# 歪麦霸王餐每日签到 = type=cron,cronexp=0 7 * * *,script-path=https://gist.githubusercontent.com/Sliverkiss/49a9ffb2169a2becc33bf4fdbf6eb99a/raw/wmbwc.js,script-update-interval=0
+
+# > 小蚕霸王餐每日签到
+# 小蚕霸王餐每日签到 = type=cron,cronexp=16 0 * * *,script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw/xcbwc.js,script-update-interval=0
+
+# > 晓晓优选每日签到
+# 晓晓优选每日签到 = type=cron,cronexp=16 0 * * *,script-path=https://gist.githubusercontent.com/Sliverkiss/991a81be1fc8cf2a1937432be68f5521/raw/xxyx.js,script-update-interval=0
+
+# > 阿里云盘签到
+# 阿里云盘签到 = type=cron,cronexp=0 10 0 * * ?,wake-system=1,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js,script-update-interval=0
+
+# > 携程旅行[签到]
+携程旅行[签到] = type=cron,cronexp=0 0 * * *,wake-system=1,script-update-interval=0,timeout=300,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Ctrip-DailyBonus/Ctrip.js
+
+# > 爱奇艺[会员签到]
+爱奇艺[会员签到] = type=cron,cronexp=0 7 * * *,wake-system=1,script-update-interval=0,timeout=60,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js
+
+# > 霸王茶姬小程序签到
+霸王茶姬小程序签到 = type=cron,cronexp=00 00 10 * * *,script-path=https://raw.githubusercontent.com/Guding88/Script/main/bawangchaji/bwcj.js,script-update-interval=0
+
+# > 阿里云签到
+阿里云签到 = type=cron,cronexp=0 0 * * *,script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js,timeout=120,wake-system=1,script-update-interval=0
+
+# > bilibili每日签到
+# bilibili每日签到 = type=cron,cronexp=0 7 * * *,script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js,script-update-interval=0
+
+# > 雀巢会员俱乐部签到
+雀巢会员俱乐部 = type=cron,cronexp=0 0 * * *,script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/nestle.js,timeout=300,script-update-interval=0
+
+# > 达美乐披萨签到
+达美乐披萨 = type=cron,cronexp=0 0 * * *,script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js,timeout=300,script-update-interval=0
+
+# > 喜马拉雅签到任务
+喜马拉雅签到任务 = type=cron,cronexp=0 0 * * *,script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js,timeout=15,wake-system=1,script-update-interval=0
+
+# > 途虎养车ck
+# 途虎养车# = type=http-request,pattern=https:\/\/api\.tuhu\.cn\/User\/GetInternalCenterInfo,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/tuhu.js,script-update-interval=0
+
+# > 途虎养车
+途虎养车 = type=cron,cronexp=0 0 * * *,timeout=60,script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/tuhu.js,script-update-interval=0
+
+# > 叮咚买菜_获取cookie
+# 叮咚买菜_获取cookie = type=http-request,pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/point\/home\?api_version,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/dingdong/dingdong_checkin.js
+
+# > 叮咚买菜_每日签到
+叮咚买菜_每日签到 = type=cron,cronexp=0 0 * * *,timeout=30,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/dingdong/dingdong_checkin.js,script-update-interval=0
+
+# > 动画疯签到
+动画疯签到 = script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutDailyBonus.js,wake-system=1,timeout=300,type=cron,cronexp=0 0 * * *,script-update-interval=0
+
+# > 高德地图打车签到
+高德地图打车签到 = type=cron,cronexp=0 0 * * *,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js,timeout=120,wake-system=1,script-update-interval=0
+
+# > 蜜雪冰城签到
+蜜雪冰城签到 = type=cron,cronexp=0 0 * * *,script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js,script-update-interval=0
+
+# > 柠季ck
+# 柠季ck = type=http-response,pattern=^https?:\/\/pos\.meituan\.com\/api\/v1\/crm\/frontend\/campaign\/display,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/ningji/ningji.js,requires-body=1,max-size=-1,timeout=60,binary-body-mode=0,script-update-interval=0
+
+# > 柠季签到
+柠季签到 = type=cron,cronexp=0 0 * * *,timeout=60,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/ningji/ningji.js,script-update-interval=0
+
+# > 𝐙𝐈𝐏𝐏𝐎会员中心签到
+𝐙𝐈𝐏𝐏𝐎会员中心签到 = type=cron,cronexp=0 0 * * *,script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/zippo.js,timeout=10,script-update-interval=0
+
+# > 贴吧每日签到
+贴吧每日签到 = type=cron,cronexp=0 0 * * *,timeout=60,script-path=https://gist.githubusercontent.com/blackmatrix7/cebabe7a385fc6a9ad32e2f7a35851dc/raw/1363d8720c92267d0a97fcd8eb98673760891fc9/tieba_min.js,script-update-interval=0
+
+# > 𝐍𝐆𝐀刮墙
+𝐍𝐆𝐀刮墙 = type=cron,cronexp=0 0 * * *,script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/nga.js,script-update-interval=0
+
+# > ————资讯热搜————
+# > 黑料不打烊
+黑料不打烊 = type=cron,cronexp="0 9,15 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/hlbdy.js,timeout=60,script-update-interval=0
+
+# > 𝑶𝑵𝑬每日推荐
+𝑶𝑵𝑬每日推荐 = type=cron,cronexp=0 21 * * *,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/one_daily_task.js,script-update-interval=0
+
+# > 每天60秒读懂世界
+每天60秒读懂世界 = type=cron,cronexp=0 30 9 * * *,wake-system=1,script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js,timeout=60
