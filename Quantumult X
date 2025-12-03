@@ -394,14 +394,25 @@ FILTER_REGION, tag=𝑪𝑵, force-policy=direct, update-interval=172800, opt-pa
 [filter_local]
 # ————本地分流————
 IP-CIDR,95.161.76.100/31,REJECT
+
+# 兜底请求
 final, ♻️𝑭𝑰𝑵𝑨𝑳
+
 host, rsshub.app, proxy
 host, 211.211.84.123, proxy
+
+# 12306
 host, ad.12306.cn, direct
+
+# Deepseek
 DOMAIN-SUFFIX,deepseek.com,DIRECT
 DOMAIN-SUFFIX,api.deepseek.com,DIRECT
+
+# AGE动漫
 DOMAIN-SUFFIX,agedm.org,DIRECT
 DOMAIN-SUFFIX,m.agedm.org,DIRECT
+
+# 网易云音乐
 HOST-SUFFIX, MUSIC.163.COM, DIRECT
 
 [rewrite_local]
