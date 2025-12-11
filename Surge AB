@@ -108,6 +108,25 @@ dns-server = 223.5.5.5, 114.114.114.114
 
 
 # > ————单𝒊𝒑机场𝑩————
+# > 🇭🇰香港𝑩
+🇭🇰香港𝑩 = smart, policy-regex-filter=香港, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑩
+
+
+# > 🇺🇸美国𝑩
+🇺🇸美国𝑩 = smart, policy-regex-filter=美国, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑩
+
+
+🇯🇵日本𝑩 = smart, policy-regex-filter=日本, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑩
+
+
+# > 🇨🇳台湾𝑩
+🇨🇳台湾𝑩 = smart, policy-regex-filter=台湾, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑩
+
+
+# > 🇸🇬新加坡𝑩
+🇸🇬新加坡𝑩 = smart, policy-regex-filter=新加坡, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑩
+
+
 # > 🇮🇳印度𝑩
 🇮🇳印度𝑩 = smart, policy-regex-filter=新德里, no-alert=0, hidden=1, include-all-proxies=0, include-other-group=我的机场𝑩, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/India.png
 
@@ -136,36 +155,36 @@ dns-server = 223.5.5.5, 114.114.114.114
 
 # > ————国际服务与媒体策略组————
 # > 𝑮𝒐𝒐𝒈𝒍𝒆（谷歌服务）
-🌏𝑮𝒐𝒐𝒈𝒍𝒆 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/google(1).png, persistent=0
+🌏𝑮𝒐𝒐𝒈𝒍𝒆 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/google(1).png, persistent=0
 
 
 # > 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕（微软服务）
-💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/microsoft.png
+💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/microsoft.png
 
 
 # > 𝑨𝒑𝒑𝒍𝒆（苹果服务）
-🍎𝑨𝒑𝒑𝒍𝒆 = select, 🛜国内直连, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Apple_Classic.png
+🍎𝑨𝒑𝒑𝒍𝒆 = select, 🛜国内直连, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Apple_Classic.png
 
 
 # > 𝑨𝒑𝒑𝒍𝒆𝑻𝑽
-💽𝑨𝒑𝒑𝒍𝒆𝑻𝑽 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/AppleTV.png
+💽𝑨𝒑𝒑𝒍𝒆𝑻𝑽 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/AppleTV.png
 
 
 # > ————国外社交策略组————
 # > 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
-📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/telegram(1).png
+📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/telegram(1).png
 
 
 # > 𝑻𝒘𝒊𝒕𝒕𝒆𝒓(𝑿)
-📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿) = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png
+📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿) = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png
 
 
 # > 𝑫𝒊𝒔𝒄𝒐𝒓𝒅
-🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Discord.png
+🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Discord.png
 
 
 # > 𝑹𝒆𝒅𝒅𝒊𝒕
-📑𝑹𝒆𝒅𝒅𝒊𝒕 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/reddit(1).png
+📑𝑹𝒆𝒅𝒅𝒊𝒕 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/reddit(1).png
 
 
 # > ————游戏平台AI工具与插画策略组————
@@ -174,11 +193,11 @@ dns-server = 223.5.5.5, 114.114.114.114
 
 
 # > 𝑷𝒊𝒙𝒊𝒗
-🍄𝑷𝒊𝒙𝒊𝒗 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/plus-emby.png
+🍄𝑷𝒊𝒙𝒊𝒗 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/plus-emby.png
 
 
 # > 𝑺𝒕𝒆𝒂𝒎+𝑬𝒑𝒊𝒄
-🎮𝑺𝒕𝒆𝒂𝒎 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png
+🎮𝑺𝒕𝒆𝒂𝒎 = select, 🛜国内直连, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png
 
 
 # > ————国外影音流媒体与短视频策略组————
@@ -187,35 +206,35 @@ dns-server = 223.5.5.5, 114.114.114.114
 
 
 # > 𝑯𝑩𝑶
-💿𝑯𝑩𝑶 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/HBOmax.png
+💿𝑯𝑩𝑶 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/HBOmax.png
 
 
 # > 𝑫𝒊𝒔𝒏𝒆𝒚+
-🎬𝑫𝒊𝒔𝒏𝒆𝒚+ = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/disney.png
+🎬𝑫𝒊𝒔𝒏𝒆𝒚+ = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/disney.png
 
 
 # > 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎
-📷𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Instagram.png
+📷𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Instagram.png
 
 
 # > 𝑻𝒊𝒌𝑻𝒐𝒌
-📽𝑻𝒊𝒌𝑻𝒐𝒌 = select, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇹🇭泰国𝑨𝑩, 🇲🇾马来西亚𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/TikTok_1.png
+📽𝑻𝒊𝒌𝑻𝒐𝒌 = select, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇹🇭泰国𝑨𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, 🇲🇾马来西亚𝑩, 🇮🇳印度𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/TikTok_1.png
 
 
 # > 𝑺𝒑𝒐𝒕𝒊𝒇𝒚
-🎧𝑺𝒑𝒐𝒕𝒊𝒇𝒚 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/spotify(green).png
+🎧𝑺𝒑𝒐𝒕𝒊𝒇𝒚 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/spotify(green).png
 
 
 # > 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, ヾ(=･ﾟ=)ﾉ喵♪, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, ヾ(=･ﾟ=)ﾉ喵♪, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
 
 
 # > 𝑻𝒘𝒊𝒕𝒄𝒉
-🖥️𝑻𝒘𝒊𝒕𝒄𝒉 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇲🇾马来西亚𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/twitch.png
+🖥️𝑻𝒘𝒊𝒕𝒄𝒉 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, 🇲🇾马来西亚𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/twitch.png
 
 
 # > 𝑵𝒆𝒕𝒇𝒍𝒊𝒙
-🎥𝑵𝒆𝒕𝒇𝒍𝒊𝒙 = select, 🇺🇸美国𝑨𝑩, 🇭🇰香港𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/netflixgc.png
+🎥𝑵𝒆𝒕𝒇𝒍𝒊𝒙 = select, 🇺🇸美国𝑨𝑩, 🇭🇰香港𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/netflixgc.png
 
 
 # > 𝑩𝒂𝒉𝒂𝒎𝒖𝒕（动画疯）
@@ -233,7 +252,9 @@ dns-server = 223.5.5.5, 114.114.114.114
 
 # > ————最终网络请求策略组————
 # > 𝑭𝑰𝑵𝑨𝑳（兜底分流）
-♻️𝑭𝑰𝑵𝑨𝑳 = select, 🌏节点最佳𝑨𝑩, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Script-Hub.png, no-alert=1, hidden=0, include-all-proxies=1, policy-regex-filter=🇭🇰香港𝑨
+♻️𝑭𝑰𝑵𝑨𝑳 = select, 🌏节点最佳𝑨𝑩, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, icon-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Script-Hub.png, no-alert=1, hidden=0, include-all-proxies=1, policy-regex-filter=🇭🇰香港𝑨
+
+
 
 [Rule]
 # > ————本地域名分流规则————
