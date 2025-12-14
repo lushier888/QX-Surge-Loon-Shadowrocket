@@ -153,10 +153,9 @@ disable-udp-ports = 443
 # 𝑷𝒊𝒙𝒊𝒗
 🍄𝑷𝒊𝒙𝒊𝒗 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/pixiv(2).png
 
-# 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
-🤖𝑪𝒉𝒂𝒕𝑮𝑷𝑻 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/ChatGPT-green.png
-
-# 𝑺𝒕𝒆𝒂𝒎
+# 𝑪𝒉𝒂𝒕𝑮𝑷𝑻+𝑮𝒆𝒎𝒊𝒏𝒊
+🤖𝑨𝑰 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/ChatGPT-green.png
+# 𝑺𝒕𝒆𝒂𝒎+𝑬𝒑𝒊𝒄
 🎮𝑺𝒕𝒆𝒂𝒎 = select,🇭🇰香港𝑨,🇺🇸美国𝑨,🇯🇵日本𝑨,🇨🇳台湾𝑨,🇸🇬新加波𝑨,🇰🇷韩国𝑨,🇭🇰香港𝑩,🇺🇸美国𝑩,🇯🇵日本𝑩,🇨🇳台湾𝑩,🇸🇬新加坡𝑩,🇰🇷韩国𝑩,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png
 
 # ————国外影音与短视频流媒体策略组————
@@ -241,8 +240,14 @@ disable-udp-ports = 443
 
 [Rule]
 # ————本地分流规则————
+# 𝑮𝒆𝒎𝒊𝒏𝒊
+DOMAIN-SUFFIX,googleapis.com,🤖𝑨𝑰
+
 # 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎（防止转圈）
 IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve
+
+# 𝒊𝒕𝒖𝒓𝒓𝒊𝒕（电报增强）
+DOMAIN-SUFFIX,api.iturrit.com,📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
 
 # 𝒀𝒐𝒖𝑻𝒖𝒃𝒆（分流）
 DOMAIN-SUFFIX,rr5---sn-i3bssn7e.googlevideo.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
