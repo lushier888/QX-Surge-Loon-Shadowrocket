@@ -189,7 +189,7 @@ dns-server = 223.5.5.5, 114.114.114.114
 
 # > ————游戏平台AI工具与插画策略组————
 # > 𝑪𝒉𝒂𝒕𝑮𝑷𝑻+𝑮𝒆𝒎𝒊𝒏𝒊
-🤖𝑨𝑰 = select, 🇺🇳𝑨𝑰解锁𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/chatgpt(white1).png
+🤖𝑨𝑰 = select, 🇺🇳𝑨𝑰解锁𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=0, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/chatgpt(white1).png
 
 
 # > 𝑷𝒊𝒙𝒊𝒗
