@@ -258,7 +258,7 @@ dns-server = 223.5.5.5, 114.114.114.114
 
 [Rule]
 # > ————本地域名分流规则————
-DOMAIN-SUFFIX,robinfrontend-pa.googleapis.com,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
+DOMAIN-SUFFIX,googleapis.com,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
 DOMAIN-SUFFIX,cn.pornhub.com,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑷𝒐𝒓𝒏𝒉𝒖𝒃
 DOMAIN-SUFFIX,dnsleaktest.com,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑫𝑵𝑺
 DOMAIN-SUFFIX,xp.apple.com,🍎𝑨𝒑𝒑𝒍𝒆 // 𝒙𝒑.𝑨𝒑𝒑𝒍𝒆
