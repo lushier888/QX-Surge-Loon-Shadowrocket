@@ -242,25 +242,52 @@ dns-server = 223.5.5.5, 114.114.114.114
 
 [Rule]
 # > ————本地域名分流规则————
-DOMAIN-SUFFIX,googleapis.com,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
-DOMAIN-SUFFIX,cn.pornhub.com,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑷𝒐𝒓𝒏𝒉𝒖𝒃
-DOMAIN-SUFFIX,dnsleaktest.com,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑫𝑵𝑺
-DOMAIN-SUFFIX,xp.apple.com,🍎𝑨𝒑𝒑𝒍𝒆 // 𝒙𝒑.𝑨𝒑𝒑𝒍𝒆
-DOMAIN-SUFFIX,api.iturrit.com,📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 // 𝑻𝒖𝒓𝒓𝒊𝒕电报增强
-DOMAIN-SUFFIX,ios.chat.openai.com,🤖𝑪𝒉𝒂𝒕𝑮𝑷𝑻 // 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
-DOMAIN-SUFFIX,grok-v2.x.ai,"📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)" // 𝑮𝒓𝒐𝒌
-DOMAIN-SUFFIX,youtubei.googleapis.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-DOMAIN-SUFFIX,rr2---sn-a5meknzl.googlevideo.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-DOMAIN-SUFFIX,image.baidu.com,🛜国内直连,extended-matching // 𝑨𝑮𝑬动漫
-DOMAIN-SUFFIX,m.agedm.vip,🛜国内直连,extended-matching // 𝑨𝑮𝑬动漫
-DOMAIN-SUFFIX,api.agedm.vip,🛜国内直连,extended-matching // 𝑨𝑮𝑬动漫
-DOMAIN-SUFFIX,chat.deepseek.com,🛜国内直连 // 𝑫𝒆𝒆𝒑𝒔𝒆𝒆𝒌
-DOMAIN-SUFFIX,wspeed.qq.com,🛜国内直连 // 𝑸𝑸
-DOMAIN-SUFFIX,h5.qzone.qq.com,🛜国内直连 // 𝑸𝑸空间
-DOMAIN-SUFFIX,data.xiaoheihe.cn,🛜国内直连 // 小黑盒
-DOMAIN-SUFFIX,monitor.xiaoheihe.cn,🛜国内直连 // 小黑盒
-DOMAIN-SUFFIX,shouji.sogou.com,🛜国内直连 // 搜狗输入法
+# > 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎防止转圈规则
 IP-CIDR,95.161.76.100/31,REJECT,pre-matching,no-resolve // 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎防止转圈
+# > ————𝑨𝑰分流规则————
+# > 𝑮𝒆𝒎𝒊𝒏𝒊规则
+DOMAIN,generativelanguage.googleapis.com,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
+DOMAIN,proactivebackend-pa.googleapis.com,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
+DOMAIN-SUFFIX,gemini.google.com,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
+DOMAIN-KEYWORD,googleai,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
+# > 𝑪𝒉𝒂𝒕𝑮𝑷𝑻规则
+DOMAIN-SUFFIX,openai.com,🤖𝑨𝑰 // 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
+# > 𝑮𝒓𝒐𝒌规则
+DOMAIN-SUFFIX,x.ai,📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿) // 𝑮𝒓𝒐𝒌
+# > ————其它国外服务与媒体规则————
+# > 𝑻𝒊𝒌𝑻𝒐𝒌规则
+DOMAIN-KEYWORD,tiktok,📽𝑻𝒊𝒌𝑻𝒐𝒌 // 𝑻𝒊𝒌𝑻𝒐𝒌
+DOMAIN-SUFFIX,byteoversea.com,📽𝑻𝒊𝒌𝑻𝒐𝒌 // 𝑻𝒊𝒌𝑻𝒐𝒌
+DOMAIN-SUFFIX,ibytedtos.com,📽𝑻𝒊𝒌𝑻𝒐𝒌 // 𝑻𝒊𝒌𝑻𝒐𝒌
+# > 𝒀𝒐𝒖𝑻𝒖𝒃𝒆规则
+DOMAIN-SUFFIX,googlevideo.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+DOMAIN-SUFFIX,youtubei.googleapis.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+# > 𝑷𝒐𝒓𝒏𝒉𝒖𝒃规则
+DOMAIN-SUFFIX,pornhub.com,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑷𝒐𝒓𝒏𝒉𝒖𝒃
+# > 𝑫𝑵𝑺规则
+DOMAIN-SUFFIX,dnsleaktest.com,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑫𝑵𝑺
+# > 𝑨𝒑𝒑𝒍𝒆规则
+DOMAIN-SUFFIX,apple.com,🍎𝑨𝒑𝒑𝒍𝒆 // 𝑨𝒑𝒑𝒍𝒆
+# > 𝑻𝒖𝒓𝒓𝒊𝒕电报增强规则
+DOMAIN-SUFFIX,api.iturrit.com,📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 // 𝑻𝒖𝒓𝒓𝒊𝒕电报增强
+# > ————国内直连分流规则————
+# > 𝑨𝑮𝑬动漫规则
+DOMAIN-SUFFIX,agedm.vip,🛜国内直连
+# > 𝑫𝒆𝒆𝒑𝒔𝒆𝒆𝒌规则
+DOMAIN-SUFFIX,deepseek.com,🛜国内直连 // 𝑫𝒆𝒆𝒑𝒔𝒆𝒆𝒌
+# > 𝑸𝑸规则
+DOMAIN-SUFFIX,qq.com,🛜国内直连 // 𝑸𝑸
+# > 𝑸𝑸空间规则
+DOMAIN-SUFFIX,qzone.qq.com,🛜国内直连 // 𝑸𝑸空间
+DOMAIN-SUFFIX,gtimg.cn,🛜国内直连 // 𝑸𝑸空间
+# > 小黑盒规则
+DOMAIN-SUFFIX,xiaoheihe.cn,🛜国内直连 // 小黑盒
+# > 讯飞输入法分流
+DOMAIN-SUFFIX,iflytek.com,🛜国内直连 // 讯飞输入法
+DOMAIN-SUFFIX,voicecloud.cn,🛜国内直连 // 讯飞输入法
+# > 搜狗输入法规则
+DOMAIN-SUFFIX,sogou.com,🛜国内直连 // 搜狗输入法
+
 
 # > ————去广告屏蔽分流————
 RULE-SET,"http://script.hub/file/_start_/https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Reject.list/_end_/Reject.list?type=rule-set&target=surge-rule-set&del=true",REJECT // 𝑹𝒆𝒋𝒆𝒌𝒕去广告
