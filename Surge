@@ -272,7 +272,7 @@ DOMAIN-SUFFIX,apple.com,🍎𝑨𝒑𝒑𝒍𝒆 // 𝑨𝒑𝒑𝒍𝒆
 DOMAIN-SUFFIX,api.iturrit.com,📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 // 𝑻𝒖𝒓𝒓𝒊𝒕电报增强
 # > ————国内直连分流规则————
 # > 𝑨𝑮𝑬动漫规则
-DOMAIN-SUFFIX,agedm.vip,🛜国内直连
+DOMAIN-SUFFIX,agedm.vip,🛜国内直连 // 𝑨𝑮𝑬动漫
 # > 𝑫𝒆𝒆𝒑𝒔𝒆𝒆𝒌规则
 DOMAIN-SUFFIX,deepseek.com,🛜国内直连 // 𝑫𝒆𝒆𝒑𝒔𝒆𝒆𝒌
 # > 𝑸𝑸规则
@@ -282,7 +282,7 @@ DOMAIN-SUFFIX,qzone.qq.com,🛜国内直连 // 𝑸𝑸空间
 DOMAIN-SUFFIX,gtimg.cn,🛜国内直连 // 𝑸𝑸空间
 # > 小黑盒规则
 DOMAIN-SUFFIX,xiaoheihe.cn,🛜国内直连 // 小黑盒
-# > 讯飞输入法分流
+# > 讯飞输入法规则
 DOMAIN-SUFFIX,iflytek.com,🛜国内直连 // 讯飞输入法
 DOMAIN-SUFFIX,voicecloud.cn,🛜国内直连 // 讯飞输入法
 # > 搜狗输入法规则
