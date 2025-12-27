@@ -72,6 +72,8 @@ server=[2402:4e00::]
 
 
 [policy]
+
+
 # ————节点信息策略自动选择————
 # 🇭🇰香港𝑨
 url-latency-benchmark=🇭🇰香港𝑨, server-tag-regex=🇭🇰香港, check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
@@ -125,6 +127,9 @@ url-latency-benchmark=🇷🇺俄罗斯𝑩, server-tag-regex=俄罗斯, check-i
 url-latency-benchmark=欧洲𝑩, server-tag-regex=巴勒莫|马德里|巴勒鲁普|巴黎|法兰克福|雅典|圣地亚哥|奥斯陆|斯德哥尔摩|华沙|日内瓦|图苏拉, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/European_Union.png
 
 # ————策略组位置————
+# 𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊空降助手策略
+static={{{空降助手策略}}}, direct, proxy, reject, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BiliBili.png
+
 # 🕹手动切换
 static=🕹手动切换, direct, server-tag-regex=., img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/quanx.png
 
