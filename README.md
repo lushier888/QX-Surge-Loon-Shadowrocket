@@ -200,7 +200,19 @@ http://script.hub/file/_start_/https://raw.githubusercontent.com/chmg2025/script
 爱爱网
 http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/aiaiwang.js/_end_/aiaiwang.sgmodule?n=%E7%88%B1%E7%88%B1%E7%BD%91%2B%E4%BC%9A%E5%91%98%E8%A7%A3%E9%94%81%E5%8E%BB%E5%B9%BF%E5%91%8A&type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
 
+mmav
+http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/mmav.js/_end_/mmav.sgmodule?n=mmav%2B%E4%BC%9A%E5%91%98%E8%A7%A3%E9%94%81%E3%80%81%E9%87%91%E5%B8%81%E8%A7%86%E9%A2%91%E3%80%81%E4%BB%98%E8%B4%B9%E8%A7%86%E9%A2%91%E3%80%81%E5%9B%BE%E5%BA%93%E3%80%81%E5%8E%BB%E5%B9%BF%E5%91%8A&type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
+
+小狐狸
+http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/xiaohuli.js/_end_/xiaohuli.sgmodule?n=%E5%B0%8F%E7%8B%90%E7%8B%B8%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E8%A7%86%E9%A2%91&type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
+
+
 以下为对应的色站地址
+小狐狸
+https://06.xhlld076.shop/
+
+mmav
+https://337tc.com
 
 爱爱网
 http://aa5.com/
@@ -364,6 +376,12 @@ https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ydm.sgmodule
 # ————LSP破解重写————
 以下收集的Quantumult X色色重写，其它代理用此重写请复制重写链接使用scripthub转换
 https://scripthub.vercel.app/
+
+小狐狸
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/xiaohuli.js
+
+mmav
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/mmav.js
 
 爱爱网
 https://raw.githubusercontent.com/WeiGiegie/666/main/aiaiwang.js
