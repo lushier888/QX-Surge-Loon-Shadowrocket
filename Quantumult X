@@ -578,6 +578,23 @@ https://raw.githubusercontent.com/mw418/Loon/main/script/jd_price.js, tag=京东
 
 
 # ————LSP破解重写————
+# 小狐狸
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/xiaohuli.js, tag=小狐狸, update-interval=172800, opt-parser=true, enabled=true
+
+# mmav
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/mmav.js, tag=mmav, update-interval=172800, opt-parser=true, enabled=true
+
+# 爱爱网
+https://raw.githubusercontent.com/WeiGiegie/666/main/aiaiwang.js, tag=爱爱网, update-interval=172800, opt-parser=true, enabled=true
+
+# 海角社区
+https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/haijiao.js, tag=海角社区, update-interval=172800, opt-parser=true, enabled=true
+
+# JVID
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/jvid.js, tag=JVID, update-interval=172800, opt-parser=true, enabled=true
+
+# 糖心Vlog
+https://raw.githubusercontent.com/WeiGiegie/666/main/sugar.js, tag=糖心Vlog, update-interval=172800, opt-parser=true, enabled=true
 
 # 香蕉视频
 https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/xjsp.js, tag=香蕉视频, update-interval=172800, opt-parser=true, enabled=true
