@@ -757,6 +757,21 @@ http://script.hub/file/_start_/https://raw.githubusercontent.com/ZenmoFeiShi/Qx/
 https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, tag=YouTube去广告, enabled=false
 
 # ————LSP插件分类————
+# 小狐狸
+http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/xiaohuli.js/_end_/xiaohuli.plugin?n=%E5%B0%8F%E7%8B%90%E7%8B%B8%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E8%A7%86%E9%A2%91&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=小狐狸, enabled=true
+
+# mmav
+http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/mmav.js/_end_/mmav.plugin?n=mmav%2B%E4%BC%9A%E5%91%98%E8%A7%A3%E9%94%81%E3%80%81%E9%87%91%E5%B8%81%E8%A7%86%E9%A2%91%E3%80%81%E4%BB%98%E8%B4%B9%E8%A7%86%E9%A2%91%E3%80%81%E5%9B%BE%E5%BA%93%E3%80%81%E5%8E%BB%E5%B9%BF%E5%91%8A&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=mmav, enabled=true
+
+# 爱爱网
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/aiaiwang.js/_end_/aiaiwang.plugin?n=%E7%88%B1%E7%88%B1%E7%BD%91%2B%E4%BC%9A%E5%91%98%E8%A7%A3%E9%94%81%E5%8E%BB%E5%B9%BF%E5%91%8A&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=爱爱网, enabled=true
+
+# 海角社区
+http://script.hub/file/_start_/https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/haijiao.js/_end_/haijiao.plugin?n=%E6%B5%B7%E8%A7%92%E7%A4%BE%E5%8C%BA%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E5%B8%96%E5%AD%90&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=海角社区, enabled=true
+
+# 糖心Vlog
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/sugar.js/_end_/sugar.plugin?n=%E7%B3%96%E5%BF%83Vlog%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E8%A7%86%E9%A2%91%E5%92%8C%E5%8E%BB%E5%B9%BF%E5%91%8A&type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=糖心Vlog, enabled=true
+
 # YDM系列通杀合集
 https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ydm.js, tag=YDM系列通杀合集, enabled=true
 
