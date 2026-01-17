@@ -106,47 +106,67 @@ https://github.com/Koolson/Qure/raw/master/Other/QureColor-All.json
 
 以下收集一些boxjs订阅
 
-
+NobyDa 脚本订阅
 https://raw.githubusercontent.com/NobyDa/Script/master/NobyDa_BoxJs.json
 
+Functional Store Hub 功能配
 https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/BoxJsFiles/Functional-Store-Hub.json
 
+Peng-YM 应用订阅
 https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/box.js.json
 
+toulanboy 脚本订阅
 https://raw.githubusercontent.com/toulanboy/scripts/master/toulanboy.boxjs.json
 
+evilbutcher 应用订阅
 https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/evilbutcher.boxjs.json
 
+zZPiglet 应用订阅
 https://raw.githubusercontent.com/zZPiglet/Task/master/zZPiglet.boxjs.json
 
+DomplingYaYa 应用订阅
 https://raw.githubusercontent.com/dompling/Script/master/dompling.boxjs.json
 
+yuheng 脚本订阅
 https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/boxjs.json
 
+🍿️ DualSubs Legacy
 https://github.com/DualSubs/BoxJs/raw/main/archive/DualSubs.Legacy.boxjs.json
 
+lowking应用订阅
 https://raw.githubusercontent.com/lowking/Scripts/master/lowking.boxjs.json
 
+id77 脚本订阅
 https://raw.githubusercontent.com/id77/QuantumultX/master/box.json
 
+Sliverkiss签到脚本订阅
 https://gist.githubusercontent.com/Sliverkiss/18bd01be356360a8065a21ea71685ad3/raw/sliverkiss.boxjs.json
 
+🍿️ DualSubs
 https://github.com/DualSubs/BoxJs/raw/main/DualSubs.BoxJs.json
 
+🪐 BiliUniverse: 📺 BiliBili
 https://github.com/BiliUniverse/BoxJs/raw/main/BiliBili.boxjs.json
 
+ChinaMobile 的应用订阅
 https://github.com/ChinaTelecomOperators/ChinaMobile/releases/download/Prerelease-Alpha/boxjs.json
 
+blackmatrix7应用订阅
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/boxjs.json
 
+ iRingo
 https://github.com/NSRingo/BoxJs/raw/main/iRingo.BoxJs.json
 
+ChinaUnicom 的应用订阅
 https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/boxjs.json
 
+雪之下雪乃
 https://raw.githubusercontent.com/xzxxn777/Surge/main/xzxxn.json
 
+fmz200のBoxJS订阅
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/boxjs/fmz200_boxjs.json
 
+URLscheme
 https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/boxjs.json
 
 
