@@ -318,10 +318,10 @@ https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX
 # 𝑾𝒆𝒊𝒃𝒐（微博分流）
 https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Weibo/Weibo.list, tag=𝑾𝒆𝒊𝒃𝒐（微博）, force-policy=🚾𝑾𝒆𝒊𝒃𝒐, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/weibo(1).png, update-interval=172800, opt-parser=false, enabled=true
 
-
+# 𝑳𝑨𝑵
 FILTER_LAN, tag=𝑳𝑨𝑵, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
 
-
+# 国内IP直连网络
 FILTER_REGION, tag=𝑪𝑵, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
 
 [filter_local]
@@ -354,51 +354,36 @@ host, 211.211.84.123, proxy
 IP-CIDR,95.161.76.100/31,REJECT
 
 [rewrite_local]
-# 获取联通cookie
-https:\/\/m\.client\.10010\.com\/(.*)\/smartwisdomCommon  url script-request-header https://raw.githubusercontent.com/dompling/Script/master/10010/index.js
-https:\/\/m\.client\.10010\.com\/serviceimportantbusiness\/smart\/smartwisdomCommonNew  url script-request-header https://raw.githubusercontent.com/dompling/Script/master/10010/index.js
-
-# 脚本转换器
-^https?:\/\/(raw|gist)\.githubusercontent.com/.*\.js$ url script-response-body https://raw.githubusercontent.com/Peng-YM/ScriptConverter/master/js-converter.js
-
-https:\/\/api\.bilibili\.com\/pgc\/player\/api\/playurl url 302 https://bili.miao.best/geturl/maom/
-
-https:\/\/api.bilibili.com\/pgc\/view\/app\/season url 302 https://bili.miao.best/season/
 
 
 # 重写远程订阅
 [rewrite_remote]
 # ————去广告重写合集系列————
 # 奶思微博去广告
-http://script.hub/file/_start_/https://github.com/fmz200/wool_scripts/raw/main/Surge/module/weibo.module/_end_/weibo.plugin?n=%E5%A5%B6%E6%80%9D%E5%BE%AE%E5%8D%9A%E5%8E%BB%E5%B9%BF%E5%91%8A%2B%E5%8E%BB%E9%99%A4%E5%B8%B8%E8%A7%81%E7%9A%84%E5%B9%BF%E5%91%8A%E5%92%8C%E9%83%A8%E5%88%86%E5%A4%9A%E4%BD%99%E7%9A%84%E6%A8%A1%E5%9D%97&type=surge-module&target=loon-plugin&del=true, tag=奶思微博去广告, update-interval=172800, opt-parser=true, enabled=true
-
+http://script.hub/file/_start_/https://github.com/fmz200/wool_scripts/raw/main/Surge/module/weibo.module/_end_/weibo.plugin?n=%E5%A5%B6%E6%80%9D%E5%BE%AE%E5%8D%9A%E5%8E%BB%E5%B9%BF%E5%91%8A%2B%E5%8E%BB%E9%99%A4%E5%B8%B8%E8%A7%81%E7%9A%84%E5%B9%BF%E5%91%8A%E5%92%8C%E9%83%A8%E5%88%86%E5%A4%9A%E4%BD%99%E7%9A%84%E6%A8%A1%E5%9D%97&type=surge-module&target=loon-plugin&del=true, tag=奶思微博去广告, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/weibo(1).png, update-interval=172800, opt-parser=true, enabled=true
 
 # Spotify会员去广告
 https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.conf, tag=Spotify会员去广告, update-interval=172800, opt-parser=true, enabled=false
 
 # bilibili增强跳视频推广告
-https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/release/surge/module/bilibili.sgmodule, tag=bilibili增强跳视频推广告, update-interval=172800, opt-parser=true, enabled=true
 
 # 毒奶去网页广告
-https://limbopro.com/Adblock4limbo.sgmodule, tag=毒奶去网页广告, update-interval=172800, opt-parser=true, enabled=true
+https://limbopro.com/Adblock4limbo.sgmodule, tag=毒奶去网页广告, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 广告屏蔽
-https://whatshub.top/rewrite/AdBlock.conf, tag=广告屏蔽, update-interval=172800, opt-parser=true, enabled=false
+https://whatshub.top/rewrite/AdBlock.conf, tag=广告屏蔽, update-interval=172800, opt-parser=true, enabled=true
 
 # 墨鱼去开屏广告2.0
-https://gist.githubusercontent.com/ddgksf2013/12ef6aad209155e7eb62c5b00c11b9dd/raw/StartUpAds.conf, tag=墨鱼去开屏广告2.0, update-interval=172800, opt-parser=true, enabled=true
 
 # App去广告合集
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt, tag=App去广告合集, update-interval=172800, opt-parser=true, enabled=false
 
 # 哔哩哔哩去广告合集
-https://raw.githubusercontent.com/zwf234/rules/master/QuantumultX/bilibili.conf, tag=哔哩哔哩去广告合集, update-interval=172800, opt-parser=true, enabled=false
 
 # 微博去广告删除部分推广
 https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo.conf, tag=微博去广告删除部分推广, update-interval=172800, opt-parser=true, enabled=false
 
 # Wx小程序净化
-https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/WxPureDominion.snippet, tag=Wx小程序净化, update-interval=-1, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/WxPureDominion.snippet, tag=Wx小程序净化, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/wechat(1).png, update-interval=-1, opt-parser=false, enabled=true
 
 # 油管去广告画中画
 https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/YoutubeAds.conf, tag=油管去广告画中画, update-interval=172800, opt-parser=true, enabled=false
@@ -407,86 +392,83 @@ https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/YoutubeAds.conf, tag=�
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet, tag=微博去广告, update-interval=172800, opt-parser=true, enabled=false
 
 # Pixiv会员去广告
-https://github.com/ddgksf2013/Scripts/raw/master/pixivAds.js, tag=Pixiv会员去广告, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/ddgksf2013/Scripts/raw/master/pixivAds.js, tag=Pixiv会员去广告, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/pixiv.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 12306去广告
-https://github.com/ddgksf2013/Scripts/raw/master/12306.js, tag=12306去广告, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/ddgksf2013/Scripts/raw/master/12306.js, tag=12306去广告, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/mini/12306.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 京东去广告
-https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%BA%AC%E4%B8%9C%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule, tag=京东去广告, update-interval=172800, opt-parser=true, enabled=false
 
 # 微信小程序去广告
-https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/Applet.conf, tag=微信小程序去广告, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/Applet.conf, tag=微信小程序去广告, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/wechat(1).png, update-interval=172800, opt-parser=true, enabled=true
 
 # Youtube去视频5秒广告
-https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule, tag=Youtube去视频5秒广告, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule, tag=Youtube去视频5秒广告, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/youtube(4).png, update-interval=172800, opt-parser=true, enabled=true
 
 # 酷安去广告
-https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, tag=酷安去广告, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, tag=酷安去广告, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/kuancoolapk(1).png, update-interval=172800, opt-parser=true, enabled=true
 
 # 微信公众号去广告
-https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/WeChat.conf, tag=微信公众号去广告, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/WeChat.conf, tag=微信公众号去广告, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/wechat(1).png, update-interval=172800, opt-parser=true, enabled=true
 
 # Youtube去页面广告
 https://raw.githubusercontent.com/app2smile/rules/master/module/youtube-qx.conf, tag=Youtube去页面广告, update-interval=172800, opt-parser=true, enabled=false
 
 # 贴吧去广告
-https://github.com/app2smile/rules/raw/master/module/tieba-qx.conf, tag=贴吧去广告, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/app2smile/rules/raw/master/module/tieba-qx.conf, tag=贴吧去广告, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/mini/tieba.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 知乎去广告
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zheye/zheye.snippet, tag=知乎去广告, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zheye/zheye.snippet, tag=知乎去广告, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/zhihu.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 滴滴出行去广告[需卸载重装]
 https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Didichuxing.snippet, tag=滴滴出行去广告[需卸载重装], update-interval=172800, opt-parser=true, inserted-resource=true, enabled=true
 
 # 什么值得买去广告
-https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Smzdm.snippet, tag=什么值得买去广告@ZenmoFeiShi, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Smzdm.snippet, tag=什么值得买去广告@ZenmoFeiShi, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/mini/smzdm.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 高德地图去广告
-https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/Amap.conf, tag=高德地图去广告[需卸载重装], update-interval=172800, opt-parser=true, enabled=true
 
 # 微博国际版去广告
 https://raw.githubusercontent.com/Keywos/rule/main/script/weibo_us/wb_us.sgmodule, tag=微博国际版去广告, update-interval=172800, opt-parser=true, enabled=false
 
 # App&小程序净化合集
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/cleanup.snippet, tag=App&小程序净化合集@fmz200, update-interval=172800, opt-parser=true, enabled=false
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/cleanup.snippet, tag=App&小程序净化合集@fmz200, update-interval=172800, opt-parser=true, enabled=true
 
 # Spotify播放去广告
-https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Module/AD/Spotify.sgmodule, tag=Spotify播放去底部创建广告, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Module/AD/Spotify.sgmodule, tag=Spotify播放去底部创建广告, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/spotify(green)(1).png, update-interval=172800, opt-parser=true, enabled=true
 
 # 墨鱼去广告模块
-https://raw.githubusercontent.com/ddgksf2013/Modules/main/Adblock.sgmodule, tag=墨鱼去广告模块, update-interval=172800, opt-parser=true, enabled=true
 
 # 微博去广告
-https://raw.githubusercontent.com/neishe321/My_Scripts/refs/heads/main/Surge/Module/weibo.sgmodule, tag=微博去广告, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/neishe321/My_Scripts/refs/heads/main/Surge/Module/weibo.sgmodule, tag=微博去广告, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/weibo(1).png, update-interval=172800, opt-parser=true, enabled=true
 
 # 中国联通去广告
-https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule, tag=中国联通去广告, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule, tag=中国联通去广告, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/China_Unicom.png, update-interval=172800, opt-parser=true, enabled=true
 
 # pornhub去广告
-https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pornhub.js, tag=pornhub去广告, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pornhub.js, tag=pornhub去广告, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Pornhub_1.png, update-interval=172800, opt-parser=true, enabled=true
 
 
 # 🍿️ ————DualSubs重新合集————
 # 🍿️ DualSubs: 🎵 Spotify
-https://github.com/DualSubs/Spotify/releases/latest/download/DualSubs.Spotify.snippet, tag=🍿️ DualSubs: 🎵 Spotify, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/DualSubs/Spotify/releases/latest/download/DualSubs.Spotify.snippet, tag=🍿️ DualSubs: 🎵 Spotify, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/spotify(green)(1).png, update-interval=172800, opt-parser=true, enabled=true
 
 # 🍿️ DualSubs: 🎵 Spotify Transcripts
-https://github.com/DualSubs/Spotify/raw/main/modules/DualSubs.Spotify.Transcripts.snippet, tag=🍿️ DualSubs: 🎵 Spotify Transcripts, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/DualSubs/Spotify/raw/main/modules/DualSubs.Spotify.Transcripts.snippet, tag=🍿️ DualSubs: 🎵 Spotify Transcripts, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/spotify(green)(1).png, update-interval=172800, opt-parser=true, enabled=true
 
 # 🍿️ DualSubs: 🇳 Netflix
-https://github.com/DualSubs/Netflix/releases/latest/download/DualSubs.Netflix.snippet, tag=🍿️ DualSubs: 🇳 Netflix, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/DualSubs/Netflix/releases/latest/download/DualSubs.Netflix.snippet, tag=🍿️ DualSubs: 🇳 Netflix, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Netflix.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 📺 BiliBili: ⚙️ Enhanced
-https://github.com/BiliUniverse/Enhanced/releases/latest/download/BiliBili.Enhanced.snippet, tag=📺 BiliBili: ⚙️ Enhanced, update-interval=172800, opt-parser=false, enabled=true
+https://github.com/BiliUniverse/Enhanced/releases/latest/download/BiliBili.Enhanced.snippet, tag=📺 BiliBili: ⚙️ Enhanced, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 📺 BiliBili: 🛡️ ADBlock
-https://github.com/BiliUniverse/ADBlock/releases/latest/download/BiliBili.ADBlock.snippet, tag=📺 BiliBili: 🛡️ ADBlock, update-interval=172800, opt-parser=false, enabled=true
+https://github.com/BiliUniverse/ADBlock/releases/latest/download/BiliBili.ADBlock.snippet, tag=📺 BiliBili: 🛡️ ADBlock, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png, update-interval=172800, opt-parser=false, enabled=true
 
 
 # ————京东历史比价重写————
 # 京东比价底部曲线版
-https://raw.githubusercontent.com/githubdulong/Script/master/Surge/JD_Helper.sgmodule, tag=京东比价底部曲线版, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/githubdulong/Script/master/Surge/JD_Helper.sgmodule, tag=京东比价底部曲线版, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/mini/jd.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 京东比价曲线图
 http://script.hub/file/_start_/https://raw.githubusercontent.com/githubdulong/Script/master/jd_price.js/_end_/jd_price.sgmodule?type=loon-plugin&target=surge-module&del=true&jqEnabled=true, tag=京东比价曲线图, update-interval=172800, opt-parser=true, enabled=false
@@ -591,7 +573,7 @@ https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/one2jj.js, tag=
 https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ts.js, tag=老色批通杀vip, update-interval=172800, opt-parser=true, enabled=false
 
 # ONE
-https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/One.js, tag=ONE, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/One.js, tag=ONE, update-interval=172800, opt-parser=true, enabled=false
 
 # 65看
 65kan.snippet, tag=65看, update-interval=172800, opt-parser=true, enabled=true
@@ -603,7 +585,7 @@ https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/65kan.js, tag=
 https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/65kan.js, tag=65看, update-interval=172800, opt-parser=true, enabled=false
 
 # 鲍鱼盒子
-https://raw.githubusercontent.com/WeiGiegie/666/main/byhz.js, tag=鲍鱼盒子, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/WeiGiegie/666/main/byhz.js, tag=鲍鱼盒子, update-interval=172800, opt-parser=true, enabled=false
 
 # Mr.好色
 https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/mr.js, tag=Mr.好色, update-interval=172800, opt-parser=true, enabled=true
@@ -713,13 +695,10 @@ https://raw.githubusercontent.com/89996462/Quantumult-X/main/yx/wjhm5.js, tag=�
 https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, tag=网易云音乐会员, update-interval=172800, opt-parser=true, enabled=false
 
 # 百度网盘VIP
-https://raw.githubusercontent.com/WeiGiegie/666/main/panda.js, tag=百度网盘VIP, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/WeiGiegie/666/main/panda.js, tag=百度网盘VIP, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/baidunetdisk(1).png, update-interval=172800, opt-parser=true, enabled=true
 
 # 微信读书VIP
 https://raw.githubusercontent.com/WeiGiegie/666/main/wxds.js, tag=微信读书VIP, update-interval=172800, opt-parser=true, enabled=false
-
-# 微信读书无限卡会
-https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/txwxds.js, tag=微信读书无限卡会, update-interval=172800, opt-parser=true, enabled=true
 
 # Https抓包
 https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/https.js, tag=Https抓包, update-interval=172800, opt-parser=true, enabled=true
@@ -772,39 +751,40 @@ https://github.com/DualSubs/Universal/releases/latest/download/DualSubs.Universa
 https://github.com/DualSubs/AddOn/raw/main/modules/DualSubs.AddOn.Akamaized.snippet, tag=Akamaized, update-interval=172800, opt-parser=false, enabled=true
 
 # 微信110解锁被屏蔽的URL
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/UnblockURLinWeChat.conf, tag=微信110解锁被屏蔽的URL, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/UnblockURLinWeChat.conf, tag=微信110解锁被屏蔽的URL, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/wechat(1).png, update-interval=172800, opt-parser=true, enabled=true
 
 # 解决Google搜索人机验证
-https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Snippet/GoogleCAPTCHA.snippet, tag=解决Google搜索人机验证, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Snippet/GoogleCAPTCHA.snippet, tag=解决Google搜索人机验证, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Google.png, update-interval=172800, opt-parser=true, enabled=true
 
 # Dualsub字幕
 https://raw.githubusercontent.com/Neurogram-R/Quantumult-X/main/snippet/Dualsub.snippet, tag=Dualsub字幕, update-interval=172800, opt-parser=true, enabled=true
 
 # 奈飞剧评分
-https://raw.githubusercontent.com/Orz-3/QuantumultX/master/Netflix_ratings.conf, tag=奈飞剧评分, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/Orz-3/QuantumultX/master/Netflix_ratings.conf, tag=奈飞剧评分, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Netflix_01.png, update-interval=172800, opt-parser=true, enabled=true
 
 # B站繁体翻译 
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/Bilibili_CC.conf, tag=B站繁体翻译@ddkgsf2013, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Function/Bilibili_CC.conf, tag=B站繁体翻译@ddkgsf2013, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png, update-interval=172800, opt-parser=true, enabled=true
 
 # YouTube双语
-https://raw.githubusercontent.com/id77/QuantumultX/master/rewrite/Youtube_CC.conf, tag=YouTube双语, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/id77/QuantumultX/master/rewrite/Youtube_CC.conf, tag=YouTube双语, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/YouTube_01.png, update-interval=172800, opt-parser=true, enabled=true
 
 # TF下载解锁
-https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/TestFlightDownload.conf, tag=TF下载解锁@NobyDa, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/TestFlightDownload.conf, tag=TF下载解锁@NobyDa, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/testflight.png, update-interval=172800, opt-parser=false, enabled=true
 
 # script-hub
-https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/modules/script-hub.surge.sgmodule, tag=script-hub, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/modules/script-hub.surge.sgmodule, tag=script-hub, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Script-Hub.png, update-interval=172800, opt-parser=true, enabled=true
 
 # Sub-Store
-https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/QX.snippet, tag=Sub-Store, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/QX.snippet, tag=Sub-Store, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/SubStore-01.png, update-interval=172800, opt-parser=true, enabled=true
 
 # boxjs
-https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.quanx.conf, tag=boxjs, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.quanx.conf, tag=boxjs, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/mini/box.png, update-interval=172800, opt-parser=true, enabled=true
+
 
 [task_local]
 # ————任务签到脚本————
 # 晓晓优选每日任务
-16 7 * * * https://gist.githubusercontent.com/Sliverkiss/991a81be1fc8cf2a1937432be68f5521/raw/xxyx.js, tag=晓晓优选每日签到, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/xxyx_01.jpeg, enabled=true
+16 7 * * * https://gist.githubusercontent.com/Sliverkiss/991a81be1fc8cf2a1937432be68f5521/raw/xxyx.js, tag=晓晓优选每日签到, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/xxyx.png, enabled=true
 
 # 霸王茶姬签到
 0 0 1 1 * https://raw.githubusercontent.com/Guding88/Script/main/bawangchaji/bwcj2024.js, tag=霸王茶姬签到, enabled=true
@@ -967,9 +947,3 @@ force_sni_domain_name = false
 
 # 主机名
 hostname = -weather-data.apple.com,act.10010.com, m.client.10010.com,raw.githubusercontent.com, gist.githubusercontent.com,m.client.10010.com,agedm.org, m.agedm.org,deepseek.com, api.deepseek.com,raw.githubusercontent.com,gist.githubusercontent.com,github.com
-
-# 当使用 Quantumult X 在 M 芯片的 Mac 设备上作为局域网网关时，使用下面的参数来 跳过某些特定设备的 mitm 需求
-;skip_src_ip = 192.168.4.0, 92.168.4.51
-
-# 当多个不同的 TCP 连接（非域名类请求）的目标 IP 不同，但这些连接的 TSL 握手 SNI 字段相同时，如需跳过其中某些连接的 MitM hostname 匹配过程，可使用👇参数。
-;skip_dst_ip = 123.44.55.4
