@@ -13,7 +13,7 @@
 
 [general]
 # 节点延迟测试链接
-server_check_url = http://captive.apple.com/generate_204
+server_check_url = http://1.1.1.1/generate_204
 
 # 网络连通性测试链接
 network_check_url = http://connectivitycheck.platform.hicloud.com/generate_204
@@ -25,50 +25,32 @@ server_check_timeout = 3000
 profile_img_url = https://s1.imagehub.cc/images/2025/07/22/e2fb09ef7ad704fa486ae024ffd98c27.png
 
 # 节点页面的节点信息展示，可完整自定义展示内容与方式
-geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://github.com/KOP-XIAO/QuantumultX/raw/master/Scripts/IP_API.js
+geo_location_checker = http://ip-api.com/json/?lang=zh-CN, https://github.com/KOP-XIAO/QuantumultX/raw/master/Scripts/IP_API.js
 ;geo_location_checker = http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Quantumult/Script/geo_location_checker.js
 
-# 资源解析器，可用于自定义各类远程资源的转换，如节点，规则 𝒇𝒊𝒍𝒕𝒆𝒓，复写 𝒓𝒆𝒘𝒓𝒊𝒕𝒆 等，𝒖𝒓𝒍 地址可远程，可 本地/𝒊𝑪𝒍𝒐𝒖𝒅(𝑸𝒖𝒂𝒏𝒕𝒖𝒎𝒖𝒍𝒕 𝑿/𝑺𝒄𝒓𝒊𝒑𝒕𝒔目录）;
-resource_parser_url =https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
+# 资源解析器，可用于自定义各类远程资源的转换，如节点，规则 𝒇𝒊𝒍𝒕𝒆𝒓，复写 𝒓𝒆𝒘𝒓𝒊𝒕𝒆 等，𝒖𝒓𝒍 地址可远程，可 本地/𝒊𝑪𝒍𝒐𝒖𝒅(𝑸𝒖𝒂𝒏𝒕𝒖𝒎𝒖𝒍𝒕 𝑿/𝑺𝒄𝒓𝒊𝒑𝒕𝒔目录);
+resource_parser_url = https://git.repcz.link/raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
 
-# 下列路径将不经过𝑸𝒖𝒂𝒏𝑿的处理,设置后建议重启设备
+# 下列路径将不经过 𝑸𝒖𝒂𝒏𝑿 的处理,设置后建议重启设备
 excluded_routes = 239.255.255.250/32
 
-#　𝑼𝑫𝑷　𝑫𝒓𝒐𝒑名单
-udp_drop_list = 443
+# 𝑼𝑫𝑷　𝑫𝒓𝒐𝒑名单
+udp_drop_list = QUIC
 
-# 第一个𝒇𝒊𝒍𝒕𝒆𝒓为4𝒈模式开启规则分流，第二个𝒇𝒊𝒍𝒕𝒆𝒓为其他𝒘𝒊𝒇𝒊下开启规则分流，第三个𝒘𝒊𝒇𝒊1修改成你路由器翻墙的𝒘𝒊𝒇𝒊名开启直连模式，第四个𝒘𝒊𝒇𝒊2为你公司或者其他有路由器翻墙的𝑾𝒊𝑭𝒊名走直连
-;running_mode_trigger = filter, filter, filter:all_direct, filter: all_direct
-
-# 𝒅𝒏𝒔 𝒆𝒙𝒄𝒍𝒖𝒔𝒊𝒐𝒏 𝒍𝒊𝒔𝒕中的域名将不使用𝒇𝒂𝒌𝒆-𝒊𝒑方式. 其它域名则全部采用 𝒇𝒂𝒌𝒆-𝒊𝒑 及远程解析的模式
-dns_exclusion_list = *.lan, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, mdn.open.wo.cn, opencloud.wostore.cn, auth.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
+# 𝒅𝒏𝒔 𝒆𝒙𝒄𝒍𝒖𝒔𝒊𝒐𝒏 𝒍𝒊𝒔𝒕 中的域名将不使用 𝒇𝒂𝒌𝒆-𝒊𝒑 方式. 其它域名则全部采用 𝒇𝒂𝒌𝒆-𝒊𝒑 及远程解析的模式
+dns_exclusion_list = *.lan, *.direct, *.cmpassport.com, id6.me, open.e.189.cn, mdn.open.wo.cn, opencloud.wostore.cn, auth.wosms.cn, *.10099.com.cn, *.msftconnecttest.com, *.msftncsi.com, lancache.steamcontent.com
 
 # 节点不支持𝑼𝑫𝑷转发时返回的策略：𝒅𝒊𝒓𝒆𝒄𝒕/𝒓𝒆𝒋𝒆𝒄𝒕/节点
 fallback_udp_policy = reject
 
-
 [dns]
-;circumvent-ipv4-answer = 127.0.0.1, 0.0.0.0
-;circumvent-ipv6-answer = ::
-;prefer-doh3
-no-system
 ;no-ipv6
-server = 223.5.5.5
-server = 114.114.114.114
-server = 119.29.29.29
-server=[2400:3200:baba::1]
-server=[2400:3200::1]
-server=[2402:4e00::]
-;server = 8.8.8.8
+no-system
+server= 223.5.5.5
+server= 119.29.29.29
 
-
-# 使用 𝑫𝒐𝑯3，𝑫𝑵𝑺 𝒐𝒗𝒆𝒓 𝑯𝑻𝑻𝑷/3，须开启下面参数
-
-# 指定 𝒅𝒐𝒉 服务，则上面的一般 𝒅𝒏𝒔 解析均失效
-;doh-server = https://120.53.53.53/dns-query, https://223.5.5.5/dns-query
-
-# 如指定了 𝑫𝒐𝑸 服务，则 𝑫𝒐𝑯 以及其它 𝒅𝒏𝒔解析均失效
-;doq-server quic://223.5.5.5, quic://223.6.6.6
+# 𝑨𝒑𝒑 𝑺𝒕𝒐𝒓𝒆 下载请求解析 金山𝑪𝑫𝑵
+alias = /iosapps.itunes.apple.com/iosapps.itunes.apple.com.download.ks-cdn.com
 
 
 [policy]
@@ -127,9 +109,6 @@ url-latency-benchmark=🇷🇺俄罗斯𝑩, server-tag-regex=俄罗斯, check-i
 url-latency-benchmark=欧洲𝑩, server-tag-regex=巴勒莫|马德里|巴勒鲁普|巴黎|法兰克福|雅典|圣地亚哥|奥斯陆|斯德哥尔摩|华沙|日内瓦|图苏拉, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/European_Union.png
 
 # ————策略组位置————
-# 𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊空降助手策略
-static={{{空降助手策略}}}, direct, proxy, reject, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BiliBili.png
-
 # 🕹手动切换
 static=🕹手动切换, direct, server-tag-regex=., img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/quanx.png
 
@@ -225,176 +204,125 @@ static=♻️𝑭𝑰𝑵𝑨𝑳, 🕹手动切换, 🇭🇰香港𝑨, 🇺�
 [filter_remote]
 # ————去广告分流————
 # 毒奶网页去广告
-https://limbopro.com/Adblock4limbo.list, tag=毒奶网页去广告, force-policy=reject, update-interval=172800, opt-parser=false, enabled=true
+https://limbopro.com/Adblock4limbo.list, tag=毒奶网页去广告, force-policy=reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝑹𝒆𝒋𝒆𝒌𝒕分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Reject.list, tag=𝑹𝒆𝒋𝒆𝒌𝒕, force-policy=reject, update-interval=172800, opt-parser=false, enabled=true
-
-# 𝑨𝑫_𝑫𝒊𝑫𝒊𝑪𝒉𝒖𝑿𝒊𝒏𝒈分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/DDCX.snippet, tag=𝑨𝑫_𝑫𝒊𝑫𝒊𝑪𝒉𝒖𝑿𝒊𝒏𝒈, force-policy=reject, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=true
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Reject.list, tag=𝑹𝒆𝒋𝒆𝒌𝒕, force-policy=reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AdBlack.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝑨𝒅𝒗𝒆𝒓𝒕𝒊𝒔𝒊𝒏𝒈去广告
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Advertising/Advertising.list, tag=𝑨𝒅𝒗𝒆𝒓𝒕𝒊𝒔𝒊𝒏𝒈去广告, force-policy=reject, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Advertising/Advertising.list, tag=𝑨𝒅𝒗𝒆𝒓𝒕𝒊𝒔𝒊𝒏𝒈去广告, force-policy=reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 反劫持
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Hijacking/Hijacking.list, tag=反劫持, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Hijacking/Hijacking.list, tag=反劫持, force-policy=reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AdBlack.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 隐私保护
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list, tag=隐私保护, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list, tag=隐私保护, force-policy=reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 系统禁止更新分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/SystemOTA/SystemOTA.list, tag=𝐢𝐨𝐬系统禁止更新, force-policy=reject, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/SystemOTA/SystemOTA.list, tag=𝐢𝐨𝐬系统禁止更新, force-policy=reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_Update.png, update-interval=172800, opt-parser=true, enabled=true
 
 
 # ————国外服务————
 # 𝑮𝒐𝒐𝒈𝒍𝒆（谷歌服务分流）
-https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Google/Google.list, tag=𝑮𝒐𝒐𝒈𝒍𝒆, force-policy=🌏𝑮𝒐𝒐𝒈𝒍𝒆, update-interval=172800, opt-parser=true, enabled=true
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Google/Google.list, tag=𝑮𝒐𝒐𝒈𝒍𝒆, force-policy=🌏𝑮𝒐𝒐𝒈𝒍𝒆, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Microsoft.list, tag=𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕, force-policy=💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕, update-interval=172800, opt-parser=false, enabled=true
-
-# 𝑮𝒊𝒕𝑯𝒖𝒃分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Github.list, tag=𝑮𝒊𝒕𝑯𝒖𝒃, force-policy=💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕, update-interval=172800, opt-parser=false, enabled=true
-
-# 𝑶𝒏𝒆𝑫𝒓𝒊𝒗𝒆分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/OneDrive.list, tag=𝑶𝒏𝒆𝑫𝒓𝒊𝒗𝒆, force-policy=💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕, update-interval=172800, opt-parser=false, enabled=true
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Microsoft.list, tag=𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕, force-policy=💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/microsoft.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝑨𝒑𝒑𝒍𝒆（苹果服务分流）
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Apple.list, tag=𝑨𝒑𝒑𝒍𝒆, force-policy=🍎𝑨𝒑𝒑𝒍𝒆, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Apple.list, tag=𝑨𝒑𝒑𝒍𝒆, force-policy=🍎𝑨𝒑𝒑𝒍𝒆, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/apple(1).png, update-interval=172800, opt-parser=true, enabled=true
 
 
 # ————游戏平台与AI工具插画分流————
 # 𝑷𝒊𝒙𝒊𝒗分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Pixiv/Pixiv.list, tag=𝑷𝒊𝒙𝒊𝒗, force-policy=👾𝑷𝒊𝒙𝒊𝒗, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Pixiv/Pixiv.list, tag=𝑷𝒊𝒙𝒊𝒗, force-policy=👾𝑷𝒊𝒙𝒊𝒗, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/pixiv.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Pinterest/Pinterest.list, tag=𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕, force-policy=👾𝑷𝒊𝒙𝒊𝒗, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Pinterest/Pinterest.list, tag=𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕, force-policy=👾𝑷𝒊𝒙𝒊𝒗, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/Pinterest.png, update-interval=172800, opt-parser=true, enabled=true
+
+# 𝑮𝒊𝒕𝑯𝒖𝒃分流
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Github.list, tag=𝑮𝒊𝒕𝑯𝒖𝒃, force-policy=💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/github.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝑪𝒉𝒂𝒕𝑮𝑷𝑻分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list, tag=𝑪𝒉𝒂𝒕𝑮𝑷𝑻, force-policy=🤖𝑪𝒉𝒂𝒕𝑮𝑷𝑻, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list, tag=𝑪𝒉𝒂𝒕𝑮𝑷𝑻, force-policy=🤖𝑨𝑰, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/chatGPT-green.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 𝐀𝐈分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/AI.list, tag=𝐀𝐈, force-policy=🤖𝑪𝒉𝒂𝒕𝑮𝑷𝑻, update-interval=172800, opt-parser=false, enabled=true
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/AI.list, tag=𝐀𝐈, force-policy=🤖𝑨𝑰, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/chatgpt(balck).png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝑺𝒕𝒆𝒂𝒎分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Steam/Steam.list, tag=𝑺𝒕𝒆𝒂𝒎, force-policy=🎮𝑺𝒕𝒆𝒂𝒎, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Steam/Steam.list, tag=𝑺𝒕𝒆𝒂𝒎, force-policy=🎮𝑺𝒕𝒆𝒂𝒎, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/steam(1).png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝑬𝒑𝒊𝒄分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Epic/Epic.list, tag=𝑬𝒑𝒊𝒄, force-policy=🎮𝑺𝒕𝒆𝒂𝒎, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Epic/Epic.list, tag=𝑬𝒑𝒊𝒄, force-policy=🎮𝑺𝒕𝒆𝒂𝒎, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/mini/piao.png, update-interval=172800, opt-parser=false, enabled=true
 
 
 # ————国外社交分流————
 # 𝑹𝒆𝒅𝒅𝒊𝒕分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Reddit/Reddit.list, tag=𝑹𝒆𝒅𝒅𝒊𝒕, force-policy=📖𝑹𝒆𝒅𝒅𝒊𝒕, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Reddit/Reddit.list, tag=𝑹𝒆𝒅𝒅𝒊𝒕, force-policy=📖𝑹𝒆𝒅𝒅𝒊𝒕, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/reddit.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Telegram.list, tag=𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎, force-policy=📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Telegram.list, tag=𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎, force-policy=📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/telegram.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Twitter.list, tag=𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿), force-policy=📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿), update-interval=172800, opt-parser=false, enabled=true
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Twitter.list, tag=𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿), force-policy=📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿), img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Twitter.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Instagram/Instagram.list, tag=𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎, force-policy=📷𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎, update-interval=172800, opt-parser=true, enabled=true
-
-# 𝑭𝒂𝒄𝒆𝒃𝒐𝒐𝒌分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Facebook/Facebook.list, tag=𝑭𝒂𝒄𝒆𝒃𝒐𝒐𝒌, force-policy=📷𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Instagram/Instagram.list, tag=𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎, force-policy=📷𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Instagram.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 𝑫𝒊𝒔𝒄𝒐𝒓𝒅分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Discord/Discord.list, tag=𝑫𝒊𝒔𝒄𝒐𝒓𝒅, force-policy=🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Discord/Discord.list, tag=𝑫𝒊𝒔𝒄𝒐𝒓𝒅, force-policy=🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/discord(2).png, update-interval=172800, opt-parser=true, enabled=true
 
 
 # ————国外流媒体影音短视频分流————
 # 𝑬𝒎𝒃𝒚分流
-https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Emby/Emby.list, tag=𝑬𝒎𝒃𝒚, force-policy=🎞𝑬𝒎𝒃𝒚, update-interval=172800, opt-parser=false, enabled=true
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Emby/Emby.list, tag=𝑬𝒎𝒃𝒚, force-policy=🎞𝑬𝒎𝒃𝒚, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Emby.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝐓𝐕𝐁分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TVB/TVB.list, tag=𝑻𝑽𝑩, force-policy=♻️𝑭𝑰𝑵𝑨𝑳, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/TVB/TVB.list, tag=𝑻𝑽𝑩, force-policy=♻️𝑭𝑰𝑵𝑨𝑳, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/TVB.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝑻𝒘𝒊𝒕𝒄𝒉分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Twitch/Twitch.list, tag=𝑻𝒘𝒊𝒕𝒄𝒉, force-policy=🖥️𝑻𝒘𝒊𝒕𝒄𝒉, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Twitch/Twitch.list, tag=𝑻𝒘𝒊𝒕𝒄𝒉, force-policy=🖥️𝑻𝒘𝒊𝒕𝒄𝒉, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/twitch.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝒀𝒐𝒖𝑻𝒖𝒃𝒆分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/YouTube.list, tag=𝒀𝒐𝒖𝑻𝒖𝒃𝒆, force-policy=📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/YouTube.list, tag=𝒀𝒐𝒖𝑻𝒖𝒃𝒆, force-policy=📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/youtube(4).png, update-interval=172800, opt-parser=true, enabled=true
 
 # 𝑺𝒑𝒐𝒕𝒊𝒇𝒚分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Spotify.list, tag=𝑺𝒑𝒐𝒕𝒊𝒇𝒚, force-policy=🎧𝑺𝒑𝒐𝒕𝒊𝒇𝒚, update-interval=172800, opt-parser=false, enabled=true
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Spotify.list, tag=𝑺𝒑𝒐𝒕𝒊𝒇𝒚, force-policy=🎧𝑺𝒑𝒐𝒕𝒊𝒇𝒚, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/spotify(green)(1).png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝑻𝒊𝒌𝑻𝒐𝒌分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/TikTok.list, tag=𝑻𝒊𝒌𝑻𝒐𝒌, force-policy=📽𝑻𝒊𝒌𝑻𝒐𝒌, update-interval=172800, opt-parser=true, enabled=true
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/TikTok.list, tag=𝑻𝒊𝒌𝑻𝒐𝒌, force-policy=📽𝑻𝒊𝒌𝑻𝒐𝒌, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Tiktok_07.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 𝑩𝒂𝒉𝒂𝒎𝒖𝒕（动画疯）分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Bahamut/Bahamut.list, tag=𝑩𝒂𝒉𝒂𝒎𝒖𝒕（动画疯）, force-policy=🧸𝑩𝒂𝒉𝒂𝒎𝒖𝒕, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Bahamut/Bahamut.list, tag=𝑩𝒂𝒉𝒂𝒎𝒖𝒕（动画疯）, force-policy=🧸𝑩𝒂𝒉𝒂𝒎𝒖𝒕, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/bahamute.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 𝑨𝒑𝒑𝒍𝒆𝑻𝑽
-https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/AppleTV/AppleTV.list, tag=𝑨𝒑𝒑𝒍𝒆𝑻𝑽, force-policy=💽𝑨𝒑𝒑𝒍𝒆𝑻𝑽, update-interval=172800, opt-parser=false, enabled=true
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/AppleTV/AppleTV.list, tag=𝑨𝒑𝒑𝒍𝒆𝑻𝑽, force-policy=💽𝑨𝒑𝒑𝒍𝒆𝑻𝑽, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/color/appletv.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝑵𝒆𝒕𝒇𝒍𝒊𝒙分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Netflix.list, tag=𝑵𝒆𝒕𝒇𝒍𝒊𝒙, force-policy=🎥𝑵𝒆𝒕𝒇𝒍𝒊𝒙, update-interval=172800, opt-parser=false, enabled=true
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Netflix.list, tag=𝑵𝒆𝒕𝒇𝒍𝒊𝒙, force-policy=🎥𝑵𝒆𝒕𝒇𝒍𝒊𝒙, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Netflix_01.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝑫𝒊𝒔𝒏𝒆𝒚+分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Disney.list, tag=𝑫𝒊𝒔𝒏𝒆𝒚+, force-policy=🎬𝑫𝒊𝒔𝒏𝒆𝒚+, update-interval=172800, opt-parser=false, enabled=true
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Disney.list, tag=𝑫𝒊𝒔𝒏𝒆𝒚+, force-policy=🎬𝑫𝒊𝒔𝒏𝒆𝒚+, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Disney+_1.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝑷𝒓𝒊𝒎𝒆𝑽𝒊𝒅𝒆𝒐分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/PrimeVideo.list, tag=𝑷𝒓𝒊𝒎𝒆𝑽𝒊𝒅𝒆𝒐, force-policy=🎬𝑫𝒊𝒔𝒏𝒆𝒚+, update-interval=172800, opt-parser=false, enabled=true
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/PrimeVideo.list, tag=𝑷𝒓𝒊𝒎𝒆𝑽𝒊𝒅𝒆𝒐, force-policy=🎬𝑫𝒊𝒔𝒏𝒆𝒚+, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/Prime_Video_1.png, update-interval=172800, opt-parser=false, enabled=true
 
 # 𝑯𝑩𝑶分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/HBO.list, tag=𝑯𝑩𝑶, force-policy=💿𝑯𝑩𝑶, update-interval=172800, opt-parser=false, enabled=true
-
-# 𝑨𝒑𝒑𝒍𝒆𝑷𝒓𝒐𝒙𝒚分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/AppleProxy.list, tag=𝑨𝒑𝒑𝒍𝒆𝑷𝒓𝒐𝒙𝒚, force-policy=🍎𝑨𝒑𝒑𝒍𝒆, update-interval=172800, opt-parser=false, enabled=true
+https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/HBO.list, tag=𝑯𝑩𝑶, force-policy=💿𝑯𝑩𝑶, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/icon/qure/color/HBO_Max.png, update-interval=172800, opt-parser=false, enabled=true
 
 
 # ————国内App分流————
-# 12306分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/12306/12306.list, tag=12306, force-policy=direct, update-interval=172800, opt-parser=false, enabled=false
-
-# 招商银行分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/CMB/CMB.list, tag=招商银行, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-
-# 京东分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/JingDong/JingDong.list, tag=京东, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-
-# 美图分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MeiTu/MeiTu.list, tag=美图, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-
-# 中国联通分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/ChinaUnicom/ChinaUnicom.list, tag=中国联通, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-
-# 美团分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/MeiTuan/MeiTuan.list, tag=美团, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-
-# 高德地图分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/GaoDe/GaoDe.list, tag=高德地图, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-
-# 知乎分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Zhihu/Zhihu.list, tag=知乎, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-
-# 微信分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list, tag=微信, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-
-# 迅雷分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Xunlei/Xunlei.list, tag=迅雷, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
-
-# 百度分流
-https://whatshub.top/rule/Baidu.list, tag=百度, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
-
-# 网易云音乐分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/NetEaseMusic/NetEaseMusic.list, tag=网易云音乐, force-policy=direct, update-interval=172800, opt-parser=true, enabled=false
-
 # 𝑩𝒊𝒍𝒊𝒃𝒊𝒍𝒊（哔哩哔哩分流）
-https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/BiliBili/BiliBili.list, tag=𝒃𝒊𝒍𝒊𝒃𝒊𝒍𝒊（哔哩哔哩）, force-policy=📺𝒃𝒊𝒍𝒊𝒃𝒊𝒍𝒊, update-interval=172800, opt-parser=true, enabled=true
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/BiliBili/BiliBili.list, tag=𝒃𝒊𝒍𝒊𝒃𝒊𝒍𝒊（哔哩哔哩）, force-policy=📺𝒃𝒊𝒍𝒊𝒃𝒊𝒍𝒊, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 𝑾𝒆𝒊𝒃𝒐（微博分流）
-https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Weibo/Weibo.list, tag=𝑾𝒆𝒊𝒃𝒐（微博）, force-policy=🚾𝑾𝒆𝒊𝒃𝒐, update-interval=172800, opt-parser=false, enabled=true
+https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/QuantumultX/Weibo/Weibo.list, tag=𝑾𝒆𝒊𝒃𝒐（微博）, force-policy=🚾𝑾𝒆𝒊𝒃𝒐, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/weibo(1).png, update-interval=172800, opt-parser=false, enabled=true
 
 
-# ————国内直连网络分流————
-# 𝑳𝑨𝑵
-FILTER_LAN, tag=𝑳𝑨𝑵, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
+FILTER_LAN, tag=𝑳𝑨𝑵, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
 
-# 国内IP直连网络
-FILTER_REGION, tag=𝑪𝑵, force-policy=direct, update-interval=172800, opt-parser=true, enabled=true
 
+FILTER_REGION, tag=𝑪𝑵, force-policy=direct, update-interval=172800, opt-parser=false, enabled=true
 
 [filter_local]
 # ————本地分流————
