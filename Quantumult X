@@ -54,8 +54,6 @@ alias = /iosapps.itunes.apple.com/iosapps.itunes.apple.com.download.ks-cdn.com
 
 
 [policy]
-
-
 # ————节点信息策略自动选择————
 # 🇭🇰香港𝑨
 url-latency-benchmark=🇭🇰香港𝑨, server-tag-regex=🇭🇰香港, check-interval=600, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
