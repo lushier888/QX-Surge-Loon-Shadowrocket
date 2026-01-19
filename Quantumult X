@@ -236,7 +236,7 @@ https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Apple.list, tag=𝑨𝒑�
 
 # ————游戏平台与AI工具插画分流————
 # 𝑷𝒊𝒙𝒊𝒗分流
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Pixiv/Pixiv.list, tag=𝑷𝒊𝒙𝒊𝒗, force-policy=👾𝑷𝒊𝒙𝒊𝒗, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/pixiv.png, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Pixiv/Pixiv.list, tag=𝑷𝒊𝒙𝒊𝒗, force-policy=🍄𝑷𝒊𝒙𝒊𝒗, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/pixiv.png, update-interval=172800, opt-parser=true, enabled=true
 
 # 𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕分流
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Pinterest/Pinterest.list, tag=𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕, force-policy=👾𝑷𝒊𝒙𝒊𝒗, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/Pinterest.png, update-interval=172800, opt-parser=true, enabled=true
