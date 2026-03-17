@@ -274,6 +274,9 @@ http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/
 小狐狸
 http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/xiaohuli.js/_end_/xiaohuli.sgmodule?n=%E5%B0%8F%E7%8B%90%E7%8B%B8%2B%E8%A7%A3%E9%94%81%E4%BC%9A%E5%91%98%E8%A7%86%E9%A2%91&type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
 
+xv暗网
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/xv.sgmodule
+
 
 以下为对应的色站地址
 
@@ -389,6 +392,8 @@ https://18akmanhua.com/
 91porna
 https://91porna.com/
 
+xv暗网
+https://d18psf29jvwgay.cloudfront.net
 
 
 YDM系列   #cloudfront AV 🔞
@@ -445,6 +450,9 @@ https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ydm.sgmodule
 # ————LSP破解重写————
 以下收集的Quantumult X色色重写，其它代理用此重写请复制重写链接使用scripthub转换
 https://scripthub.vercel.app/
+
+xv暗网
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/xv.js
 
 小狐狸
 https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/xiaohuli.js
