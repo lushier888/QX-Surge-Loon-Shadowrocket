@@ -280,6 +280,9 @@ https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/xv.sgmodule
 
 以下为对应的色站地址
 
+xv暗网
+https://d18psf29jvwgay.cloudfront.net
+
 小狐狸
 https://06.xhlld076.shop/
 
