@@ -311,8 +311,8 @@ https://xa1jgfbdlwf2ncxq.413373.xyz:8283/home?channel=gj-41
 91av
 https://leaf6w.com/?channel=-1&index=1
 
-妻子友社，请用老色批通用脚本
-https://p2.yzuncidv.org:2096/
+妻友，请用老色批通用脚本
+https://p3.qy01b.net/?qypjb_aff=XC5G
 
 快手萝莉
 https://dnt92ffcqr0xu.cloudfront.net/loli
