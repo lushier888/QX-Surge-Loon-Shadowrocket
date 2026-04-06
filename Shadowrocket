@@ -138,20 +138,6 @@ update-url = https://whatshub.top/config/shadowrocket_basic.conf
 🇰🇷 韩国𝑩 = url-test,,use=true,interval=600,tolerance=100,timeout=5,url=http://www.gstatic.com/generate_204,policy-regex-filter=韩国
 
 
-# 该配置策略组可实现特定规则走指定策略或节点；如想让netflix走新加坡节点 那么可以在相应代理分组里勾选新加坡节点；
-# 更改代理分组策略的步骤(以🎥 Netflix策略为例)：点击界面底部配置--点击配置文件"ⓘ"符号---代理分组---点击🎥 Netflix策略的"ⓘ"符号---勾选🇸🇬 新加坡节点--保存。(新版小火箭只需首页下拉即可调出代理分组界面）
-
-# ♻️ ALL策略表示对所有节点进行测速并选择延迟最低的节点；测速间隔600秒，容差100ms；
-# 若不想用某些特定节点 可以通过正则排除 例：♻️ ALL = url-test,url=http://www.gstatic.com/generate_204,interval=600,tolerance=100,timeout=5,policy-regex-filter=^(?!.*?(国内|限速|试用)).*$
-# 也可以让指定机场参与测速 比如你的订阅连接的备注名是 YBNET 就套用以下示例：（新版已支持订阅选择）
-# 🚀 策略选择 = select,✈️ 机场选择,🇨🇳 台湾节点,🇬🇧 英国节点,🇯🇵 日本节点,🇭🇰 香港节点,🇸🇬 新加坡节点,🇺🇸 美国节点,🇰🇷 韩国节点,🇷🇺 俄罗斯节点,🇮🇳 印度,🇩🇪 德国,🇨🇦 加拿大,interval=86400,timeout=5,select=0,url=http://www.gstatic.com/generate_204
-# ✈️ 机场选择 = url-test,YBNET,interval=600,tolerance=0,timeout=3,select=0,url=http://www.gstatic.com/generate_204
-
-
-
-
-# 以下国家地区节点筛选 请自行根据机场节点名称修改正则
-
 [Rule]
 # ————去广告分流规则————
 # Advertising去广告
