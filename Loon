@@ -427,10 +427,10 @@ https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/Weibo/
 https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Loon/China/China.list, policy=DIRECT, tag=全球直连, enabled=true
 
 # 𝑳𝑨𝑵（兜底请求）
-https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER, policy=DIRECT, tag=𝑳𝑨𝑵, enabled=true
+https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER.lsr, policy=DIRECT, tag=𝑳𝑨𝑵, enabled=true
 
 # 𝑪𝑵 𝑹𝑬𝑮𝑰𝑶𝑵
-https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER, policy=DIRECT, tag=𝑪𝑵 𝑹𝑬𝑮𝑰𝑶𝑵, enabled=true
+https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER.lsr, policy=DIRECT, tag=𝑪𝑵 𝑹𝑬𝑮𝑰𝑶𝑵, enabled=true
 
 [Host]
 
