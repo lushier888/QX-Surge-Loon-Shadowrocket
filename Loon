@@ -10,7 +10,7 @@
 # DNS泄露测试地址 https://ip.net.coffee/dns/
 
 [General]
-# ipv6（已设置开启不泄露DNS）
+# 𝑰𝑷𝒗6（已设置开启不泄露𝑫𝑵𝑺）
 ipv6-vif = auto
 ip-mode = prefer-v6
 
@@ -30,7 +30,7 @@ ipv6 = false
 # 𝑮𝒆𝒐𝑰𝑷 数据库
 geoip-url = https://github.com/Masaiki/GeoIP2-CN/raw/release/Country.mmdb
 
-# 𝑫𝑵𝑺（防止𝐃𝐍𝐒泄露）
+# 𝑫𝑵𝑺（防止(𝑫𝑵𝑺泄露）
 dns-server = system,119.29.29.29,1.12.12.12,1.1.1.1,8.8.8.8
 
 # 𝑫𝒐𝑯
