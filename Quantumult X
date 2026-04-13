@@ -252,9 +252,6 @@ https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Github.list, tag=𝑮𝒊�
 # 𝑪𝒉𝒂𝒕𝑮𝑷𝑻分流
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list, tag=𝑪𝒉𝒂𝒕𝑮𝑷𝑻, force-policy=🤖𝑨𝑰, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/chatGPT-green.png, update-interval=172800, opt-parser=true, enabled=true
 
-# 𝐀𝐈分流
-https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/AI.list, tag=𝐀𝐈, force-policy=🤖𝑨𝑰, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/chatgpt(balck).png, update-interval=172800, opt-parser=false, enabled=true
-
 # 𝑺𝒕𝒆𝒂𝒎分流
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Steam/Steam.list, tag=𝑺𝒕𝒆𝒂𝒎, force-policy=🎮𝑺𝒕𝒆𝒂𝒎, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/steam(1).png, update-interval=172800, opt-parser=false, enabled=true
 
