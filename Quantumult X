@@ -8,7 +8,8 @@
 # 图标库收集地址https://qx.atlucky.me/shi-yong-fang-fa/zi-ding-yi-tu-biao#xia-mian-shi-yi-xie-shou-ji-de-tu-biao-ku
 # 色色重写对应地址请参考 https://github.com/lushier888/QX-Surge-Loon-Shadowrocket
 # 花体英文字体 https://www.iamwawa.cn/fontchanger.html
-# 最后更新时间 2026.1.17 时间：09：29
+# DNS泄露测试地址 https://ip.net.coffee/dns/
+# 最后更新时间 2026.4.14 时间：09：29
 
 
 [general]
@@ -46,8 +47,12 @@ fallback_udp_policy = reject
 [dns]
 ;no-ipv6
 no-system
-server= 223.5.5.5
-server= 119.29.29.29
+# 𝐃𝐍𝐒 （防止𝐃𝐍𝐒泄露） 
+server = 1.12.12.12
+server = 119.29.29.29
+
+# 指定使用腾讯和国外加密
+doh-server = https://120.53.53.53/dns-query, https://1.1.1.1/dns-query, https://8.8.8.8/dns-query
 
 # 𝑨𝒑𝒑 𝑺𝒕𝒐𝒓𝒆 下载请求解析 金山𝑪𝑫𝑵
 alias = /iosapps.itunes.apple.com/iosapps.itunes.apple.com.download.ks-cdn.com
