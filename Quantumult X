@@ -14,7 +14,7 @@
 
 [general]
 # 节点延迟测试链接
-server_check_url = http://1.1.1.1/generate_204
+server_check_url = http://captive.apple.com/generate_204
 
 # 网络连通性测试链接
 network_check_url = http://connectivitycheck.platform.hicloud.com/generate_204
@@ -26,37 +26,39 @@ server_check_timeout = 3000
 profile_img_url = https://s1.imagehub.cc/images/2025/07/22/e2fb09ef7ad704fa486ae024ffd98c27.png
 
 # 节点页面的节点信息展示，可完整自定义展示内容与方式
-geo_location_checker = http://ip-api.com/json/?lang=zh-CN, https://github.com/KOP-XIAO/QuantumultX/raw/master/Scripts/IP_API.js
+geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://github.com/KOP-XIAO/QuantumultX/raw/master/Scripts/IP_API.js
 ;geo_location_checker = http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Quantumult/Script/geo_location_checker.js
 
-# 资源解析器，可用于自定义各类远程资源的转换，如节点，规则 𝒇𝒊𝒍𝒕𝒆𝒓，复写 𝒓𝒆𝒘𝒓𝒊𝒕𝒆 等，𝒖𝒓𝒍 地址可远程，可 本地/𝒊𝑪𝒍𝒐𝒖𝒅(𝑸𝒖𝒂𝒏𝒕𝒖𝒎𝒖𝒍𝒕 𝑿/𝑺𝒄𝒓𝒊𝒑𝒕𝒔目录);
-resource_parser_url = https://git.repcz.link/raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
+# 资源解析器，可用于自定义各类远程资源的转换，如节点，规则 𝒇𝒊𝒍𝒕𝒆𝒓，复写 𝒓𝒆𝒘𝒓𝒊𝒕𝒆 等，𝒖𝒓𝒍 地址可远程，可 本地/𝒊𝑪𝒍𝒐𝒖𝒅(𝑸𝒖𝒂𝒏𝒕𝒖𝒎𝒖𝒍𝒕 𝑿/𝑺𝒄𝒓𝒊𝒑𝒕𝒔目录）
+resource_parser_url =https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
 
-# 下列路径将不经过 𝑸𝒖𝒂𝒏𝑿 的处理,设置后建议重启设备
+# 下列路径将不经过𝑸𝒖𝒂𝒏𝑿的处理,设置后建议重启设备
 excluded_routes = 239.255.255.250/32
 
-# 𝑼𝑫𝑷　𝑫𝒓𝒐𝒑名单
-udp_drop_list = QUIC
+#　𝑼𝑫𝑷　𝑫𝒓𝒐𝒑名单
+udp_drop_list = 443
+# 第一个𝒇𝒊𝒍𝒕𝒆𝒓为4𝒈模式开启规则分流，第二个𝒇𝒊𝒍𝒕𝒆𝒓为其他𝒘𝒊𝒇𝒊下开启规则分流，第三个𝒘𝒊𝒇𝒊1修改成你路由器翻墙的𝒘𝒊𝒇𝒊名开启直连模式，第四个𝒘𝒊𝒇𝒊2为你公司或者其他有路由器翻墙的𝑾𝒊𝑭𝒊名走直连
+# 默认关闭根据𝒘𝒊𝒇𝒊切换模式，如需开启，删除下方的";"即可
+;running_mode_trigger = filter, filter, filter:all_direct, filter: all_direct
 
-# 𝒅𝒏𝒔 𝒆𝒙𝒄𝒍𝒖𝒔𝒊𝒐𝒏 𝒍𝒊𝒔𝒕 中的域名将不使用 𝒇𝒂𝒌𝒆-𝒊𝒑 方式. 其它域名则全部采用 𝒇𝒂𝒌𝒆-𝒊𝒑 及远程解析的模式
-dns_exclusion_list = *.lan, *.direct, *.cmpassport.com, id6.me, open.e.189.cn, mdn.open.wo.cn, opencloud.wostore.cn, auth.wosms.cn, *.10099.com.cn, *.msftconnecttest.com, *.msftncsi.com, lancache.steamcontent.com
+# 𝒅𝒏𝒔 𝒆𝒙𝒄𝒍𝒖𝒔𝒊𝒐𝒏 𝒍𝒊𝒔𝒕中的域名将不使用𝒇𝒂𝒌𝒆-𝒊𝒑方式. 其它域名则全部采用 𝒇𝒂𝒌𝒆-𝒊𝒑 及远程解析的模式
+dns_exclusion_list = *.lan, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, mdn.open.wo.cn, opencloud.wostore.cn, auth.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
 
 # 节点不支持𝑼𝑫𝑷转发时返回的策略：𝒅𝒊𝒓𝒆𝒄𝒕/𝒓𝒆𝒋𝒆𝒄𝒕/节点
 fallback_udp_policy = reject
 
 [dns]
-;no-ipv6
+;circumvent-ipv4-answer = 127.0.0.1, 0.0.0.0
+;circumvent-ipv6-answer = ::
+;prefer-doh3
 no-system
+no-ipv6
 # 𝐃𝐍𝐒 （防止𝐃𝐍𝐒泄露） 
 server = 1.12.12.12
 server = 119.29.29.29
 
-# 指定使用腾讯和国外加密
+# 𝑫𝑶𝑯
 doh-server = https://120.53.53.53/dns-query, https://1.1.1.1/dns-query, https://8.8.8.8/dns-query
-
-# 𝑨𝒑𝒑 𝑺𝒕𝒐𝒓𝒆 下载请求解析 金山𝑪𝑫𝑵
-alias = /iosapps.itunes.apple.com/iosapps.itunes.apple.com.download.ks-cdn.com
-
 
 [policy]
 # ————节点信息策略自动选择————
