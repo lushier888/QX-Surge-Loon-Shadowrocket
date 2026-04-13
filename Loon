@@ -3,13 +3,14 @@
 # 节点为本人自用机场节点筛选，若与你机场不一致请自行到
   配置筛选节点更改（包含的订阅）选择为自己的机场
 # 节点策略组使用AB分开,AB代表使用两个机场,以此类推
-# 更新时间: 2025.12.27 时间 07:41
+# 更新时间: 2025.04.14 时间 21:41
 # 花体英文字体 https://www.iamwawa.cn/fontchanger.html
 # 更多的插件可以前往此处安装 https://pluginhub.kelee.one
 # 色色插件对应地址请参考 https://github.com/lushier888/QX-Surge-Loon-Shadowrocket
-
+# DNS泄露测试地址 https://ip.net.coffee/dns/
 
 [General]
+# ipv6（已设置开启不泄露DNS）
 ipv6-vif = auto
 ip-mode = prefer-v6
 
@@ -29,11 +30,14 @@ ipv6 = false
 # 𝑮𝒆𝒐𝑰𝑷 数据库
 geoip-url = https://github.com/Masaiki/GeoIP2-CN/raw/release/Country.mmdb
 
-# 𝑫𝑵𝑺
-dns-server = system,119.29.29.29,223.5.5.5,162.159.195.1
+# 𝑫𝑵𝑺（防止𝐃𝐍𝐒泄露）
+dns-server = system,119.29.29.29,1.12.12.12,1.1.1.1,8.8.8.8
 
 # 𝑫𝒐𝑯
-doh-server = https://dns.alidns.com/dns-query,https://doh.pub/dns-query
+doh-server = https://doh.pub/dns-query
+
+# 劫持
+hijack-dns = *:53
 
 # 跳过代理
 skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,17.0.0.0/8,*.local,*.crashlytics.com,seed-sequoia.siri.apple.com,localhost,sequoia.apple.com,www.abchina.com.cn
