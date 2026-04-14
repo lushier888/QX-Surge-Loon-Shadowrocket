@@ -22,7 +22,7 @@ Surge模块仓库
 https://surge.qingr.moe/
 
 Loon插件仓库
-https://pluginhub.kelee.one/
+https://hub.kelee.one/
 
 
 以下收集一些Surge、Loon、Quantumult X通用订阅图标合集
