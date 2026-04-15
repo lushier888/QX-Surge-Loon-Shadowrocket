@@ -3,7 +3,7 @@
 主用Surge
 
 不写Egern配置如果想用就使用下面的Surge配置或者Loon倒入Egern，Egern支持强奸这两个配置
-Egern支持强奸Surge和Loon配置，可以通用Surge模块，使用Surge配置到Egern并不会兼容策略组订阅图标，依然需要
+Egern支持强奸Surge和Loon配置，可以通用Surge模块和Loon插件，使用Surge配置到Egern并不会兼容策略组订阅图标，依然需要
 再次添加订阅图标
 
 
