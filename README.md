@@ -177,9 +177,6 @@ https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/boxjs.json
 XiamMao
 https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/XiaoMao.json
 
-中国联通
-https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/boxjs.json
-
 
 以下收集一些Surge订阅LSP模块，部分是QX重写经过Script Hub转换而来
 
