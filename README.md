@@ -16,6 +16,7 @@ Loon配置
 https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Loon
 
 Egern配置
+
 https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/blob/b33e52fef7fe3a62cd900ca25c465e2c6747aff0/Egern%20AB
 
 shadowrocket配置
