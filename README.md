@@ -2,10 +2,6 @@
 若与你机场节点需求不一致请自行根据自己机场需求添加节点正则
 主用Surge
 
-不写Egern配置如果想用就使用下面的Surge配置或者Loon倒入Egern，Egern支持强奸这两个配置
-Egern支持强奸Surge和Loon配置，Egern可以通用Surge模块和Loon插件，使用Surge配置到Egern并不会兼容策略组订阅图标，依然需要
-再次添加订阅图标
-
 
 Quantumult X配置
 https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Quantumult%20X
@@ -18,6 +14,9 @@ https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/hea
 
 Loon配置
 https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Loon
+
+Egern配置
+https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/blob/b33e52fef7fe3a62cd900ca25c465e2c6747aff0/Egern%20AB
 
 shadowrocket配置
 https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Shadowrocket
