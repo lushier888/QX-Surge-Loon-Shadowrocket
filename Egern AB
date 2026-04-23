@@ -10,14 +10,14 @@ dns:
   bootstrap:
   - system
   upstreams:
-    Domestic-DNS:
+    国内域名𝑫𝑵𝑺:
     - https://119.29.29.29/dns-query
     - https://[2400:3200::1]/dns-query
     - https://1.1.1.1/dns-query
   forward:
   - domain_wildcard:
       match: '*'
-      value: Domestic-DNS
+      value: 国内域名𝑫𝑵𝑺
   hosts:
     iosapps.itunes.apple.com:
     - iosapps.itunes.apple.com.download.ks-cdn.com
