@@ -1225,38 +1225,42 @@ rules:
     name: ♻️兜底网络
     policy: ♻️𝑭𝑰𝑵𝑨𝑳
 scriptings:
-- http_request:
-    name: 机场流量信息
-    match: ''
-    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Sub_Widget.JS
-    body_required: false
-    binary_body: false
+- schedule:
+    name: TestFlight监控
+    cron: '* * * * * ?'
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/TestFlight.js
+    timeout: 120
     disabled: true
-- http_request:
-    name: 和风天气
-    match: ''
+- generic:
+    name: 和风天气小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Weather_Widget.JS
-    body_required: false
-    binary_body: false
-    disabled: true
-- http_request:
-    name: '1'
-    match: ''
-    script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Probe.js
-    body_required: false
-    binary_body: false
-    disabled: true
-- http_request:
-    name: 日历
-    match: ''
+    timeout: 120
+- generic:
+    name: 机场订阅小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Sub_Widget.JS
+    timeout: 120
+- generic:
+    name: 聚合热搜小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/HSW_Widget.JS
+- generic:
+    name: 万年历小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/CN_Cal.JS
+- generic:
+    name: 节日倒计时小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Holiday_Countdown.js
-    body_required: false
-    binary_body: false
-    disabled: true
-- network:
-    name: 网络雷达
-    script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Network-Pro.js
-    disabled: true
+- generic:
+    name: 油价查询小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Oil_Widget.JS
+- generic:
+    name: 虚拟货币小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Crypto_Widget.JS
+- generic:
+    name: 彩票开奖小组件
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Lottery-Widget.JS
+- generic:
+    name: '测试网络下载速度小组件 '
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/NetSpeed_Widget.JS
+
 mitm:
   ca_p12:
   ca_passphrase:
@@ -1275,9 +1279,20 @@ mitm:
     - qmwebapi.qmai.cn
     - wx.10099.com.cn
 widgets:
-- name: 彩票查询
-- name: 日历
-- name: 网络雷达
+- name: 测试网络下载速度
+  script_name: '测试网络下载速度小组件 '
+- name: 虚拟货币
+  script_name: 虚拟货币小组件
+- name: 油价查询
+  script_name: 油价查询小组件
+- name: 彩票开奖
+  script_name: 彩票开奖小组件
+- name: 节日倒计时
+  script_name: 节日倒计时小组件
+- name: 万年历
+  script_name: 万年历小组件
+- name: 聚合热搜
+  script_name: 聚合热搜小组件
 modules:
 - name: Trakt增强
   url: https://raw.githubusercontent.com/DemoJameson/Loon.Plugins/main/trakt_simplified_chinese/trakt_simplified_chinese.sgmodule
