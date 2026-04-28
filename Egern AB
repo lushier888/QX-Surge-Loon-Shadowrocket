@@ -16,7 +16,7 @@ dns:
     - https://8.8.8.8/dns-query
     兜底网络:
     - https://dns.nextdns.io
-  forward:
+    forward:
   - proxy_rule_set:
       match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Google/Google.list
       value: 谷歌（国外）
