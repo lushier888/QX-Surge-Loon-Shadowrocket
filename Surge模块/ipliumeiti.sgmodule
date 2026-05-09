@@ -8,7 +8,7 @@ liumeiti_panel = script-name=liumeiti_script, update-interval=43200
 
 [Script]
 # 引用你 GitHub 上的脚本。请务必确认你的分支是 main 还是 master。
-liumeiti_script = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/main/liumeiti.js
+liumeiti_script = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Surge%E6%A8%A1%E5%9D%97/ipliumeiti.js
 
 [MITM]
 # 关键：必须包含这些域名，否则脚本无法读取加密的 API 数据
