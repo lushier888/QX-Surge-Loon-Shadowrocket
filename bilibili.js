@@ -1,4 +1,4 @@
-let obj = JSON.parse($response.body);
+ let obj = JSON.parse($response.body);
 
 // 逻辑：强制修改画质参数 qn
 // 120 代表 4K，116 代表 1080P 高码率，112 代表 1080P+
