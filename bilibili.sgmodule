@@ -1,0 +1,10 @@
+#!name=Bilibili 4K 画质解锁
+#!desc=解锁 B 站客户端 4K/杜比视界画质选项。
+#!category=功能增强
+
+[Script]
+# 拦截播放地址与画质参数，调用自定义路径脚本
+bilibili_4k = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/v2\/playback\/playurl,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/main/bilibili.js
+
+[MITM]
+hostname = %APPEND% app.bilibili.com
