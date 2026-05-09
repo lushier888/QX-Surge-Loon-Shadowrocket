@@ -1,11 +1,11 @@
-#!name=IP与流媒体信息面板
-#!desc=合并版：上半部分显示IP信息，下半部分显示流媒体/ChatGPT解锁状态。
+#!name=IP和流媒体信息
+#!desc=节点地理信息与主流流媒体解锁状态检测。
 #!category=工具
 
 [Panel]
-# 这里的名字可以自定义，script-name 对应下面 [Script] 里的名称
-IP_Stream_Panel = script-name=combined_script, update-interval=43200
+# 面板显示名称：流媒体检测
+liumeiti_panel = script-name=liumeiti_script, update-interval=43200
 
 [Script]
-# 这里直接引用我刚才为你合并好的那个“全能版” JS 脚本的 GitHub 链接
-combined_script = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/main/Scripts/combined_script.js
+# 引用你 GitHub 上的 js 文件
+liumeiti_script = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/main/liumeiti.js
