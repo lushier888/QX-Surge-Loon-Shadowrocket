@@ -1,0 +1,13 @@
+#!name=老色批通杀VIP
+#!desc=使用此脚本会攻击所有MitM域名, 会对iCloud无法使用网络建议使用时开启模块, 不用时候关闭模块避免影响iCloud正常使用
+#!author=小白
+#!date=2025-04-16
+
+
+[Script]
+通杀 = type=http-response, pattern=^https:\/\/[^\/]*\.(.*\.cn)(\/\w+\/[a-z0-9]{32}\/[a-z0-9]{32}\.m3u8)(\?.*)?$, script-path=https://raw.githubusercontent.com/chmg2025/js/refs/heads/main/ts.js, requires-body=true, timeout=60
+
+[MITM]
+hostname = %APPEND% *.ivldhj.cn, *.cn
+
+
