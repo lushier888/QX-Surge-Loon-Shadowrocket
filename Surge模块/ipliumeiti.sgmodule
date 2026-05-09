@@ -1,17 +1,11 @@
-#!name=IP与流媒体检测合集
-#!desc=物理合并：IP-Check 面板 + ChatGPT 流媒体检测脚本。
+#!name=IP与流媒体信息面板
+#!desc=合并版：上半部分显示IP信息，下半部分显示流媒体/ChatGPT解锁状态。
 #!category=工具
 
 [Panel]
-# 这个是第一个模块的面板显示逻辑
-IP-Check = script-name=IP_Check_Script, update-interval=43200
+# 这里的名字可以自定义，script-name 对应下面 [Script] 里的名称
+IP_Stream_Panel = script-name=combined_script, update-interval=43200
 
 [Script]
-# 脚本 1：IP 地理位置查询逻辑
-IP_Check_Script = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/IP-Check/Moore/IP-Check.js
-
-# 脚本 2：ChatGPT 与流媒体解锁检测逻辑
-stream68 = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/tcqgg2018/surge4/main/stream_GPT.js
-
-[MITM]
-hostname = %APPEND% api.ipify.org, *.google.com
+# 这里直接引用我刚才为你合并好的那个“全能版” JS 脚本的 GitHub 链接
+combined_script = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/main/Scripts/combined_script.js
