@@ -1,11 +1,15 @@
-#!name=IP和流媒体信息
-#!desc=节点地理信息与主流流媒体解锁状态检测。
+#!name=IP流媒体信息面板
+#!desc=合并版：显示详细IP地理信息、ISP、ASN及ChatGPT/Netflix/Disney+/YouTube解锁检测。
 #!category=工具
 
 [Panel]
-# 面板显示名称：流媒体检测
+# 面板显示的名称，script-name 对应下方的脚本名
 liumeiti_panel = script-name=liumeiti_script, update-interval=43200
 
 [Script]
-# 引用你 GitHub 上的 js 文件
+# 引用你 GitHub 上的脚本。请务必确认你的分支是 main 还是 master。
 liumeiti_script = type=generic, timeout=15, script-path=https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/main/liumeiti.js
+
+[MITM]
+# 关键：必须包含这些域名，否则脚本无法读取加密的 API 数据
+hostname = %APPEND% api.ipify.org, ip-api.com, chat.openai.com, *.netflix.com, *.disneyplus.com, *.youtube.com
