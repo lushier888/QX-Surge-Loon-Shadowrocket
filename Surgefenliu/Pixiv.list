@@ -1,0 +1,8 @@
+# > Pixiv 核心
+DOMAIN-SUFFIX,pixiv.net
+DOMAIN-SUFFIX,pixiv.me
+DOMAIN-SUFFIX,pximg.net
+
+# > Pixiv 辅助
+DOMAIN-SUFFIX,pixiv.org
+DOMAIN-KEYWORD,pixiv
