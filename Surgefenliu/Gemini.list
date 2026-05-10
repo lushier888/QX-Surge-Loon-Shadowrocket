@@ -26,3 +26,22 @@ DOMAIN-KEYWORD,speech-pa.googleapis.com
 # > Gemini 核心前端网关 (Robin)
 DOMAIN,robinfrontend-pa.googleapis.com
 
+# Gemini 远程规则集 - 验证版
+# ----------------------------------
+
+# 核心 Frontend 网关 (你发现的关键点)
+DOMAIN,robinfrontend-pa.googleapis.com
+
+# Gemini 核心 API
+DOMAIN,gemini.google.com
+DOMAIN,generativelanguage.googleapis.com
+DOMAIN,proactivebackend-pa.googleapis.com
+
+# 辅助与身份验证
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,static.gemini.google.com
+
+# 宽泛匹配以防万一
+DOMAIN-KEYWORD,gemini
+
+
