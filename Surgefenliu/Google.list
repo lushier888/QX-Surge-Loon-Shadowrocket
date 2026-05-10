@@ -36,3 +36,6 @@ DOMAIN-SUFFIX,firebaseio.com
 DOMAIN-SUFFIX,app-measurement.com
 DOMAIN-SUFFIX,googlezip.net
 DOMAIN-SUFFIX,google.org
+
+# > DNS
+DOMAIN-SUFFIX,dnsleaktest.com
