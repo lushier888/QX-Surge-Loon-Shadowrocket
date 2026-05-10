@@ -1,0 +1,24 @@
+# > Gemini 核心域名
+DOMAIN,gemini.google.com
+DOMAIN,bard.google.com
+
+# > Gemini API 与多模态传输 (核心，不加这个 App 版必死)
+DOMAIN,generativelanguage.googleapis.com
+DOMAIN,proactivebackend-pa.googleapis.com
+DOMAIN,content-autofill.googleapis.com
+
+# > Google 身份验证与账户管理 (防止掉登录态)
+DOMAIN-SUFFIX,accounts.google.com
+DOMAIN-SUFFIX,ssl.gstatic.com
+
+# > 静态资源与 UI 组件
+DOMAIN-SUFFIX,static.gemini.google.com
+DOMAIN-KEYWORD,google-analytics
+
+# > 附加的 Google API (用于多模态图片/文件上传)
+DOMAIN,ai.google.dev
+DOMAIN,aistudio.google.com
+DOMAIN-SUFFIX,googleusercontent.com
+
+# > 如果你使用移动端 App，建议把这个也加上
+DOMAIN-KEYWORD,speech-pa.googleapis.com
