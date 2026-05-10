@@ -310,6 +310,7 @@ RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Douban.list,🛜国内直连 // 豆瓣
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/WeChat.list,🛜国内直连 // 微信
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Xunlei.list,🛜国内直连 // 迅雷
+
 # > ————国内App筛选直连————
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChinaDIRECT.list,🛜国内直连 // 国内App筛选直连
 
