@@ -1,1 +1,67 @@
-
+# > ————国内直连分流规则————
+# > 𝑩𝑶𝑺𝑺直聘规则
+DOMAIN-SUFFIX,img.bosszhipin.com
+# > 𝑨𝑮𝑬动漫规则
+DOMAIN-SUFFIX,agedm.vip
+# > 𝑫𝒆𝒆𝒑𝒔𝒆𝒆𝒌规则
+DOMAIN-SUFFIX,deepseek.com
+# > 𝑫𝒐𝒖𝒃𝒂𝒐 (豆包) 分流规则
+DOMAIN-SUFFIX,doubao.com
+DOMAIN-SUFFIX,volces.com
+DOMAIN-SUFFIX,bytegecko.com
+DOMAIN-SUFFIX,byteoversea.com
+DOMAIN-SUFFIX,ibyteimg.com
+DOMAIN-SUFFIX,doubao.net
+DOMAIN-KEYWORD,doubao
+# > 夸克规则
+DOMAIN-SUFFIX,quark.cn
+DOMAIN-SUFFIX,quark.net
+# > 𝑸𝑸规则
+DOMAIN-SUFFIX,qq.com
+# > 𝑸𝑸空间规则
+DOMAIN-SUFFIX,qzone.qq.com
+DOMAIN-SUFFIX,gtimg.cn
+# > 小黑盒规则
+DOMAIN-SUFFIX,xiaoheihe.cn
+# > 游民星空
+DOMAIN-SUFFIX,gamersky.com
+DOMAIN-SUFFIX,gamersky.cn
+DOMAIN-SUFFIX,gsstatic.com
+DOMAIN-SUFFIX,gamerskystatic.com
+# > NGA玩家社区规则
+DOMAIN-SUFFIX,nga.cn
+DOMAIN-SUFFIX,178.com
+DOMAIN-SUFFIX,ngacn.cc
+DOMAIN-SUFFIX,msga.cc
+DOMAIN,nga.178.com
+DOMAIN,pic.nga.178.com
+DOMAIN,img.nga.178.com
+DOMAIN,attachments.nga.178.com
+# > 淘宝规则
+DOMAIN-SUFFIX,taobao.com
+DOMAIN-SUFFIX,tmall.com
+DOMAIN-SUFFIX,alicdn.com
+DOMAIN-SUFFIX,aliyun.com
+DOMAIN-SUFFIX,alimama.com
+DOMAIN-SUFFIX,tbcache.com
+DOMAIN-SUFFIX,tb.cn
+DOMAIN-KEYWORD,taobao
+# > 高德地图规则
+DOMAIN-KEYWORD,amap
+DOMAIN-SUFFIX,amap.com
+DOMAIN-SUFFIX,autonavi.com
+DOMAIN-SUFFIX,amap.cn
+DOMAIN-SUFFIX,gaode.com
+# > 讯飞输入法规则
+DOMAIN-SUFFIX,iflytek.com
+DOMAIN-SUFFIX,voicecloud.cn
+# > 搜狗输入法规则
+DOMAIN-SUFFIX,sogou.com
+# > 网易云音乐规则
+DOMAIN-SUFFIX,music.163.com
+DOMAIN-SUFFIX,126.net
+DOMAIN-SUFFIX,163jiasu.com
+DOMAIN-SUFFIX,ydstatic.com
+DOMAIN-SUFFIX,netease.com
+DOMAIN-KEYWORD,netease
+DOMAIN-KEYWORD,music.126
