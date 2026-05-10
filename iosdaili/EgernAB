@@ -6,6 +6,7 @@ hijack_dns:
 geoip_db_url: https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
 proxy_latency_test_url: http://www.apple.com/library/test/success.html
 direct_latency_test_url: http://www.baidu.com
+compat_route: false
 dns:
   upstreams:
     阿里-腾讯（国内）:
@@ -18,99 +19,99 @@ dns:
     - https://dns.nextdns.io
   forward:
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Google/Google.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Google.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Microsoft/Microsoft.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Microsoft.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Apple/Apple.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Apple.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Telegram/Telegram.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/telegram.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Twitter/Twitter.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Twitter.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Reddit/Reddit.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Reddit.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Discord/Discord.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Discord.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Instagram/Instagram.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Instagram.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Pixiv/Pixiv.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pixiv.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Pinterest/Pinterest.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pinterest.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/OpenAI/OpenAI.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChatGPT.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Steam/Steam.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Steam.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Epic/Epic.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Epic.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/AppleTV/AppleTV.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/AppleTV.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/HBO/HBO.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/HBO.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Disney/Disney.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Disney+.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Netflix/Netflix.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Netflix.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Spotify/Spotify.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Spotify.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Emby/Emby.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Enby.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/YouTube/YouTube.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/YouTube.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/TikTok/TikTok.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/TikTok.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Twitch/Twitch.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Twitch.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Bahamut/Bahamut.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Bahamut.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - domain_suffix:
@@ -118,27 +119,27 @@ dns:
       value: 阿里-腾讯（国内）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/BiliBili/BiliBili.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Bilibili.list
       value: 阿里-腾讯（国内）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Weibo/Weibo.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Weibo.list
       value: 阿里-腾讯（国内）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/WeChat/WeChat.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/WeChat.list
       value: 阿里-腾讯（国内）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/DouBan/DouBan.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Douban.list
       value: 阿里-腾讯（国内）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/NGA/NGA.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/NGA.list
       value: 阿里-腾讯（国内）
       disabled: false
   - proxy_rule_set:
-      match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Xunlei/Xunlei.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Xunlei.list
       value: 阿里-腾讯（国内）
       disabled: false
   - domain_wildcard:
@@ -152,16 +153,12 @@ policy_groups:
 - external:
     name: 我的节点𝑨
     type: select
-    urls:
-    -
     update_interval: -1
     icon: https://s1.imagehub.cc/images/2026/03/25/b2126dc8e764a3576c3f7e60f164cf2f.png
     hidden: false
 - external:
     name: 我的节点𝑩
     type: select
-    urls:
-    -
     filter: IPLC|IPV6
     update_interval: 0
     icon: https://s1.imagehub.cc/images/2025/07/22/e2fb09ef7ad704fa486ae024ffd98c27.png
@@ -812,233 +809,15 @@ policy_groups:
     icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Script-Hub.png
     hidden: false
 rules:
-- domain_suffix:
-    name: boss直聘
-    match: img.bosszhipin.com
-    policy: 🛜国内直连
-    disabled: false
-- domain:
-    name: BOSS直聘
-    match: img.bosszhipin.com
-    policy: 🛜国内直连
-    disabled: false
 - ip_cidr:
+    name: 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎防止转圈
     match: 95.161.76.100/31
     policy: REJECT
     no_resolve: true
-- domain:
-    match: alkalimessages-pa.googleapis.com
-    policy: 🤖𝑨𝑰
-- domain:
-    match: generativelanguage.googleapis.com
-    policy: 🤖𝑨𝑰
-- domain:
-    match: proactivebackend-pa.googleapis.com
-    policy: 🤖𝑨𝑰
-- domain:
-    match: proactive-pwa-pa.googleapis.com
-    policy: 🤖𝑨𝑰
-- domain_suffix:
-    match: gemini.google.com
-    policy: 🤖𝑨𝑰
-- domain_suffix:
-    match: gemini.google
-    policy: 🤖𝑨𝑰
-- domain_keyword:
-    match: googleai
-    policy: 🤖𝑨𝑰
-- domain_suffix:
-    match: openai.com
-    policy: 🤖𝑨𝑰
-- domain_suffix:
-    match: x.ai
-    policy: 📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)
-- domain_keyword:
-    match: tiktok
-    policy: 📽𝑻𝒊𝒌𝑻𝒐𝒌
-- domain_suffix:
-    match: byteoversea.com
-    policy: 📽𝑻𝒊𝒌𝑻𝒐𝒌
-- domain_suffix:
-    match: ibytedtos.com
-    policy: 📽𝑻𝒊𝒌𝑻𝒐𝒌
-- domain_suffix:
-    match: googlevideo.com
-    policy: 📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-- domain_suffix:
-    match: youtube.com
-    policy: 📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-- domain_suffix:
-    match: ytimg.com
-    policy: 📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-- domain_suffix:
-    match: ggpht.com
-    policy: 📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-- domain_suffix:
-    match: youtubei.googleapis.com
-    policy: 📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-- domain_keyword:
-    match: youtube
-    policy: 📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-- domain_suffix:
-    match: dnsleaktest.com
-    policy: 🌏 𝑮𝒐𝒐𝒈𝒍𝒆
-- domain_suffix:
-    match: api.iturrit.com
-    policy: 📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
+    disabled: false
 - domain_suffix:
     match: shsiis.cloudfisher.cc
     policy: 🎞️𝑬𝒎𝒃𝒚
-- domain_suffix:
-    match: missav123.com
-    policy: 🌏 𝑮𝒐𝒐𝒈𝒍𝒆
-- domain_suffix:
-    match: pornhub.com
-    policy: 🌏 𝑮𝒐𝒐𝒈𝒍𝒆
-- domain_suffix:
-    match: agedm.vip
-    policy: 🛜国内直连
-- domain_suffix:
-    match: deepseek.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: doubao.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: volces.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: bytegecko.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: byteoversea.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: ibyteimg.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: doubao.net
-    policy: 🛜国内直连
-- domain_keyword:
-    match: doubao
-    policy: 🛜国内直连
-- domain_suffix:
-    match: qq.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: qzone.qq.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: gtimg.cn
-    policy: 🛜国内直连
-- domain_suffix:
-    match: xiaoheihe.cn
-    policy: 🛜国内直连
-- domain_suffix:
-    match: gamersky.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: gamersky.cn
-    policy: 🛜国内直连
-- domain_suffix:
-    match: gsstatic.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: gamerskystatic.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: nga.cn
-    policy: 🛜国内直连
-- domain_suffix:
-    match: 178.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: ngacn.cc
-    policy: 🛜国内直连
-- domain_suffix:
-    match: msga.cc
-    policy: 🛜国内直连
-- domain:
-    match: nga.178.com
-    policy: 🛜国内直连
-- domain:
-    match: pic.nga.178.com
-    policy: 🛜国内直连
-- domain:
-    match: img.nga.178.com
-    policy: 🛜国内直连
-- domain:
-    match: attachments.nga.178.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: taobao.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: tmall.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: alicdn.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: aliyun.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: alimama.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: tbcache.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: tb.cn
-    policy: 🛜国内直连
-- domain_keyword:
-    match: taobao
-    policy: 🛜国内直连
-- domain_keyword:
-    match: amap
-    policy: 🛜国内直连
-- domain_suffix:
-    match: amap.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: autonavi.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: amap.cn
-    policy: 🛜国内直连
-- domain_suffix:
-    match: gaode.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: iflytek.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: voicecloud.cn
-    policy: 🛜国内直连
-- domain_suffix:
-    match: sogou.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: music.163.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: 126.net
-    policy: 🛜国内直连
-- domain_suffix:
-    match: 163jiasu.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: ydstatic.com
-    policy: 🛜国内直连
-- domain_suffix:
-    match: netease.com
-    policy: 🛜国内直连
-- domain_keyword:
-    match: netease
-    policy: 🛜国内直连
-- domain_keyword:
-    match: music.126
-    policy: 🛜国内直连
 - rule_set:
     match: http://script.hub/file/_start_/https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Reject.list/_end_/Reject.list?type=rule-set&target=surge-rule-set&del=true
     policy: REJECT
@@ -1064,150 +843,159 @@ rules:
     match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/SystemOTA/SystemOTA.list
     policy: REJECT
 - rule_set:
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Google/Google.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Google.list
     policy: 🌏 𝑮𝒐𝒐𝒈𝒍𝒆
+    disabled: false
 - rule_set:
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Microsoft/Microsoft.list
+    name: 𝑳𝑺𝑷网站
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/LSP.list
+    policy: 🌏 𝑮𝒐𝒐𝒈𝒍𝒆
+    disabled: false
+- rule_set:
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Microsoft.list
     policy: 💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕
+    disabled: false
 - rule_set:
     match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/GitHub/GitHub.list
     policy: 💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕
 - rule_set:
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Apple/Apple.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Apple.list
     policy: 🍎𝑨𝒑𝒑𝒍𝒆
+    disabled: false
 - rule_set:
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/AppStore/AppStore.list
-    policy: 🍎𝑨𝒑𝒑𝒍𝒆
-- rule_set:
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Telegram/Telegram.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/telegram.list
     policy: 📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
+    disabled: false
 - rule_set:
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Twitter/Twitter.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Twitter.list
     policy: 📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)
+    disabled: false
 - rule_set:
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Instagram/Instagram.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Instagram.list
     policy: 📷𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎
+    disabled: false
 - rule_set:
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Reddit/Reddit.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Reddit.list
     policy: 📑𝑹𝒆𝒅𝒅𝒊𝒕
+    disabled: false
 - rule_set:
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Discord/Discord.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Discord.list
     policy: 🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅
+    disabled: false
 - rule_set:
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Pixiv/Pixiv.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pixiv.list
     policy: 🍄𝑷𝒊𝒙𝒊𝒗
+    disabled: false
 - rule_set:
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Pinterest/Pinterest.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pinterest.list
     policy: 🍄𝑷𝒊𝒙𝒊𝒗
+    disabled: false
 - rule_set:
-    match: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Gemini/Gemini.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list
     policy: 🤖𝑨𝑰
+    disabled: false
 - rule_set:
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/OpenAI/OpenAI.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChatGPT.list
     policy: 🤖𝑨𝑰
+    disabled: false
 - rule_set:
     name: 𝐒𝐩𝐞𝐞𝐝𝐭𝐞𝐬𝐭
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Speedtest/Speedtest.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Speedtest.list
     policy: ♻️𝑭𝑰𝑵𝑨𝑳
     disabled: false
 - rule_set:
     name: 𝑺𝒕𝒆𝒂𝒎
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Steam/Steam.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Steam.list
     policy: 🎮𝑺𝒕𝒆𝒂𝒎
     disabled: false
 - rule_set:
     name: 𝑬𝒑𝒊𝒄
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Epic/Epic.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Epic.list
     policy: 🎮𝑺𝒕𝒆𝒂𝒎
     disabled: false
 - rule_set:
     name: 𝑨𝒑𝒑𝒍𝒆𝑻𝑽
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/AppleTV/AppleTV.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/AppleTV.list
     policy: 💽𝑨𝒑𝒑𝒍𝒆𝑻𝑽
     disabled: false
 - rule_set:
     name: 𝑯𝑩𝑶
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/HBO/HBO.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/HBO.list
     policy: 💿𝑯𝑩𝑶
     disabled: false
 - rule_set:
     name: 𝑫𝒊𝒔𝒏𝒆𝒚+
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Disney/Disney.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Disney+.list
     policy: 🎬𝑫𝒊𝒔𝒏𝒆𝒚+
     disabled: false
 - rule_set:
     name: 𝑵𝒆𝒕𝒇𝒍𝒊𝒙
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Netflix/Netflix.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Netflix.list
     policy: 🎥𝑵𝒆𝒕𝒇𝒍𝒊𝒙
     disabled: false
 - rule_set:
+    name: 𝑻𝒊𝒌𝑻𝒐𝒌
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/TikTok.list
+    policy: 📽𝑻𝒊𝒌𝑻𝒐𝒌
+    disabled: false
+- rule_set:
     name: 𝑺𝒑𝒐𝒕𝒊𝒇𝒚
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Spotify/Spotify.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Spotify.list
     policy: 🎧𝑺𝒑𝒐𝒕𝒊𝒇𝒚
     disabled: false
 - rule_set:
     name: 𝑬𝒎𝒃𝒚
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Emby/Emby.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Enby.list
     policy: 🎞️𝑬𝒎𝒃𝒚
     disabled: false
 - rule_set:
     name: 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/YouTube/YouTube.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/YouTube.list
     policy: 📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
     disabled: false
 - rule_set:
     name: 𝑻𝒘𝒊𝒕𝒄𝒉
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Twitch/Twitch.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Twitch.list
     policy: 🖥️𝑻𝒘𝒊𝒕𝒄𝒉
     disabled: false
 - rule_set:
     name: 动画疯
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Bahamut/Bahamut.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Bahamut.list
     policy: 🧸𝑩𝒂𝒉𝒂𝒎𝒖𝒕
     disabled: false
 - rule_set:
     name: 哔哩哔哩
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/BiliBili/BiliBili.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Bilibili.list
     policy: 📺𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊
     disabled: false
 - rule_set:
     name: 微博
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Weibo/Weibo.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Weibo.list
     policy: 🚾𝑾𝒆𝒊𝒃𝒐
     disabled: false
 - rule_set:
     name: 𝑵𝑮𝑨玩家社区
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/NGA/NGA.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/NGA.list
     policy: 🛜国内直连
     disabled: false
 - rule_set:
     name: 豆瓣
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/DouBan/DouBan.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Douban.list
     policy: 🛜国内直连
     disabled: false
 - rule_set:
     name: 微信
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/WeChat/WeChat.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/WeChat.list
     policy: 🛜国内直连
     disabled: false
 - rule_set:
     name: 迅雷
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Xunlei/Xunlei.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Xunlei.list
     policy: 🛜国内直连
     disabled: false
-- domain_suffix:
-    name: 𝑨𝒑𝒑𝒍𝒆
-    match: apps.apple.com
-    policy: 🛜国内直连
-    disabled: false
-- domain_suffix:
-    name: 𝑨𝒑𝒑𝒍𝒆 𝑴𝒂𝒑𝒔
-    match: ls.apple.com
-    policy: 🛜国内直连
-    disabled: false
-- domain_suffix:
-    name: 𝑨𝒑𝒑𝒍𝒆 𝑺𝒕𝒐𝒓𝒆 𝑶𝒏𝒍𝒊𝒏𝒆
-    match: store.apple.com
+- rule_set:
+    name: 国内筛选App
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChinaDIRECT.list
     policy: 🛜国内直连
     disabled: false
 - rule_set:
@@ -1260,10 +1048,8 @@ scriptings:
 - generic:
     name: '测试网络下载速度小组件 '
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/NetSpeed_Widget.JS
-
 mitm:
-  ca_p12:
-  ca_passphrase:
+  ca_p12: 
   hostnames:
     includes:
     - w2.qy12a.cc
@@ -1294,6 +1080,9 @@ widgets:
 - name: 聚合热搜
   script_name: 聚合热搜小组件
 modules:
+- name: Bilibili增强
+  url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/BilibiliAD.sgmodule
+  enabled: true
 - name: Trakt增强
   url: https://raw.githubusercontent.com/DemoJameson/Loon.Plugins/main/trakt_simplified_chinese/trakt_simplified_chinese.sgmodule
   enabled: true
@@ -1326,11 +1115,6 @@ modules:
   enabled: true
 - name: 去开屏广告
   url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.sgmodule
-  enabled: true
-- name: Bilibili增强（保留热搜）
-  url: Bilibili增强
-  compat_arguments:
-    空降助手策略: 🛜国内直连
   enabled: true
 - name: YouTube去广告
   url: https://github.com/Repcz/Tool/raw/X/Egern/Module/YouTube.yaml
@@ -1401,12 +1185,10 @@ modules:
 - name: 机场流量信息𝑨𝑩
   url: https://raw.githubusercontent.com/IBL3ND/MK/refs/heads/main/subscription-info.sgmodule
   compat_arguments:
-    A名称:
-    A地址:
-    A重置:
-    B名称:
-    B地址:
-    B重置:
+    A名称: 
+    A地址: 
+    A重置: 
+    B名称: 
   enabled: true
 - name: 油价
   url: 油价
@@ -1459,12 +1241,12 @@ modules:
 - name: '📺 BiliBili: ⚙️ Enhanced'
   url: https://github.com/BiliUniverse/Enhanced/releases/latest/download/BiliBili.Enhanced.sgmodule
   enabled: false
-- name: 机场流量信息
+- name: 机场流量信息𝑨
   url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Sub-info/Moore/Sub-info.sgmodule
   compat_arguments:
-    NAME:
-    URL:
-    RESET_Day:
+    NAME: 
+    URL: 
+    RESET_Day: 
     COLOR: '#78C7E3'
   enabled: false
 - name: 油价
