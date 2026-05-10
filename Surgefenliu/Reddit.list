@@ -1,0 +1,8 @@
+# > Reddit 核心
+DOMAIN-SUFFIX,reddit.com
+DOMAIN-SUFFIX,redditmedia.com
+DOMAIN-SUFFIX,redditstatic.com
+
+# > Reddit 图片与视频托管
+DOMAIN-SUFFIX,redd.it
+DOMAIN-KEYWORD,reddit
