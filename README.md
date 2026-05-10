@@ -18,7 +18,7 @@ Loon配置
 https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/ios%20daili/Loon
 
 Egern配置
-https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/ios%20daili/Egern%20AB
+https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/iosdaili/EgernAB
 
 shadowrocket配置
 https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/ios%20daili/Shadowrocket
