@@ -1,0 +1,15 @@
+# > Apple TV+ 核心播放接口
+DOMAIN,tv.apple.com
+DOMAIN,tv.g.apple.com
+
+# > Apple TV 内容传输 (视频流核心)
+DOMAIN-SUFFIX,aaplimg.com
+DOMAIN-SUFFIX,apple-mapkit.com
+
+# > 特定播放请求域名
+DOMAIN-KEYWORD,hls-svod.itunes.apple.com
+DOMAIN-KEYWORD,hls-svod-ve.itunes.g.aaplimg.com
+
+# > 如果你在 Apple TV 硬件上使用，建议增加这些
+DOMAIN-SUFFIX,uts-api.itunes.apple.com
+DOMAIN-SUFFIX,play-edge.itunes.apple.com
