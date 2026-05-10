@@ -22,3 +22,7 @@ DOMAIN-SUFFIX,googleusercontent.com
 
 # > 如果你使用移动端 App，建议把这个也加上
 DOMAIN-KEYWORD,speech-pa.googleapis.com
+
+# > Gemini 核心前端网关 (Robin)
+DOMAIN,robinfrontend-pa.googleapis.com
+
