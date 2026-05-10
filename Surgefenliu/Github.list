@@ -1,0 +1,13 @@
+# > GitHub 主站与 API
+DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,github.io
+DOMAIN-SUFFIX,githubapp.com
+DOMAIN-SUFFIX,githubassets.com
+
+# > GitHub 远程资源与 Raw 下载 (规则更新核心)
+DOMAIN-SUFFIX,githubusercontent.com
+DOMAIN-SUFFIX,github.global.ssl.fastly.net
+
+# > GitHub 镜像与容器服务
+DOMAIN-SUFFIX,ghcr.io
+DOMAIN-SUFFIX,pkg.github.com
