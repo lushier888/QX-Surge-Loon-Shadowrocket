@@ -1,0 +1,9 @@
+# > Steam 商店与社区
+DOMAIN-SUFFIX,steampowered.com
+DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN-SUFFIX,steamstatic.com
+DOMAIN-SUFFIX,steamusercontent.com
+
+# > Steam 聊天与验证
+DOMAIN-SUFFIX,steam-chat.com
+DOMAIN-SUFFIX,steamserver.net
