@@ -1,0 +1,10 @@
+# > YouTube 核心
+DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,youtubei.googleapis.com
+DOMAIN-SUFFIX,ytimg.com
+DOMAIN-SUFFIX,ggpht.com
+DOMAIN-SUFFIX,youtu.be
+
+# > YouTube 视频流 (核心流量)
+DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-KEYWORD,youtube
