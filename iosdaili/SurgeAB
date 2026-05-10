@@ -250,60 +250,6 @@ dns-server = 1.12.12.12, 1.1.1.1, 8.8.8.8
 # > ————本地域名分流规则————
 # > 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎防止转圈规则
 IP-CIDR,95.161.76.100/31,REJECT,pre-matching,no-resolve // 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎防止转圈
-# > ————𝑨𝑰分流规则————
-# > 𝑮𝒆𝒎𝒊𝒏𝒊规则
-DOMAIN,generativelanguage.googleapis.com,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
-DOMAIN,proactivebackend-pa.googleapis.com,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
-DOMAIN-SUFFIX,gemini.google.com,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
-DOMAIN-KEYWORD,googleai,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
-# > 𝑪𝒉𝒂𝒕𝑮𝑷𝑻规则
-DOMAIN-SUFFIX,openai.com,🤖𝑨𝑰 // 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
-# > 𝑮𝒓𝒐𝒌规则
-DOMAIN-SUFFIX,x.ai,📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿) // 𝑮𝒓𝒐𝒌
-# > ————其它国外服务与媒体规则————
-# > 𝑻𝒊𝒌𝑻𝒐𝒌规则
-DOMAIN-KEYWORD,tiktok,📽𝑻𝒊𝒌𝑻𝒐𝒌 // 𝑻𝒊𝒌𝑻𝒐𝒌
-DOMAIN-SUFFIX,byteoversea.com,📽𝑻𝒊𝒌𝑻𝒐𝒌 // 𝑻𝒊𝒌𝑻𝒐𝒌
-DOMAIN-SUFFIX,ibytedtos.com,📽𝑻𝒊𝒌𝑻𝒐𝒌 // 𝑻𝒊𝒌𝑻𝒐𝒌
-# > 𝒀𝒐𝒖𝑻𝒖𝒃𝒆规则
-DOMAIN-SUFFIX,googlevideo.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-DOMAIN-SUFFIX,youtube.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-DOMAIN-SUFFIX,ytimg.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-DOMAIN-SUFFIX,ggpht.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-DOMAIN-SUFFIX,youtubei.googleapis.com,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-DOMAIN-KEYWORD,youtube,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-# > 𝑷𝒐𝒓𝒏𝒉𝒖𝒃规则
-DOMAIN-SUFFIX,pornhub.com,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑷𝒐𝒓𝒏𝒉𝒖𝒃
-# > 𝑫𝑵𝑺规则
-DOMAIN-SUFFIX,dnsleaktest.com,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑫𝑵𝑺
-# > 𝑻𝒖𝒓𝒓𝒊𝒕电报增强规则
-DOMAIN-SUFFIX,api.iturrit.com,📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 // 𝑻𝒖𝒓𝒓𝒊𝒕电报增强
-# > ————国内直连分流规则————
-# > 𝑨𝑮𝑬动漫规则
-DOMAIN-SUFFIX,agedm.vip,🛜国内直连 // 𝑨𝑮𝑬动漫
-# > 𝑫𝒆𝒆𝒑𝒔𝒆𝒆𝒌规则
-DOMAIN-SUFFIX,deepseek.com,🛜国内直连 // 𝑫𝒆𝒆𝒑𝒔𝒆𝒆𝒌
-# > 𝑫𝒐𝒖𝒃𝒂𝒐 (豆包) 分流规则
-DOMAIN-SUFFIX,doubao.com,🛜国内直连 // 豆包
-DOMAIN-SUFFIX,volces.com,🛜国内直连 // 豆包
-DOMAIN-SUFFIX,bytegecko.com,🛜国内直连 // 豆包
-DOMAIN-SUFFIX,byteoversea.com,🛜国内直连 // 豆包
-DOMAIN-SUFFIX,ibyteimg.com,🛜国内直连 // 豆包
-DOMAIN-SUFFIX,doubao.net,🛜国内直连 // 豆包
-DOMAIN-KEYWORD,doubao,🛜国内直连 // 豆包
-# > 𝑸𝑸规则
-DOMAIN-SUFFIX,qq.com,🛜国内直连 // 𝑸𝑸
-# > 𝑸𝑸空间规则
-DOMAIN-SUFFIX,qzone.qq.com,🛜国内直连 // 𝑸𝑸空间
-DOMAIN-SUFFIX,gtimg.cn,🛜国内直连 // 𝑸𝑸空间
-# > 小黑盒规则
-DOMAIN-SUFFIX,xiaoheihe.cn,🛜国内直连 // 小黑盒
-# > 讯飞输入法规则
-DOMAIN-SUFFIX,iflytek.com,🛜国内直连 // 讯飞输入法
-DOMAIN-SUFFIX,voicecloud.cn,🛜国内直连 // 讯飞输入法
-# > 搜狗输入法规则
-DOMAIN-SUFFIX,sogou.com,🛜国内直连 // 搜狗输入法
-
 
 # > ————去广告屏蔽分流————
 RULE-SET,"http://script.hub/file/_start_/https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Reject.list/_end_/Reject.list?type=rule-set&target=surge-rule-set&del=true",REJECT // 𝑹𝒆𝒋𝒆𝒌𝒕去广告
@@ -322,45 +268,50 @@ RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Su
 RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Apple/Apple.list,🍎𝑨𝒑𝒑𝒍𝒆 // 𝑨𝒑𝒑𝒍𝒆 苹果服务
 RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/AppStore/AppStore.list,🍎𝑨𝒑𝒑𝒍𝒆 // 𝑨𝒑𝒑𝒔𝒕𝒐𝒓𝒆 苹果商店
 
+# > ————国际服务分流————
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Google.list,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑮𝒐𝒐𝒈𝒍𝒆谷歌服务
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/LSP.list,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑳𝑺𝑷网站
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Microsoft.list,💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 // 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 微软服务
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Github.list,💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 // 𝑮𝒊𝒕𝑯𝒖𝒃
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Apple.list,🍎𝑨𝒑𝒑𝒍𝒆 // 𝑨𝒑𝒑𝒍𝒆 苹果服务
+
 # > ————国外社交分流分流————
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Telegram/Telegram.list,📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 // 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Twitter/Twitter.list,"📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)" // 𝑻𝒘𝒊𝒕𝒕𝒆𝒓(𝑿)
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Instagram/Instagram.list,📷𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎 // 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Reddit/Reddit.list,📑𝑹𝒆𝒅𝒅𝒊𝒕 // 𝑹𝒆𝒅𝒅𝒊𝒕
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Discord/Discord.list,🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅 // 𝑫𝒊𝒔𝒄𝒐𝒓𝒅
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/telegram.list,📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 // 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Twitter.list,"📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)" // 𝑻𝒘𝒊𝒕𝒕𝒆𝒓(𝑿)
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Instagram.list,📷𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎 // 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Reddit.list,📑𝑹𝒆𝒅𝒅𝒊𝒕 // 𝑹𝒆𝒅𝒅𝒊𝒕
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Discord.list,🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅 // 𝑫𝒊𝒔𝒄𝒐𝒓𝒅
 
 # > ————游戏与AI工具分流————
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Pixiv/Pixiv.list,🍄𝑷𝒊𝒙𝒊𝒗 // 𝑷𝒊𝒙𝒊𝒗
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Pinterest/Pinterest.list,🍄𝑷𝒊𝒙𝒊𝒗 // 𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/OpenAI/OpenAI.list,🤖𝑨𝑰 // 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Speedtest/Speedtest.list,♻️𝑭𝑰𝑵𝑨𝑳 // 𝐒𝐩𝐞𝐞𝐝𝐭𝐞𝐬𝐭
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Steam/Steam.list,🎮𝑺𝒕𝒆𝒂𝒎 // 𝑺𝒕𝒆𝒂𝒎
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Epic/Epic.list,🎮𝑺𝒕𝒆𝒂𝒎 // 𝑬𝒑𝒊𝒄
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pixiv.list,🍄𝑷𝒊𝒙𝒊𝒗 // 𝑷𝒊𝒙𝒊𝒗
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pinterest.list,🍄𝑷𝒊𝒙𝒊𝒗 // 𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChatGPT.list,🤖𝑨𝑰 // 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Speedtest.list,♻️𝑭𝑰𝑵𝑨𝑳 // 𝐒𝐩𝐞𝐞𝐝𝐭𝐞𝐬𝐭
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Steam.list,🎮𝑺𝒕𝒆𝒂𝒎 // 𝑺𝒕𝒆𝒂𝒎
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Epic.list,🎮𝑺𝒕𝒆𝒂𝒎 // 𝑬𝒑𝒊𝒄
 
 # > ————流媒体与影音短视频分流————
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/AppleTV/AppleTV.list,💽𝑨𝒑𝒑𝒍𝒆𝑻𝑽 // 𝑨𝒑𝒑𝒍𝒆𝑻𝑽
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/HBO/HBO.list,💿𝑯𝑩𝑶 // 𝑯𝑩𝑶
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Disney/Disney.list,🎬𝑫𝒊𝒔𝒏𝒆𝒚+ // 𝑫𝒊𝒔𝒏𝒆𝒚+
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Netflix/Netflix.list,🎥𝑵𝒆𝒕𝒇𝒍𝒊𝒙 // 𝑵𝒆𝒕𝒇𝒍𝒊𝒙
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Spotify/Spotify.list,🎧𝑺𝒑𝒐𝒕𝒊𝒇𝒚 // 𝑺𝒑𝒐𝒕𝒊𝒇𝒚
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Emby/Emby.list,🎞️𝑬𝒎𝒃𝒚 // 𝑬𝒎𝒃𝒚
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/YouTube/YouTube.list,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/TikTok/TikTok.list,📽𝑻𝒊𝒌𝑻𝒐𝒌 // 𝑻𝒊𝒌𝑻𝒐𝒌
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Twitch/Twitch.list,🖥️𝑻𝒘𝒊𝒕𝒄𝒉,extended-matching // 𝑻𝒘𝒊𝒕𝒄𝒉
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Bahamut/Bahamut.list,🧸𝑩𝒂𝒉𝒂𝒎𝒖𝒕 // 𝑩𝒂𝒉𝒂𝒎𝒖𝒕
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/AppleTV.list,💽𝑨𝒑𝒑𝒍𝒆𝑻𝑽 // 𝑨𝒑𝒑𝒍𝒆𝑻𝑽
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/HBO.list,💿𝑯𝑩𝑶 // 𝑯𝑩𝑶
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Disney+.list,🎬𝑫𝒊𝒔𝒏𝒆𝒚+ // 𝑫𝒊𝒔𝒏𝒆𝒚+
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Netflix.list,🎥𝑵𝒆𝒕𝒇𝒍𝒊𝒙 // 𝑵𝒆𝒕𝒇𝒍𝒊𝒙
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/TikTok.list,📽𝑻𝒊𝒌𝑻𝒐𝒌 // 𝑻𝒊𝒌𝑻𝒐𝒌
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Spotify.list,🎧𝑺𝒑𝒐𝒕𝒊𝒇𝒚 // 𝑺𝒑𝒐𝒕𝒊𝒇𝒚
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Enby.list,🎞️𝑬𝒎𝒃𝒚 // 𝑬𝒎𝒃𝒚
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/YouTube.list,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Twitch.list,🖥️𝑻𝒘𝒊𝒕𝒄𝒉,extended-matching // 𝑻𝒘𝒊𝒕𝒄𝒉
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Bahamut.list,🧸𝑩𝒂𝒉𝒂𝒎𝒖𝒕 // 𝑩𝒂𝒉𝒂𝒎𝒖𝒕
 
 # > ————国内媒体与社交分流————
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/BiliBili/BiliBili.list,📺𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊 // 𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Weibo/Weibo.list,🚾𝑾𝒆𝒊𝒃𝒐 // 𝑾𝒆𝒊𝒃𝒐
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/NGA/NGA.list,🛜国内直连 // 𝑵𝑮𝑨玩家社区
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/DouBan/DouBan.list,🛜国内直连 // 豆瓣
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/WeChat/WeChat.list,🛜国内直连 // 微信
-RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Xunlei/Xunlei.list,🛜国内直连 // 迅雷
-
-# > ————𝐀𝐩𝐩𝐥𝐞 直连分流————
-DOMAIN-SUFFIX,apps.apple.com,🛜国内直连 // 𝑨𝒑𝒑𝒍𝒆
-DOMAIN-SUFFIX,ls.apple.com,🛜国内直连 // 𝑨𝒑𝒑𝒍𝒆 𝑴𝒂𝒑𝒔
-DOMAIN-SUFFIX,store.apple.com,🛜国内直连 // 𝑨𝒑𝒑𝒍𝒆 𝑺𝒕𝒐𝒓𝒆 𝑶𝒏𝒍𝒊𝒏𝒆
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Bilibili.list,📺𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊,no-resolve // 𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Weibo.list,🚾𝑾𝒆𝒊𝒃𝒐 // 𝑾𝒆𝒊𝒃𝒐
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/NGA.list,🛜国内直连 // 𝑵𝑮𝑨玩家社区
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Douban.list,🛜国内直连 // 豆瓣
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/WeChat.list,🛜国内直连 // 微信
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Xunlei.list,🛜国内直连 // 迅雷
+# > ————国内App筛选直连————
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChinaDIRECT.list,🛜国内直连 // 国内App筛选直连
 
 # > ——国内直连 以下规则将触发本地 𝐃𝐍𝐒 解析——
 RULE-SET,LAN,🛜国内直连 // 📶局域网
