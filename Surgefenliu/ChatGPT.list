@@ -1,0 +1,10 @@
+# > OpenAI 核心接口
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+
+# > OpenAI 静态资源与验证
+DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,openaiapi-site.azureedge.net
