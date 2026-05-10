@@ -6,22 +6,22 @@ Egern可以通用Surge配置模块脚本和Loon配置插件脚本
 
 
 Quantumult X配置
-https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Quantumult%20X
+https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/ios%20daili/Quantumult%20X
 
 𝑺𝒖𝒓𝒈𝒆自动𝑺𝒎𝒂𝒓𝒕测试故障自动切换配置
-https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Surge%20AB
+https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/ios%20daili/Surge%20AB
 
 Surge配置
-https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Surge
+https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/ios%20daili/Surge
 
 Loon配置
-https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Loon
+https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/ios%20daili/Loon
 
 Egern配置
-https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Egern%20AB
+https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/ios%20daili/Egern%20AB
 
 shadowrocket配置
-https://raw.githubusercontent.com/lushier888/QX-Surge-Loon-Shadowrocket/refs/heads/main/Shadowrocket
+https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/ios%20daili/Shadowrocket
 
 Surge模块仓库
 https://surge.qingr.moe/
