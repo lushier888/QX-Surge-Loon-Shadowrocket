@@ -1,9 +1,9 @@
 # > Steam 商店与社区
-host-suffix, steampowered.com
-host-suffix, steamcommunity.com
-host-suffix, steamstatic.com
-host-suffix, steamusercontent.com
+host-suffix,steampowered.com
+host-suffix,steamcommunity.com
+host-suffix,steamstatic.com
+host-suffix,steamusercontent.com
 
 # > Steam 聊天与验证
-host-suffix, steam-chat.com
-host-suffix, steamserver.net
+host-suffix,steam-chat.com
+host-suffix,steamserver.net
