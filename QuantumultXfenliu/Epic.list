@@ -1,7 +1,7 @@
 # > Epic Games 核心
-host-suffix, epicgames.com
-host-suffix, entitlenetments.com
-host-suffix, help.epicgames.com
+host-suffix,epicgames.com
+host-suffix,entitlenetments.com
+host-suffix,help.epicgames.com
 
 # > Epic 静态资源
-host-suffix, unrealengine.com
+host-suffix,unrealengine.com
