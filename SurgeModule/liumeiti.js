@@ -1,89 +1,162 @@
-const REQUEST_HEADERS = {
-  'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1'
-};
+/*
+Surge Panel - Media & AI Unlock Checker
+支持：
+Disney+
+YouTube Premium
+Netflix
+HBO Max
+ChatGPT
+Gemini
+
+显示：
+- 解锁 / 未解锁
+- 地区
+- Netflix 全解 / 自制
+*/
+
+const UA =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122 Safari/537.36";
 
 (async () => {
-  let results = await Promise.all([
-    checkNetflix(),
-    checkDisneyPlus(),
-    checkYouTube(),
-    checkHBO(),
-    checkChatGPT(),
-    checkGemini()
+  const result = await Promise.all([
+    netflix(),
+    disney(),
+    youtube(),
+    hbo(),
+    chatgpt(),
+    gemini()
   ]);
 
   $done({
-    title: '流媒体 & AI 检测 (No MITM)',
-    content: results.join('\n'),
-    icon: 'shield.fill',
-    'icon-color': '#34C759'
+    title: "流媒体 & AI 解锁检测",
+    content: result.join("\n"),
+    icon: "sparkles.tv.fill",
+    "icon-color": "#FF9500"
   });
 })();
 
-// Netflix: 根据是否跳转到搜索页或特定标题页判定
-async function checkNetflix() {
-  return new Promise((r) => {
-    $httpClient.get({url:'https://www.netflix.com/title/81215561',headers:REQUEST_HEADERS},(err,res)=>{
-      if(err) r('Netflix: ❌连接失败');
-      else if(res.status===200) r('Netflix: ✅完整解锁');
-      else if(res.status===404) r('Netflix: ⚠️仅限自制剧');
-      else r('Netflix: ❌被封锁');
+function get(options) {
+  return new Promise((resolve) => {
+    $httpClient.get(options, (err, resp, body) => {
+      resolve({ err, resp, body });
     });
   });
 }
 
-// Disney+: 依据地区限制跳转 302 判定
-async function checkDisneyPlus() {
-  return new Promise((r) => {
-    $httpClient.get({url:'https://www.disneyplus.com',headers:REQUEST_HEADERS},(err,res)=>{
-      if(err) r('Disney+: ❌连接失败');
-      else if(res.status===200 || res.status===302) r('Disney+: ✅已解锁');
-      else r('Disney+: ❌不支持此地区');
-    });
+// Netflix
+async function netflix() {
+  const { err, resp, body } = await get({
+    url: "https://www.netflix.com/title/81215567",
+    headers: { "User-Agent": UA }
   });
+
+  if (err) return "Netflix   ❌ 网络错误";
+
+  const region = resp.headers["x-originating-url"]
+    ? resp.headers["x-originating-url"].match(/\/([a-z]{2})\//i)
+    : null;
+
+  const loc = region ? region[1].toUpperCase() : "UNKNOWN";
+
+  if (resp.status === 200)
+    return `Netflix   ✅ 全解 (${loc})`;
+
+  if (resp.status === 404)
+    return `Netflix   ⚠️ 仅自制 (${loc})`;
+
+  return `Netflix   ❌ 未解锁`;
 }
 
-// YouTube: 探测 Premium 页面状态码
-async function checkYouTube() {
-  return new Promise((r) => {
-    $httpClient.get({url:'https://www.youtube.com/premium',headers:REQUEST_HEADERS},(err,res)=>{
-      if(err) r('YouTube: ❌连接失败');
-      else if(res.status===200) r('YouTube: ✅Premium可用');
-      else r('YouTube: ❌不支持地区');
-    });
+// Disney+
+async function disney() {
+  const { err, body } = await get({
+    url: "https://www.disneyplus.com",
+    headers: { "User-Agent": UA }
   });
+
+  if (err) return "Disney+  ❌ 网络错误";
+
+  const region =
+    body.match(/"region":"(.*?)"/)?.[1] ||
+    body.match(/"countryCode":"(.*?)"/)?.[1];
+
+  if (body.includes("disneyplus"))
+    return `Disney+  ✅ ${region || "UNKNOWN"}`;
+
+  return "Disney+  ❌ 未解锁";
 }
 
-// HBO Max: 探测 Max 官网响应
-async function checkHBO() {
-  return new Promise((r) => {
-    $httpClient.get({url:'https://www.max.com',headers:REQUEST_HEADERS},(err,res)=>{
-      if(err) r('HBO Max: ❌连接失败');
-      else if(res.status===200 || res.status===302) r('HBO Max: ✅已解锁');
-      else r('HBO Max: ❌被封锁');
-    });
+// YouTube
+async function youtube() {
+  const { err, body } = await get({
+    url: "https://www.youtube.com/premium",
+    headers: { "User-Agent": UA }
   });
+
+  if (err) return "YouTube  ❌ 网络错误";
+
+  const region =
+    body.match(/"countryCode":"(.*?)"/)?.[1];
+
+  if (
+    body.includes(
+      "YouTube and YouTube Music ad-free"
+    )
+  ) {
+    return `YouTube  ✅ Premium (${region || "UNKNOWN"})`;
+  }
+
+  return `YouTube  ❌ 未解锁`;
 }
 
-// ChatGPT: 探测 iOS API 接口
-async function checkChatGPT() {
-  return new Promise((r) => {
-    $httpClient.get({url:'https://ios.chat.openai.com/',headers:REQUEST_HEADERS},(err,res)=>{
-      if(err) r('ChatGPT: ❌连接失败');
-      // 无MITM时，能通即视为解锁，因为封锁通常直接 403 或 拒绝连接
-      else if(res.status===200 || res.status===403) r(res.status===200?'✅已解锁':'❌被封锁');
-      else r('ChatGPT: ❓状态异常');
-    });
+// HBO Max
+async function hbo() {
+  const { err, body } = await get({
+    url: "https://play.max.com",
+    headers: { "User-Agent": UA }
   });
+
+  if (err) return "HBO Max  ❌ 网络错误";
+
+  const region =
+    body.match(/"country":"(.*?)"/)?.[1];
+
+  if (body.includes("Max")) {
+    return `HBO Max  ✅ ${region || "UNKNOWN"}`;
+  }
+
+  return "HBO Max  ❌ 未解锁";
 }
 
-// Gemini: 探测 Google 地区受限接口
-async function checkGemini() {
-  return new Promise((r) => {
-    $httpClient.get({url:'https://gemini.google.com/app',headers:REQUEST_HEADERS},(err,res)=>{
-      if(err) r('Gemini: ❌连接失败');
-      else if(res.status===200) r('Gemini: ✅已解锁');
-      else r('Gemini: ❌不支持');
-    });
+// ChatGPT
+async function chatgpt() {
+  const { err, body } = await get({
+    url: "https://chat.openai.com/cdn-cgi/trace",
+    headers: { "User-Agent": UA }
   });
+
+  if (err) return "ChatGPT  ❌ 网络错误";
+
+  const region = body.match(/loc=([A-Z]+)/)?.[1];
+
+  return `ChatGPT  ✅ ${region || "UNKNOWN"}`;
+}
+
+// Gemini
+async function gemini() {
+  const { err, body } = await get({
+    url: "https://gemini.google.com",
+    headers: { "User-Agent": UA }
+  });
+
+  if (err) return "Gemini   ❌ 网络错误";
+
+  const region =
+    body.match(/"countryCode":"(.*?)"/)?.[1];
+
+  if (body.includes("Gemini")) {
+    return `Gemini   ✅ ${region || "UNKNOWN"}`;
+  }
+
+  return "Gemini   ❌ 未解锁";
 }
