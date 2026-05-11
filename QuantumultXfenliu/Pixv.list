@@ -1,8 +1,8 @@
 # > Pixiv 核心
-host-suffix, pixiv.net
-host-suffix, pixiv.me
-host-suffix, pximg.net
+host-suffix,pixiv.net
+host-suffix,pixiv.me
+host-suffix,pximg.net
 
 # > Pixiv 辅助
-host-suffix, pixiv.org
-host-keyword, pixiv
+host-suffix,pixiv.org
+host-keyword,pixiv
