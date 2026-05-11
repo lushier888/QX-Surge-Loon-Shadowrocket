@@ -1,7 +1,7 @@
 # > Instagram 核心
-host-suffix, instagram.com
-host-suffix, cdninstagram.com
-host-suffix, instagr.am
+host-suffix,instagram.com
+host-suffix,cdninstagram.com
+host-suffix,instagr.am
 
 # > Meta 静态资源 (Instagram 必选)
-host-keyword, instagram
+host-keyword,instagram
