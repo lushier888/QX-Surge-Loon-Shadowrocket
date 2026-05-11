@@ -1,6 +1,6 @@
 # > HBO Max 核心
-host-suffix, max.com
-host-suffix, hbomax.com
-host-suffix, hbogo.com
-host-suffix, hbo.com
-host-suffix, hbomaxcdn.com
+host-suffix,max.com
+host-suffix,hbomax.com
+host-suffix,hbogo.com
+host-suffix,hbo.com
+host-suffix,hbomaxcdn.com
