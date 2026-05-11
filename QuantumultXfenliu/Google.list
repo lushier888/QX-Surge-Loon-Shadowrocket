@@ -1,40 +1,40 @@
 # > Google Search & Domains
-host-suffix, google.com
-host-suffix, google.com.hk
-host-suffix, google.jp
-host-suffix, google.sg
-host-suffix, google.tw
-host-keyword, www.google.
-host-keyword, googleadservices
+host-suffix,google.com
+host-suffix,google.com.hk
+host-suffix,google.jp
+host-suffix,google.sg
+host-suffix,google.tw
+host-keyword,www.google.
+host-keyword,googleadservices
 
 # > Google Infrastructure & Static Resources
-host-suffix, gstatic.com
-host-suffix, googleusercontent.com
-host-suffix, google-analytics.com
-host-suffix, googletagmanager.com
-host-suffix, googlesyndication.com
-host-suffix, doubleclick.net
-host-suffix, googleoptimize.com
+host-suffix,gstatic.com
+host-suffix,googleusercontent.com
+host-suffix,google-analytics.com
+host-suffix,googletagmanager.com
+host-suffix,googlesyndication.com
+host-suffix,doubleclick.net
+host-suffix,googleoptimize.com
 
 # > Google Workspace (Drive, Docs, Sheets)
-host-suffix, googledrive.com
-host-suffix, docs.google.com
-host-suffix, sheets.google.com
-host-suffix, slides.google.com
+host-suffix,googledrive.com
+host-suffix,docs.google.com
+host-suffix,sheets.google.com
+host-suffix,slides.google.com
 
 # > Google Play & Chrome
-host-suffix, googleplay.com
-host-suffix, gvt1.com
-host-suffix, gvt2.com
-host-suffix, gvt3.com
-host-suffix, chrome.com
-host-suffix, chrome-extension.google.com
+host-suffix,googleplay.com
+host-suffix,gvt1.com
+host-suffix,gvt2.com
+host-suffix,gvt3.com
+host-suffix,chrome.com
+host-suffix,chrome-extension.google.com
 
 # > Firebase & Cloud Services
-host-suffix, firebaseio.com
-host-suffix, app-measurement.com
-host-suffix, googlezip.net
-host-suffix, google.org
+host-suffix,firebaseio.com
+host-suffix,app-measurement.com
+host-suffix,googlezip.net
+host-suffix,google.org
 
 # > DNS
-host-suffix, dnsleaktest.com
+host-suffix,dnsleaktest.com
