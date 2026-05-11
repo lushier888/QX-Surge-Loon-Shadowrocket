@@ -1,0 +1,13 @@
+# > Apple 基础同步与下载
+host-suffix, itunes.apple.com
+host-suffix, mzstatic.com
+host-suffix, icloud.com
+host-suffix, icloud-content.com
+host-suffix, me.com
+host-suffix, apple-livephotos.com
+host-suffix, push.apple.com
+host-suffix, apple.com
+host-suffix, digicert.com
+host-suffix, entrust.net
+host-suffix, apple-dns.net
+host-keyword, apple-support
