@@ -1,5 +1,7 @@
 [Script]
-媒体检测 = type=generic,timeout=10,script-path=MediaCheck.js,argument=title=流媒体&AI检测&subtitle=点击手动刷新
+# > 远程加载 GitHub 脚本，无须 MITM 即可探测
+媒体检测=type=generic,timeout=15,script-path=https://raw.githubusercontent.com/Koolson/Qure/master/Surge/Script/StreamCheck.js,argument=title=流媒体&AI检测&subtitle=点击手动刷新
 
 [Panel]
-媒体检测 = script-name=媒体检测,update-interval=3600
+# > 首页展示面板
+媒体检测=script-name=媒体检测,update-interval=3600
