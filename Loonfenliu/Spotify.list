@@ -1,0 +1,7 @@
+# > Spotify 核心
+DOMAIN-SUFFIX,spotify.com
+DOMAIN-SUFFIX,scdn.co
+DOMAIN-SUFFIX,spoti.fi
+
+# > Spotify 验证与流媒体
+DOMAIN-KEYWORD,spotify
