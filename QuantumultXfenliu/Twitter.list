@@ -1,0 +1,13 @@
+# > X (Twitter) 核心域名
+host-suffix, x.com
+host-suffix, twitter.com
+host-suffix, twimg.com
+host-suffix, t.co
+
+# > X 视频与静态资源
+host-suffix, periscope.tv
+host-suffix, pscp.tv
+host-suffix, vine.co
+
+# > X 身份验证与 API
+host-keyword, twitter
