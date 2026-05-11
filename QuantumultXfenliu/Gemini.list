@@ -1,0 +1,45 @@
+# > Gemini 核心域名
+host, gemini.google.com
+host, bard.google.com
+
+# > Gemini API 与多模态传输
+host, generativelanguage.googleapis.com
+host, proactivebackend-pa.googleapis.com
+host, content-autofill.googleapis.com
+
+# > Google 身份验证与账户管理
+host-suffix, accounts.google.com
+host-suffix, ssl.gstatic.com
+
+# > 静态资源与 UI 组件
+host-suffix, static.gemini.google.com
+host-keyword, google-analytics
+
+# > 附加的 Google API (用于多模态图片/文件上传)
+host, ai.google.dev
+host, aistudio.google.com
+host-suffix, googleusercontent.com
+
+# > 如果你使用移动端 App，建议把这个也加上
+host-keyword, speech-pa.googleapis.com
+
+# > Gemini 核心前端网关 (Robin)
+host, robinfrontend-pa.googleapis.com
+
+# Gemini 远程规则集 - 验证版
+# ----------------------------------
+
+# 核心 Frontend 网关
+host, robinfrontend-pa.googleapis.com
+
+# Gemini 核心 API
+host, gemini.google.com
+host, generativelanguage.googleapis.com
+host, proactivebackend-pa.googleapis.com
+
+# 辅助与身份验证
+host-suffix, googleusercontent.com
+host-suffix, static.gemini.google.com
+
+# 宽泛匹配以防万一
+host-keyword, gemini
