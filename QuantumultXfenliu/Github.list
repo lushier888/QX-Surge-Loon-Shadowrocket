@@ -1,0 +1,13 @@
+# > GitHub 主站与 API
+host-suffix, github.com
+host-suffix, github.io
+host-suffix, githubapp.com
+host-suffix, githubassets.com
+
+# > GitHub 远程资源与 Raw 下载 (规则更新核心)
+host-suffix, githubusercontent.com
+host-suffix, github.global.ssl.fastly.net
+
+# > GitHub 镜像与容器服务
+host-suffix, ghcr.io
+host-suffix, pkg.github.com
