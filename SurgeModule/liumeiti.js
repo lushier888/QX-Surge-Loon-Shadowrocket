@@ -198,8 +198,8 @@ async function checkChatGPT() {
 
         let gpt =
           l !== -1
-            ? "ChatGPT: 已解锁 ➠ "
-            : "ChatGPT: 未解锁 ➠ ";
+            ? "𝑪𝒉𝒂𝒕𝑮𝑷𝑻: 已解锁 ➠ "
+            : "𝑪𝒉𝒂𝒕𝑮𝑷𝑻: 未解锁 ➠ ";
 
         resolve(`${gpt}${loc}`);
 
