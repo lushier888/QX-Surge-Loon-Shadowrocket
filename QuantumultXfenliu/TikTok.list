@@ -1,18 +1,18 @@
 # > TikTok 核心域名
-host-suffix, tiktok.com
-host-suffix, tiktokv.com
-host-suffix, tiktokcdn.com
-host-suffix, byteoversea.com
-host-suffix, musical.ly
+host-suffix,tiktok.com
+host-suffix,tiktokv.com
+host-suffix,tiktokcdn.com
+host-suffix,byteoversea.com
+host-suffix,musical.ly
 
 # > TikTok 静态资源与视频流 (核心流量)
-host-keyword, tiktok
-host-keyword, musical.ly
-host-keyword, -tiktok
-host-keyword, tiktok-
+host-keyword,tiktok
+host-keyword,musical.ly
+host-keyword,-tiktok
+host-keyword,tiktok-
 
 # > TikTok 内部 API 与分发
-host-suffix, p16-tiktokcdn-com.akamaized.net
-host-suffix, ibyteimg.com
-host-suffix, ibytedtos.com
-host-suffix, myvcloud.com
+host-suffix,p16-tiktokcdn-com.akamaized.net
+host-suffix,ibyteimg.com
+host-suffix,ibytedtos.com
+host-suffix,myvcloud.com
