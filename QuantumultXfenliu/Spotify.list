@@ -1,7 +1,7 @@
 # > Spotify 核心
-host-suffix, spotify.com
-host-suffix, scdn.co
-host-suffix, spoti.fi
+host-suffix,spotify.com
+host-suffix,scdn.co
+host-suffix,spoti.fi
 
 # > Spotify 验证与流媒体
-host-keyword, spotify
+host-keyword,spotify
