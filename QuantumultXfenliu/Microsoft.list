@@ -1,33 +1,33 @@
 # > Microsoft 账户与身份验证 (核心：解决登录转圈)
-host-suffix, microsoft.com
-host-suffix, live.com
-host-suffix, passport.net
-host-suffix, msauth.net
-host-suffix, msauthimages.net
-host-suffix, msftauth.net
+host-suffix,microsoft.com
+host-suffix,live.com
+host-suffix,passport.net
+host-suffix,msauth.net
+host-suffix,msauthimages.net
+host-suffix,msftauth.net
 
 # > OneDrive 与 SharePoint (生产力：保证同步不掉线)
-host-suffix, onedrive.com
-host-suffix, 1drv.ms
-host-suffix, sharepoint.com
-host-suffix, sharepointonline.com
-host-suffix, storage.live.com
+host-suffix,onedrive.com
+host-suffix,1drv.ms
+host-suffix,sharepoint.com
+host-suffix,sharepointonline.com
+host-suffix,storage.live.com
 
 # > Office / Microsoft 365 (Word, Excel, Outlook)
-host-suffix, office.com
-host-suffix, office365.com
-host-suffix, office.net
-host-suffix, outlook.com
-host-suffix, outlook.office365.com
+host-suffix,office.com
+host-suffix,office365.com
+host-suffix,office.net
+host-suffix,outlook.com
+host-suffix,outlook.office365.com
 
 # > Windows 系统更新与应用商店
-host-suffix, microsoft.com.akadns.net
-host-suffix, windows.com
-host-suffix, windowsupdate.com
-host-suffix, mp.microsoft.com
+host-suffix,microsoft.com.akadns.net
+host-suffix,windows.com
+host-suffix,windowsupdate.com
+host-suffix,mp.microsoft.com
 
 # > 微软静态资源与 CDN
-host-suffix, msedge.net
-host-suffix, msftstatic.com
-host-suffix, aspnetcdn.com
-host-suffix, msecnd.net
+host-suffix,msedge.net
+host-suffix,msftstatic.com
+host-suffix,aspnetcdn.com
+host-suffix,msecnd.net
