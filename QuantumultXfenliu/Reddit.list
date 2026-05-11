@@ -1,0 +1,8 @@
+# > Reddit 核心
+host-suffix, reddit.com
+host-suffix, redditmedia.com
+host-suffix, redditstatic.com
+
+# > Reddit 图片与视频托管
+host-suffix, redd.it
+host-keyword, reddit
