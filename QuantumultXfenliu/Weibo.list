@@ -1,4 +1,4 @@
-DOMAIN-SUFFIX,weibo.com
-DOMAIN-SUFFIX,weibocdn.com
-DOMAIN-SUFFIX,sinaimg.cn
-DOMAIN-SUFFIX,sinajs.cn
+host-suffix, weibo.com
+host-suffix, weibocdn.com
+host-suffix, sinaimg.cn
+host-suffix, sinajs.cn
