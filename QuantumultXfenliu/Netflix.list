@@ -1,8 +1,8 @@
 # > Netflix 核心
-host-suffix, netflix.com
-host-suffix, netflix.net
-host-suffix, nflxext.com
-host-suffix, nflximg.com
-host-suffix, nflximg.net
-host-suffix, nflxvideo.net
-host-suffix, nflxso.net
+host-suffix,netflix.com
+host-suffix,netflix.net
+host-suffix,nflxext.com
+host-suffix,nflximg.com
+host-suffix,nflximg.net
+host-suffix,nflxvideo.net
+host-suffix,nflxso.net
