@@ -1,15 +1,15 @@
 # > Apple TV+ 核心播放接口
-host, tv.apple.com
-host, tv.g.apple.com
+host,tv.apple.com
+host,tv.g.apple.com
 
 # > Apple TV 内容传输 (视频流核心)
-host-suffix, aaplimg.com
-host-suffix, apple-mapkit.com
+host-suffix,aaplimg.com
+host-suffix,apple-mapkit.com
 
 # > 特定播放请求域名
-host-keyword, hls-svod.itunes.apple.com
-host-keyword, hls-svod-ve.itunes.g.aaplimg.com
+host-keyword,hls-svod.itunes.apple.com
+host-keyword,hls-svod-ve.itunes.g.aaplimg.com
 
 # > 如果你在 Apple TV 硬件上使用，建议增加这些
-host-suffix, uts-api.itunes.apple.com
-host-suffix, play-edge.itunes.apple.com
+host-suffix,uts-api.itunes.apple.com
+host-suffix,play-edge.itunes.apple.com
