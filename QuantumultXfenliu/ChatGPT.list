@@ -6,5 +6,5 @@ host-suffix,oaistatic.com
 host-suffix,oaiusercontent.com
 
 # > OpenAI 静态资源与验证
-host, chat.openai.com.cdn.cloudflare.net
-host, openaiapi-site.azureedge.net
+host,chat.openai.com.cdn.cloudflare.net
+host,openaiapi-site.azureedge.net
