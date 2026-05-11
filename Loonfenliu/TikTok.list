@@ -1,0 +1,18 @@
+# > TikTok 核心域名
+DOMAIN-SUFFIX,tiktok.com
+DOMAIN-SUFFIX,tiktokv.com
+DOMAIN-SUFFIX,tiktokcdn.com
+DOMAIN-SUFFIX,byteoversea.com
+DOMAIN-SUFFIX,musical.ly
+
+# > TikTok 静态资源与视频流 (核心流量)
+DOMAIN-KEYWORD,tiktok
+DOMAIN-KEYWORD,musical.ly
+DOMAIN-KEYWORD,-tiktok
+DOMAIN-KEYWORD,tiktok-
+
+# > TikTok 内部 API 与分发
+DOMAIN-SUFFIX,p16-tiktokcdn-com.akamaized.net
+DOMAIN-SUFFIX,ibyteimg.com
+DOMAIN-SUFFIX,ibytedtos.com
+DOMAIN-SUFFIX,myvcloud.com
