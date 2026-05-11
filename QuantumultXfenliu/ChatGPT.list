@@ -1,0 +1,10 @@
+# > OpenAI 核心接口
+host-suffix, openai.com
+host-suffix, chatgpt.com
+host-suffix, auth0.com
+host-suffix, oaistatic.com
+host-suffix, oaiusercontent.com
+
+# > OpenAI 静态资源与验证
+host, chat.openai.com.cdn.cloudflare.net
+host, openaiapi-site.azureedge.net
