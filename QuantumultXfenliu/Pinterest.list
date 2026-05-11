@@ -1,12 +1,12 @@
 # > Pinterest 核心
-host-suffix, pinterest.com
-host-suffix, pinterest.at
-host-suffix, pinterest.ca
-host-suffix, pinterest.co.uk
-host-suffix, pinterest.de
-host-suffix, pinterest.fr
-host-suffix, pinterest.jp
+host-suffix,pinterest.com
+host-suffix,pinterest.at
+host-suffix,pinterest.ca
+host-suffix,pinterest.co.uk
+host-suffix,pinterest.de
+host-suffix,pinterest.fr
+host-suffix,pinterest.jp
 
 # > Pinterest 图片托管
-host-suffix, pinimg.com
-host-keyword, pinterest
+host-suffix,pinimg.com
+host-keyword,pinterest
