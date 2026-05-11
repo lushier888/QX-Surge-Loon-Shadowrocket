@@ -1,40 +1,40 @@
 # > Google Search & Domains
-host-suffix, google.com, Google
-host-suffix, google.com.hk, Google
-host-suffix, google.jp, Google
-host-suffix, google.sg, Google
-host-suffix, google.tw, Google
-host-keyword, www.google., Google
-host-keyword, googleadservices, Google
+host-suffix, google.com
+host-suffix, google.com.hk
+host-suffix, google.jp
+host-suffix, google.sg
+host-suffix, google.tw
+host-keyword, www.google.
+host-keyword, googleadservices
 
 # > Google Infrastructure & Static Resources
-host-suffix, gstatic.com, Google
-host-suffix, googleusercontent.com, Google
-host-suffix, google-analytics.com, Google
-host-suffix, googletagmanager.com, Google
-host-suffix, googlesyndication.com, Google
-host-suffix, doubleclick.net, Google
-host-suffix, googleoptimize.com, Google
+host-suffix, gstatic.com
+host-suffix, googleusercontent.com
+host-suffix, google-analytics.com
+host-suffix, googletagmanager.com
+host-suffix, googlesyndication.com
+host-suffix, doubleclick.net
+host-suffix, googleoptimize.com
 
 # > Google Workspace (Drive, Docs, Sheets)
-host-suffix, googledrive.com, Google
-host-suffix, docs.google.com, Google
-host-suffix, sheets.google.com, Google
-host-suffix, slides.google.com, Google
+host-suffix, googledrive.com
+host-suffix, docs.google.com
+host-suffix, sheets.google.com
+host-suffix, slides.google.com
 
 # > Google Play & Chrome
-host-suffix, googleplay.com, Google
-host-suffix, gvt1.com, Google
-host-suffix, gvt2.com, Google
-host-suffix, gvt3.com, Google
-host-suffix, chrome.com, Google
-host-suffix, chrome-extension.google.com, Google
+host-suffix, googleplay.com
+host-suffix, gvt1.com
+host-suffix, gvt2.com
+host-suffix, gvt3.com
+host-suffix, chrome.com
+host-suffix, chrome-extension.google.com
 
 # > Firebase & Cloud Services
-host-suffix, firebaseio.com, Google
-host-suffix, app-measurement.com, Google
-host-suffix, googlezip.net, Google
-host-suffix, google.org, Google
+host-suffix, firebaseio.com
+host-suffix, app-measurement.com
+host-suffix, googlezip.net
+host-suffix, google.org
 
 # > DNS
-host-suffix, dnsleaktest.com, Google
+host-suffix, dnsleaktest.com
