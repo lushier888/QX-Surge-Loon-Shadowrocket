@@ -1,0 +1,10 @@
+# > YouTube 核心
+host-suffix,youtube.com
+host-suffix,youtubei.googleapis.com
+host-suffix,ytimg.com
+host-suffix,ggpht.com
+host-suffix,youtu.be
+
+# > YouTube 视频流 (核心流量)
+host-suffix,googlevideo.com
+host-keyword,youtube
