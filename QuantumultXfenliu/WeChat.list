@@ -1,8 +1,8 @@
-host-suffix, weixin.com
-host-suffix, wechat.com
-host-suffix, tencent.com
-host-suffix, qlogo.cn
-host-suffix, qpic.cn
-host-suffix, servicewechat.com
-host-keyword, wechat
-host-keyword, weixin
+host-suffix,weixin.com
+host-suffix,wechat.com
+host-suffix,tencent.com
+host-suffix,qlogo.cn
+host-suffix,qpic.cn
+host-suffix,servicewechat.com
+host-keyword,wechat
+host-keyword,weixin
