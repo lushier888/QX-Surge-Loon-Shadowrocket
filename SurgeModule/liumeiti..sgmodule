@@ -1,9 +1,9 @@
-#!name=Media Unlock
-#!desc=Netflix Disney+ YouTube HBO ChatGPT Gemini
-#!author=你自己
+#!name=流媒体检测工具📺
+#!desc=检测𝑪𝒉𝒂𝒕𝑮𝑷𝑻，𝒀𝒐𝒖𝑻𝒖𝒃𝒆，𝑵𝒆𝒕𝒇𝒍𝒊𝒙，𝑫𝒊𝒔𝒏𝒆𝒚+ 
 
 [Panel]
-流媒体解锁 = script-name=流媒体解锁
+stream68 = script-name=stream68, title="流媒体解锁检测", content="请刷新面板", update-interval= 60
 
 [Script]
-流媒体解锁 = type=panel,timeout=20,script-path=https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/liumeiti.js
+#流媒体+ChatGPT、Gemini
+stream68 = type=generic, timeout=15, script-path=https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/liumeiti.js
