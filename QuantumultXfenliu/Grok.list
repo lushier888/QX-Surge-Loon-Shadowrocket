@@ -1,0 +1,7 @@
+# > Grok 核心接口
+host, grok.com
+host, api.grok.com
+
+# > X 内部 Grok 专用分发 (防止在 X App 内调用时失效)
+host-suffix, x-ai.com
+host-keyword, grok-api
