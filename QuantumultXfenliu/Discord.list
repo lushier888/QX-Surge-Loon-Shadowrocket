@@ -1,10 +1,10 @@
 # > Discord 核心
-host-suffix, discord.com
-host-suffix, discordapp.com
-host-suffix, discordapp.net
-host-suffix, discord.gg
-host-suffix, discord.media
-host-suffix, discord.v-gg
+host-suffix,discord.com
+host-suffix,discordapp.com
+host-suffix,discordapp.net
+host-suffix,discord.gg
+host-suffix,discord.media
+host-suffix,discord.v-gg
 
 # > Discord 静态资源
-host-suffix, discord-attachments-uploads-prd.s3.amazonaws.com
+host-suffix,discord-attachments-uploads-prd.s3.amazonaws.com
