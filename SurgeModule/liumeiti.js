@@ -1,21 +1,32 @@
-/*
-Surge Panel - Media & AI Unlock Checker
-支持：
-Disney+
-YouTube Premium
-Netflix
-HBO Max
-ChatGPT
-Gemini
-
-显示：
-- 解锁 / 未解锁
-- 地区
-- Netflix 全解 / 自制
-*/
+const panel = {
+  title: "流媒体 & AI 解锁",
+  content: [],
+  icon: "play.tv.fill",
+  "icon-color": "#FF9500"
+};
 
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122 Safari/537.36";
+
+function request(url) {
+  return new Promise((resolve) => {
+    $httpClient.get(
+      {
+        url,
+        headers: {
+          "User-Agent": UA
+        }
+      },
+      (err, resp, body) => {
+        resolve({
+          err,
+          resp,
+          body
+        });
+      }
+    );
+  });
+}
 
 (async () => {
   const result = await Promise.all([
@@ -27,136 +38,138 @@ const UA =
     gemini()
   ]);
 
-  $done({
-    title: "流媒体 & AI 解锁检测",
-    content: result.join("\n"),
-    icon: "sparkles.tv.fill",
-    "icon-color": "#FF9500"
-  });
+  panel.content = result.join("\n");
+
+  $done(panel);
 })();
 
-function get(options) {
-  return new Promise((resolve) => {
-    $httpClient.get(options, (err, resp, body) => {
-      resolve({ err, resp, body });
-    });
-  });
-}
-
-// Netflix
 async function netflix() {
-  const { err, resp, body } = await get({
-    url: "https://www.netflix.com/title/81215567",
-    headers: { "User-Agent": UA }
-  });
+  const { err, resp } = await request(
+    "https://www.netflix.com/title/81215567"
+  );
 
-  if (err) return "Netflix   ❌ 网络错误";
+  if (err) return "Netflix   ❌";
 
-  const region = resp.headers["x-originating-url"]
-    ? resp.headers["x-originating-url"].match(/\/([a-z]{2})\//i)
-    : null;
+  let region = "UNKNOWN";
 
-  const loc = region ? region[1].toUpperCase() : "UNKNOWN";
+  const url =
+    resp.headers["x-originating-url"];
 
-  if (resp.status === 200)
-    return `Netflix   ✅ 全解 (${loc})`;
+  if (url) {
+    const match = url.match(/\/([a-z]{2})\//i);
 
-  if (resp.status === 404)
-    return `Netflix   ⚠️ 仅自制 (${loc})`;
+    if (match) {
+      region = match[1].toUpperCase();
+    }
+  }
 
-  return `Netflix   ❌ 未解锁`;
+  if (resp.status === 200) {
+    return `Netflix   ✅ Full (${region})`;
+  }
+
+  if (resp.status === 404) {
+    return `Netflix   ⚠️ Originals (${region})`;
+  }
+
+  return `Netflix   ❌`;
 }
 
-// Disney+
 async function disney() {
-  const { err, body } = await get({
-    url: "https://www.disneyplus.com",
-    headers: { "User-Agent": UA }
-  });
+  const { err, body } = await request(
+    "https://www.disneyplus.com"
+  );
 
-  if (err) return "Disney+  ❌ 网络错误";
+  if (err) return "Disney+  ❌";
 
   const region =
-    body.match(/"region":"(.*?)"/)?.[1] ||
-    body.match(/"countryCode":"(.*?)"/)?.[1];
+    body.match(/Region: ([A-Z]{2})/)?.[1] ||
+    body.match(/"countryCode":"(.*?)"/)?.[1] ||
+    "UNKNOWN";
 
-  if (body.includes("disneyplus"))
-    return `Disney+  ✅ ${region || "UNKNOWN"}`;
+  if (
+    body.includes("disneyplus") ||
+    body.includes("Disney+")
+  ) {
+    return `Disney+  ✅ (${region})`;
+  }
 
-  return "Disney+  ❌ 未解锁";
+  return "Disney+  ❌";
 }
 
-// YouTube
 async function youtube() {
-  const { err, body } = await get({
-    url: "https://www.youtube.com/premium",
-    headers: { "User-Agent": UA }
-  });
+  const { err, body } = await request(
+    "https://www.youtube.com/premium"
+  );
 
-  if (err) return "YouTube  ❌ 网络错误";
+  if (err) return "YouTube  ❌";
 
   const region =
-    body.match(/"countryCode":"(.*?)"/)?.[1];
+    body.match(/"countryCode":"(.*?)"/)?.[1] ||
+    "UNKNOWN";
 
   if (
     body.includes(
       "YouTube and YouTube Music ad-free"
     )
   ) {
-    return `YouTube  ✅ Premium (${region || "UNKNOWN"})`;
+    return `YouTube  ✅ Premium (${region})`;
   }
 
-  return `YouTube  ❌ 未解锁`;
+  return `YouTube  ❌ (${region})`;
 }
 
-// HBO Max
 async function hbo() {
-  const { err, body } = await get({
-    url: "https://play.max.com",
-    headers: { "User-Agent": UA }
-  });
+  const { err, body } = await request(
+    "https://play.max.com"
+  );
 
-  if (err) return "HBO Max  ❌ 网络错误";
+  if (err) return "HBO Max  ❌";
 
   const region =
-    body.match(/"country":"(.*?)"/)?.[1];
+    body.match(/"country":"(.*?)"/)?.[1] ||
+    "UNKNOWN";
 
-  if (body.includes("Max")) {
-    return `HBO Max  ✅ ${region || "UNKNOWN"}`;
+  if (
+    body.includes("Max") ||
+    body.includes("play.max")
+  ) {
+    return `HBO Max  ✅ (${region})`;
   }
 
-  return "HBO Max  ❌ 未解锁";
+  return "HBO Max  ❌";
 }
 
-// ChatGPT
 async function chatgpt() {
-  const { err, body } = await get({
-    url: "https://chat.openai.com/cdn-cgi/trace",
-    headers: { "User-Agent": UA }
-  });
+  const { err, body } = await request(
+    "https://chat.openai.com/cdn-cgi/trace"
+  );
 
-  if (err) return "ChatGPT  ❌ 网络错误";
-
-  const region = body.match(/loc=([A-Z]+)/)?.[1];
-
-  return `ChatGPT  ✅ ${region || "UNKNOWN"}`;
-}
-
-// Gemini
-async function gemini() {
-  const { err, body } = await get({
-    url: "https://gemini.google.com",
-    headers: { "User-Agent": UA }
-  });
-
-  if (err) return "Gemini   ❌ 网络错误";
+  if (err) return "ChatGPT  ❌";
 
   const region =
-    body.match(/"countryCode":"(.*?)"/)?.[1];
+    body.match(/loc=([A-Z]+)/)?.[1] ||
+    "UNKNOWN";
 
-  if (body.includes("Gemini")) {
-    return `Gemini   ✅ ${region || "UNKNOWN"}`;
+  return `ChatGPT  ✅ (${region})`;
+}
+
+async function gemini() {
+  const { err, body } = await request(
+    "https://gemini.google.com"
+  );
+
+  if (err) return "Gemini   ❌";
+
+  const region =
+    body.match(/"countryCode":"(.*?)"/)?.[1] ||
+    "UNKNOWN";
+
+  if (
+    body.includes("Gemini") ||
+    body.includes("bard")
+  ) {
+    return `Gemini   ✅ (${region})`;
   }
 
-  return "Gemini   ❌ 未解锁";
+  return "Gemini   ❌";
 }
