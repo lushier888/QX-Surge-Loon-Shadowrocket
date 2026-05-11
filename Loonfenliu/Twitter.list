@@ -1,0 +1,13 @@
+# > X (Twitter) 核心域名
+DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,t.co
+
+# > X 视频与静态资源
+DOMAIN-SUFFIX,periscope.tv
+DOMAIN-SUFFIX,pscp.tv
+DOMAIN-SUFFIX,vine.co
+
+# > X 身份验证与 API
+DOMAIN-KEYWORD,twitter
