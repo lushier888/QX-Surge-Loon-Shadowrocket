@@ -1,0 +1,67 @@
+# > ————国内直连分流规则————
+# > 𝑩𝑶𝑺𝑺直聘规则
+host-suffix, img.bosszhipin.com
+# > 𝑨𝑮𝑬动漫规则
+host-suffix, agedm.vip
+# > 𝑫𝒆𝒆𝒑𝒔𝒆𝒆𝒌规则
+host-suffix, deepseek.com
+# > 𝑫𝒐𝒖𝒃𝒂𝒐 (豆包) 分流规则
+host-suffix, doubao.com
+host-suffix, volces.com
+host-suffix, bytegecko.com
+host-suffix, byteoversea.com
+host-suffix, ibyteimg.com
+host-suffix, doubao.net
+host-keyword, doubao
+# > 夸克规则
+host-suffix, quark.cn
+host-suffix, quark.net
+# > 𝑸𝑸规则
+host-suffix, qq.com
+# > 𝑸𝑸空间规则
+host-suffix, qzone.qq.com
+host-suffix, gtimg.cn
+# > 小黑盒规则
+host-suffix, xiaoheihe.cn
+# > 游民星空
+host-suffix, gamersky.com
+host-suffix, gamersky.cn
+host-suffix, gsstatic.com
+host-suffix, gamerskystatic.com
+# > NGA玩家社区规则
+host-suffix, nga.cn
+host-suffix, 178.com
+host-suffix, ngacn.cc
+host-suffix, msga.cc
+host, nga.178.com
+host, pic.nga.178.com
+host, img.nga.178.com
+host, attachments.nga.178.com
+# > 淘宝规则
+host-suffix, taobao.com
+host-suffix, tmall.com
+host-suffix, alicdn.com
+host-suffix, aliyun.com
+host-suffix, alimama.com
+host-suffix, tbcache.com
+host-suffix, tb.cn
+host-keyword, taobao
+# > 高德地图规则
+host-keyword, amap
+host-suffix, amap.com
+host-suffix, autonavi.com
+host-suffix, amap.cn
+host-suffix, gaode.com
+# > 讯飞输入法规则
+host-suffix, iflytek.com
+host-suffix, voicecloud.cn
+# > 搜狗输入法规则
+host-suffix, sogou.com
+# > 网易云音乐规则
+host-suffix, music.163.com
+host-suffix, 126.net
+host-suffix, 163jiasu.com
+host-suffix, ydstatic.com
+host-suffix, netease.com
+host-keyword, netease
+host-keyword, music.126
