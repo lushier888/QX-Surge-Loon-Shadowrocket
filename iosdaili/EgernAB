@@ -863,7 +863,7 @@ rules:
     policy: 🍎𝑨𝒑𝒑𝒍𝒆
     disabled: false
 - rule_set:
-    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/telegram.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Telegram.list
     policy: 📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
     disabled: false
 - rule_set:
