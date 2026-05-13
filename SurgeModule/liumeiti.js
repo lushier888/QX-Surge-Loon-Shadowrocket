@@ -229,14 +229,17 @@ async function checkChatGPT() {
 
 }
 
-// Gemini 检测
 async function checkGemini() {
 
   return new Promise((resolve, reject) => {
 
-    let option = {
-      url: 'https://gemini.google.com/',
-      headers: REQUEST_HEADERS,
+    const option = {
+      url: 'https://gemini.google.com/app',
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0 Safari/537.36',
+        'Accept-Language': 'en'
+      }
     };
 
     $httpClient.get(option, function(error, response, data) {
@@ -249,40 +252,56 @@ async function checkGemini() {
 
       }
 
+      let status = response.status;
+
       let region =
-        response.headers['cf-ipcountry'] ||
         response.headers['x-openai-public-ip-country'] ||
+        response.headers['cf-ipcountry'] ||
         'US';
 
+      region = region.toUpperCase();
+
       let loc =
-        `${getCountryFlagEmoji(region)} | ${region.toUpperCase()}`;
+        `${getCountryFlagEmoji(region)} | ${region}`;
 
-      if (response.status === 200) {
-
-        if (
+      // 已解锁
+      if (
+        status === 200 &&
+        (
           data.includes('Gemini') ||
+          data.includes('bard') ||
           data.includes('Google AI')
-        ) {
+        )
+      ) {
 
-          resolve(
-            `𝑮𝒆𝒎𝒊𝒏𝒊: 已解锁 ➠ ${loc}`
-          );
+        resolve(
+          `𝑮𝒆𝒎𝒊𝒏𝒊: 已解锁 ➠ ${loc}`
+        );
 
-        } else {
+        return;
 
-          resolve(
-            `𝑮𝒆𝒎𝒊𝒏𝒊: 未解锁 ➠ ${loc}`
-          );
+      }
 
-        }
-
-      } else {
+      // 被地区限制
+      if (
+        status === 403 ||
+        data.includes('not available') ||
+        data.includes('unsupported country') ||
+        data.includes('currently unavailable')
+      ) {
 
         resolve(
           `𝑮𝒆𝒎𝒊𝒏𝒊: 未解锁 ➠ ${loc}`
         );
 
+        return;
+
       }
+
+      // 其它情况
+      resolve(
+        `𝑮𝒆𝒎𝒊𝒏𝒊: 检测失败`
+      );
 
     });
 
