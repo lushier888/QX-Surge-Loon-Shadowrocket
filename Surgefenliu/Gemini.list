@@ -4,6 +4,13 @@ DOMAIN,bard.google.com
 DOMAIN-SUFFIX,google.com,
 DOMAIN-SUFFIX,gemini.google.com
 
+# Cloudflare 探测接口
+IP-CIDR,1.1.1.1/32,no-resolve
+# OpenAI 探测接口
+DOMAIN,chat.openai.com
+# Gemini 探测接口
+DOMAIN,gemini.google.com
+
 
 # > Gemini API 与多模态传输 (核心，不加这个 App 版必死)
 DOMAIN,generativelanguage.googleapis.com
