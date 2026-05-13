@@ -235,45 +235,66 @@ async function checkGemini() {
 
     const option = {
       url: 'https://gemini.google.com/app',
-      headers: REQUEST_HEADERS
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0 Safari/537.36',
+        'Accept-Language': 'en'
+      }
     };
 
     $httpClient.get(option, function(error, response, data) {
 
-      if (error || !response) {
+      try {
+
+        // 请求失败
+        if (error || !response) {
+
+          resolve('𝑮𝒆𝒎𝒊𝒏𝒊: 检测失败');
+
+          return;
+        }
+
+        // 防止 data 为 undefined
+        data = data || '';
+
+        let status = response.status || 0;
+
+        // 已解锁
+        if (
+          status === 200 &&
+          (
+            data.indexOf('Gemini') !== -1 ||
+            data.indexOf('Google AI') !== -1 ||
+            data.indexOf('bard') !== -1
+          )
+        ) {
+
+          resolve('𝑮𝒆𝒎𝒊𝒏𝒊: 已解锁');
+
+          return;
+        }
+
+        // 未解锁
+        if (
+          status === 403 ||
+          data.indexOf('unsupported country') !== -1 ||
+          data.indexOf('not available') !== -1 ||
+          data.indexOf('currently unavailable') !== -1
+        ) {
+
+          resolve('𝑮𝒆𝒎𝒊𝒏𝒊: 未解锁');
+
+          return;
+        }
+
+        // 其它情况
         resolve('𝑮𝒆𝒎𝒊𝒏𝒊: 检测失败');
-        return;
+
+      } catch(e) {
+
+        resolve('𝑮𝒆𝒎𝒊𝒏𝒊: 检测异常');
+
       }
-
-      let status = response.status;
-
-      // 可访问
-      if (
-        status === 200 &&
-        (
-          data.includes('Gemini') ||
-          data.includes('Google AI')
-        )
-      ) {
-
-        resolve('𝑮𝒆𝒎𝒊𝒏𝒊: 已解锁');
-
-        return;
-      }
-
-      // 地区限制
-      if (
-        status === 403 ||
-        data.includes('unsupported country') ||
-        data.includes('not available')
-      ) {
-
-        resolve('𝑮𝒆𝒎𝒊𝒏𝒊: 未解锁');
-
-        return;
-      }
-
-      resolve('𝑮𝒆𝒎𝒊𝒏𝒊: 检测失败');
 
     });
 
