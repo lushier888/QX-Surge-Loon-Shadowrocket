@@ -231,77 +231,49 @@ async function checkChatGPT() {
 
 async function checkGemini() {
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
 
     const option = {
       url: 'https://gemini.google.com/app',
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0 Safari/537.36',
-        'Accept-Language': 'en'
-      }
+      headers: REQUEST_HEADERS
     };
 
     $httpClient.get(option, function(error, response, data) {
 
       if (error || !response) {
-
         resolve('𝑮𝒆𝒎𝒊𝒏𝒊: 检测失败');
-
         return;
-
       }
 
       let status = response.status;
 
-      let region =
-        response.headers['x-openai-public-ip-country'] ||
-        response.headers['cf-ipcountry'] ||
-        'US';
-
-      region = region.toUpperCase();
-
-      let loc =
-        `${getCountryFlagEmoji(region)} | ${region}`;
-
-      // 已解锁
+      // 可访问
       if (
         status === 200 &&
         (
           data.includes('Gemini') ||
-          data.includes('bard') ||
           data.includes('Google AI')
         )
       ) {
 
-        resolve(
-          `𝑮𝒆𝒎𝒊𝒏𝒊: 已解锁 ➠ ${loc}`
-        );
+        resolve('𝑮𝒆𝒎𝒊𝒏𝒊: 已解锁');
 
         return;
-
       }
 
-      // 被地区限制
+      // 地区限制
       if (
         status === 403 ||
-        data.includes('not available') ||
         data.includes('unsupported country') ||
-        data.includes('currently unavailable')
+        data.includes('not available')
       ) {
 
-        resolve(
-          `𝑮𝒆𝒎𝒊𝒏𝒊: 未解锁 ➠ ${loc}`
-        );
+        resolve('𝑮𝒆𝒎𝒊𝒏𝒊: 未解锁');
 
         return;
-
       }
 
-      // 其它情况
-      resolve(
-        `𝑮𝒆𝒎𝒊𝒏𝒊: 检测失败`
-      );
+      resolve('𝑮𝒆𝒎𝒊𝒏𝒊: 检测失败');
 
     });
 
