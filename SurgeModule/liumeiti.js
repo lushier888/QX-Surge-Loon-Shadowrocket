@@ -7,7 +7,7 @@
  * 由bigmom2012修改
  * 更新日期：2022-07-30 11:28
  * 更新日期：2024-07-04 21:28
- * 增加 Gemini 检测并修改字体
+ * 2026-05-13 同步 Gemini 显示格式为：𝑮𝒆𝒎𝒊𝒏𝒊: 已解锁 ➠ 🚩 | CC
  */
 
 const REQUEST_HEADERS = {
@@ -26,27 +26,6 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
 
 let url = "http://chat.openai.com/cdn-cgi/trace";
 let tf=["T1","XX","AL","DZ","AD","AO","AG","AR","AM","AU","AT","AZ","BS","BD","BB","BE","BZ","BJ","BT","BA","BW","BR","BG","BF","CV","CA","CL","CO","KM","CR","HR","CY","DK","DJ","DM","DO","EC","SV","EE","FJ","FI","FR","GA","GM","GE","DE","GH","GR","GD","GT","GN","GW","GY","HT","HN","HU","IS","IN","ID","IQ","IE","IL","IT","JM","JP","JO","KZ","KE","KI","KW","KG","LV","LB","LS","LR","LI","LT","LU","MG","MW","MY","MV","ML","MT","MH","MR","MU","MX","MC","MN","ME","MA","MZ","MM","NA","NR","NP","NL","NZ","NI","NE","NG","MK","NO","OM","PK","PW","PA","PG","PE","PH","PL","PT","QA","RO","RW","KN","LC","VC","WS","SM","ST","SN","RS","SC","SL","SG","SK","SI","SB","ZA","ES","LK","SR","SE","CH","TH","TG","TO","TT","TN","TR","TV","UG","AE","US","UY","VU","ZM","BO","BN","CG","CZ","VA","FM","MD","PS","KR","TW","TZ","TL","GB"];
-let tff=["plus","on"];
-
-// 处理 argument 参数
-let titlediy, icon, iconerr, iconColor, iconerrColor;
-if (typeof $argument !== 'undefined') {
-  const args = $argument.split('&');
-  for (let i = 0; i < args.length; i++) {
-    const [key, value] = args[i].split('=');
-    if (key === 'title') {
-      titlediy = value;
-    } else if (key === 'icon') {
-      icon = value;
-    } else if (key === 'iconerr') {
-      iconerr = value;
-    } else if (key === 'icon-color') {
-      iconColor = value;
-    } else if (key === 'iconerr-color') {
-      iconerrColor = value;
-    }
-  }
-}
 
 // 获取国旗 Emoji 函数
 function getCountryFlagEmoji(countryCode) {
@@ -79,12 +58,12 @@ Date.prototype.Format = function(fmt) {
   };
 
   // 并发检测所有项
-  let [chatgpt_result, gemini_result, disney_data, youtube_result, netflix_result] = await Promise.all([
+  let [chatgpt_result, gemini_result, netflix_result, youtube_result, disney_data] = await Promise.all([
     checkChatGPT(),
     checkGemini(),
-    testDisneyPlus(),
+    check_netflix(),
     check_youtube_premium(),
-    check_netflix()
+    testDisneyPlus()
   ]);
 
   let { region, status } = disney_data;
@@ -111,47 +90,49 @@ Date.prototype.Format = function(fmt) {
   $done(panel_result);
 })();
 
-// ChatGPT 检测 (应用指定字体)
+// ChatGPT 检测
 async function checkChatGPT() {
   return new Promise((resolve) => {
     $httpClient.get(url, function(error, response, data) {
-      if (error) {
-        resolve("𝑪𝒉𝒂𝒕𝑮𝑼𝑻: 检测失败");
-        return;
-      }
+      if (error) { resolve("𝑪𝒉𝒂𝒕𝑮𝑷𝑻: 检测失败"); return; }
       let lines = data.split("\n");
       let cf = lines.reduce((acc, line) => {
         let [key, value] = line.split("=");
         acc[key] = value;
         return acc;
       }, {});
-      let loc = getCountryFlagEmoji(cf.loc) + ' | ' + cf.loc;
-      let l = tf.indexOf(cf.loc);
+      let loc = cf.loc || 'XX';
+      let l = tf.indexOf(loc);
       let gpt = (l !== -1) ? "𝑪𝒉𝒂𝒕𝑮𝑷𝑻: 已解锁 ➠ " : "𝑪𝒉𝒂𝒕𝑮𝑷𝑻: 未解锁 ➠ ";
-      resolve(`${gpt}${loc}`);
+      resolve(`${gpt}${getCountryFlagEmoji(loc)} | ${loc}`);
     });
   });
 }
 
-// Gemini 检测 (新增函数，应用指定字体)
+// Gemini 检测 (格式已同步)
 async function checkGemini() {
   return new Promise((resolve) => {
-    let opts = {
-      url: 'https://gemini.google.com/app',
-      headers: REQUEST_HEADERS,
-    };
-    $httpClient.get(opts, function(error, response, data) {
-      if (error) {
-        resolve("𝑮𝒆𝒎𝒊𝒏𝒊: 检测失败");
-        return;
-      }
-      if (response.status === 200) {
-        resolve("𝑮𝒆𝒎𝒊𝒏𝒊: 已解锁 ➠ ✅");
-      } else if (response.status === 403) {
-        resolve("𝑮𝒆𝒎𝒊𝒏𝒊: 未解锁 ➠ 🚫");
-      } else {
-        resolve("𝑮𝒆𝒎𝒊𝒏𝒊: 不支持此地区 ➠ ✖️");
-      }
+    // 探测 Google 节点的地区信息
+    $httpClient.get('https://www.google.com/buildlabel', function(error, response, data) {
+      let region = response ? response.headers['X-App-Region'] || response.headers['x-app-region'] : '';
+      
+      let opts = {
+        url: 'https://gemini.google.com/app',
+        headers: REQUEST_HEADERS,
+      };
+      
+      $httpClient.get(opts, function(err, res, body) {
+        if (err) { resolve("𝑮𝒆𝒎𝒊𝒏𝒊: 检测失败"); return; }
+        
+        let loc = region ? region.toUpperCase() : 'XX';
+        if (res.status === 200) {
+          resolve(`𝑮𝒆𝒎𝒊𝒏𝒊: 已解锁 ➠ ${getCountryFlagEmoji(loc)} | ${loc}`);
+        } else if (res.status === 403) {
+          resolve(`𝑮𝒆𝒎𝒊𝒏𝒊: 未解锁 ➠ ${getCountryFlagEmoji(loc)} | ${loc}`);
+        } else {
+          resolve("𝑮𝒆𝒎𝒊𝒏𝒊: 不支持此地区 ➠ ✖️");
+        }
+      });
     });
   });
 }
@@ -159,68 +140,40 @@ async function checkGemini() {
 async function check_youtube_premium() {
   let inner_check = () => {
     return new Promise((resolve, reject) => {
-      let option = {
-        url: 'https://www.youtube.com/premium',
-        headers: REQUEST_HEADERS,
-      };
+      let option = { url: 'https://www.youtube.com/premium', headers: REQUEST_HEADERS };
       $httpClient.get(option, function(error, response, data) {
-        if (error != null || response.status !== 200) {
-          reject('Error');
-          return;
-        }
-        if (data.indexOf('Premium is not available in your country') !== -1) {
-          resolve('Not Available');
-          return;
-        }
+        if (error != null || response.status !== 200) { reject('Error'); return; }
+        if (data.indexOf('Premium is not available in your country') !== -1) { resolve('Not Available'); return; }
         let region = '';
         let re = new RegExp('"countryCode":"(.*?)"', 'gm');
         let result = re.exec(data);
-        if (result != null && result.length === 2) {
-          region = result[1];
-        } else if (data.indexOf('www.google.cn') !== -1) {
-          region = 'CN';
-        } else {
-          region = 'US';
-        }
+        if (result != null && result.length === 2) { region = result[1]; } 
+        else { region = data.indexOf('www.google.cn') !== -1 ? 'CN' : 'US'; }
         resolve(region);
       });
     });
   };
 
   let youtube_check_result = '𝐘𝐨𝐮𝐓𝐮𝐛𝐞: ';
-  await inner_check()
-    .then((code) => {
-      if (code === 'Not Available') {
-        youtube_check_result += '不支持解锁';
-      } else {
-        youtube_check_result += '已解锁 ➠ ' + `${getCountryFlagEmoji(code)} | ` + code.toUpperCase();
-      }
-    })
-    .catch(() => {
-      youtube_check_result += '检测失败';
-    });
+  await inner_check().then((code) => {
+    youtube_check_result += (code === 'Not Available') ? '不支持解锁' : '已解锁 ➠ ' + `${getCountryFlagEmoji(code)} | ` + code.toUpperCase();
+  }).catch(() => { youtube_check_result += '检测失败'; });
   return youtube_check_result;
 }
 
 async function check_netflix() {
   let inner_check = (filmId) => {
     return new Promise((resolve, reject) => {
-      let option = {
-        url: 'https://www.netflix.com/title/' + filmId,
-        headers: REQUEST_HEADERS,
-      };
+      let option = { url: 'https://www.netflix.com/title/' + filmId, headers: REQUEST_HEADERS };
       $httpClient.get(option, function(error, response, data) {
         if (error != null) { reject('Error'); return; }
         if (response.status === 403) { reject('Not Available'); return; }
         if (response.status === 404) { resolve('Not Found'); return; }
         if (response.status === 200) {
-          let url = response.headers['x-originating-url'] || response.headers['Location'] || '';
-          let region = 'US';
-          if (url.includes('/')) {
-            region = url.split('/')[3] || 'US';
-            region = region.split('-')[0];
-          }
-          if (region === 'title' || !region) region = 'US';
+          let url = response.headers['x-originating-url'] || '';
+          let region = url.split('/')[3] || 'US';
+          region = region.split('-')[0];
+          if (region === 'title') region = 'US';
           resolve(region);
           return;
         }
@@ -247,17 +200,12 @@ async function check_netflix() {
 
 async function testDisneyPlus() {
   try {
-    let { region, cnbl } = await Promise.race([testHomePage(), timeout(7000)]);
+    let { region } = await Promise.race([testHomePage(), timeout(7000)]);
     let { countryCode, inSupportedLocation } = await Promise.race([getLocationInfo(), timeout(7000)]);
     region = countryCode ?? region;
-    if (inSupportedLocation === false || inSupportedLocation === 'false') {
-      return { region, status: STATUS_COMING };
-    } else {
-      return { region, status: STATUS_AVAILABLE };
-    }
+    return { region, status: (inSupportedLocation === false) ? STATUS_COMING : STATUS_AVAILABLE };
   } catch (error) {
     if (error === 'Not Available') return { status: STATUS_NOT_AVAILABLE };
-    if (error === 'Timeout') return { status: STATUS_TIMEOUT };
     return { status: STATUS_ERROR };
   }
 }
@@ -266,38 +214,16 @@ function getLocationInfo() {
   return new Promise((resolve, reject) => {
     let opts = {
       url: 'https://disney.api.edge.bamgrid.com/graph/v1/device/graphql',
-      headers: {
-        'Accept-Language': 'en',
-        Authorization: 'ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84',
-        'Content-Type': 'application/json',
-        'User-Agent': UA,
-      },
+      headers: { 'Accept-Language': 'en', Authorization: 'ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84', 'Content-Type': 'application/json', 'User-Agent': UA },
       body: JSON.stringify({
         query: 'mutation registerDevice($input: RegisterDeviceInput!) { registerDevice(registerDevice: $input) { grant { grantType assertion } } }',
-        variables: {
-          input: {
-            applicationRuntime: 'chrome',
-            attributes: {
-              browserName: 'chrome',
-              browserVersion: '94.0.4606',
-              manufacturer: 'apple',
-              model: null,
-              operatingSystem: 'macintosh',
-              operatingSystemVersion: '10.15.7',
-              osDeviceIds: [],
-            },
-            deviceFamily: 'browser',
-            deviceLanguage: 'en',
-            deviceProfile: 'macosx',
-          },
-        },
-      }),
+        variables: { input: { applicationRuntime: 'chrome', attributes: { browserName: 'chrome', browserVersion: '94.0.4606', manufacturer: 'apple', operatingSystem: 'macintosh', operatingSystemVersion: '10.15.7', osDeviceIds: [] }, deviceFamily: 'browser', deviceLanguage: 'en', deviceProfile: 'macosx' } }
+      })
     };
-    $httpClient.post(opts, function(error, response, data) {
+    $httpClient.post(opts, (error, response, data) => {
       if (error || response.status !== 200) { reject('Not Available'); return; }
-      data = JSON.parse(data);
-      if (data?.errors) { reject('Not Available'); return; }
-      let { session: { inSupportedLocation, location: { countryCode } } } = data?.extensions?.sdk;
+      let res = JSON.parse(data);
+      let { inSupportedLocation, location: { countryCode } } = res?.extensions?.sdk.session;
       resolve({ inSupportedLocation, countryCode });
     });
   });
@@ -305,20 +231,14 @@ function getLocationInfo() {
 
 function testHomePage() {
   return new Promise((resolve, reject) => {
-    let opts = { url: 'https://www.disneyplus.com/', headers: { 'Accept-Language': 'en', 'User-Agent': UA } };
-    $httpClient.get(opts, function(error, response, data) {
-      if (error || response.status !== 200 || data.indexOf('Sorry, Disney+ is not available in your region.') !== -1) {
-        reject('Not Available'); return;
-      }
-      let match = data.match(/Region: ([A-Za-z]{2})[\s\S]*?CNBL: ([12])/);
-      if (!match) { resolve({ region: '', cnbl: '' }); return; }
-      resolve({ region: match[1], cnbl: match[2] });
+    $httpClient.get({ url: 'https://www.disneyplus.com/', headers: { 'Accept-Language': 'en', 'User-Agent': UA } }, (error, response, data) => {
+      if (error || response.status !== 200 || data.indexOf('Sorry, Disney+ is not available in your region.') !== -1) { reject('Not Available'); return; }
+      let match = data.match(/Region: ([A-Za-z]{2})/);
+      resolve({ region: match ? match[1] : '' });
     });
   });
 }
 
 function timeout(delay = 5000) {
-  return new Promise((_, reject) => {
-    setTimeout(() => { reject('Timeout'); }, delay);
-  });
+  return new Promise((_, reject) => { setTimeout(() => { reject('Timeout'); }, delay); });
 }
