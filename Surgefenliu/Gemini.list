@@ -1,6 +1,9 @@
 # > Gemini 核心域名
 DOMAIN,gemini.google.com
 DOMAIN,bard.google.com
+DOMAIN-SUFFIX,google.com,
+DOMAIN-SUFFIX,gemini.google.com
+
 
 # > Gemini API 与多模态传输 (核心，不加这个 App 版必死)
 DOMAIN,generativelanguage.googleapis.com
