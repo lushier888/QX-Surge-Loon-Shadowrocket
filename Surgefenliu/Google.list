@@ -9,6 +9,7 @@ DOMAIN-KEYWORD,googleadservices
 
 # > Google Infrastructure & Static Resources
 # 这些是 Google 服务的地基，Gemini 和 YouTube 以外的服务都靠它们
+DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,google-analytics.com
