@@ -843,6 +843,10 @@ rules:
     match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/SystemOTA/SystemOTA.list
     policy: REJECT
 - rule_set:
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list
+    policy: 🤖𝑨𝑰
+    disabled: false
+- rule_set:
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Google.list
     policy: 🌏 𝑮𝒐𝒐𝒈𝒍𝒆
     disabled: false
@@ -889,10 +893,6 @@ rules:
 - rule_set:
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pinterest.list
     policy: 🍄𝑷𝒊𝒙𝒊𝒗
-    disabled: false
-- rule_set:
-    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list
-    policy: 🤖𝑨𝑰
     disabled: false
 - rule_set:
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChatGPT.list
