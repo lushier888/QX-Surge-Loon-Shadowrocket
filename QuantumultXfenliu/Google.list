@@ -1,40 +1,33 @@
-# > Google Search & Domains
-host-suffix,google.com
-host-suffix,google.com.hk
-host-suffix,google.jp
-host-suffix,google.sg
-host-suffix,google.tw
-host-keyword,www.google.
-host-keyword,googleadservices
+# > 基础域名
+HOST-SUFFIX,google.com,Google
+HOST-SUFFIX,google.com.hk,Google
 
-# > Google Infrastructure & Static Resources
-host-suffix,gstatic.com
-host-suffix,googleusercontent.com
-host-suffix,google-analytics.com
-host-suffix,googletagmanager.com
-host-suffix,googlesyndication.com
-host-suffix,doubleclick.net
-host-suffix,googleoptimize.com
+# > 核心服务与 API (不含任何 Gemini/YouTube 后端)
+HOST-SUFFIX,googleapis.com,Google
+HOST-SUFFIX,gstatic.com,Google
+HOST-SUFFIX,googleusercontent.com,Google
+HOST-SUFFIX,ggpht.com,Google
 
-# > Google Workspace (Drive, Docs, Sheets)
-host-suffix,googledrive.com
-host-suffix,docs.google.com
-host-suffix,sheets.google.com
-host-suffix,slides.google.com
+# > 媒体与动态资源
+HOST-SUFFIX,gvt1.com,Google
+HOST-SUFFIX,gvt2.com,Google
+HOST-SUFFIX,gvt3.com,Google
 
-# > Google Play & Chrome
-host-suffix,googleplay.com
-host-suffix,gvt1.com
-host-suffix,gvt2.com
-host-suffix,gvt3.com
-host-suffix,chrome.com
-host-suffix,chrome-extension.google.com
+# > 工作区与云服务 (仅基础版)
+HOST-SUFFIX,googledrive.com,Google
+HOST-SUFFIX,firebaseio.com,Google
+HOST-SUFFIX,googlezip.net,Google
 
-# > Firebase & Cloud Services
-host-suffix,firebaseio.com
-host-suffix,app-measurement.com
-host-suffix,googlezip.net
-host-suffix,google.org
+# > 广告与追踪
+HOST-SUFFIX,googlesyndication.com,Google
+HOST-SUFFIX,doubleclick.net,Google
+HOST-SUFFIX,google-analytics.com,Google
+HOST-SUFFIX,googletagmanager.com,Google
+HOST-SUFFIX,googleoptimize.com,Google
 
-# > DNS
-host-suffix,dnsleaktest.com
+# > 其它关键基础设施
+HOST-SUFFIX,chrome.com,Google
+HOST-SUFFIX,chrome-extension.google.com,Google
+HOST-SUFFIX,google.org,Google
+HOST-SUFFIX,app-measurement.com,Google
+HOST-SUFFIX,dnsleaktest.com,Google
