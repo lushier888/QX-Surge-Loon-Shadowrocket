@@ -1,3 +1,7 @@
+# > Google核心
+DOMAIN,gemini.google.com
+DOMAIN,generativelanguage.googleapis.com
+
 # > Gemini 核心域名
 DOMAIN,gemini.google.com
 DOMAIN,bard.google.com
