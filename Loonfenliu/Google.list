@@ -1,40 +1,33 @@
-# > Google Search & Domains
-DOMAIN-SUFFIX,google.com
-DOMAIN-SUFFIX,google.com.hk
-DOMAIN-SUFFIX,google.jp
-DOMAIN-SUFFIX,google.sg
-DOMAIN-SUFFIX,google.tw
-DOMAIN-KEYWORD,www.google.
-DOMAIN-KEYWORD,googleadservices
+# > 基础域名
+DOMAIN-SUFFIX,google.com,Google
+DOMAIN-SUFFIX,google.com.hk,Google
 
-# > Google Infrastructure & Static Resources
-DOMAIN-SUFFIX,gstatic.com
-DOMAIN-SUFFIX,googleusercontent.com
-DOMAIN-SUFFIX,google-analytics.com
-DOMAIN-SUFFIX,googletagmanager.com
-DOMAIN-SUFFIX,googlesyndication.com
-DOMAIN-SUFFIX,doubleclick.net
-DOMAIN-SUFFIX,googleoptimize.com
+# > 核心服务与 API (不含任何 Gemini/YouTube 后端)
+DOMAIN-SUFFIX,googleapis.com,Google
+DOMAIN-SUFFIX,gstatic.com,Google
+DOMAIN-SUFFIX,googleusercontent.com,Google
+DOMAIN-SUFFIX,ggpht.com,Google
 
-# > Google Workspace (Drive, Docs, Sheets)
-DOMAIN-SUFFIX,googledrive.com
-DOMAIN-SUFFIX,docs.google.com
-DOMAIN-SUFFIX,sheets.google.com
-DOMAIN-SUFFIX,slides.google.com
+# > 媒体与动态资源
+DOMAIN-SUFFIX,gvt1.com,Google
+DOMAIN-SUFFIX,gvt2.com,Google
+DOMAIN-SUFFIX,gvt3.com,Google
 
-# > Google Play & Chrome
-DOMAIN-SUFFIX,googleplay.com
-DOMAIN-SUFFIX,gvt1.com
-DOMAIN-SUFFIX,gvt2.com
-DOMAIN-SUFFIX,gvt3.com
-DOMAIN-SUFFIX,chrome.com
-DOMAIN-SUFFIX,chrome-extension.google.com
+# > 工作区与云服务 (仅基础版)
+DOMAIN-SUFFIX,googledrive.com,Google
+DOMAIN-SUFFIX,firebaseio.com,Google
+DOMAIN-SUFFIX,googlezip.net,Google
 
-# > Firebase & Cloud Services
-DOMAIN-SUFFIX,firebaseio.com
-DOMAIN-SUFFIX,app-measurement.com
-DOMAIN-SUFFIX,googlezip.net
-DOMAIN-SUFFIX,google.org
+# > 广告与追踪
+DOMAIN-SUFFIX,googlesyndication.com,Google
+DOMAIN-SUFFIX,doubleclick.net,Google
+DOMAIN-SUFFIX,google-analytics.com,Google
+DOMAIN-SUFFIX,googletagmanager.com,Google
+DOMAIN-SUFFIX,googleoptimize.com,Google
 
-# > DNS
-DOMAIN-SUFFIX,dnsleaktest.com
+# > 其它关键基础设施
+DOMAIN-SUFFIX,chrome.com,Google
+DOMAIN-SUFFIX,chrome-extension.google.com,Google
+DOMAIN-SUFFIX,google.org,Google
+DOMAIN-SUFFIX,app-measurement.com,Google
+DOMAIN-SUFFIX,dnsleaktest.com,Google
