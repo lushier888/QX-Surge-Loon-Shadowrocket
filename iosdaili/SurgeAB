@@ -262,13 +262,14 @@ RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Su
 RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/SystemOTA/SystemOTA.list,REJECT // 屏蔽𝒊𝒐𝒔系统升级
 
 # > ————国际服务分流————
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
 RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Google/Google.list,🌏𝑮𝒐𝒐𝒈𝒍𝒆,extended-matching // 𝑮𝒐𝒐𝒈𝒍𝒆 谷歌服务
 RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Microsoft/Microsoft.list,💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 // 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 微软服务
 RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/GitHub/GitHub.list,💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 // 𝑮𝒊𝒕𝑯𝒖𝒃
 RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Apple/Apple.list,🍎𝑨𝒑𝒑𝒍𝒆 // 𝑨𝒑𝒑𝒍𝒆 苹果服务
 RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/AppStore/AppStore.list,🍎𝑨𝒑𝒑𝒍𝒆 // 𝑨𝒑𝒑𝒔𝒕𝒐𝒓𝒆 苹果商店
 
-# > ————国际服务分流————
+# > ————国际服务与AI分流————
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Google.list,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑮𝒐𝒐𝒈𝒍𝒆谷歌服务
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/LSP.list,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑳𝑺𝑷网站
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Microsoft.list,💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 // 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 微软服务
@@ -285,7 +286,6 @@ RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads
 # > ————游戏与AI工具分流————
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pixiv.list,🍄𝑷𝒊𝒙𝒊𝒗 // 𝑷𝒊𝒙𝒊𝒗
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pinterest.list,🍄𝑷𝒊𝒙𝒊𝒗 // 𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕
-RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChatGPT.list,🤖𝑨𝑰 // 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Speedtest.list,♻️𝑭𝑰𝑵𝑨𝑳 // 𝐒𝐩𝐞𝐞𝐝𝐭𝐞𝐬𝐭
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Steam.list,🎮𝑺𝒕𝒆𝒂𝒎 // 𝑺𝒕𝒆𝒂𝒎
