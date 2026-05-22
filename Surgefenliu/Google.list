@@ -1,32 +1,41 @@
-# Google Core
-DOMAIN-SUFFIX,googleapis.com
+# > Google Search & Domains
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,google.com.hk
+DOMAIN-SUFFIX,google.jp
+DOMAIN-SUFFIX,google.sg
+DOMAIN-SUFFIX,google.tw
+DOMAIN-KEYWORD,www.google.
+DOMAIN-KEYWORD,googleadservices
+
+# > Google Infrastructure & Static Resources
+# 这些是 Google 服务的地基，Gemini 和 YouTube 以外的服务都靠它们
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,googleusercontent.com
-DOMAIN-SUFFIX,ggpht.com
-DOMAIN-SUFFIX,gvt1.com
-DOMAIN-SUFFIX,gvt2.com
-DOMAIN-SUFFIX,gvt3.com
-
-# Google Main
-DOMAIN-SUFFIX,google.com
-
-# Google Services
-DOMAIN,accounts.google.com
-DOMAIN,mail.google.com
-DOMAIN,drive.google.com
-DOMAIN,docs.google.com
-DOMAIN,maps.google.com
-DOMAIN,translate.google.com
-DOMAIN,play.google.com
-
-# Firebase
-DOMAIN-SUFFIX,firebaseio.com
-DOMAIN-SUFFIX,app-measurement.com
-
-# Ads / Analytics
 DOMAIN-SUFFIX,google-analytics.com
 DOMAIN-SUFFIX,googletagmanager.com
 DOMAIN-SUFFIX,googlesyndication.com
+DOMAIN-SUFFIX,doubleclick.net
+DOMAIN-SUFFIX,googleoptimize.com
+
+# > Google Workspace (Drive, Docs, Sheets)
+DOMAIN-SUFFIX,googledrive.com
+DOMAIN-SUFFIX,docs.google.com
+DOMAIN-SUFFIX,sheets.google.com
+DOMAIN-SUFFIX,slides.google.com
+
+# > Google Play & Chrome
+DOMAIN-SUFFIX,googleplay.com
+DOMAIN-SUFFIX,gvt1.com
+DOMAIN-SUFFIX,gvt2.com
+DOMAIN-SUFFIX,gvt3.com
+DOMAIN-SUFFIX,chrome.com
+DOMAIN-SUFFIX,chrome-extension.google.com
+
+# > Firebase & Cloud Services
+DOMAIN-SUFFIX,firebaseio.com
+DOMAIN-SUFFIX,app-measurement.com
+DOMAIN-SUFFIX,googlezip.net
+DOMAIN-SUFFIX,google.org
 
 # > DNS
 DOMAIN-SUFFIX,dnsleaktest.com
