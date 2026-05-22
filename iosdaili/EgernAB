@@ -1,3 +1,4 @@
+#Gemini的规则必须在Google前面否则就会被Google抢走流量导致Gemini断网
 ipv6: true
 allow_external_connections: true
 vif_only: true
