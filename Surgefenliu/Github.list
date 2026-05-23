@@ -1,13 +1,19 @@
-# > GitHub 主站与 API
-DOMAIN-SUFFIX,github.com
-DOMAIN-SUFFIX,github.io
-DOMAIN-SUFFIX,githubapp.com
-DOMAIN-SUFFIX,githubassets.com
+# GitHub 分流规则 
+DOMAIN-SUFFIX,github.com,GitHub
+DOMAIN-SUFFIX,github.io,GitHub
+DOMAIN-SUFFIX,githubapp.com,GitHub
+DOMAIN-SUFFIX,githubassets.com,GitHub
+DOMAIN-SUFFIX,githubusercontent.com,GitHub
+DOMAIN-SUFFIX,raw.githubusercontent.com,GitHub
+DOMAIN-SUFFIX,objects.githubusercontent.com,GitHub
 
-# > GitHub 远程资源与 Raw 下载 (规则更新核心)
-DOMAIN-SUFFIX,githubusercontent.com
-DOMAIN-SUFFIX,github.global.ssl.fastly.net
+# API 与其他服务
+DOMAIN-SUFFIX,api.github.com,GitHub
+DOMAIN-SUFFIX,gist.github.com,GitHub
+DOMAIN-SUFFIX,codeload.github.com,GitHub
+DOMAIN-SUFFIX,assets.github.com,GitHub
 
-# > GitHub 镜像与容器服务
-DOMAIN-SUFFIX,ghcr.io
-DOMAIN-SUFFIX,pkg.github.com
+# 容器与包管理
+DOMAIN-SUFFIX,ghcr.io,GitHub
+DOMAIN-SUFFIX,pkg.github.com,GitHub
+DOMAIN-SUFFIX,container-registry.github.com,GitHub
