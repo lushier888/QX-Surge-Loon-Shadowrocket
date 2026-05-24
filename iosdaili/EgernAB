@@ -1,5 +1,3 @@
-# Gemini的规则必须在Google前面否则就会被
-# Google抢走流量导致Gemini断网
 # 本人自用配置通过自用Surge配置倒入Egern
 # 本人修改和添加DNS分流规则
 # 添加一些自用规则和LSP模块
@@ -168,18 +166,14 @@ dns:
 # ————机场节点订阅与策略组————
 policy_groups:
 - external:
-    name: 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
+    name: 我的机场𝑨
     type: select
-    urls:
-    - https://sub.store/download/%F0%9D%91%AA%F0%9D%92%8D%F0%9D%92%90%F0%9D%92%96%F0%9D%92%85%F0%9D%91%AD%F0%9D%92%8A%F0%9D%92%94%F0%9D%92%89%F0%9D%92%86%F0%9D%92%93%20%E2%98%81%EF%B8%8F?target=Egern
     update_interval: -1
     icon: https://s1.imagehub.cc/images/2026/03/25/b2126dc8e764a3576c3f7e60f164cf2f.png
     hidden: false
 - external:
-    name: 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    name: 我的机场𝑩
     type: select
-    urls:
-    - https://sub.store/download/%F0%9D%92%89%F0%9D%92%96%F0%9D%92%90%F0%9D%92%8B%F0%9D%92%8A%F0%9D%92%82%F0%9D%92%8F%20%F0%9F%91%BE%F0%9F%91%BE?target=Egern
     filter: IPLC|IPV6
     update_interval: 0
     icon: https://s1.imagehub.cc/images/2025/07/22/e2fb09ef7ad704fa486ae024ffd98c27.png
@@ -187,154 +181,154 @@ policy_groups:
 - auto_test:
     name: 🇭🇰香港𝑨𝑩
     policies:
-    - 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑨
+    - 我的机场𝑩
     flatten: true
     filter: 香港
     hidden: true
 - auto_test:
     name: 🇺🇸美国𝑨𝑩
     policies:
-    - 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑨
+    - 我的机场𝑩
     flatten: true
     filter: 美国
     hidden: true
 - auto_test:
     name: 🇯🇵日本𝑨𝑩
     policies:
-    - 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑨
+    - 我的机场𝑩
     flatten: true
     filter: 日本
     hidden: true
 - auto_test:
     name: 🇨🇳台湾𝑨𝑩
     policies:
-    - 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑨
+    - 我的机场𝑩
     flatten: true
     filter: 台湾
     hidden: true
 - auto_test:
     name: 🇸🇬新加坡𝑨𝑩
     policies:
-    - 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑨
+    - 我的机场𝑩
     flatten: true
     filter: 新加坡
     hidden: true
 - auto_test:
     name: 🇰🇷韩国𝑨𝑩
     policies:
-    - 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑨
+    - 我的机场𝑩
     flatten: true
     filter: 韩国
     hidden: true
 - auto_test:
     name: 🇹🇭泰国𝑨𝑩
     policies:
-    - 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑨
+    - 我的机场𝑩
     flatten: true
     filter: 泰国
     hidden: true
 - auto_test:
     name: 🇭🇰香港𝑨
     policies:
-    - 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
+    - 我的机场𝑨
     flatten: true
     filter: 香港
     hidden: true
 - auto_test:
     name: 🇨🇳台湾𝑨
     policies:
-    - 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
+    - 我的机场𝑨
     flatten: true
     filter: 台湾
     hidden: true
 - auto_test:
     name: 🇺🇸美国𝑨
     policies:
-    - 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
+    - 我的机场𝑨
     flatten: true
     filter: 美国
     hidden: true
 - auto_test:
     name: 🇯🇵日本𝑨
     policies:
-    - 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
+    - 我的机场𝑨
     flatten: true
     filter: 日本
     hidden: true
 - auto_test:
     name: 🇸🇬新加坡𝑨
     policies:
-    - 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
+    - 我的机场𝑨
     flatten: true
     filter: 新加坡
     hidden: true
 - auto_test:
     name: 🇭🇰香港𝑩
     policies:
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑩
     flatten: true
     filter: 香港
     hidden: true
 - auto_test:
     name: 🇺🇸美国𝑩
     policies:
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑩
     flatten: true
     filter: 美国
     hidden: true
 - auto_test:
     name: 🇯🇵日本𝑩
     policies:
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑩
     flatten: true
     filter: 日本
     hidden: true
 - auto_test:
     name: 🇨🇳台湾𝑩
     policies:
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑩
     flatten: true
     filter: 台湾
     hidden: true
 - auto_test:
     name: 🇸🇬新加坡𝑩
     policies:
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑩
     flatten: true
     filter: 新加坡
     hidden: true
 - auto_test:
     name: 🇰🇭柬埔寨𝑩
     policies:
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑩
     flatten: true
     filter: 柬埔寨
     hidden: true
 - auto_test:
     name: 🇷🇺俄罗斯𝑩
     policies:
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑩
     flatten: true
     filter: 俄罗斯
     hidden: true
 - select:
     name: 🇻🇳越南𝑩
     policies:
-    - 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
+    - 我的机场𝑩
     flatten: true
     filter: 越南
     hidden: true
 - auto_test:
     name: 🇺🇸𝑮𝒆𝒎𝒊𝒏𝒊节点
     policies:
-    - 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
+    - 我的机场𝑨
     flatten: true
     filter: 🇺🇸美国 01|🇺🇸 美国直连|🇨🇳 台湾直连
     hidden: true
@@ -1110,8 +1104,8 @@ scriptings:
 
 # ————密匙————
 mitm:
-  ca_p12: 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
-  ca_passphrase: 26D4B63B
+  ca_p12: 
+  ca_passphrase: 
 
 # ————主机域名————
   hostnames:
@@ -1420,12 +1414,12 @@ modules:
 - name: 机场流量信息𝑨𝑩
   url: https://raw.githubusercontent.com/IBL3ND/MK/refs/heads/main/subscription-info.sgmodule
   compat_arguments:
-    A_name: 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
-    A_url: https://yuyun.mhlnf.cn/yuyunsvip?token=3032cbaff9c6e369dfad6dd12669c05b&resetDay1
-    A_reset: '26'
-    B_name: 𝒉𝒖𝒐𝒋𝒊𝒂𝒏 👾👾
-    B_url: https://168866.sub-cloudflare.com/link/FhGcHCFwYYdy7fb7?sub=3
-    B_reset: '6'
+    A_name: 
+    A_url: 
+    A_reset: 
+    B_name: 
+    B_url: 
+    B_reset: 
   enabled: true
 - name: 油价
   url: 油价
@@ -1678,12 +1672,11 @@ modules:
 - name: 机场流量信息𝑨
   url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Sub-info/Moore/Sub-info.sgmodule
   compat_arguments:
-    NAME: 𝑪𝒍𝒐𝒖𝒅𝑭𝒊𝒔𝒉𝒆𝒓 ☁️
-    URL: https%3A%2F%2Fyuyun.mhlnf.cn%2Fyuyunsvip%3Ftoken%3D3032cbaff9c6e369dfad6dd12669c05b
-    RESET_Day: '26'
+    NAME: 
+    URL: 
+    RESET_Day: 
     COLOR: '#78C7E3'
   enabled: false
 - name: 油价
   url: https://yfamilys.com/sgmodule/oil.sgmodule
-  enabled: false
   enabled: false
