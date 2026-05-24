@@ -23,6 +23,10 @@ env_schema:
 # --- 脚本引入区 ---
 scriptings:
   - generic:
+      name: 网络高级-NetworkPro
+      script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Network-Pro.js
+
+  - generic:
       name: 黄历信息-HL
       script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/HL.js
       
@@ -36,6 +40,9 @@ scriptings:
 
 # --- 面板展示区 ---
 widgets:
+  - name: 网络高级-NetworkPro
+    script_name: 网络高级-NetworkPro
+
   - name: 黄历信息-HL
     script_name: 黄历信息-HL
     
