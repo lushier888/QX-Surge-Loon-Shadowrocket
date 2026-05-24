@@ -30,6 +30,9 @@ https://surge.qingr.moe/
 Loon插件仓库
 https://hub.kelee.one/
 
+Egern模块仓库
+https://nutrepo.com/
+
 Surge和Loon模块插件一键转换到Egern（这是直接安装的Egern模块）
 https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/surge-loon-to-egern.yaml
 
