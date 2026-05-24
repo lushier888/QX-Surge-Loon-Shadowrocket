@@ -49,8 +49,5 @@ widgets:
   - name: 今日油价-Youjia
     script_name: 今日油价-Youjia
     
-  - name: 节点探针-Monitor
-    script_name: 节点探针-Monitor
-    
   - name: 加密货币-Crypto
     script_name: 加密货币-Crypto
