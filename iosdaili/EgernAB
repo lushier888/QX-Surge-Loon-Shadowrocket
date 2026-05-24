@@ -1430,6 +1430,9 @@ modules:
 - name: 迅雷会员
   url: https://yfamilys.com/module/thunder.module
   enabled: true
+- name: 幻宇星球VIP解锁
+  url: https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/huanyu/modules/huanyu.sgmodule
+  enabled: true
 - name: 老色批通杀VIP
   url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeLSPModule/LSPTXVIP.sgmodule
   enabled: false
