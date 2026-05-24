@@ -20,6 +20,10 @@ dns:
     - https://dns.nextdns.io
   forward:
   - proxy_rule_set:
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list
+      value: 谷歌 - CDN（国外）
+      disabled: false
+  - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Google.list
       value: 谷歌 - CDN（国外）
       disabled: false
@@ -32,7 +36,7 @@ dns:
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
-      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/telegram.list
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Telegram.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
@@ -57,10 +61,6 @@ dns:
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pinterest.list
-      value: 谷歌 - CDN（国外）
-      disabled: false
-  - proxy_rule_set:
-      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list
       value: 谷歌 - CDN（国外）
       disabled: false
   - proxy_rule_set:
