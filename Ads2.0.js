@@ -11,6 +11,7 @@
 // @ConfigURL         https://ddgksf2013.top/Profile/QuantumultX.conf
 // ==/UserScript==
 
+
 # 𝐂𝐮𝐭𝐭𝐥𝐞𝐟𝐢𝐬𝐡 𝐒𝐞𝐥𝐟-𝐮𝐬𝐞 𝐂𝐨𝐧𝐟𝐢𝐠𝐮𝐫𝐚𝐭𝐢𝐨𝐧 𝐂𝐡𝐚𝐧𝐠𝐞𝐥𝐨𝐠 𝐂𝐫𝐞𝐚𝐭𝐞𝐝 𝐛𝐲 𝐝𝐝𝐠𝐤𝐬𝐟𝟐𝟎𝟏𝟑
 # [+]2022-03-01  1、QX小白配置2.0已全面更新，重点更新[rewrite_remote]内容  
 # [+]2022-03-15  2、QX配置头增加网易云解锁指导、图标库、IOS屏蔽更新、旧版文档、Crack腾讯文档  
