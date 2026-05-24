@@ -1,0 +1,49 @@
+name: "综合面板小组件合集"
+description: "包含黄历、油价、网络信息、服务器监控与加密货币的组件合集"
+
+# --- 环境变量配置区 (已集成：油价地区、探针参数) ---
+env_schema:
+  # 1. 今日油价配置
+  GAS_REGION:
+    name: 油价地区代码
+    description: "请前往 m.qiyoujiage.com 查看，例如：guangdong/guangzhou"
+    default_value: "sichuan/chengdu"
+  SHOW_TREND:
+    name: 显示油价趋势
+    description: "是否显示本轮调价趋势，填写 true 或 false"
+    default_value: "true"
+
+  # 2. 服务器探针配置 (Server Monitor)
+  WIDGET_NAME:
+    name: 节点名称
+    description: 探针显示的节点名称
+    default_value: "My Node"
+  
+
+# --- 脚本引入区 ---
+scriptings:
+  - generic:
+      name: 黄历信息-HL
+      script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/HL.js
+      
+  - generic:
+      name: 今日油价-Youjia
+      script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Youjia.js
+      
+  - generic:
+      name: 加密货币-Crypto
+      script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Crypto.js
+
+# --- 面板展示区 ---
+widgets:
+  - name: 黄历信息-HL
+    script_name: 黄历信息-HL
+    
+  - name: 今日油价-Youjia
+    script_name: 今日油价-Youjia
+    
+  - name: 节点探针-Monitor
+    script_name: 节点探针-Monitor
+    
+  - name: 加密货币-Crypto
+    script_name: 加密货币-Crypto
