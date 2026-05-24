@@ -1,0 +1,9 @@
+#!name=139fm
+#!desc=解锁付费资源无需登入
+
+[Script]
+# >139fm 🔞，无需登录！
+139fm = type=http-request, pattern=^https?:\/\/139fm.(fun|bond|cfd|click|cyou)\/podcast\/\d+, script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/139fm.js, timeout=60
+
+[MITM]
+hostname = %APPEND% 139fm.bond, 139fm.fun, 139fm.cfd, 139fm.click, 139fm.cyou
