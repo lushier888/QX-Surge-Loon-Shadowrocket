@@ -810,44 +810,53 @@ policy_groups:
     icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Script-Hub.png
     hidden: false
 rules:
-- ip_cidr:
-    name: 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎防止转圈
-    match: 95.161.76.100/31
-    policy: REJECT
-    no_resolve: true
-    disabled: false
-- domain_suffix:
-    match: shsiis.cloudfisher.cc
-    policy: 🎞️𝑬𝒎𝒃𝒚
 - rule_set:
+    name: 𝑹𝒆𝒋𝒆𝒌𝒕去广告
     match: http://script.hub/file/_start_/https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Reject.list/_end_/Reject.list?type=rule-set&target=surge-rule-set&del=true
     policy: REJECT
+    disabled: false
 - rule_set:
+    name: 𝑨𝒅𝒗𝒆𝒓𝒕𝒊𝒔𝒊𝒏𝒈
     match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Advertising/Advertising.list
     policy: REJECT
+    disabled: false
 - rule_set:
+    name: 𝑨𝒅𝒗𝒆𝒓𝒕𝒊𝒔𝒊𝒏𝒈𝑳𝒊𝒕𝒆
     match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/AdvertisingLite/AdvertisingLite.list
     policy: REJECT
+    disabled: false
 - rule_set:
+    name: 毒奶网页去广告
     match: https://raw.githubusercontent.com/limbopro/Adblock4limbo/main/Adblock4limbo_surge.list
     policy: REJECT
+    disabled: false
 - rule_set:
+    name: 奶思去广告合集
     match: http://script.hub/file/_start_/https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/rejectAd.list/_end_/rejectAd.list?type=rule-set&target=surge-rule-set&del=true
     policy: REJECT
+    disabled: false
 - rule_set:
+    name: 隐私保护
     match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Privacy/Privacy.list
     policy: REJECT
+    disabled: false
 - rule_set:
+    name: 反劫持
     match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Hijacking/Hijacking.list
     policy: REJECT
+    disabled: false
 - rule_set:
+    name: 屏蔽𝒊𝒐𝒔系统升级
     match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/SystemOTA/SystemOTA.list
     policy: REJECT
+    disabled: false
 - rule_set:
+    name: 𝑮𝒆𝒎𝒊𝒏𝒊
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list
     policy: 🤖𝑨𝑰
     disabled: false
 - rule_set:
+    name: 谷歌服务
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Google.list
     policy: 🌏 𝑮𝒐𝒐𝒈𝒍𝒆
     disabled: false
@@ -857,45 +866,57 @@ rules:
     policy: 🌏 𝑮𝒐𝒐𝒈𝒍𝒆
     disabled: false
 - rule_set:
+    name: 微软服务
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Microsoft.list
     policy: 💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕
     disabled: false
 - rule_set:
+    name: 𝑮𝒊𝒕𝑯𝒖𝒃
     match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/GitHub/GitHub.list
     policy: 💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕
+    disabled: false
 - rule_set:
+    name: 苹果服务
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Apple.list
     policy: 🍎𝑨𝒑𝒑𝒍𝒆
     disabled: false
 - rule_set:
+    name: 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Telegram.list
     policy: 📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
     disabled: false
 - rule_set:
+    name: 𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Twitter.list
     policy: 📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)
     disabled: false
 - rule_set:
+    name: 𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Instagram.list
     policy: 📷𝑰𝒏𝒔𝒕𝒂𝒈𝒓𝒂𝒎
     disabled: false
 - rule_set:
+    name: 𝑹𝒆𝒅𝒅𝒊𝒕
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Reddit.list
     policy: 📑𝑹𝒆𝒅𝒅𝒊𝒕
     disabled: false
 - rule_set:
+    name: 𝑫𝒊𝒔𝒄𝒐𝒓𝒅
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Discord.list
     policy: 🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅
     disabled: false
 - rule_set:
+    name: 𝑷𝒊𝒙𝒊𝒗
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pixiv.list
     policy: 🍄𝑷𝒊𝒙𝒊𝒗
     disabled: false
 - rule_set:
+    name: 𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pinterest.list
     policy: 🍄𝑷𝒊𝒙𝒊𝒗
     disabled: false
 - rule_set:
+    name: 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChatGPT.list
     policy: 🤖𝑨𝑰
     disabled: false
