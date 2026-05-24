@@ -291,6 +291,8 @@ http://script.hub/file/_start_/https://raw.githubusercontent.com/Yu9191/Rewrite/
 xv暗网
 https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/xv.sgmodule
 
+幻宇星球VIP解锁
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/huanyu/modules/huanyu.sgmodule
 
 以下为对应的色站地址
 
@@ -412,6 +414,9 @@ https://91porna.com/
 xv暗网
 https://d18psf29jvwgay.cloudfront.net
 
+幻宇星球VIP
+https://huanyu-proxy.daoyufan.workers.dev/md
+
 
 YDM系列   #cloudfront AV 🔞
 站点列表如下
@@ -467,6 +472,9 @@ https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/ydm.sgmodule
 # ————LSP破解重写————
 以下收集的Quantumult X色色重写，其它代理用此重写请复制重写链接使用scripthub转换
 https://scripthub.vercel.app/
+
+幻宇星球VIP解锁
+https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/huanyu/modules/huanyu.conf
 
 xv暗网
 https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/xv.js
