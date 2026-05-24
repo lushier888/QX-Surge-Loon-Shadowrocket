@@ -1,0 +1,8 @@
+#!name=18ak漫画
+#!desc=解锁会员金币付费漫画
+
+[Script]
+18kmanhua = type=http-response, pattern=https:\/\/18akmanhua\.com\/api\/(chaptersDetails|memberDetails|videoDetails), script-path=https://gist.githubusercontent.com/Yu9191/919552f4d3358c070e5d995137514748/raw/18kmanhua.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% 18akmanhua.com
