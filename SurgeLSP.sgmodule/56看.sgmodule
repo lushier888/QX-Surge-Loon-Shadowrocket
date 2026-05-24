@@ -1,0 +1,14 @@
+#!name=65看
+#!desc=去广告解锁视频
+#!date=2025-08-30
+
+[URL Rewrite]
+^https?:\/\/hm-img\.gycss\.cn\/videos\/(.*)\/preview\.m3u8$ https://hm-img.gycss.cn/videos/$1/index.m3u8 header
+
+[Script]
+会员 = type=http-response, pattern=^https://sm-api\.(xuezhumall|gycss)\.(com|cn)/api/users/profile\?*, script-path=https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/65kan.js, requires-body=true, timeout=60
+
+广告 = type=http-response, pattern=^https://sm-api\.(xuezhumall|gycss)\.(com|cn)/api/common_ads\?*, script-path=https://raw.githubusercontent.com/chmg2025/script/refs/heads/main/65kan.js, requires-body=true, timeout=60
+
+[MITM]
+hostname = %APPEND% *.xuezhumall.com, *.gycss.cn
