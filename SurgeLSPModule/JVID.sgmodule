@@ -1,0 +1,17 @@
+#!name=JVID
+#!desc=去除所有广告精简底部导航栏，token失效会通知，提示失效再次打开网页即可
+#!date=2025-09-20
+
+[Script]
+广告 = type=http-response, pattern=https://[^/]+/front/system/(bannersetting/userGetBannerSet|banner/bannerListByMAcct|datadictionary/getDicByKeys), script-path=https://raw.githubusercontent.com/chmg2025/js/refs/heads/main/jvid.js, requires-body=true, timeout=60
+
+底部 = type=http-response, pattern=https://[^/]+/front/media/category/listAllCategory, script-path=https://raw.githubusercontent.com/chmg2025/js/refs/heads/main/jvid.js, requires-body=true, timeout=60
+
+会员 = type=http-response, pattern=https://[^/]+/front/cluser/c/user/info/get, script-path=https://raw.githubusercontent.com/chmg2025/js/refs/heads/main/jvid.js, requires-body=true, timeout=60
+
+视频 = type=http-response, pattern=https://[^/]+/front/media/getMediaById, script-path=https://raw.githubusercontent.com/chmg2025/js/refs/heads/main/jvid.js, requires-body=true, timeout=60
+
+登录 = type=http-response, pattern=https://[^/]+/front/cluser/c/user/mac/login, script-path=https://raw.githubusercontent.com/chmg2025/js/refs/heads/main/jvid.js, requires-body=true, timeout=60
+
+[MITM]
+hostname = %APPEND% *.uywhqqxp.cc, *.cdv6x4x6.cc, *.x5vuztxr.cc, *.sgmn3p7k.cc, *.y9wgsnn3.cc
