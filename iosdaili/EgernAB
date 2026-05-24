@@ -21,14 +21,16 @@ dns:
     - quic://dns.alidns.com:853
     - https://doh.pub/dns-query
     - https://rubyfish.cn/dns-query
-    - https://dns.alidns.com/dns-
+    - https://dns.alidns.com/dns-query
     谷歌 - CDN（国外）:
     - https://dns.google/dns-query
     - https://dns.adguard.com/dns-query
+    - https://dns.switch.ch/dns-query
     - https://cloudflare-dns.com/dns-query
     兜底网络:
     - https://dns.nextdns.io
     - https://dns.google/dns-query
+    - https://dns.switch.ch/dns-query
     - https://dns.adguard.com/dns-query
     - https://cloudflare-dns.com/dns-query
 
