@@ -16,8 +16,12 @@ compat_route: false
 dns:
   upstreams:
     阿里-腾讯（国内）:
-    - https://223.5.5.5/dns-query
-    - https://119.29.29.29/dns-query
+    - quic://223.6.6.6:853
+    - quic://223.5.5.5:853
+    - quic://dns.alidns.com:853
+    - https://doh.pub/dns-query
+    - https://rubyfish.cn/dns-query
+    - https://dns.alidns.com/dns-
     谷歌 - CDN（国外）:
     - https://dns.google/dns-query
     - https://dns.adguard.com/dns-query
@@ -25,7 +29,6 @@ dns:
     兜底网络:
     - https://dns.nextdns.io
     - https://dns.google/dns-query
-    - https://dns.switch.ch/dns-query
     - https://dns.adguard.com/dns-query
     - https://cloudflare-dns.com/dns-query
 
