@@ -1,4 +1,5 @@
-# Gemini的规则必须在Google前面否则就会被Google抢走流量导致Gemini断网
+# Gemini的规则必须在Google前面否则就会被
+# Google抢走流量导致Gemini断网
 # 本人自用配置通过自用Surge配置倒入Egern
 # 本人修改和添加DNS分流规则
 # 添加一些自用规则和LSP模块
