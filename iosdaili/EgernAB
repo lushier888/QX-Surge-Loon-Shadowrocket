@@ -132,10 +132,6 @@ dns:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Bahamut.list
       value: 谷歌 - CDN（国外）
       disabled: false
-  - domain_suffix:
-      match: img.bosszhipin.com
-      value: 阿里-腾讯（国内）
-      disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Bilibili.list
       value: 阿里-腾讯（国内）
