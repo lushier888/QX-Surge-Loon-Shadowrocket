@@ -900,7 +900,7 @@ rules:
     disabled: false
 - rule_set:
     name: 𝑮𝒊𝒕𝑯𝒖𝒃
-    match: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/GitHub/GitHub.list
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Github.list
     policy: 💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕
     disabled: false
 - rule_set:
@@ -913,6 +913,9 @@ rules:
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Telegram.list
     policy: 📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
     disabled: false
+- rule_set:
+    name: 𝑮𝒓𝒐𝒌
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Grok.list
 - rule_set:
     name: 𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Twitter.list
