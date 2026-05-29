@@ -1,6 +1,7 @@
 # 本人自用配置通过自用Surge配置倒入Egern
 # 本人修改和添加DNS分流规则
-# 添加一些自用规则和LSP模块
+# 添加一些自用规则和LSP模块、JS脚本组件
+# 脚本请自行根据需求添加环境变量
 # 最后更新时间 2026.5.24  16：07
 
 # ————ipv6与网络测速————
@@ -1068,6 +1069,23 @@ rules:
 
 # ————订阅小组件————
 scriptings:
+- generic:
+    name: 今日油价
+    script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Youjia.js
+    disabled: false
+- generic:
+    name: 黄历信息-HL
+    script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/HL.js
+- generic:
+    name: 雷达网络
+    script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Network-Pro.js
+    disabled: false
+- generic:
+    name: 流媒体与AI解锁检测
+    script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Unlock-Detection_Widget.JS
+- generic:
+    name: 数据中心
+    script_url: https://raw.githubusercontent.com/magicdan3688/MyProxyScripts/refs/heads/main/ip-dch.js
 - schedule:
     name: TestFlight监控
     cron: '* * * * * ?'
@@ -1081,6 +1099,8 @@ scriptings:
 - generic:
     name: 机场订阅小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Sub_Widget.JS
+    env:
+      NAME1: RESET1
     timeout: 120
 - generic:
     name: 聚合热搜小组件
@@ -1105,7 +1125,6 @@ scriptings:
 - generic:
     name: '测试网络下载速度小组件 '
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/NetSpeed_Widget.JS
-
 # ————密匙————
 mitm:
   ca_p12: 
@@ -1129,17 +1148,31 @@ mitm:
 
 # ————脚本小组件————
 widgets:
+- name: 机场AB
+  script_name: 机场订阅小组件
+  env:
+    NAME1: 
+    URL1: 
+    NAME2: 
+    URL2: 
+- name: 数据中心
+  script_name: 数据中心
+- name: 网络雷达
+  script_name: 雷达网络
+- name: 黄历信息-HL
+  script_name: 黄历信息-HL
+- name: 流媒体与AI解锁检测
+  script_name: 流媒体与AI解锁检测
+- name: 今日油价
+  script_name: 今日油价
 - name: 测试网络下载速度
   script_name: '测试网络下载速度小组件 '
-- name: 虚拟货币
-  script_name: 虚拟货币小组件
-- name: 节日倒计时
-  script_name: 节日倒计时小组件
 - name: 万年历
   script_name: 万年历小组件
 - name: 聚合热搜
   script_name: 聚合热搜小组件
-
+  env:
+    TITLE: 微博
 # ————去广告模块与LSP模块————
 modules:
 - name: 爱奇艺去广告
