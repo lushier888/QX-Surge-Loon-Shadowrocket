@@ -1,4 +1,4 @@
-# > Doubao 豆包分流规则
+# > Doubao 豆包实时语音通话专用规则（加强版）
 
 DOMAIN-KEYWORD,doubao
 DOMAIN-SUFFIX,doubao.com
@@ -9,12 +9,20 @@ DOMAIN-SUFFIX,volces.com
 DOMAIN-SUFFIX,volccdn.com
 DOMAIN-SUFFIX,volcengineapi.com
 
+# === RTC 实时音视频核心（重点加强）===
 DOMAIN-SUFFIX,rtc.volcengine.com
 DOMAIN-SUFFIX,rtc-cn.volcengine.com
 DOMAIN-SUFFIX,rtcs.volcengine.com
+DOMAIN-SUFFIX,turn.volcengine.com
+DOMAIN-SUFFIX,stun.volcengine.com
+DOMAIN-SUFFIX,turn-cn.volcengine.com
+DOMAIN-SUFFIX,rtc-live.volcengine.com
+
 DOMAIN-KEYWORD,rtc-vcloud
 DOMAIN-KEYWORD,volc-rtc
+DOMAIN-KEYWORD,volcengine-rtc
 
+# 字节系补充
 DOMAIN-SUFFIX,byteoversea.com
 DOMAIN-SUFFIX,ibyteimg.com
 DOMAIN-SUFFIX,bytegecko.com
