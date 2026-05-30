@@ -1,8 +1,15 @@
-# > Doubao / Volcengine AI
+# > 豆包文本与基础域名
 DOMAIN-KEYWORD,doubao
 DOMAIN-SUFFIX,doubao.com
+
+# > 火山引擎 RTC 实时音视频（电话/视频功能核心）
 DOMAIN-SUFFIX,volcengine.com
 DOMAIN-SUFFIX,volccdn.com
 DOMAIN-SUFFIX,volces.com
+DOMAIN-KEYWORD,rtc-vcloud
+
+# > 字节跳动海外及多模态流媒体节点
 DOMAIN-SUFFIX,byteoversea.com
 DOMAIN-SUFFIX,ibyteimg.com
+DOMAIN-SUFFIX,bytegecko.com
+DOMAIN-SUFFIX,snssdk.com
