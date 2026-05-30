@@ -1,15 +1,24 @@
-# > 豆包文本与基础域名
+# > Doubao 豆包分流规则
+
 DOMAIN-KEYWORD,doubao
 DOMAIN-SUFFIX,doubao.com
+DOMAIN-SUFFIX,doubaoai.com
 
-# > 火山引擎 RTC 实时音视频（电话/视频功能核心）
 DOMAIN-SUFFIX,volcengine.com
-DOMAIN-SUFFIX,volccdn.com
 DOMAIN-SUFFIX,volces.com
-DOMAIN-KEYWORD,rtc-vcloud
+DOMAIN-SUFFIX,volccdn.com
+DOMAIN-SUFFIX,volcengineapi.com
 
-# > 字节跳动海外及多模态流媒体节点
+DOMAIN-SUFFIX,rtc.volcengine.com
+DOMAIN-SUFFIX,rtc-cn.volcengine.com
+DOMAIN-SUFFIX,rtcs.volcengine.com
+DOMAIN-KEYWORD,rtc-vcloud
+DOMAIN-KEYWORD,volc-rtc
+
 DOMAIN-SUFFIX,byteoversea.com
 DOMAIN-SUFFIX,ibyteimg.com
 DOMAIN-SUFFIX,bytegecko.com
 DOMAIN-SUFFIX,snssdk.com
+
+DOMAIN-SUFFIX,api.doubao.com
+DOMAIN-SUFFIX,ark.cn-beijing.volces.com
