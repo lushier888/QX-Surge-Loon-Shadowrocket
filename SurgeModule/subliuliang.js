@@ -1,22 +1,28 @@
-/** V1.36
-* Sub-Store 流量查询小组件 - 深色浅色自动适配版
-* 大号组件可显示3个订阅信息 | 中号组件可显示2个订阅信息
-* 进度条颜色：>=60%绿色 | >=40%蓝色 | <40%橙色
-*/
+/**
+ * Sub-Store 流量查询小组件（中号多机场大字号 V8 - 纯净流量版）
+ *
+ * 环境变量示例：
+ * SUB_NAMES=机场A,机场B                            # 指定显示的订阅名称
+ * TITLE=我的套餐                                   # 小组件标题
+ */
+
 export default async function (ctx) {
   const cfg = getConfig(ctx);
   const cache = readCache(ctx, cfg);
+
   try {
     const subs = await fetchSubscriptions(ctx, cfg);
     const selected = selectSubscriptions(subs, cfg);
     if (!selected.length) {
       return errorWidget(cfg, '未找到订阅', 'SUB_NAMES 没有匹配到 Sub-Store 里的订阅名称');
     }
+
     const items = [];
     const selectedItems = selected.slice(0, cfg.maxItems);
     await Promise.all(selectedItems.map(async (sub, index) => {
       items[index] = await fetchFlowItem(ctx, cfg, sub);
     }));
+
     const payload = {
       at: Date.now(),
       source: cfg.baseUrl,
@@ -31,6 +37,7 @@ export default async function (ctx) {
     return errorWidget(cfg, 'Sub-Store 连接失败', shortError(e));
   }
 }
+
 function getConfig(ctx) {
   const env = ctx.env || {};
   const family = ctx.widgetFamily || 'systemMedium';
@@ -39,10 +46,11 @@ function getConfig(ctx) {
     accessoryCircular: 1,
     accessoryRectangular: 1,
     systemSmall: 1,
-    systemMedium: 2,
-    systemLarge: 3,
-    systemExtraLarge: 3,
+    systemMedium: 2, 
+    systemLarge: 5,
+    systemExtraLarge: 7,
   }[family] || 2;
+
   const baseUrls = unique([
     env.SUB_STORE_BASE_URL,
     env.SUB_STORE_URL,
@@ -52,6 +60,7 @@ function getConfig(ctx) {
     'http://127.0.0.1:3000',
     'http://localhost:3000',
   ].map(normalizeBaseUrl).filter(Boolean));
+
   return {
     family,
     title: env.TITLE || 'Sub-Store 套餐',
@@ -68,44 +77,13 @@ function getConfig(ctx) {
     useCache: bool(env.USE_CACHE, true),
     hideErrors: bool(env.HIDE_ERRORS, false),
     cacheKey: env.CACHE_KEY || 'substore-flow-widget-cache-v2',
-    resetDay: env.RESET_DAY || '',
-    startDate: env.START_DATE || '',
-    cycleDays: env.CYCLE_DAYS || '',
-    resetRules: parseResetRules(env.RESET_RULES || ''),
   };
 }
-function getThemeColors() {
-  return {
-    bgGradient: [
-      { light: '#FFFFFF', dark: '#0f172a' },
-      { light: '#F3F4F6', dark: '#111827' },
-      { light: '#FFFFFF', dark: '#1e293b' }
-    ],
-    bgGradientStale: [
-      { light: '#FEF3C7', dark: '#2b1b0f' },
-      { light: '#F9ECD5', dark: '#1f2937' }
-    ],
-    bgGradientError: [
-      { light: '#FEE2E2', dark: '#3f1d1d' },
-      { light: '#FECACA', dark: '#1f2937' }
-    ],
-    cardBg: { light: '#F3F4F680', dark: '#1E293B80' },
-    summaryBg: { light: '#DBEAFE30', dark: '#0EA5E920' },
-    errorBg: { light: '#FEE2E280', dark: '#7F1D1D55' },
-    headerText: { light: '#1F2937', dark: '#E5E7EB' },
-    subText: { light: '#6B7280', dark: '#94A3B8' },
-    lightText: { light: '#374151', dark: '#CBD5E1' },
-    summaryText: { light: '#0369A1', dark: '#E0F2FE' },
-    primaryIcon: { light: '#3B82F6', dark: '#60A5FA' },
-    successText: { light: '#059669', dark: '#34D399' },
-    warningText: { light: '#D97706', dark: '#FBBF24' },
-    errorText: { light: '#DC2626', dark: '#F87171' },
-    staleText: { light: '#B45309', dark: '#FDE68A' },
-  };
-}
+
 async function fetchSubscriptions(ctx, cfg) {
   const storedSubs = readStoredSubscriptions(ctx);
   if (storedSubs.length) return storedSubs;
+
   let lastError;
   const urls = Array.isArray(cfg.baseUrls) && cfg.baseUrls.length ? cfg.baseUrls : [cfg.baseUrl];
   for (const base of urls) {
@@ -126,6 +104,7 @@ async function fetchSubscriptions(ctx, cfg) {
   }
   throw lastError || new Error('无法连接 Sub-Store');
 }
+
 function selectSubscriptions(subs, cfg) {
   if (!cfg.names.length) return subs.filter(isRemoteSub);
   return cfg.names.map((name) => {
@@ -137,6 +116,7 @@ function selectSubscriptions(subs, cfg) {
     return found || { name: wanted, missing: true };
   });
 }
+
 function isRemoteSub(sub) {
   if (!sub || typeof sub !== 'object') return false;
   if (sub.subUserinfo) return true;
@@ -144,14 +124,20 @@ function isRemoteSub(sub) {
   if (sub.url && /^https?:\/\//i.test(String(sub.url).trim())) return true;
   return false;
 }
+
 async function fetchFlowItem(ctx, cfg, sub) {
   const name = String(sub && sub.name ? sub.name : '未命名订阅');
   if (sub.missing) {
-    return { name, error: '订阅不存在' };
+    return {
+      name,
+      error: '订阅不存在',
+    };
   }
+
   try {
     const storedFlow = readStoredFlow(ctx, name);
     if (storedFlow) return decorateItem(sub, storedFlow, cfg);
+
     if (sub.__apiFlowUrl) {
       try {
         const json = await requestJson(ctx, sub.__apiFlowUrl, cfg);
@@ -159,6 +145,7 @@ async function fetchFlowItem(ctx, cfg, sub) {
         if (hasUsableFlow(flow)) return decorateItem(sub, flow, cfg);
       } catch (_) {}
     }
+
     const json = await requestJson(
       ctx,
       apiUrl(cfg.baseUrl, '/api/sub/flow/' + encodeURIComponent(name)),
@@ -172,19 +159,33 @@ async function fetchFlowItem(ctx, cfg, sub) {
       const directFlow = await fetchDirectFlow(ctx, cfg, sub);
       if (hasUsableFlow(directFlow)) return decorateItem(sub, directFlow, cfg);
     } catch (_) {}
-    return { name, error: shortError(e) };
+    return {
+      name,
+      error: shortError(e),
+    };
   }
 }
+
 async function fetchDirectFlow(ctx, cfg, sub) {
   const raw = firstHttpUrl(sub.url || sub.subUserinfo || '');
   if (!raw) throw new Error('订阅链接不可用');
   const parts = splitUrlArgs(raw);
   const args = parts.args;
   if (args.noFlow) throw new Error('noFlow');
+
   const url = args.flowUrl || parts.url;
-  const headers = { 'User-Agent': args.flowUserAgent || cfg.flowUserAgent };
+  const headers = {
+    'User-Agent': args.flowUserAgent || cfg.flowUserAgent,
+  };
   Object.assign(headers, parseHeaderObject(args.flowHeaders || args.headers));
-  const opt = { headers, timeout: cfg.timeout, redirect: 'follow', insecureTls: cfg.insecureTls || !!args.insecure };
+
+  const opt = {
+    headers,
+    timeout: cfg.timeout,
+    redirect: 'follow',
+    insecureTls: cfg.insecureTls || !!args.insecure,
+  };
+
   if (args.flowUrl) {
     const resp = await ctx.http.get(url, opt);
     const bodyFlow = parseFlowString(await safeText(resp));
@@ -192,16 +193,19 @@ async function fetchDirectFlow(ctx, cfg, sub) {
     const headerFlow = parseFlowHeaders(resp.headers);
     if (hasUsableFlow(headerFlow)) return headerFlow;
   }
+
   try {
     const resp = await ctx.http.head(url, opt);
     const flow = parseFlowHeaders(resp.headers);
     if (hasUsableFlow(flow)) return flow;
   } catch (_) {}
+
   const resp = await ctx.http.get(url, opt);
   const flow = parseFlowHeaders(resp.headers);
   if (hasUsableFlow(flow)) return flow;
   throw new Error('响应头未包含流量信息');
 }
+
 function decorateItem(sub, flow, cfg) {
   const total = num(flow.total);
   const upload = finiteOrZero(flow.upload);
@@ -210,6 +214,7 @@ function decorateItem(sub, flow, cfg) {
   const remain = Number.isFinite(total) && total > 0 ? Math.max(0, total - used) : NaN;
   const usedRatio = Number.isFinite(total) && total > 0 ? clamp(used / total, 0, 1) : NaN;
   const remainRatio = Number.isFinite(usedRatio) ? 1 - usedRatio : NaN;
+
   return {
     name: String(sub.name || '订阅'),
     planName: flow.planName || '',
@@ -220,12 +225,11 @@ function decorateItem(sub, flow, cfg) {
     remain,
     usedRatio,
     remainRatio,
-    remainingDays: num(flow.remainingDays),
-    resetAt: calcResetAt(sub.url || '', flow.remainingDays, sub.name, cfg),
     expireAt: Number.isFinite(flow.expires) && flow.expires > 0 ? new Date(flow.expires * 1000) : null,
     appUrl: flow.appUrl || '',
   };
 }
+
 function normalizeFlow(raw) {
   const data = raw && typeof raw === 'object' ? raw : {};
   const usage = data.usage && typeof data.usage === 'object' ? data.usage : {};
@@ -234,14 +238,15 @@ function normalizeFlow(raw) {
     upload: num(usage.upload ?? data.upload),
     download: num(usage.download ?? data.download),
     expires: num(data.expires ?? data.expire),
-    remainingDays: num(data.remainingDays ?? data.reset_day),
     planName: String(data.planName || data.plan_name || ''),
     appUrl: String(data.appUrl || data.app_url || ''),
   };
 }
+
 function hasUsableFlow(flow) {
   return flow && Number.isFinite(flow.total) && flow.total > 0 && Number.isFinite(flow.upload) && Number.isFinite(flow.download);
 }
+
 function parseFlowHeaders(headers) {
   if (!headers) return {};
   const subInfo = getHeaderValue(headers, 'subscription-userinfo');
@@ -252,6 +257,7 @@ function parseFlowHeaders(headers) {
   if (planName) flow.planName = planName;
   return flow;
 }
+
 function parseFlowString(raw) {
   const s = String(raw || '');
   const field = (key) => {
@@ -268,252 +274,180 @@ function parseFlowString(raw) {
     download: field('download'),
     total: field('total'),
     expire: field('expire'),
-    reset_day: field('reset_day'),
     app_url: strField('app_url'),
     plan_name: strField('plan_name'),
   });
 }
+
 function renderWidget(cfg, payload, stale, staleMsg) {
-  const theme = getThemeColors();
   const items = Array.isArray(payload.items) ? payload.items : [];
   const fam = cfg.family;
+
   if (fam === 'accessoryInline') {
     return {
       type: 'widget',
       refreshAfter: refreshISO(cfg.refreshMinutes),
       url: cfg.openUrl,
-      children: [renderInline(cfg, items[0], stale, theme)],
+      children: [renderInline(cfg, items[0], stale)],
     };
   }
+
   if (fam === 'accessoryCircular') {
-    return root(cfg, [renderCircular(items[0], stale, cfg, theme)], stale, theme);
+    return root(cfg, [renderCircular(items[0], stale, cfg)], stale);
   }
+
   if (fam === 'accessoryRectangular') {
-    return root(cfg, [renderAccessoryRectangular(cfg, items[0], stale, theme)], stale, theme);
+    return root(cfg, [renderAccessoryRectangular(cfg, items[0], stale)], stale);
   }
-  const limit = fam === 'systemLarge' || fam === 'systemExtraLarge' ? 3 : fam === 'systemSmall' ? 1 : 2;
+
+  const limit = fam === 'systemLarge' || fam === 'systemExtraLarge' ? 5 : fam === 'systemSmall' ? 1 : 2;
   const shown = items.slice(0, limit);
-  const children = [header(cfg, payload, stale, theme)];
-  const summary = aggregate(shown, theme);
-  if (fam === 'systemMedium') {
-    if (summary) children.push(summaryCardSmall(summary, theme));
-  } else {
-    if (shown.length > 1 && summary) children.push(summaryCard(summary, theme));
+  const children = [header(cfg, payload, stale)];
+
+  if (items.length > 1) {
+    children.push(summaryCard(aggregate(items)));
   }
+
   if (fam === 'systemSmall') {
-    children.push(renderSmallCard(shown[0], theme));
+    children.push(renderSmallCard(shown[0]));
   } else {
-    const large = fam === 'systemLarge' || fam === 'systemExtraLarge';
-    for (const item of shown) children.push(renderCard(item, large, theme));
+    for (const item of shown) children.push(renderCard(item));
   }
-  children.push(footer(cfg, payload, stale, staleMsg, theme));
-  return root(cfg, children, stale, theme);
+
+  children.push(footer(cfg, payload, stale, staleMsg));
+  return root(cfg, children, stale);
 }
-function root(cfg, children, stale, theme) {
-  const bgColors = stale ? theme.bgGradientStale : theme.bgGradient;
+
+function root(cfg, children, stale) {
   return {
     type: 'widget',
     url: cfg.openUrl,
     refreshAfter: refreshISO(cfg.refreshMinutes),
-    padding: 14,
-    gap: 4,
-    backgroundGradient: {
-      type: 'linear',
-      colors: bgColors,
-      startPoint: { x: 0, y: 0 },
-      endPoint: { x: 1, y: 1 },
+    padding: [6, 14, 4, 14], 
+    gap: 4,                  
+    backgroundColor: stale ? {
+      light: '#FFFBEB',
+      dark: '#2B1B0F'
+    } : {
+      light: '#FFFFFF',
+      dark: '#1C1C1E'
     },
     children,
   };
 }
-function header(cfg, payload, stale, theme) {
-  const iconColor = stale ? theme.staleText : theme.primaryIcon;
-  const textColor = stale ? theme.staleText : theme.headerText;
+
+function header(cfg, payload, stale) {
   return {
     type: 'stack',
     direction: 'row',
     alignItems: 'center',
     gap: 6,
     children: [
-      { type: 'image', src: stale ? 'sf-symbol:exclamationmark.triangle.fill' : 'sf-symbol:chart.bar.xaxis', color: iconColor, width: 16, height: 16 },
-      text(stale ? cfg.title + ' · 缓存' : cfg.title, 'caption1', 'semibold', textColor, { maxLines: 1, minScale: 0.6 }),
+      {
+        type: 'image',
+        src: stale ? 'sf-symbol:exclamationmark.triangle.fill' : 'sf-symbol:chart.bar.xaxis',
+        color: stale ? '#F59E0B' : '#3B82F6',
+        width: 12,
+        height: 12,
+      },
+      text(stale ? cfg.title + ' · 缓存' : cfg.title, 'footnote', 'bold', { light: '#1C1C1E', dark: '#E5E7EB' }, 1.0),
       { type: 'spacer' },
-      text(fmtClock(payload.at || Date.now()), 'caption2', 'regular', theme.subText, { maxLines: 1 }),
+      text(fmtClock(payload.at || Date.now()), 'caption1', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 1.0),
     ],
   };
 }
-function summaryCard(summary, theme) {
+
+function summaryCard(summary) {
+  const textVal = summary ? summary.text : '--';
+  const colorVal = summary ? summary.color : '#10B981';
   return {
     type: 'stack',
     direction: 'row',
     alignItems: 'center',
     gap: 8,
-    padding: [10, 12],
-    backgroundColor: theme.summaryBg,
-    borderRadius: 12,
+    padding: [4, 10],
+    backgroundColor: { light: '#E0F2FE65', dark: '#0EA5E910' },
+    borderRadius: 5,
     children: [
-      { type: 'image', src: 'sf-symbol:sum', color: theme.primaryIcon, width: 16, height: 16 },
-      text('合计剩余', 'caption1', 'semibold', theme.summaryText, { maxLines: 1 }),
+      { type: 'image', src: 'sf-symbol:sum', color: { light: '#0284C7', dark: '#BAE6FD' }, width: 12, height: 12 },
+      text('合计剩余', 'footnote', 'semibold', { light: '#0369A1', dark: '#BAE6FD' }, 1.0),
       { type: 'spacer' },
-      text(summary.text, 'body', 'bold', summary.color, { maxLines: 1, minScale: 0.7 }),
+      text(textVal, 'body', 'bold', colorVal, 1.0),
     ],
   };
 }
-function summaryCardSmall(summary, theme) {
-  return {
-    type: 'stack',
-    direction: 'row',
-    alignItems: 'center',
-    gap: 3,
-    padding: [3, 10],
-    backgroundColor: theme.summaryBg,
-    borderRadius: 10,
-    children: [
-      { type: 'image', src: 'sf-symbol:sum', color: theme.primaryIcon, width: 14, height: 14 },
-      text('合计剩余', 'caption2', 'semibold', theme.summaryText, { maxLines: 1 }),
-      { type: 'spacer' },
-      text(summary.text, 'subheadline', 'bold', summary.color, { maxLines: 1, minScale: 0.7 }),
-    ],
-  };
-}
-function renderCard(item, large, theme) {
-  if (!item) return missingCard('未选择订阅', theme);
-  if (item.error) return errorCard(item.name || '订阅', item.error, theme);
-  if (large) {
-    return {
-      type: 'stack',
-      direction: 'column',
-      gap: 5,
-      padding: [7, 14],
-      backgroundColor: theme.cardBg,
-      borderRadius: 14,
-      children: [
-        {
-          type: 'stack',
-          direction: 'row',
-          alignItems: 'center',
-          gap: 6,
-          children: [
-            { type: 'image', src: 'sf-symbol:chart.bar', color: theme.primaryIcon, width: 12, height: 12 },
-            text(displayName(item), 'subheadline', 'semibold', theme.headerText, { maxLines: 1, minScale: 0.65 }),
-            { type: 'spacer' },
-            text(formatBytes(item.remain), 'headline', 'bold', colorForRemain(item.remainRatio, theme), { maxLines: 1, minScale: 0.65 }),
-          ],
-        },
-        {
-          type: 'stack',
-          direction: 'row',
-          alignItems: 'center',
-          gap: 8,
-          children: [progressBar(item.remainRatio, false, 200, theme), text(ratioText(item.remainRatio), 'caption2', 'semibold', theme.lightText, { maxLines: 1 })],
-        },
-        {
-          type: 'stack',
-          direction: 'row',
-          alignItems: 'center',
-          gap: 8,
-          children: [
-            text('已用 ' + formatBytes(item.used) + ' / 总共 ' + totalText(item), 'caption2', 'regular', theme.subText, { maxLines: 1 }),
-            { type: 'spacer' },
-            text(expireText(item), 'caption2', 'regular', theme.subText, { maxLines: 1 }),
-          ],
-        },
-      ],
-    };
-  } else {
-    return {
-      type: 'stack',
-      direction: 'column',
-      gap: 0,
-      padding: [0, 12],
-      backgroundColor: theme.cardBg,
-      borderRadius: 12,
-      children: [
-        {
-          type: 'stack',
-          direction: 'row',
-          alignItems: 'center',
-          gap: 2,
-          children: [
-            { type: 'image', src: 'sf-symbol:chart.bar', color: theme.primaryIcon, width: 10, height: 10 },
-            text(displayName(item), 'subheadline', 'semibold', theme.headerText, { maxLines: 1, minScale: 0.65 }),
-            { type: 'spacer' },
-            text(formatBytes(item.remain), 'body', 'bold', colorForRemain(item.remainRatio, theme), { maxLines: 1, minScale: 0.65 }),
-          ],
-        },
-        {
-          type: 'stack',
-          direction: 'row',
-          alignItems: 'center',
-          gap: 3,
-          children: [progressBar(item.remainRatio, false, 140, theme), text(ratioText(item.remainRatio), 'caption2', 'semibold', theme.lightText, { maxLines: 1 })],
-        },
-        {
-          type: 'stack',
-          direction: 'row',
-          alignItems: 'center',
-          gap: 3,
-          children: [
-            text('已用 ' + formatBytes(item.used) + ' / 总共 ' + totalText(item), 'footnote', 'regular', theme.subText, { maxLines: 1 }),
-            { type: 'spacer' },
-            text(expireTextShort(item), 'footnote', 'regular', theme.subText, { maxLines: 1 }),
-          ],
-        },
-      ],
-    };
+
+function renderCard(item) {
+  if (!item) return missingCard('未选择订阅');
+  if (item.error) return errorCard(item.name || '订阅', item.error);
+
+  const sublineChildren = [
+    text('已用 ' + formatBytes(item.used) + ' / ' + totalText(item), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85)
+  ];
+
+  if (item.expireAt && !isNaN(item.expireAt.getTime())) {
+    sublineChildren.push(text('  |  到期: ' + fmtDate(item.expireAt), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85));
   }
-}
-function renderSmallCard(item, theme) {
-  if (!item) return missingCard('未选择订阅', theme);
-  if (item.error) return errorCard(item.name || '订阅', item.error, theme);
+
+  sublineChildren.push({ type: 'spacer' });
+  sublineChildren.push(text(ratioText(item.remainRatio), 'caption2', 'semibold', colorForRemain(item.remainRatio), 0.9));
+
   return {
     type: 'stack',
     direction: 'column',
-    gap: 3,
-    padding: [6, 10],
-    backgroundColor: theme.cardBg,
-    borderRadius: 12,
+    gap: 2, 
+    padding: [2, 0, 2, 0],
     children: [
       {
         type: 'stack',
         direction: 'row',
         alignItems: 'center',
-        gap: 4,
         children: [
-          { type: 'image', src: 'sf-symbol:chart.bar', color: theme.primaryIcon, width: 12, height: 12 },
-          text(displayName(item), 'body', 'semibold', theme.headerText, { maxLines: 1, minScale: 0.6 }),
+          text(displayName(item), 'body', 'bold', { light: '#111827', dark: '#FFFFFF' }, 1.0),
           { type: 'spacer' },
-          text(formatBytes(item.remain), 'title3', 'bold', colorForRemain(item.remainRatio, theme), { maxLines: 1, minScale: 0.6 }),
-        ],
+          text(remainText(item), 'body', 'bold', colorForRemain(item.remainRatio), 1.0)
+        ]
       },
+      
+      progressBar(item.usedRatio, item.remainRatio),
+      
       {
         type: 'stack',
         direction: 'row',
         alignItems: 'center',
-        gap: 6,
-        children: [progressBar(item.remainRatio, true, 0, theme), text(ratioText(item.remainRatio), 'caption2', 'semibold', theme.lightText, { maxLines: 1 })],
-      },
-      {
-        type: 'stack',
-        direction: 'row',
-        alignItems: 'center',
-        gap: 0,
-        children: [
-          text('已用 ' + formatBytes(item.used) + ' / 总共 ' + totalText(item), 'footnote', 'regular', theme.subText, { maxLines: 1 }),
-          { type: 'spacer' },
-          text(expireTextShort(item), 'footnote', 'regular', theme.subText, { maxLines: 1 }),
-        ],
-      },
+        children: sublineChildren
+      }
     ],
   };
 }
-function renderInline(cfg, item, stale, theme) {
-  if (!item) return text('未选择订阅', 'caption1', 'semibold', theme.headerText, { maxLines: 1, minScale: 0.5 });
-  if (item.error) return text(displayName(item) + ' · ' + item.error, 'caption1', 'semibold', theme.errorText, { maxLines: 1, minScale: 0.5 });
-  const body = displayName(item) + ' 剩余 ' + formatBytes(item.remain) + ' · 重置 ' + resetShort(item) + ' · 到期 ' + expireShort(item);
-  return text(body, 'caption1', 'semibold', stale ? theme.staleText : theme.headerText, { maxLines: 1, minScale: 0.45 });
+
+function renderSmallCard(item) {
+  if (!item) return missingCard('未选择订阅');
+  if (item.error) return errorCard(item.name || '订阅', item.error);
+
+  return {
+    type: 'stack',
+    direction: 'column',
+    gap: 4,
+    padding: [6, 8],
+    backgroundColor: { light: '#F3F4F6', dark: '#FFFFFF12' },
+    borderRadius: 8,
+    children: [
+      text(displayName(item), 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 1.0),
+      text(remainText(item), 'subheadline', 'bold', colorForRemain(item.remainRatio), 1.0),
+      progressBar(item.usedRatio, item.remainRatio)
+    ],
+  };
 }
-function renderCircular(item, stale, cfg, theme) {
+
+function renderInline(cfg, item, stale) {
+  if (!item) return text('未选择订阅', 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 1.0);
+  if (item.error) return text(displayName(item) + ' · ' + item.error, 'caption1', 'semibold', '#EF4444', 1.0);
+  const body = displayName(item) + ' 剩余 ' + remainText(item);
+  return text(body, 'caption1', 'semibold', stale ? '#D97706' : { light: '#111827', dark: '#FFFFFF' }, 1.0);
+}
+
+function renderCircular(item, stale, cfg) {
   const pct = Number.isFinite(item && item.remainRatio) ? Math.round(item.remainRatio * 100) + '%' : '--';
   return {
     type: 'widget',
@@ -523,56 +457,43 @@ function renderCircular(item, stale, cfg, theme) {
     gap: 2,
     backgroundColor: 'rgba(0,0,0,0)',
     children: [
-      { type: 'image', src: 'sf-symbol:chart.pie.fill', color: stale ? theme.staleText : colorForRemain(item && item.remainRatio, theme), width: 18, height: 18 },
-      text(pct, 'headline', 'bold', theme.headerText, { textAlign: 'center', maxLines: 1, minScale: 0.6 }),
+      { type: 'image', src: 'sf-symbol:chart.pie.fill', color: stale ? '#F59E0B' : colorForRemain(item && item.remainRatio), width: 16, height: 16 },
+      text(pct, 'headline', 'bold', { light: '#111827', dark: '#FFFFFF' }, 1.0, { textAlign: 'center' }),
     ],
   };
 }
-function renderAccessoryRectangular(cfg, item, stale, theme) {
-  if (!item) return missingCard('未选择订阅', theme);
-  if (item.error) return errorCard(item.name || '订阅', item.error, theme);
+
+function renderAccessoryRectangular(cfg, item, stale) {
+  if (!item) return missingCard('未选择订阅');
+  if (item.error) return errorCard(item.name || '订阅', item.error);
   return {
     type: 'stack',
     direction: 'column',
-    gap: 3,
-    padding: 8,
-    backgroundColor: theme.cardBg,
-    borderRadius: 12,
+    gap: 2,
+    padding: 6,
+    backgroundColor: { light: '#F3F4F6', dark: '#FFFFFF10' },
+    borderRadius: 8,
     children: [
-      {
-        type: 'stack',
-        direction: 'row',
-        alignItems: 'center',
-        gap: 2,
-        children: [
-          { type: 'image', src: 'sf-symbol:chart.bar', color: theme.primaryIcon, width: 10, height: 10 },
-          text(displayName(item), 'caption2', 'semibold', theme.headerText, { maxLines: 1, minScale: 0.5, flex: 1 }),
-          text(formatBytes(item.remain), 'body', 'bold', colorForRemain(item.remainRatio, theme), { maxLines: 1, minScale: 0.55 }),
-        ],
-      },
-      text(ratioText(item.remainRatio) + ' · ' + expireShort(item), 'caption2', 'regular', theme.lightText, { maxLines: 1, minScale: 0.5 }),
+      text(displayName(item), 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 1.0),
+      text(remainText(item), 'headline', 'bold', colorForRemain(item.remainRatio), 1.0)
     ],
   };
 }
-function footer(cfg, payload, stale, staleMsg, theme) {
+
+function footer(cfg, payload, stale, staleMsg) {
   const source = payload.source || cfg.baseUrl;
   const msg = stale ? '缓存模式 · ' + (staleMsg || '最新请求失败') : '数据源 ' + source;
-  return text(msg, 'caption2', 'regular', stale ? theme.staleText : theme.subText, { maxLines: 1, minScale: 0.55 });
+  return text(msg, 'caption2', 'regular', stale ? '#D97706' : { light: '#9CA3AF', dark: '#71717A' }, 1.0);
 }
+
 function errorWidget(cfg, title, msg) {
-  const theme = getThemeColors();
   return {
     type: 'widget',
     url: cfg.openUrl,
     refreshAfter: refreshISO(cfg.refreshMinutes),
-    padding: 14,
-    gap: 8,
-    backgroundGradient: {
-      type: 'linear',
-      colors: theme.bgGradientError,
-      startPoint: { x: 0, y: 0 },
-      endPoint: { x: 1, y: 1 },
-    },
+    padding: 12,
+    gap: 6,
+    backgroundColor: { light: '#FEF2F2', dark: '#2D1A1A' },
     children: [
       {
         type: 'stack',
@@ -580,80 +501,81 @@ function errorWidget(cfg, title, msg) {
         alignItems: 'center',
         gap: 6,
         children: [
-          { type: 'image', src: 'sf-symbol:exclamationmark.triangle.fill', color: theme.errorText, width: 16, height: 16 },
-          text(title, 'headline', 'bold', theme.headerText, { maxLines: 1 }),
+          { type: 'image', src: 'sf-symbol:exclamationmark.triangle.fill', color: '#EF4444', width: 14, height: 14 },
+          text(title, 'headline', 'bold', { light: '#991B1B', dark: '#FFFFFF' }, 1.0),
         ],
       },
-      text(msg, 'caption1', 'regular', theme.errorText, { maxLines: 5, minScale: 0.65 }),
+      text(msg, 'caption1', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 1.0),
     ],
   };
 }
-function missingCard(msg, theme) {
+
+function missingCard(msg) {
   return {
     type: 'stack',
     direction: 'column',
     gap: 4,
-    padding: [8, 10],
-    backgroundColor: 'rgba(255,255,255,0.1)',
-    borderRadius: 12,
+    padding: [6, 8],
+    backgroundColor: { light: '#E5E7EB', dark: '#FFFFFF12' },
+    borderRadius: 8,
     children: [
-      text('提示', 'caption1', 'semibold', theme.headerText, { maxLines: 1 }),
-      text(msg, 'caption2', 'regular', theme.lightText, { maxLines: 2, minScale: 0.65 }),
+      text('提示', 'caption1', 'semibold', { light: '#374151', dark: '#FFFFFF' }, 1.0),
+      text(msg, 'caption2', 'regular', { light: '#4B5563', dark: '#CBD5E1' }, 1.0),
     ],
   };
 }
-function errorCard(title, msg, theme) {
+
+function errorCard(title, msg) {
   return {
     type: 'stack',
     direction: 'column',
     gap: 4,
-    padding: [8, 10],
-    backgroundColor: theme.errorBg,
-    borderRadius: 12,
+    padding: [6, 8],
+    backgroundColor: { light: '#FEE2E2', dark: '#7F1D1D55' },
+    borderRadius: 8,
     children: [
-      text(title, 'caption1', 'semibold', theme.headerText, { maxLines: 1 }),
-      text(msg, 'caption2', 'regular', theme.errorText, { maxLines: 2, minScale: 0.65 }),
+      text(title, 'caption1', 'semibold', { light: '#991B1B', dark: '#FFFFFF' }, 1.0),
+      text(msg, 'caption2', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 1.0),
     ],
   };
 }
-function progressBar(remainRatio, fill, width, theme) {
-  if (!Number.isFinite(remainRatio)) {
+
+function progressBar(usedRatio, remainRatio) {
+  if (!Number.isFinite(usedRatio)) {
     return {
       type: 'stack',
       direction: 'row',
       alignItems: 'center',
       gap: 4,
       children: [
-        { type: 'image', src: 'sf-symbol:infinity', color: theme.successText, width: 12, height: 12 },
-        text('无限流量', 'caption2', 'semibold', theme.successText, { maxLines: 1 }),
+        { type: 'image', src: 'sf-symbol:infinity', color: '#10B981', width: 10, height: 10 },
+        text('无限流量', 'caption2', 'semibold', '#10B981', 1.0),
       ],
     };
   }
-  const pct = clamp(remainRatio, 0, 1);
-  const barStyle = fill ? { flex: 1 } : { width: width || 180 };
+  const pct = clamp(usedRatio, 0, 1);
   return {
     type: 'stack',
     direction: 'row',
     alignItems: 'center',
-    height: 6,
-    backgroundColor: 'rgba(255,255,255,0.2)',
+    height: 6, 
+    backgroundColor: { light: '#E5E7EB', dark: '#FFFFFF15' },
     borderRadius: 3,
-    ...barStyle,
     children: [
       {
         type: 'stack',
         height: 6,
-        backgroundColor: colorForRemain(remainRatio, theme),
+        backgroundColor: colorForRemain(remainRatio),
         borderRadius: 3,
-        width: fill ? undefined : Math.max(4, Math.round((width || 180) * pct)),
-        flex: fill ? pct : undefined,
+        flex: pct > 0.02 ? pct : 0.02,
         children: [{ type: 'spacer' }],
       },
-      { type: 'spacer', flex: 1 - pct },
+      { type: 'spacer', flex: (1 - pct) > 0 ? (1 - pct) : 0.001 },
     ],
   };
 }
-function aggregate(items, theme) {
+
+function aggregate(items) {
   const finite = items.filter((i) => i && Number.isFinite(i.total) && i.total > 0 && Number.isFinite(i.remain));
   if (!finite.length) return null;
   const remain = finite.reduce((sum, i) => sum + i.remain, 0);
@@ -661,109 +583,50 @@ function aggregate(items, theme) {
   const ratio = total > 0 ? remain / total : NaN;
   return {
     text: formatBytes(remain),
-    color: colorForRemain(ratio, theme),
+    color: colorForRemain(ratio),
   };
 }
+
+function remainText(item) {
+  if (!item) return '--';
+  if (!Number.isFinite(item.total) || item.total <= 0) return '无限流量';
+  return formatBytes(item.remain);
+}
+
 function totalText(item) {
   if (!item || !Number.isFinite(item.total) || item.total <= 0) return '无限';
   return formatBytes(item.total);
 }
+
 function ratioText(remainRatio) {
   if (!Number.isFinite(remainRatio)) return '无限';
   return Math.round(clamp(remainRatio, 0, 1) * 100) + '%';
 }
+
 function displayName(item) {
   if (!item) return '订阅';
-  if (item.planName && item.planName !== item.name) return item.planName + ' · ' + item.name;
-  return item.planName || item.name || '订阅';
+  return item.name || '订阅';
 }
-function resetText(item) {
-  if (!item) return '未知';
-  if (item.resetAt instanceof Date && !isNaN(item.resetAt.getTime())) {
-    return fmtDate(item.resetAt) + ' · ' + humanDuration(item.resetAt.getTime() - Date.now());
-  }
-  if (Number.isFinite(item.remainingDays)) {
-    const d = Math.max(0, Math.floor(item.remainingDays));
-    return (d === 0 ? '今天' : d + '天后');
-  }
-  return '未知';
+
+function colorForRemain(remainRatio) {
+  if (!Number.isFinite(remainRatio)) return '#10B981';
+  if (remainRatio <= 0.3) return '#EF4444';
+  if (remainRatio <= 0.5) return '#F59E0B';
+  return '#10B981';
 }
-function resetShort(item) {
-  if (!item) return '未知';
-  if (item.resetAt instanceof Date && !isNaN(item.resetAt.getTime())) return fmtMD(item.resetAt);
-  if (Number.isFinite(item.remainingDays)) return Math.max(0, Math.floor(item.remainingDays)) + '天';
-  return '未知';
-}
-function expireText(item) {
-  if (!item || !(item.expireAt instanceof Date) || isNaN(item.expireAt.getTime())) return '长期有效';
-  return fmtDate(item.expireAt) + ' · ' + humanDuration(item.expireAt.getTime() - Date.now());
-}
-function expireTextShort(item) {
-  if (!item || !(item.expireAt instanceof Date) || isNaN(item.expireAt.getTime())) return '长期有效';
-  return fmtMD(item.expireAt);
-}
-function expireShort(item) {
-  if (!item || !(item.expireAt instanceof Date) || isNaN(item.expireAt.getTime())) return '长期有效';
-  return fmtMD(item.expireAt);
-}
-function colorForRemain(remainRatio, theme) {
-  if (!Number.isFinite(remainRatio)) return theme.successText;
-  if (remainRatio >= 0.6) return theme.successText;   // >= 60% 绿色
-  if (remainRatio >= 0.4) return theme.primaryIcon;   // >= 40% 蓝色
-  return theme.warningText;                            // < 40% 橙色
-}
-function calcResetAt(rawUrl, remainingDays, subName, cfg) {
-  const args = parseArgs(rawUrl);
-  const now = new Date();
-  const envRule = getResetRule(subName, cfg);
-  Object.assign(args, envRule);
-  if (args.startDate && args.cycleDays) {
-    const cycle = parseInt(args.cycleDays, 10);
-    const start = new Date(args.startDate);
-    if (Number.isFinite(cycle) && cycle > 0 && !isNaN(start.getTime())) {
-      const today = startOfDay(now);
-      let next = startOfDay(start);
-      while (next <= today) next = addDays(next, cycle);
-      return next;
-    }
-  }
-  if (args.resetDay) {
-    const day = clampInt(args.resetDay, 1, 1, 31);
-    if (Number.isFinite(day)) {
-      const y = now.getFullYear();
-      const m = now.getMonth();
-      const thisDay = Math.min(day, daysInMonth(y, m));
-      if (now.getDate() <= thisDay) return new Date(y, m, thisDay, 0, 0, 0, 0);
-      const nextMonth = new Date(y, m + 1, 1, 0, 0, 0, 0);
-      nextMonth.setDate(Math.min(day, daysInMonth(nextMonth.getFullYear(), nextMonth.getMonth())));
-      return nextMonth;
-    }
-  }
-  if (Number.isFinite(remainingDays)) {
-    return addDays(startOfDay(now), Math.max(0, Math.floor(remainingDays)));
-  }
-  return null;
-}
-function getResetRule(subName, cfg) {
-  const rules = (cfg && cfg.resetRules) || {};
-  const name = String(subName || '');
-  if (rules[name]) return rules[name];
-  const fallback = {};
-  if (cfg && cfg.resetDay) fallback.resetDay = cfg.resetDay;
-  if (cfg && cfg.startDate) fallback.startDate = cfg.startDate;
-  if (cfg && cfg.cycleDays) fallback.cycleDays = cfg.cycleDays;
-  return fallback;
-}
+
 function parseArgs(rawUrl) {
   const url = String(rawUrl || '').split(/\r?\n/).map((s) => s.trim()).find(Boolean) || '';
   const idx = url.indexOf('#');
   if (idx < 0) return {};
   const frag = url.slice(idx + 1).trim();
   if (!frag) return {};
+
   try {
     const obj = JSON.parse(safeDecode(frag));
     if (obj && typeof obj === 'object' && !Array.isArray(obj)) return obj;
   } catch (_) {}
+
   const out = {};
   for (const part of frag.split('&')) {
     if (!part) continue;
@@ -774,46 +637,238 @@ function parseArgs(rawUrl) {
   }
   return out;
 }
+
 function requestJson(ctx, url, cfg) {
-  return ctx.http.get(url, {
-    headers: { Accept: 'application/json', 'User-Agent': 'Egern-SubStore-Widget' },
-    timeout: cfg.timeout,
-    redirect: 'follow',
-    insecureTls: cfg.insecureTls,
-  }).then(async (resp) => {
-    const text = await safeText(resp);
-    if (resp.status < 200 || resp.status >= 300) {
-      throw new Error('HTTP ' + resp.status + ' ' + preview(text, 120));
-    }
-    try {
-      return JSON.parse(text);
-    } catch (_) {
-      throw new Error('JSON 解析失败 ' + preview(text, 120));
-    }
-  });
+  return ctx.http
+    .get(url, {
+      headers: {
+        Accept: 'application/json',
+        'User-Agent': 'Egern-SubStore-Widget',
+      },
+      timeout: cfg.timeout,
+      redirect: 'follow',
+      insecureTls: cfg.insecureTls,
+    })
+    .then(async (resp) => {
+      const text = await safeText(resp);
+      if (resp.status < 200 || resp.status >= 300) {
+        throw new Error('HTTP ' + resp.status + ' ' + preview(text, 120));
+      }
+      try {
+        return JSON.parse(text);
+      } catch (_) {
+        throw new Error('JSON 解析失败 ' + preview(text, 120));
+      }
+    });
 }
+
 function unwrapData(json) {
   if (json && typeof json === 'object' && 'data' in json) return json.data;
   return json;
 }
+
 async function safeText(resp) {
-  try {
-    return await resp.text();
-  } catch (_) {
-    return '';
-  }
+  try { return await resp.text(); } catch (_) { return ''; }
 }
+
 function apiUrl(base, path) {
   const b = normalizeBaseUrl(base);
   const p = String(path || '').startsWith('/') ? String(path || '') : '/' + String(path || '');
   if (/\/api$/i.test(b) && p.startsWith('/api/')) return b + p.slice(4);
   return b + p;
 }
+
 function normalizeBaseUrl(url) {
   return String(url || '').trim().replace(/\/+$/, '');
 }
-function unique(arr) {
+
+ function unique(arr) {
   const out = [];
   for (const item of arr) {
     if (item && !out.includes(item)) out.push(item);
   }
+  return out;
+}
+
+function firstHttpUrl(raw) {
+  const lines = String(raw || '').split(/[\r\n]+/).map((s) => s.trim()).filter(Boolean);
+  return lines.find((s) => /^https?:\/\//i.test(s)) || '';
+}
+
+function splitUrlArgs(raw) {
+  const s = String(raw || '');
+  const idx = s.indexOf('#');
+  if (idx < 0) return { url: s, args: {} };
+  return { url: s.slice(0, idx), args: parseArgs(s) };
+}
+
+function parseHeaderObject(raw) {
+  if (!raw) return {};
+  if (typeof raw === 'object' && !Array.isArray(raw)) return raw;
+  try {
+    const obj = JSON.parse(String(raw));
+    return obj && typeof obj === 'object' && !Array.isArray(obj) ? obj : {};
+  } catch (_) {
+    return {};
+  }
+}
+
+function getHeaderValue(headers, name) {
+  if (!headers) return '';
+  try { if (typeof headers.get === 'function') return headers.get(name) || ''; } catch (_) {}
+  const lower = String(name).toLowerCase();
+  for (const key of Object.keys(headers)) {
+    if (key.toLowerCase() === lower) {
+      const v = headers[key];
+      return Array.isArray(v) ? v.join(', ') : String(v || '');
+    }
+  }
+  return '';
+}
+
+function parseList(v) {
+  if (Array.isArray(v)) return v.map(String).map((s) => s.trim()).filter(Boolean);
+  const s = String(v || '').trim();
+  if (!s) return [];
+  if (s[0] === '[') {
+    try {
+      const arr = JSON.parse(s);
+      if (Array.isArray(arr)) return arr.map(String).map((x) => x.trim()).filter(Boolean);
+    } catch (_) {}
+  }
+  return s.split(/[\n,|]+/).map((x) => x.trim()).filter(Boolean);
+}
+
+function readStoredSubscriptions(ctx) {
+  const storage = ctx && ctx.storage;
+  if (!storage) return [];
+  const candidates = [];
+  const keys = ['subs', 'sub-store', 'Sub-Store', 'substore', 'SubStore', 'subscriptions'];
+  for (const key of keys) {
+    try { if (typeof storage.getJSON === 'function') candidates.push(storage.getJSON(key)); } catch (_) {}
+    try { if (typeof storage.get === 'function') candidates.push(parseMaybeJSON(storage.get(key))); } catch (_) {}
+  }
+  for (const value of candidates) {
+    const subs = extractSubsFromValue(value);
+    if (subs.length) return subs;
+  }
+  return [];
+}
+
+function readStoredFlow(ctx, name) {
+  const storage = ctx && ctx.storage;
+  if (!storage) return null;
+  const keys = ['flow:' + name, 'flow_' + name, 'sub-flow:' + name, 'sub_flow_' + name, 'substore-flow:' + name, 'substore_flow_' + name];
+  for (const key of keys) {
+    try {
+      if (typeof storage.getJSON === 'function') {
+        const flow = normalizeFlow(storage.getJSON(key));
+        if (hasUsableFlow(flow)) return flow;
+      }
+    } catch (_) {}
+    try {
+      if (typeof storage.get === 'function') {
+        const flow = normalizeFlow(parseMaybeJSON(storage.get(key)));
+        if (hasUsableFlow(flow)) return flow;
+      }
+    } catch (_) {}
+  }
+  return null;
+}
+
+function parseMaybeJSON(value) {
+  if (!value) return null;
+  if (typeof value !== 'string') return value;
+  try { return JSON.parse(value); } catch (_) { return null; }
+}
+
+function extractSubsFromValue(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) {
+    const arr = value.filter((item) => item && typeof item === 'object' && item.name);
+    if (arr.length) return arr.map((item) => ({ ...item, source: item.source || 'storage' }));
+  }
+  if (value && typeof value === 'object') {
+    if (Array.isArray(value.subs)) return extractSubsFromValue(value.subs);
+    if (value.data) return extractSubsFromValue(value.data);
+    if (value.cache) return extractSubsFromValue(value.cache);
+    if (value['sub-store']) return extractSubsFromValue(value['sub-store']);
+    const vals = Object.values(value);
+    const arr = vals.filter((item) => item && typeof item === 'object' && item.name && (item.url || item.content || item.subUserinfo));
+    if (arr.length) return arr.map((item) => ({ ...item, source: item.source || 'storage' }));
+  }
+  return [];
+}
+
+function bool(v, def) {
+  if (v == null || v === '') return !!def;
+  const s = String(v).trim().toLowerCase();
+  return ['1', 'true', 'yes', 'on', 'y'].includes(s);
+}
+
+function text(value, size, weight, color, minScale) {
+  return {
+    type: 'text',
+    text: value == null ? '' : String(value),
+    font: { size: size || 'body', weight: weight || 'regular' },
+    textColor: color || '#FFFFFF',
+    maxLines: 1,
+    minScale: minScale || 1.0, 
+  };
+}
+
+function formatBytes(bytes) {
+  if (!Number.isFinite(bytes) || bytes < 0) return '0 B';
+  if (bytes === 0) return '0 B';
+  const k = 1024;
+  const sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+}
+
+function clampInt(v, def, min, max) {
+  const n = parseInt(v, 10);
+  const x = Number.isFinite(n) ? n : def;
+  return Math.min(max, Math.max(min, x));
+}
+
+function num(v) {
+  const n = Number(v);
+  return Number.isFinite(n) ? n : NaN;
+}
+
+function finiteOrZero(v) { return Number.isFinite(v) ? v : 0; }
+function clamp(n, min, max) { return Math.min(max, Math.max(min, n)); }
+function refreshISO(minutes) { return new Date(Date.now() + minutes * 60000).toISOString(); }
+function pad2(n) { return String(n).padStart(2, '0'); }
+function safeDecode(s) { try { return decodeURIComponent(String(s).replace(/\+/g, '%20')); } catch (_) { return String(s); } }
+
+function fmtClock(ts) {
+  const d = new Date(ts);
+  return pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+}
+
+function fmtDate(d) {
+  if (!d || isNaN(d.getTime())) return '';
+  return (d.getMonth() + 1) + '-' + pad2(d.getDate());
+}
+
+function shortError(err) {
+  const msg = err && err.message ? err.message : String(err || '未知错误');
+  return preview(msg, 80);
+}
+
+function preview(s, len) {
+  s = String(s == null ? '' : s).replace(/\s+/g, ' ').trim();
+  return s.length > len ? s.slice(0, len - 1) + '…' : s;
+}
+
+function writeCache(ctx, cfg, payload) {
+  if (!cfg.useCache || !ctx.storage || !ctx.storage.setJSON) return;
+  try { ctx.storage.setJSON(cfg.cacheKey, payload); } catch (_) {}
+}
+
+function readCache(ctx, cfg) {
+  if (!cfg.useCache || !ctx.storage || !ctx.storage.getJSON) return null;
+  try { return ctx.storage.getJSON(cfg.cacheKey); } catch (_) { return null; }
+}
