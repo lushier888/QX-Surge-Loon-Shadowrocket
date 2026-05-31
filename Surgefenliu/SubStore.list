@@ -1,0 +1,25 @@
+# --- Sub-Store 专属域名匹配 ---
+DOMAIN-SUFFIX,substore.local
+DOMAIN-KEYWORD,sub-store
+DOMAIN-KEYWORD,substore
+
+# --- 基础本地与局域网域名 ---
+DOMAIN-SUFFIX,local
+DOMAIN-MATCH,localhost
+
+# --- 局域网 IPv4 地址段 (IP-CIDR) ---
+IP-CIDR,0.0.0.0/8
+IP-CIDR,10.0.0.0/8
+IP-CIDR,100.64.0.0/10
+IP-CIDR,127.0.0.0/8
+IP-CIDR,169.254.0.0/16
+IP-CIDR,172.16.0.0/12
+IP-CIDR,192.0.0.0/24
+IP-CIDR,192.0.2.0/24
+IP-CIDR,192.168.0.0/16
+IP-CIDR,224.0.0.0/4
+
+# --- 局域网 IPv6 地址段 (IP-CIDR6) ---
+IP-CIDR6,::1/128
+IP-CIDR6,fc00::/7
+IP-CIDR6,fe80::/10
