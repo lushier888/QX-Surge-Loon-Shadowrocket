@@ -4,7 +4,7 @@
  * 环境变量示例：
  * SUB_NAMES=机场A,机场B                            # 指定显示的订阅名称
  * TITLE=我的套餐                                   # 小组件标题
- */
+ */ 
 
 export default async function (ctx) {
   const cfg = getConfig(ctx);
