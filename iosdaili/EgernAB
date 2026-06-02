@@ -1062,6 +1062,10 @@ rules:
 
 # ————订阅小组件————
 scriptings:
+- generic:
+    name: Sub机场流量
+    script_url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/subliuliang.js
+- generic:
     name: 机场流量组件
     script_url: https://raw.githubusercontent.com/599495053/Zhangjiawen/refs/heads/main/substore-flow-widget.js
     env:
