@@ -1054,9 +1054,7 @@ rules:
     disabled: false
 - rule_set:
     name: 𝑳𝑨𝑵📶局域网
-    match: LAN
-    policy: 🛜国内直连
-    disabled: false
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/LAN.list
 - geoip:
     name: 𝑪𝑵🇨🇳国内网络
     match: CN
