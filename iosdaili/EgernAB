@@ -1068,8 +1068,6 @@ scriptings:
 - generic:
     name: 机场流量组件
     script_url: https://raw.githubusercontent.com/599495053/Zhangjiawen/refs/heads/main/substore-flow-widget.js
-    env:
-      'RESET_DAY ': '26'
 - generic:
     name: 今日油价
     script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Youjia.js
