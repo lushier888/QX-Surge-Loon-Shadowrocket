@@ -834,11 +834,6 @@ rules:
     policy: REJECT
     no_resolve: true
     disabled: false
-- domain_suffix:
-    name: 渔云𝑬𝒎𝒃𝒚
-    match: shsiis.cloudfisher.cc
-    policy: 🎞️𝑬𝒎𝒃𝒚
-    disabled: false
 - rule_set:
     name: 𝑹𝒆𝒋𝒆𝒌𝒕去广告
     match: http://script.hub/file/_start_/https://github.com/Repcz/Tool/raw/X/QuantumultX/Rules/Reject.list/_end_/Reject.list?type=rule-set&target=surge-rule-set&del=true
