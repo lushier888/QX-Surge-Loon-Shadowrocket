@@ -1,16 +1,10 @@
-#!name=8se.me 去广告模块
-#!desc=基于 GitHub 远程脚本，精细化拦截广告并修复图片懒加载问题。
+#!name=8se.me 终极去广告模块
+#!desc=纯脚本接管版：完美放行视频与图片，精准定点消除弹窗与视觉广告。
 #!category=去广告
 
 [MITM]
 hostname = %APPEND% 8se.me, *.8se.me
 
-[URL Rewrite]
-# 修改拦截规则：加上前后缀包裹，防止误杀包含 ad 字母的正常图片路径
-# 只拦截纯粹的第三方垃圾广告联盟
-^https?:\/\/.*(popads|exoclick|juicyads)\.com.*$ - REJECT
-^https?:\/\/.*\/pussycats.*$ - REJECT
-
 [Script]
-# 依旧挂载你的远程 JS 脚本，让它处理前端弹窗
+# 仅保留这一个脚本，放行所有网络请求，由 JS 在前端进行手术式清理
 8se_ad_killer = type=http-response,pattern=^https?:\/\/(www\.)?8se\.me\/,requires-body=1,max-size=0,timeout=10,script-path=https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/8es.js
