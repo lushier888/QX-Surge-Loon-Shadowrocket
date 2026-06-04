@@ -1,21 +1,27 @@
-name: "8se.me 去广告模块"
-desc: "移除 8se.me 网站的弹窗、悬浮广告及第三方广告联盟追踪"
-category: "去广告"
+name: 8se.me 去广告模块
+desc: 基于 GitHub 远程脚本，实时动态移除 8se.me 网站的弹窗、悬浮广告及第三方广告联盟
+category: 去广告
 status: true
 
-# 1. 拦截第三方广告域名（直接拒绝连接）
-rules:
-  - DOMAIN-KEYWORD, advertising, REJECT
-  - DOMAIN-KEYWORD, analytics, REJECT
-  - DOMAIN-SUFFIX, popads.net, REJECT
-  - DOMAIN-SUFFIX, exoclick.com, REJECT
-  - DOMAIN-SUFFIX, juicyads.com, REJECT
+# 1. 严格符合 Egern 规范的 MITM 主机名配置（必须解密才能运行脚本）
+mitm:
+  hostnames:
+    - 8se.me
+    - "*.8se.me"
 
-# 2. 针对该网站的重写与脚本注入
-scriptings:
+# 2. 拦截第三方广告域名
+rules:
+  - DOMAIN-KEYWORD,advertising,REJECT
+  - DOMAIN-KEYWORD,analytics,REJECT
+  - DOMAIN-SUFFIX,popads.net,REJECT
+  - DOMAIN-SUFFIX,exoclick.com,REJECT
+  - DOMAIN-SUFFIX,juicyads.com,REJECT
+
+# 3. 纠正后的 Egern 脚本注入格式（使用 scripts 字段，而非 scriptings）
+scripts:
   - name: 8se_ad_killer
     type: http-response
-    match, ^https?:\/\/(www\.)?8se\.me\/
-    body-modification: true
+    match: ^https?:\/\/(www\.)?8se\.me\/
+    require-body: true
     timeout: 10
-    script-path: "https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/8es.js"
+    script-path: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/8es.js
