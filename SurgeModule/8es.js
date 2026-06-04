@@ -1,52 +1,15 @@
 /*
-Egern/Surge Script: 8se.me 视频放行+去广告纯净版
+Egern/Surge Script: 8se.me 完美去广告、不花屏、视频放行版
 以 GitHub 仓库为最高准则
 */
 
 let body = $response.body;
 
 if (body) {
-    // 1. 注入高维伪装：抢在网页所有脚本运行前，向系统宣告“老子已经把广告全看完了”
-    // 这样它就不会触发任何“自杀锁死”或者隐藏视频的代码
-    const injectJS = `
-    <script>
-        (function() {
-            // 伪装反广告检测变量，让网页以为广告加载成功
-            window.adblock = false;
-            window.isAdBlockActive = false;
-            window.FuckAdBlock = function() {
-                this.onDetected = function() { return this; };
-                this.onNotDetected = function(cb) { cb(); return this; };
-                this.check = function() {};
-            };
-            
-            // 阻止网页各种恶心的点击弹窗
-            window.open = function() { return null; };
-            
-            // 定时器暗杀：网页加载后，每隔 300 毫秒定向清除“强迫关闭广告插件”的流氓弹窗元素
-            // 绝不使用 window.stop() 或大范围修改变量，保证视频流正常跑
-            setInterval(function() {
-                // 恢复由于流氓弹窗导致的页面无法滚动
-                if (document.body) {
-                    document.body.style.setProperty('overflow', 'auto', 'important');
-                    document.body.style.setProperty('position', 'unset', 'important');
-                }
-                
-                var divs = document.getElementsByTagName('div');
-                for (var i = 0; i < divs.length; i++) {
-                    if (divs[i].innerText && (divs[i].innerText.includes('广告拦截') || divs[i].innerText.includes('维持运营'))) {
-                        divs[i].remove();
-                    }
-                }
-            }, 300);
-        })();
-    </script>
-    `;
-
-    // 2. 强行注入纯视觉 CSS：只把小广告、悬浮层、提示词隐藏，不破坏任何网页的 div 结构和图片/视频容器
+    // 1. 注入纯净安全的 CSS：只隐藏已知的广告特征类，绝对不乱改 html/body 的 display 属性，防止花屏
     const injectCSS = `
     <style>
-        /* 隐藏各种固定的、悬浮的、带 ad 标识的狗皮膏药广告 */
+        /* 隐藏带有 ad 标识的悬浮、固定、横幅广告，不影响网页原生排版 */
         [class*="ad-"], [id*="ad-"], iframe[src*="ads"],
         div[style*="position: fixed"][style*="z-index"] {
             display: none !important;
@@ -56,25 +19,48 @@ if (body) {
             pointer-events: none !important;
         }
         
-        /* 隐藏提示关闭去广告的遮罩层，但绝对不影响网页主体的 display */
-        div:contains("广告拦截"), div:contains("维持运营"),
-        div[style*="backdrop-filter"], .modal-backdrop, .fade.show, [style*="blur"] {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            pointer-events: none !important;
-        }
-        
-        /* 强制确保播放器区域和网页主体 100% 可见 */
-        html, body, video, .video-player, #player {
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
+        /* 强制允许页面滚动，防止被恶心遮罩层锁死 */
+        html, body {
+            overflow: auto !important;
+            position: unset !important;
         }
     </style>
     `;
+    
+    // 2. 注入原生 JS：用最标准的 DOM 操作代替 CSS，精准肉眼可见地干掉“检测弹窗”
+    const injectJS = `
+    <script>
+        (function() {
+            // 瞒天过海：提前宣告广告加载成功，让它的反去广告逻辑直接失灵
+            window.adblock = false;
+            window.isAdBlockActive = false;
+            window.FuckAdBlock = function() {
+                this.onDetected = function() { return this; };
+                this.onNotDetected = function(cb) { cb(); return this; };
+                this.check = function() {};
+            };
+            
+            // 锁死点击弹窗
+            window.open = function() { return null; };
+            
+            // 毫秒级动态补刀：每 200 毫秒扫描页面，只要发现有 div 包含“广告拦截”或“维持运营”，直接物理抹除
+            setInterval(function() {
+                var divs = document.getElementsByTagName('div');
+                for (var i = 0; i < divs.length; i++) {
+                    var text = divs[i].textContent || divs[i].innerText || "";
+                    if (text.includes('广告拦截') || text.includes('维持运营')) {
+                        // 顺着节点往上找，连带它那个模糊阴影的黑色背景遮罩层（通常是它的父级）一起干掉
+                        if (divs[i].getAttribute('id') !== 'app' && divs[i].getAttribute('id') !== 'wrapper') {
+                            divs[i].remove();
+                        }
+                    }
+                }
+            }, 200);
+        })();
+    </script>
+    `;
 
-    // 严丝合缝地注入，不破坏原生 HTML 的任何一行旧代码
+    // 严丝合缝注入头部和尾部
     body = body.replace('</head>', injectCSS + '</head>');
     body = body.replace('<body>', '<body>' + injectJS);
 }
