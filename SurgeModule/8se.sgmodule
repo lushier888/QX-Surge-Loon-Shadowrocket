@@ -18,4 +18,4 @@ scriptings:
     match, ^https?:\/\/(www\.)?8se\.me\/
     body-modification: true
     timeout: 10
-    script-path: "https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/8es.js" # 或者使用下方的本地脚本内容
+    script-path: "https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/8es.js"
