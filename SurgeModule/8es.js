@@ -1,14 +1,14 @@
 /*
-Egern/Surge Script: 8se.me 终极去广告与防网页死锁
+Egern/Surge Script: 8se.me 终极完美去广告 + 视频放行修复版
 以 GitHub 仓库为最高准则
 */
 
 let body = $response.body;
 
 if (body) {
-    // 1. 彻底抹除网页中所有包含特定广告关键字的内联原生 <script> 标签
-    // 很多网站的检测和广告加载是直接写在页面 HTML 的 script 里的，在源头上把它们蒸发
-    body = body.replace(/<script[^>]*>[\s\S]*?(popads|exoclick|juicyads|fuckadblock|blockadblock|广告拦截|维持运营)[\s\S]*?<\/script>/gi, '');
+    // 【核心修复】：删除了原先一刀切删除整个 <script> 标签的霸道正则（防止误杀视频播放器初始化代码）
+    // 改为只精准剔除可能混在 HTML 里的恶意广告商域名直链字符串，保证视频脚本完整存活
+    body = body.replace(/(popads|exoclick|juicyads|fuckadblock|blockadblock)\.com/g, 'localhost');
 
     // 2. 注入针对性样式：只隐藏特定广告和弹窗，但必须强制恢复网页主体的显示与滚动
     const injectCSS = `
