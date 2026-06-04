@@ -1,18 +1,16 @@
 #!name=8se.me 去广告模块
-#!desc=基于 GitHub 远程脚本，实时动态移除 8se.me 网站的弹窗、悬浮广告及第三方广告联盟。
+#!desc=基于 GitHub 远程脚本，精细化拦截广告并修复图片懒加载问题。
 #!category=去广告
 
 [MITM]
 hostname = %APPEND% 8se.me, *.8se.me
 
 [URL Rewrite]
-# 拦截第三方广告域名
-^https?:\/\/.*advertising.*$ - REJECT
-^https?:\/\/.*analytics.*$ - REJECT
-^https?:\/\/.*popads\.net.*$ - REJECT
-^https?:\/\/.*exoclick\.com.*$ - REJECT
-^https?:\/\/.*juicyads\.com.*$ - REJECT
+# 修改拦截规则：加上前后缀包裹，防止误杀包含 ad 字母的正常图片路径
+# 只拦截纯粹的第三方垃圾广告联盟
+^https?:\/\/.*(popads|exoclick|juicyads)\.com.*$ - REJECT
+^https?:\/\/.*\/pussycats.*$ - REJECT
 
 [Script]
-# 注入你的 GitHub 远程 JS 脚本（注意：Egern/Surge 的脚本配置必须写在同一行）
+# 依旧挂载你的远程 JS 脚本，让它处理前端弹窗
 8se_ad_killer = type=http-response,pattern=^https?:\/\/(www\.)?8se\.me\/,requires-body=1,max-size=0,timeout=10,script-path=https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/8es.js
