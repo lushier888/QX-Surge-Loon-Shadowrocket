@@ -1,46 +1,67 @@
 /*
-Egern Script: 8se.me Ad Killer
+Egern/Surge Script: 8se.me 终极去广告与反检测破解
+以 GitHub 仓库为最高准则
 */
 
 let body = $response.body;
 
 if (body) {
-    // 1. 清理 HTML 内部常见的第三方恶意/广告脚本标签
-    body = body.replace(/<script[^>]*src="[^"]*(popads|exoclick|juicyads|analytics|ad-delivery|pussycats)[^"]*"[^>]*><\/script>/gi, '');
-    
-    // 2. 强行注入 CSS 样式，把网页里可能存在的隐藏广告层、弹窗层、悬浮窗直接 display:none
+    // 1. 强行注入针对性的 CSS，不仅隐藏广告，连它弹出来的“请关闭广告拦截”遮罩层一起人间蒸发
     const injectCSS = `
     <style>
-        /* 屏蔽可能存在的悬浮、弹窗和横幅广告 class/id */
-        [class*="ad-"], [id*="ad-"], 
-        .popup-ad, .float-ad, #pop-overlay,
-        iframe[src*="ads"], 
-        div[style*="position: fixed"][style*="z-index: 999"] {
+        /* 隐藏底部悬浮的垃圾广告 */
+        [class*="ad-"], [id*="ad-"], iframe[src*="ads"],
+        div[style*="position: fixed"][style*="z-index"] {
             display: none !important;
             visibility: hidden !important;
             height: 0 !important;
-            width: 0 !important;
             opacity: 0 !important;
             pointer-events: none !important;
+        }
+        
+        /* 强行破解“请关闭广告拦截”的流氓遮罩层和弹窗 */
+        div:contains("广告拦截"), div:contains("维持运营"),
+        div[style*="backdrop-filter"], .modal-backdrop, .fade.show,
+        [style*="blur"] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+        }
+        
+        /* 恢复由于弹窗导致的网页主体无法滚动问题 */
+        body, html {
+            overflow: auto !important;
+            position: unset !important;
         }
     </style>
     `;
     
-    // 将 CSS 注入到 </head> 标签之前
-    body = body.replace('</head>', injectCSS + '</head>');
-    
-    // 3. 拦截常见的全局弹窗重定向（劫持 window.open）
+    // 2. 注入 JS 脚本，从根源上把检测广告拦截的判定逻辑（通常是定时器或检测全局变量）给直接废掉
     const injectJS = `
     <script>
         (function() {
-            // 冻结 window.open 防止点击网页任意地方弹窗
-            var originalOpen = window.open;
+            // 劫持劫持再劫持，禁止网页随便弹窗和重定向
             window.open = function() { return null; };
-            console.log("Egern: 网页弹窗重定向已被拦截");
+            
+            // 破解反广告拦截检测：如果有脚本在找广告元素，直接模拟它们存在
+            window.adblock = false;
+            window.isAdBlockActive = false;
+            
+            // 定时清除可能动态生成的遮罩层文本
+            setInterval(function() {
+                var divs = document.getElementsByTagName('div');
+                for (var i = 0; i < divs.length; i++) {
+                    if (divs[i].innerText && (divs[i].innerText.includes('广告拦截') || divs[i].innerText.includes('维持运营'))) {
+                        divs[i].remove();
+                    }
+                }
+            }, 500);
         })();
     </script>
     `;
-    // 将 JS 注入到 <body> 标签之后
+
+    // 拼装并注入
+    body = body.replace('</head>', injectCSS + '</head>');
     body = body.replace('<body>', '<body>' + injectJS);
 }
 
