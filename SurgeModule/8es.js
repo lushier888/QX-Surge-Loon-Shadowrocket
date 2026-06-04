@@ -1,15 +1,19 @@
 /*
-Egern/Surge Script: 8se.me 完美去广告、不花屏、视频放行版
+Egern/Surge Script: 8se.me 终极去广告与防网页死锁
 以 GitHub 仓库为最高准则
 */
 
 let body = $response.body;
 
 if (body) {
-    // 1. 注入纯净安全的 CSS：只隐藏已知的广告特征类，绝对不乱改 html/body 的 display 属性，防止花屏
+    // 1. 彻底抹除网页中所有包含特定广告关键字的内联原生 <script> 标签
+    // 很多网站的检测和广告加载是直接写在页面 HTML 的 script 里的，在源头上把它们蒸发
+    body = body.replace(/<script[^>]*>[\s\S]*?(popads|exoclick|juicyads|fuckadblock|blockadblock|广告拦截|维持运营)[\s\S]*?<\/script>/gi, '');
+
+    // 2. 注入针对性样式：只隐藏特定广告和弹窗，但必须强制恢复网页主体的显示与滚动
     const injectCSS = `
     <style>
-        /* 隐藏带有 ad 标识的悬浮、固定、横幅广告，不影响网页原生排版 */
+        /* 精准隐藏广告，绝不误伤网页主体结构 */
         [class*="ad-"], [id*="ad-"], iframe[src*="ads"],
         div[style*="position: fixed"][style*="z-index"] {
             display: none !important;
@@ -19,19 +23,31 @@ if (body) {
             pointer-events: none !important;
         }
         
-        /* 强制允许页面滚动，防止被恶心遮罩层锁死 */
-        html, body {
+        /* 强行震碎提示关闭插件的弹窗和遮罩层 */
+        div:contains("广告拦截"), div:contains("维持运营"),
+        div[style*="backdrop-filter"], .modal-backdrop, .fade.show, [style*="blur"] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+        
+        /* 核心防锁死：强制让网页内容元素恢复可见，防止它自杀变白 */
+        html, body, #app, #wrapper, .main-content, #main {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
             overflow: auto !important;
             position: unset !important;
         }
     </style>
     `;
     
-    // 2. 注入原生 JS：用最标准的 DOM 操作代替 CSS，精准肉眼可见地干掉“检测弹窗”
+    // 3. 注入高维伪装 JS：抢在网页所有脚本运行前，伪装成“老子已经高高兴兴把广告全看完了”的样子
     const injectJS = `
     <script>
         (function() {
-            // 瞒天过海：提前宣告广告加载成功，让它的反去广告逻辑直接失灵
+            // 劫持反广告拦截插件常用的全局变量，提前声明“没有拦截广告”
             window.adblock = false;
             window.isAdBlockActive = false;
             window.FuckAdBlock = function() {
@@ -40,27 +56,29 @@ if (body) {
                 this.check = function() {};
             };
             
-            // 锁死点击弹窗
+            // 阻止网页弹窗劫持
             window.open = function() { return null; };
             
-            // 毫秒级动态补刀：每 200 毫秒扫描页面，只要发现有 div 包含“广告拦截”或“维持运营”，直接物理抹除
+            // 定时器补刀：如果它在运行过程中动态生成了锁死页面的 class，直接干掉
             setInterval(function() {
+                // 解锁滚动
+                if (document.body) {
+                    document.body.style.setProperty('overflow', 'auto', 'important');
+                    document.body.style.setProperty('position', 'unset', 'important');
+                }
+                // 移除流氓弹窗元素
                 var divs = document.getElementsByTagName('div');
                 for (var i = 0; i < divs.length; i++) {
-                    var text = divs[i].textContent || divs[i].innerText || "";
-                    if (text.includes('广告拦截') || text.includes('维持运营')) {
-                        // 顺着节点往上找，连带它那个模糊阴影的黑色背景遮罩层（通常是它的父级）一起干掉
-                        if (divs[i].getAttribute('id') !== 'app' && divs[i].getAttribute('id') !== 'wrapper') {
-                            divs[i].remove();
-                        }
+                    if (divs[i].innerText && (divs[i].innerText.includes('广告拦截') || divs[i].innerText.includes('维持运营'))) {
+                        divs[i].remove();
                     }
                 }
-            }, 200);
+            }, 300);
         })();
     </script>
     `;
 
-    // 严丝合缝注入头部和尾部
+    // 严丝合缝地注入到 HTML 头部和尾部
     body = body.replace('</head>', injectCSS + '</head>');
     body = body.replace('<body>', '<body>' + injectJS);
 }
