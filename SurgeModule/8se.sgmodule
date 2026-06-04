@@ -1,0 +1,21 @@
+name: "8se.me 去广告模块"
+desc: "移除 8se.me 网站的弹窗、悬浮广告及第三方广告联盟追踪"
+category: "去广告"
+status: true
+
+# 1. 拦截第三方广告域名（直接拒绝连接）
+rules:
+  - DOMAIN-KEYWORD, advertising, REJECT
+  - DOMAIN-KEYWORD, analytics, REJECT
+  - DOMAIN-SUFFIX, popads.net, REJECT
+  - DOMAIN-SUFFIX, exoclick.com, REJECT
+  - DOMAIN-SUFFIX, juicyads.com, REJECT
+
+# 2. 针对该网站的重写与脚本注入
+scriptings:
+  - name: 8se_ad_killer
+    type: http-response
+    match, ^https?:\/\/(www\.)?8se\.me\/
+    body-modification: true
+    timeout: 10
+    script-path: "https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/8es.js" # 或者使用下方的本地脚本内容
