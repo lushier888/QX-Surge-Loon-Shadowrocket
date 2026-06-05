@@ -1,0 +1,10 @@
+#!name=10010
+#!desc=10010
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/JD.png
+[Script]
+10010 = type=http-request, pattern=^https?:\/\/10010v4\.com, script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.js, requires-body=true, max-size=-1, timeout=60
+
+10010_capture = type=http-response, pattern=^https?:\/\/(m\.client|loginxhm)\.10010\.com\/mobileService\/onLine\.htm, script-path=https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010_capture.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% 10010v4.com, m.client.10010.com, loginxhm.10010.com
