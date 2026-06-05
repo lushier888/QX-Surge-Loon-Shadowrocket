@@ -9,8 +9,8 @@ allow_external_connections: false
 vif_only: true
 hide_vpn_icon: true
 geoip_db_url: https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb
-proxy_latency_test_url: http://www.apple.com/library/test/success.html
-direct_latency_test_url: http://www.baidu.com
+proxy_latency_test_url: http://cp.cloudflare.com/generate_204
+direct_latency_test_url: http://connect.rom.miui.com/generate_204
 udp_latency_test_url: google.com@8.8.8.8
 compat_route: false
 dns:
