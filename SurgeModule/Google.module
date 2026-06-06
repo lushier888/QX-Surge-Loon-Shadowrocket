@@ -1,0 +1,12 @@
+#!name=Google人机验证
+#!desc=Google搜索内容时并发使用多个策略/策略组，以避免可能出现的人机验证。注意：需要在模块参数填写策略/策略组名的正则表达式。
+#!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/google(2).png
+#!arguments=策略正则,脚本引擎:auto
+#!arguments-desc=策略正则：策略/策略组名的正则表达式，例如：\n^(🇸🇬|🇭🇰)\s.*\d+$ 如需同时使用所有策略/策略组可使用 .+ 表示。\n\n脚本引擎：jsc/webview/auto，默认auto。
+#!category=🐻 NobyDa
+
+[Script]
+Google CAPTCHA = type=http-response,pattern=^https:\/\/www\.google\.com(?:\.[a-z]+|)\/(?:search\?(?:|.+?&)q=|$),requires-body=1,debug=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Google_CAPTCHA.js,max-size=0,timeout=10,ability=http-client-policy,engine={{{脚本引擎}}},argument={{{策略正则}}}
+
+[MITM]
+hostname = %APPEND% www.google.com*
