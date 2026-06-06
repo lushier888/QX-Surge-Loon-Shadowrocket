@@ -1,5 +1,6 @@
 #!name=Bilibili增强
 #!desc=拜托，没有广告的哔哩哔哩真的超酷的（保留原版去掉的热搜）
+#!icon=https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/bilibili.png
 #!category=Enhancement
 #!arguments=动态最常访问:auto,创作中心:0,过滤置顶评论广告:1,优化评论区加载:bilibili.request,空降助手:bilibili.airborne,空降助手策略:DIRECT,日志等级:4
 
