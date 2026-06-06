@@ -1,0 +1,9 @@
+#!name=pixivAds
+#!desc=pixivAds
+#!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/pixiv(2).png
+[Script]
+# ～ Pixiv去除广告（2022-12-03）@ddgksf2013
+pixivAds = type=http-response, pattern=^https?:\/\/oauth\.secure\.pixiv\.net\/(auth\/token), script-path=https://github.com/ddgksf2013/Scripts/raw/master/pixivAds.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% oauth.secure.pixiv.net
