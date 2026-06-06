@@ -1,0 +1,22 @@
+#!name=中国联通 去广告
+#!desc=去开屏
+#!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/liantong(0).png
+#!category=xream
+
+[General]
+
+force-http-engine-hosts = %APPEND% m.client.10010.com
+
+[MITM]
+
+hostname = %APPEND%, m.client.10010.com
+
+[Body Rewrite]
+
+# http-response-jq ^https?:\/\/m\.client\.10010\.com\/mobileserviceNine\/api\/v1\/index\/queryIndexWaterfall\/ 'walk(if type == "array" then [] else . end)'
+
+# http-response-jq ^https?:\/\/m\.client\.10010\.com\/mobileserviceNine\/api\/v1\/index\/queryIndexExclusiveOffers\/ 'walk(if type == "array" then [] else . end)'
+
+[Map Local]
+
+^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm data-type=text data='{"imgIndex":"0","adv":{"startup_adv":{"advCntList":[],"buttonList":[]}},"respCode":"0000"}' header='Content-Type:application/json'
