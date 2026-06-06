@@ -1,0 +1,11 @@
+#!name=Pornhub
+#!desc=去除网站页面广告
+#!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/PornEmby.png
+[Map Local]
+^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[Script]
+pornhub = type=http-response, pattern=^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$), script-path=https://github.com/ddgksf2013/Scripts/raw/master/pornhub.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% *.pornhub.com
