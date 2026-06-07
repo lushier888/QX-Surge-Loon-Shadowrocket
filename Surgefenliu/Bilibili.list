@@ -1,6 +1,10 @@
-DOMAIN-SUFFIX,bilivideo.com
+# Bilibili: 7
+# > Bilibili 主站与核心 API 接口
 DOMAIN-SUFFIX,bilibili.com
+DOMAIN-SUFFIX,bilibili.tv
 DOMAIN-SUFFIX,biliapi.com
 DOMAIN-SUFFIX,biliapi.net
+# > 视频流、直播流与静态资源 CDN
+DOMAIN-SUFFIX,bilivideo.com
 DOMAIN-SUFFIX,hdslb.com
-DOMAIN-SUFFIX,acg.tv
+DOMAIN-SUFFIX,biliimg.com
