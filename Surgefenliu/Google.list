@@ -1,36 +1,30 @@
-# > 基础域名
+# Google-Base: 18
+# > Google 核心品牌与跨域登录 (含国行设备 GMS 基础激活)
 DOMAIN-SUFFIX,google.com
-DOMAIN-SUFFIX,google.com.hk
+DOMAIN-SUFFIX,google.org
+DOMAIN-SUFFIX,google.cn
 
-# > 核心服务与 API (不含任何 Gemini/YouTube 后端)
+# > 核心服务、全局安全验证与基础 API 
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,ggpht.com
+DOMAIN-SUFFIX,recaptcha.net
 
-# > 媒体与动态资源
-DOMAIN-SUFFIX,gvt1.com
-DOMAIN-SUFFIX,gvt2.com
-DOMAIN-SUFFIX,gvt3.com
+# > 媒体、动态资源与组件分流 (利用关键词降维拦截)
+DOMAIN-KEYWORD,gvt
+DOMAIN-SUFFIX,chrome.com
 
-# > 工作区与云服务 (仅基础版)
+# > 云端服务与生产力基础设施 (仅基础版)
+DOMAIN-SUFFIX,drive.google.com
 DOMAIN-SUFFIX,googledrive.com
 DOMAIN-SUFFIX,firebaseio.com
 DOMAIN-SUFFIX,googlezip.net
 
-# > 广告与追踪
+# > 广告、追踪与数据上报 (方便单独丢进 REJECT 拦截策略)
 DOMAIN-SUFFIX,googlesyndication.com
 DOMAIN-SUFFIX,doubleclick.net
 DOMAIN-SUFFIX,google-analytics.com
 DOMAIN-SUFFIX,googletagmanager.com
 DOMAIN-SUFFIX,googleoptimize.com
-
-# > 其它关键基础设施
-DOMAIN-SUFFIX,chrome.com
-DOMAIN-SUFFIX,chrome-extension.google.com
-DOMAIN-SUFFIX,google.org
 DOMAIN-SUFFIX,app-measurement.com
-DOMAIN-SUFFIX,dnsleaktest.com
-
-# > DNS
-DOMAIN-SUFFIX,dnsleaktest.com
