@@ -2,7 +2,8 @@
 # 本人修改和添加DNS分流规则
 # 添加一些自用规则和LSP模块、JS脚本组件
 # 脚本请自行根据需求添加环境变量
-# 最后更新时间 2026.5.29  16：07
+# 节点正则筛选是本人机场，自己机场请自行根据需求更改正则筛选
+# 最后更新时间 2026.6.7  16：07
 
 ipv6: true
 allow_external_connections: false
@@ -16,18 +17,18 @@ compat_route: false
 dns:
   upstreams:
     阿里-腾讯（国内）:
-    - quic://223.6.6.6:853
     - quic://223.5.5.5:853
+    - quic://223.6.6.6:853
     - quic://dns.alidns.com:853
     - https://doh.pub/dns-query
     - https://rubyfish.cn/dns-query
     - https://dns.alidns.com/dns-query
-    谷歌 - CDN（国外）:
+    谷歌 - 𝑪𝑫𝑵（国外）:
     - https://dns.google/dns-query
     - https://dns.switch.ch/dns-query
     - https://cloudflare-dns.com/dns-query
     - https://dns.adguard.com/dns-query
-    兜底网络:
+    兜底-𝑭𝑰𝑵𝑨𝑳:
     - https://dns.nextdns.io
     - https://dns.google/dns-query
     - https://dns.switch.ch/dns-query
@@ -35,100 +36,100 @@ dns:
     - https://cloudflare-dns.com/dns-query
   forward:
   - proxy_rule_set:
-      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list
-      value: 谷歌 - CDN（国外）
-      disabled: false
-  - proxy_rule_set:
-      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Google.list
-      value: 谷歌 - CDN（国外）
-      disabled: false
-  - proxy_rule_set:
-      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Microsoft.list
-      value: 谷歌 - CDN（国外）
-      disabled: false
-  - proxy_rule_set:
-      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Apple.list
-      value: 谷歌 - CDN（国外）
-      disabled: false
-  - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Telegram.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Twitter.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Reddit.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Discord.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Instagram.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pixiv.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pinterest.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
+      disabled: false
+  - proxy_rule_set:
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChatGPT.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Steam.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Epic.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/AppleTV.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/HBO.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Disney+.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Netflix.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Spotify.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Enby.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/YouTube.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/TikTok.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Twitch.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Bahamut.list
-      value: 谷歌 - CDN（国外）
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
+      disabled: false
+  - proxy_rule_set:
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Apple.list
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
+      disabled: false
+  - proxy_rule_set:
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Google.list
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
+      disabled: false
+  - proxy_rule_set:
+      match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Microsoft.list
+      value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Doubao.list
@@ -159,49 +160,55 @@ dns:
       value: 阿里-腾讯（国内）
       disabled: false
   - proxy_rule_set:
+      match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
+      value: 阿里-腾讯（国内）
+      disabled: false
+  - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChinaDIRECT.list
       value: 阿里-腾讯（国内）
       disabled: true
   - domain_wildcard:
       match: '*'
-      value: 兜底网络
+      value: 兜底-𝑭𝑰𝑵𝑨𝑳
       disabled: false
-  hosts:
-    iosapps.itunes.apple.com:
-    - iosapps.itunes.apple.com.download.ks-cdn.com
 policy_groups:
 - external:
     name: 我的机场𝑨
     type: select
     filter: IPLC|IPV6
-    latency_test_url: http://www.apple.com/library/test/success.html
+    latency_test_url: http://cp.cloudflare.com/generate_204
     update_interval: 0
     icon: https://s1.imagehub.cc/images/2025/07/22/e2fb09ef7ad704fa486ae024ffd98c27.png
     hidden: false
 - external:
     name: 我的机场𝑩
     type: select
-    latency_test_url: http://www.apple.com/library/test/success.html
+    latency_test_url: http://cp.cloudflare.com/generate_204
     icon: https://s1.imagehub.cc/images/2026/03/25/b2126dc8e764a3576c3f7e60f164cf2f.png
     hidden: false
 - select:
-    name: 🌐𝑷𝑹𝑶𝑿𝒀
+    name: 🌐𝑷𝒓𝒐𝒙𝒚
     policies:
     - 我的机场𝑨
     - 我的机场𝑩
+    - 🇭🇰香港𝑨𝑩
+    - 🇺🇸美国𝑨𝑩
     - 🇭🇰香港纯净𝑨
     - 🇯🇵日本𝑨
     - 🇸🇬新加坡𝑨
+    - 🇻🇳越南𝑨
+    - 🇰🇭柬埔寨𝑨
     flatten: false
+    latency_test_url: http://cp.cloudflare.com/generate_204
     icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Egern.png
     hidden: false
 - smart:
     name: 🇭🇰香港纯净𝑨
     policies:
-    - 我的机场𝑩
     - 我的机场𝑨
     flatten: true
     filter: HKT
+    latency_test_url: http://www.apple.com/library/test/success.html
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
     hidden: true
 - smart:
@@ -210,7 +217,8 @@ policy_groups:
     - 我的机场𝑩
     - 我的机场𝑨
     flatten: true
-    filter: 香港
+    filter: 香港01|香港02|香港03|香港04|naytls|HKT|HKIX
+    latency_test_url: 'http://connectivity-check.cloudflare.com/generate_204 '
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
     hidden: true
 - smart:
@@ -395,21 +403,21 @@ policy_groups:
     - 🇯🇵日本𝑨𝑩
     - 🇨🇳台湾𝑨𝑩
     - 🇸🇬新加坡𝑨𝑩
-    - 🇭🇰香港𝑩
     - 🇭🇰香港𝑨
-    - 🇺🇸美国𝑩
+    - 🇭🇰香港𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
+    - 🇸🇬新加坡𝑩
     flatten: false
     icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Apple_Classic.png
     hidden: false
 - select:
-    name: 🌏 𝑮𝒐𝒐𝒈𝒍𝒆
+    name: 🌏𝑮𝒐𝒐𝒈𝒍𝒆
     policies:
     - 🇭🇰香港纯净𝑨
     - 🇭🇰香港𝑨𝑩
@@ -418,20 +426,20 @@ policy_groups:
     - 🇨🇳台湾𝑨𝑩
     - 🇸🇬新加坡𝑨𝑩
     - 🇰🇷韩国𝑨𝑩
-    - 🇭🇰香港𝑩
     - 🇭🇰香港𝑨
-    - 🇺🇸美国𝑩
+    - 🇭🇰香港𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
+    - 🇸🇬新加坡𝑩
     - 🇻🇳越南𝑨
-    - 🇰🇭柬埔寨𝑨
     flatten: false
-    icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Google.png
+    latency_test_url: http://cp.cloudflare.com/generate_204
+    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/google(2).png
     hidden: false
 - select:
     name: 💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕
@@ -442,18 +450,18 @@ policy_groups:
     - 🇯🇵日本𝑨𝑩
     - 🇨🇳台湾𝑨𝑩
     - 🇸🇬新加坡𝑨𝑩
-    - 🇰🇷韩国𝑨𝑩
-    - 🇭🇰香港𝑩
     - 🇭🇰香港𝑨
-    - 🇺🇸美国𝑩
+    - 🇭🇰香港𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
+    - 🇸🇬新加坡𝑩
     flatten: false
+    latency_test_url: http://cp.cloudflare.com/generate_204
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
     hidden: false
 - select:
@@ -477,11 +485,13 @@ policy_groups:
     - 🇸🇬新加坡𝑩
     - 🇸🇬新加坡𝑨
     flatten: false
-    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/telegram(1).png
+    latency_test_url: http://connect.rom.miui.com/generate_204
+    icon: https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/telegram.png
     hidden: false
 - select:
     name: 📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)
     policies:
+    - 🇷🇺俄罗斯𝑨
     - 🇭🇰香港纯净𝑨
     - 🇭🇰香港𝑨𝑩
     - 🇺🇸美国𝑨𝑩
@@ -489,19 +499,18 @@ policy_groups:
     - 🇨🇳台湾𝑨𝑩
     - 🇸🇬新加坡𝑨𝑩
     - 🇰🇷韩国𝑨𝑩
-    - 🇭🇰香港𝑩
     - 🇭🇰香港𝑨
-    - 🇺🇸美国𝑩
+    - 🇭🇰香港𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
-    - 🇰🇭柬埔寨𝑨
-    - 🇷🇺俄罗斯𝑨
+    - 🇸🇬新加坡𝑩
     flatten: false
+    latency_test_url: http://connect.rom.miui.com/generate_204
     icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/twitter.png
     hidden: false
 - select:
@@ -513,18 +522,19 @@ policy_groups:
     - 🇨🇳台湾𝑨𝑩
     - 🇸🇬新加坡𝑨𝑩
     - 🇰🇷韩国𝑨𝑩
-    - 🇭🇰香港𝑩
     - 🇭🇰香港𝑨
-    - 🇺🇸美国𝑩
+    - 🇭🇰香港𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
+    - 🇸🇬新加坡𝑩
     flatten: false
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Instagram.png
+    latency_test_url: http://connect.rom.miui.com/generate_204
+    icon: https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/instagram.PNG
     hidden: false
 - select:
     name: 📑𝑹𝒆𝒅𝒅𝒊𝒕
@@ -546,7 +556,7 @@ policy_groups:
     - 🇸🇬新加坡𝑩
     - 🇸🇬新加坡𝑨
     flatten: false
-    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/reddit(1).png
+    icon: https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/reddit.png
     hidden: false
 - select:
     name: 🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅
@@ -568,7 +578,7 @@ policy_groups:
     - 🇸🇬新加坡𝑩
     - 🇸🇬新加坡𝑨
     flatten: false
-    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/discord.png
+    icon: https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/discord.png
     hidden: false
 - select:
     name: 🍄𝑷𝒊𝒙𝒊𝒗
@@ -600,14 +610,14 @@ policy_groups:
     - 🇨🇳台湾𝑨𝑩
     - 🇸🇬新加坡𝑨𝑩
     - 🇰🇷韩国𝑨𝑩
-    - 🇺🇸美国𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
+    - 🇸🇬新加坡𝑩
     flatten: false
     icon: https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ChatGPT/ChatGPT5.png
     hidden: false
@@ -620,18 +630,18 @@ policy_groups:
     - 🇯🇵日本𝑨𝑩
     - 🇨🇳台湾𝑨𝑩
     - 🇸🇬新加坡𝑨𝑩
-    - 🇭🇰香港𝑩
     - 🇭🇰香港𝑨
-    - 🇺🇸美国𝑩
+    - 🇭🇰香港𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
+    - 🇸🇬新加坡𝑩
     flatten: false
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png
+    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/steam(2).png
     hidden: false
 - select:
     name: 🎧𝑺𝒑𝒐𝒕𝒊𝒇𝒚
@@ -642,18 +652,18 @@ policy_groups:
     - 🇨🇳台湾𝑨𝑩
     - 🇸🇬新加坡𝑨𝑩
     - 🇰🇷韩国𝑨𝑩
-    - 🇭🇰香港𝑩
     - 🇭🇰香港𝑨
-    - 🇺🇸美国𝑩
+    - 🇭🇰香港𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
+    - 🇸🇬新加坡𝑩
     flatten: false
-    icon: https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/spotify.png
+    icon: https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/spotify.png
     hidden: false
 - select:
     name: 💽𝑨𝒑𝒑𝒍𝒆𝑻𝑽
@@ -664,18 +674,18 @@ policy_groups:
     - 🇨🇳台湾𝑨𝑩
     - 🇸🇬新加坡𝑨𝑩
     - 🇰🇷韩国𝑨𝑩
-    - 🇭🇰香港𝑩
     - 🇭🇰香港𝑨
-    - 🇺🇸美国𝑩
+    - 🇭🇰香港𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
+    - 🇸🇬新加坡𝑩
     flatten: false
-    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/AppleTV.png
+    icon: https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/tv.png
     hidden: false
 - select:
     name: 💿𝑯𝑩𝑶
@@ -686,18 +696,18 @@ policy_groups:
     - 🇨🇳台湾𝑨𝑩
     - 🇸🇬新加坡𝑨𝑩
     - 🇰🇷韩国𝑨𝑩
-    - 🇭🇰香港𝑩
     - 🇭🇰香港𝑨
-    - 🇺🇸美国𝑩
+    - 🇭🇰香港𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
+    - 🇸🇬新加坡𝑩
     flatten: false
-    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/HBOmax.png
+    icon: https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/hbo%20max.png
     hidden: false
 - select:
     name: 🎬𝑫𝒊𝒔𝒏𝒆𝒚+
@@ -708,16 +718,16 @@ policy_groups:
     - 🇨🇳台湾𝑨𝑩
     - 🇸🇬新加坡𝑨𝑩
     - 🇰🇷韩国𝑨𝑩
-    - 🇭🇰香港𝑩
     - 🇭🇰香港𝑨
-    - 🇺🇸美国𝑩
+    - 🇭🇰香港𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
+    - 🇸🇬新加坡𝑩
     flatten: false
     icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/disney.png
     hidden: false
@@ -728,18 +738,20 @@ policy_groups:
     - 🇭🇰香港𝑨𝑩
     - 🇯🇵日本𝑨𝑩
     - 🇨🇳台湾𝑨𝑩
-    - 🇭🇰香港𝑩
+    - 🇸🇬新加坡𝑨𝑩
+    - 🇰🇷韩国𝑨𝑩
     - 🇭🇰香港𝑨
-    - 🇺🇸美国𝑩
+    - 🇭🇰香港𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
+    - 🇸🇬新加坡𝑩
     flatten: false
-    icon: https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/netflixgc.png
+    icon: https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/netflix.png
     hidden: false
 - select:
     name: 🎞️𝑬𝒎𝒃𝒚
@@ -750,7 +762,7 @@ policy_groups:
     - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑩
     flatten: false
-    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/emby.png
+    icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Emby_副本2.png
     hidden: false
 - select:
     name: 📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
@@ -763,21 +775,21 @@ policy_groups:
     - 🇸🇬新加坡𝑨𝑩
     - 🇰🇷韩国𝑨𝑩
     - 🇹🇭泰国𝑨𝑩
-    - 🇭🇰香港𝑩
     - 🇭🇰香港𝑨
-    - 🇺🇸美国𝑩
+    - 🇭🇰香港𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
+    - 🇸🇬新加坡𝑩
     - 🇷🇺俄罗斯𝑨
     - 🇻🇳越南𝑨
     - 🇰🇭柬埔寨𝑨
     flatten: false
-    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/youtube(4).png
+    icon: https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/youtube.png
     hidden: false
 - select:
     name: 📽𝑻𝒊𝒌𝑻𝒐𝒌
@@ -788,14 +800,14 @@ policy_groups:
     - 🇸🇬新加坡𝑨𝑩
     - 🇰🇷韩国𝑨𝑩
     - 🇹🇭泰国𝑨𝑩
-    - 🇺🇸美国𝑩
     - 🇺🇸美国𝑨
-    - 🇯🇵日本𝑩
+    - 🇺🇸美国𝑩
     - 🇯🇵日本𝑨
-    - 🇨🇳台湾𝑩
+    - 🇯🇵日本𝑩
     - 🇨🇳台湾𝑨
-    - 🇸🇬新加坡𝑩
+    - 🇨🇳台湾𝑩
     - 🇸🇬新加坡𝑨
+    - 🇸🇬新加坡𝑩
     - 🇷🇺俄罗斯𝑨
     - 🇰🇭柬埔寨𝑨
     - 🇻🇳越南𝑨
@@ -822,7 +834,7 @@ policy_groups:
     - 🇸🇬新加坡𝑨
     - 🇷🇺俄罗斯𝑨
     flatten: false
-    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/twitch.png
+    icon: https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/twitch.png
     hidden: false
 - select:
     name: 🧸𝑩𝒂𝒉𝒂𝒎𝒖𝒕
@@ -843,7 +855,7 @@ policy_groups:
     - 🇨🇳台湾𝑩
     - 🇨🇳台湾𝑨
     flatten: false
-    icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BiliBili.png
+    icon: https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/bilibili.png
     hidden: false
 - select:
     name: 🚾𝑾𝒆𝒊𝒃𝒐
@@ -855,13 +867,12 @@ policy_groups:
     - 🇨🇳台湾𝑨𝑩
     - 🇸🇬新加坡𝑨𝑩
     flatten: false
-    icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Weibo-00.png
+    icon: https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/weibo.png
     hidden: false
 - select:
     name: ♻️𝑭𝑰𝑵𝑨𝑳
     policies:
-    - 🛜国内直连
-    - 🌐𝑷𝑹𝑶𝑿𝒀
+    - 🌐𝑷𝒓𝒐𝒙𝒚
     - 🇭🇰香港纯净𝑨
     - 🇭🇰香港𝑨𝑩
     - 🇺🇸美国𝑨𝑩
@@ -935,39 +946,14 @@ rules:
     policy: REJECT
     disabled: false
 - rule_set:
-    name: 𝑮𝒆𝒎𝒊𝒏𝒊
-    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list
-    policy: 🤖𝑨𝑰
-    disabled: false
-- rule_set:
-    name: 谷歌服务
-    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Google.list
-    policy: 🌏 𝑮𝒐𝒐𝒈𝒍𝒆
-    disabled: false
-- rule_set:
     name: 𝑺𝒖𝒃 𝑺𝒕𝒐𝒓𝒆
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/SubStore.list
-    policy: 🌐𝑷𝑹𝑶𝑿𝒀
+    policy: 🌐𝑷𝒓𝒐𝒙𝒚
     disabled: false
 - rule_set:
     name: 𝑳𝑺𝑷网站
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/LSP.list
-    policy: 🌏 𝑮𝒐𝒐𝒈𝒍𝒆
-    disabled: false
-- rule_set:
-    name: 微软服务
-    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Microsoft.list
-    policy: 💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕
-    disabled: false
-- rule_set:
-    name: 𝑮𝒊𝒕𝑯𝒖𝒃
-    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Github.list
-    policy: 💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕
-    disabled: false
-- rule_set:
-    name: 苹果服务
-    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Apple.list
-    policy: 🍎𝑨𝒑𝒑𝒍𝒆
+    policy: 🌏𝑮𝒐𝒐𝒈𝒍𝒆
     disabled: false
 - rule_set:
     name: 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
@@ -1008,6 +994,16 @@ rules:
     name: 𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pinterest.list
     policy: 🍄𝑷𝒊𝒙𝒊𝒗
+    disabled: false
+- rule_set:
+    name: 𝑮𝒊𝒕𝑯𝒖𝒃
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Github.list
+    policy: 💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕
+    disabled: false
+- rule_set:
+    name: 𝑮𝒆𝒎𝒊𝒏𝒊
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list
+    policy: 🤖𝑨𝑰
     disabled: false
 - rule_set:
     name: 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
@@ -1075,9 +1071,24 @@ rules:
     policy: 🖥️𝑻𝒘𝒊𝒕𝒄𝒉
     disabled: false
 - rule_set:
-    name: 动画疯
+    name: 𝑩𝒂𝒉𝒂𝒎𝒖𝒕
     match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Bahamut.list
     policy: 🧸𝑩𝒂𝒉𝒂𝒎𝒖𝒕
+    disabled: false
+- rule_set:
+    name: 苹果服务
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Apple.list
+    policy: 🍎𝑨𝒑𝒑𝒍𝒆
+    disabled: false
+- rule_set:
+    name: 谷歌服务
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Google.list
+    policy: 🌏𝑮𝒐𝒐𝒈𝒍𝒆
+    disabled: false
+- rule_set:
+    name: 微软服务
+    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Microsoft.list
+    policy: 💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕
     disabled: false
 - rule_set:
     name: 豆包
@@ -1115,7 +1126,7 @@ rules:
     policy: 🛜国内直连
     disabled: false
 - rule_set:
-    name: 国内直连
+    name: 国内部分直连
     match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
     policy: 🛜国内直连
     disabled: false
@@ -1133,12 +1144,14 @@ rules:
 - default:
     name: ♻️兜底网络
     policy: ♻️𝑭𝑰𝑵𝑨𝑳
-- rule_set:
-    name: 国内筛选App
-    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChinaDIRECT.list
-    policy: 🛜国内直连
-    disabled: true
 scriptings:
+- schedule:
+    name: PingMe签到
+    cron: 30 8,20 * * *
+    script_url: https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PingMe/PingMeSignin.js
+- generic:
+    name: 机场流量
+    script_url: https://raw.githubusercontent.com/mickeu/Egern/refs/heads/main/Sub_Widget_Y.JS
 - generic:
     name: Sub机场流量
     script_url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/subliuliang.js
@@ -1159,8 +1172,6 @@ scriptings:
 - generic:
     name: 流媒体与AI解锁检测
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Unlock-Detection_Widget.JS
-    env:
-      'PROXY_POLICY ': 📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆
 - generic:
     name: 数据中心
     script_url: https://raw.githubusercontent.com/magicdan3688/MyProxyScripts/refs/heads/main/ip-dch.js
@@ -1177,6 +1188,8 @@ scriptings:
 - generic:
     name: 机场订阅小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Sub_Widget.JS
+    env:
+      NAME1: RESET1
     timeout: 120
 - generic:
     name: 聚合热搜小组件
@@ -1190,8 +1203,6 @@ scriptings:
 - generic:
     name: 油价查询小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Oil_Widget.JS
-    env:
-      guangxi: '1'
 - generic:
     name: 虚拟货币小组件
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/Crypto_Widget.JS
@@ -1202,6 +1213,8 @@ scriptings:
     name: '测试网络下载速度小组件 '
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/NetSpeed_Widget.JS
 mitm:
+  ca_p12: 
+  ca_passphrase: 
   hostnames:
     includes:
     - w2.qy12a.cc
@@ -1223,8 +1236,12 @@ widgets:
   script_name: 机场订阅小组件
 - name: 数据中心
   script_name: 数据中心
+  env:
+    POLICY: 🌐𝑷𝒓𝒐𝒙𝒚
 - name: 网络雷达
   script_name: 雷达网络
+  env:
+    POLICY: 🌐𝑷𝒓𝒐𝒙𝒚
 - name: 黄历信息-HL
   script_name: 黄历信息-HL
 - name: 今日油价
@@ -1245,6 +1262,12 @@ modules:
   enabled: true
 - name: 广告平台拦截器
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E5%B9%BF%E5%91%8A%E5%B9%B3%E5%8F%B0%E6%8B%A6%E6%88%AA%E5%99%A8.beta.sgmodule
+  enabled: true
+- name: Spotify去广告
+  url: https://kelee.one/Tool/Loon/Lpx/Spotify_remove_ads.lpx
+  compat_arguments:
+    tab: 'true'
+    useractivity: 'true'
   enabled: true
 - name: 爱奇艺去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E7%88%B1%E5%A5%87%E8%89%BA%E8%A7%86%E9%A2%91%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule
@@ -1267,8 +1290,8 @@ modules:
 - name: 拼多多去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E6%8B%BC%E5%A4%9A%E5%A4%9A%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule
   enabled: true
-- name: 微信小程序去广告
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule
+- name: 微信小程序是去广告
+  url: https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx
   enabled: true
 - name: 微信公众号去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule
@@ -1282,11 +1305,11 @@ modules:
 - name: 小红书去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%B0%8F%E7%BA%A2%E4%B9%A6%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
+- name: Pinterest去广告
+  url: https://kelee.one/Tool/Loon/Lpx/Pinterest_remove_ads.lpx
+  enabled: true
 - name: 喜马拉雅去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule
-  enabled: true
-- name: 哲也同学
-  url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zheye/zheye.sgmodule
   enabled: true
 - name: 叮咚买菜去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E5%8F%AE%E5%92%9A%E4%B9%B0%E8%8F%9C%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
@@ -1295,10 +1318,16 @@ modules:
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/%E4%BA%AC%E4%B8%9C%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
 - name: 瑞幸咖啡去广告
+  url: https://kelee.one/Tool/Loon/Lpx/LuckinCoffee_remove_ads.lpx
+  enabled: true
+- name: 瑞幸咖啡去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E7%91%9E%E5%B9%B8%E5%92%96%E5%95%A1%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
   enabled: true
 - name: 百度网盘去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule
+  enabled: true
+- name: 知乎去广告
+  url: https://kelee.one/Tool/Loon/Lpx/Zhihu_remove_ads.lpx
   enabled: true
 - name: 知乎去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E7%9F%A5%E4%B9%8E%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule
@@ -1315,11 +1344,8 @@ modules:
 - name: 虎扑去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E8%99%8E%E6%89%91%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule
   enabled: true
-- name: 贴吧净化
-  url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Spec/Tieba/Moore/Tieba.sgmodule
-  enabled: true
-- name: 贴吧去广告(>=iOS15)
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E8%B4%B4%E5%90%A7%E5%8E%BB%E5%B9%BF%E5%91%8A.official.sgmodule
+- name: 百度贴吧去广告
+  url: https://kelee.one/Tool/Loon/Lpx/Tieba_remove_ads.lpx
   enabled: true
 - name: 转转去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E8%BD%AC%E8%BD%AC%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule
@@ -1343,10 +1369,13 @@ modules:
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.official.sgmodule
   enabled: true
 - name: 中国联通去广告
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+  url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/10010AD.sgmodule
   enabled: true
 - name: YouTube去广告
-  url: https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule
+  url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/YouTube.sgmodule
+  enabled: true
+- name: 8se去广告
+  url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/8se.sgmodule
   enabled: true
 - name: TeraBox去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/TeraBox%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule
@@ -1354,28 +1383,31 @@ modules:
 - url: https://github.com/fmz200/wool_scripts/raw/main/Surge/module/weibo.module
   enabled: true
 - name: 微博去广告
-  url: http://script.hub/file/_start_/https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet/_end_/weibo.sgmodule?type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
+  url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/Wiebo.sgmodule
   enabled: true
 - name: Bilibili增强
   url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/BilibiliAD.sgmodule
   enabled: true
-- name: Spotify播放
-  url: https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Module/AD/Spotify.sgmodule
+- name: 动画疯去视频广告
+  url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/Bahamut.sgmodule
   enabled: true
 - name: 高德地图去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule
   enabled: true
-- name: Reddit 去广告
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/Reddit%20%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
+- name: Reddit去广告
+  url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/Reddit.module
+  compat_arguments:
+    NSFW: Nsfw
+    TRANSLATION: '#'
   enabled: true
 - name: QQ音乐去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/QQ%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule
   enabled: true
 - name: Pornhub去广告
-  url: http://script.hub/file/_start_/https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pornhub.js/_end_/pornhub.sgmodule?n=Pornhub%E5%8E%BB%E5%B9%BF%E5%91%8A%2B%20Pornhub%E9%A1%B5%E9%9D%A2%E5%8E%BB%E9%99%A4%E5%B9%BF%E5%91%8A&type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
+  url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/PornhubAD.sgmodule
   enabled: true
 - name: Pixiv去广告
-  url: http://script.hub/file/_start_/https://github.com/ddgksf2013/Scripts/raw/master/pixivAds.js/_end_/pixivAds.sgmodule?n=Pixiv%E5%8E%BB%E5%B9%BF%E5%91%8A%2B%E5%8E%BB%E9%99%A4%E5%B9%BF%E5%91%8A%E5%86%85%E5%AE%B9&type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
+  url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/PixvAD.sgmodule
   enabled: true
 - name: 12306去广告
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/12306%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule
@@ -1389,11 +1421,19 @@ modules:
 - name: 微信外部链接解锁
   url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E5%BE%AE%E4%BF%A1%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5%E8%A7%A3%E9%94%81.beta.sgmodule
   enabled: true
+- name: Github加速
+  url: https://kelee.one/Tool/Loon/Lpx/Switch_github_mirror.lpx
+  enabled: false
 - name: Github 429
   url: https://raw.githubusercontent.com/PoetryU/Scientist/master/Surge/Modules/gh429.sgmodule
   enabled: true
+- name: Google人机验证
+  url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/Google.module
+  compat_arguments:
+    脚本引擎: .+
+  enabled: true
 - name: Google搜索重定向
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Google%E9%87%8D%E5%AE%9A%E5%90%91.sgmodule
+  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/Google%E9%87%8D%E5%AE%9A%E5%90%91.beta.sgmodule
   enabled: true
 - name: Netflix
   url: https://whatshub.top/module/netflix_rating.sgmodule
@@ -1471,6 +1511,18 @@ modules:
     Languages[1]: ZH
     LogLevel: WARN
   enabled: true
+- name: Apple天气增强
+  url: https://kelee.one/Tool/Loon/Lpx/AppleWeatherEnhancer.lpx
+  compat_arguments:
+    Weather.Provider: ColorfulClouds
+    NextHour.Provider: ColorfulClouds
+    AirQuality.Calculate.Algorithm: EU_EAQI
+    Storage: Argument
+    LogLevel: WARN
+  enabled: true
+- name: 应用安装
+  url: https://raw.githubusercontent.com/githubdulong/Script/master/Surge/ipaTool.sgmodule
+  enabled: true
 - name: 美颜相机
   url: http://script.hub/file/_start_/https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/myCamera.js/_end_/myCamera.sgmodule?n=%E7%BE%8E%E9%A2%9C%E7%9B%B8%E6%9C%BA%2B%E7%BE%8E%E9%A2%9C%E7%9B%B8%E6%9C%BAvip&type=qx-rewrite&target=surge-module&cron=cron&cronexp=0%207%20*%20*%20*&del=true&jqEnabled=true
   enabled: true
@@ -1507,9 +1559,6 @@ modules:
 - name: Google
   url: http://script.hub/file/_start_/https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Snippet/GoogleCAPTCHA.snippet/_end_/GoogleCAPTCHA.sgmodule?n=Google%2B%20%E8%A7%A3%E5%86%B3Google%E6%90%9C%E7%B4%A2%E4%BA%BA%E6%9C%BA%E9%AA%8C%E8%AF%81&type=qx-rewrite&target=surge-module&cron=cron&cronexp=0%207%20*%20*%20*&del=true&jqEnabled=true
   enabled: true
-- name: Google搜索重定向
-  url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/Google%E9%87%8D%E5%AE%9A%E5%90%91.beta.sgmodule
-  enabled: true
 - name: Boxjs
   url: https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.surge.sgmodule
   enabled: true
@@ -1522,13 +1571,25 @@ modules:
 - name: 迅雷会员
   url: https://yfamilys.com/module/thunder.module
   enabled: true
+- name: Spotify播放
+  url: https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Module/AD/Spotify.sgmodule
+  enabled: false
+- name: 数据中心DCH
+  url: https://raw.githubusercontent.com/Linsars/Surge/main/sg/egern-ipDCH.yaml
+  compat_arguments:
+    POLICY: 🌐𝑷𝑹𝑶𝑿𝒀
+  enabled: false
+- name: 京东历史比价
+  url: https://raw.githubusercontent.com/githubdulong/Script/master/Surge/JD_Helper.sgmodule
+  enabled: false
 - name: 机场流量信息𝑨𝑩
   url: https://raw.githubusercontent.com/IBL3ND/MK/refs/heads/main/subscription-info.sgmodule
   enabled: false
 - name: 机场流量信息𝑨
   url: https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Module/Panel/Sub-info/Moore/Sub-info.sgmodule
-  compat_arguments:
-    COLOR: '#78C7E3'
+  enabled: false
+- name: 机场节点𝑩
+  url: 机场𝑩
   enabled: false
 - name: 网络组件合集
   url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/wangluozhujian.sgmodule
@@ -1558,7 +1619,10 @@ modules:
   enabled: false
 - name: 幻宇星球VIP解锁
   url: https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/huanyu/modules/huanyu.sgmodule
-  enabled: true
+  enabled: false
+- name: fi11
+  url: https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/hvvj0/fi11.sgmodule
+  enabled: false
 - name: 139fm
   url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeLSPModule/139m.sgmodule
   enabled: false
@@ -1697,8 +1761,8 @@ modules:
 - name: Revenuecat-系列解锁合集
   url: http://script.hub/file/_start_/https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js/_end_/Reheji.sgmodule?type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
   enabled: false
-- name: 京东历史比价
-  url: https://raw.githubusercontent.com/githubdulong/Script/master/Surge/JD_Helper.sgmodule
+- name: PingMe获取签到ck
+  url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/PingMe.sgmodule
   enabled: false
 - name: 巴哈姆特ck
   url: http://script.hub/file/_start_/https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutDailyBonus.js/_end_/BahamutDailyBonus.sgmodule?n=%E5%8A%A8%E7%94%BB%E7%96%AF%E5%B7%B4%E5%93%88%E5%A7%86%E7%89%B9%2B%20%E5%8A%A8%E7%94%BB%E7%96%AF%E5%B7%B4%E5%93%88%E5%A7%86%E7%89%B9%E8%84%9A%E6%9C%AC%E8%8E%B7%E5%8F%96ck%E5%92%8C%E5%AE%9A%E6%97%B6%E7%AD%BE%E5%88%B0&type=qx-rewrite&target=surge-module&cron=cron&cronexp=0%207%20*%20*%20*&del=true&jqEnabled=true
@@ -1746,7 +1810,7 @@ modules:
   url: https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Module/CtripDailyBonus.sgmodule
   enabled: false
 - name: 中国联通CK
-  url: http://script.hub/file/_start_/https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.qx.conf/_end_/10010.sgmodule?type=qx-rewrite&target=surge-module&del=true
+  url: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/SurgeModule/10010.sgmodule
   enabled: true
 - name: 🐻 爱奇艺 [会员签到]
   url: https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Module/iQIYIDailyBonus.sgmodule
@@ -1785,7 +1849,7 @@ modules:
   url: https://limbopro.com/Adblock4limbo.sgmodule
   enabled: false
 - name: 广告拦截&净化合集
-  url: http://script.hub/file/_start_/https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/blockAds.plugin/_end_/blockAds.sgmodule?type=loon-plugin&target=surge-module&del=true&jqEnabled=true
+  url: https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/blockAds.plugin
   enabled: false
 - name: '🍿️ DualSubs: ▶️ YouTube'
   url: https://github.com/DualSubs/YouTube/releases/latest/download/DualSubs.YouTube.sgmodule
@@ -1802,5 +1866,7 @@ modules:
   url: https://github.com/BiliUniverse/Enhanced/releases/latest/download/BiliBili.Enhanced.sgmodule
   enabled: false
 - name: 油价
+  url: https://yfamilys.com/sgmodule/oil.sgmodule
+  enabled: false
   url: https://yfamilys.com/sgmodule/oil.sgmodule
   enabled: false
