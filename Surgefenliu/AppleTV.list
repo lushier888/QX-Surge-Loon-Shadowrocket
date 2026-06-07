@@ -1,4 +1,4 @@
-# AppleTV: 6
+# AppleTV: 5
 # > Apple TV+ 核心服务与 API 接口
 DOMAIN-KEYWORD,itunes.apple.com
 DOMAIN-SUFFIX,tv.apple.com
@@ -6,5 +6,3 @@ DOMAIN-SUFFIX,tv.applemusic.com
 # > Apple TV+ 4K 视频流与图片 CDN
 DOMAIN-SUFFIX,aaplimg.com
 DOMAIN-SUFFIX,apple-mapkit.com
-# > 骨干网 IP 段（不解析 DNS）
-IP-CIDR,17.0.0.0/8,no-resolve
