@@ -1,8 +1,20 @@
-# GitHub-Copilot: 4
-# > Copilot AI 核心品牌、对话模型与上下文网关
-DOMAIN-SUFFIX,githubcopilot.com
+# Microsoft-Copilot: 13
+# > Copilot 核心聊天、AI 独立入口与多模态画图 CDN
 DOMAIN-SUFFIX,copilot.microsoft.com
+DOMAIN-SUFFIX,bingimages.microsoft.com
+DOMAIN-SUFFIX,ai.microsoft.com
+# > 网页端 Bing Chat 核心 AI 路由 (精准拦截 AI 流量，绝不污染普通 Bing 搜索)
+DOMAIN,chat.bing.com
+DOMAIN,edgeservices.bing.com
+DOMAIN,api.bing.microsoft.com
+# > 微软 AI 联运与 OpenAI 托管边缘节点
+DOMAIN-SUFFIX,cdn.openai.com
+DOMAIN-SUFFIX,openai.azure.com
+DOMAIN-SUFFIX,openaicom.imgix.net
+DOMAIN-SUFFIX,azureedge.net
+# > MSN 资讯组件与专属数据分发 (AI 联网搜索必需)
+DOMAIN-SUFFIX,msn.com
+DOMAIN-SUFFIX,msn.cn
 
-# > 智能代码补全、实时遥测与多模态文件传输
-DOMAIN-KEYWORD,copilot-proxy
-DOMAIN-SUFFIX,cocopilot.org
+# > 浏览器原生 Copilot 侧边栏注入支持
+DOMAIN-SUFFIX,edge.microsoft.com
