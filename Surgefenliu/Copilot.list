@@ -1,41 +1,17 @@
-# --- 1. GitHub Copilot 插件与核心组件 (IDE/VS Code/Cursor) ---
-DOMAIN-SUFFIX,githubcopilot.com
-DOMAIN-SUFFIX,copilot.github.com
-DOMAIN,copilot-proxy.githubusercontent.com
-DOMAIN,api.githubcopilot.com
+# OpenAI: 9
+# > OpenAI 核心品牌、API 与 ChatGPT 官方主入口
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
 
-# --- 2. Microsoft Copilot 核心对话与 AI 引擎域名 ---
-DOMAIN-SUFFIX,copilot.microsoft.com
-DOMAIN-SUFFIX,copilot.google.com
-DOMAIN,copilot.microsoft
-DOMAIN,api.copilot.microsoft.com
-DOMAIN,sydney.bing.com
-DOMAIN,edgeservices.bing.com
+# > OpenAI 核心静态资源、多模态内容与 CDN 分发
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
 
-# --- 3. Bing AI 与 实时联网搜索/网页端对话组件 ---
-DOMAIN-SUFFIX,bing.com
-DOMAIN-SUFFIX,bing.net
-DOMAIN-SUFFIX,bingapis.com
-DOMAIN,www.bing.com
-DOMAIN,api.bing.com
-DOMAIN,cn.bing.com
+# > OpenAI 2026 核心战略级生态 (Sora 视频与 SearchGPT 搜索)
+DOMAIN-SUFFIX,sora.com
+DOMAIN-SUFFIX,searchgpt.com
 
-# --- 4. 微软账号认证、Token 刷新与权限判定（AI 专用长尾） ---
-DOMAIN,login.microsoftonline.com
-DOMAIN,login.live.com
-DOMAIN,account.live.com
-DOMAIN,auth.gfx.ms
-DOMAIN,odc.officeapps.live.com
-
-# --- 5. Skype 底层架构（Copilot 语音与部分动态消息流借壳） ---
-DOMAIN-SUFFIX,skype.com
-DOMAIN-SUFFIX,skypeassets.com
-DOMAIN,api.skype.com
-DOMAIN,client-s.gateway.messenger.live.com
-
-# --- 6. Edge 浏览器内置 Copilot 侧边栏与遥测打点 ---
-DOMAIN,config.edge.skype.com
-DOMAIN,subnet.edge.skype.com
-DOMAIN,activity.windows.com
-DOMAIN,self.events.data.microsoft.com
-DOMAIN,v10.events.data.microsoft.com
+# > 独立账户、核心鉴权与风控安全验证 (解决登录、发不出消息转圈的死穴)
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,arkoselabs.com
+DOMAIN-SUFFIX,identrust.com
