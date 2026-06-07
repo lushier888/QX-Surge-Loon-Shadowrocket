@@ -1,13 +1,18 @@
-# Apple: 10
-# > Apple 基础同步与下载
+# Apple: 13
+# > Apple 核心服务与全域关键词
 DOMAIN-KEYWORD,apple
 DOMAIN-SUFFIX,apple.com
 DOMAIN-SUFFIX,icloud.com
 DOMAIN-SUFFIX,icloud-content.com
 DOMAIN-SUFFIX,mzstatic.com
 DOMAIN-SUFFIX,apple-dns.net
+# > 运营商与第三方加速 CDN
+DOMAIN-SUFFIX,akadns.net
+DOMAIN-SUFFIX,edgekey.net
 # > 证书与安全验证
 DOMAIN-SUFFIX,digicert.com
 DOMAIN-SUFFIX,entrust.net
-# > 骨干网 IP 段（不解析 DNS）
+# > 骨干网全域 IP 段（不解析 DNS）
 IP-CIDR,17.0.0.0/8,no-resolve
+IP-CIDR,139.178.128.0/18,no-resolve
+IP-CIDR6,2620:149::/32,no-resolve
