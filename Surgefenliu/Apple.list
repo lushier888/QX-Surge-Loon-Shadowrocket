@@ -1,13 +1,13 @@
+# Apple: 10
 # > Apple 基础同步与下载
-DOMAIN-SUFFIX,itunes.apple.com
-DOMAIN-SUFFIX,mzstatic.com
+DOMAIN-KEYWORD,apple
+DOMAIN-SUFFIX,apple.com
 DOMAIN-SUFFIX,icloud.com
 DOMAIN-SUFFIX,icloud-content.com
-DOMAIN-SUFFIX,me.com
-DOMAIN-SUFFIX,apple-livephotos.com
-DOMAIN-SUFFIX,push.apple.com
-DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,mzstatic.com
+DOMAIN-SUFFIX,apple-dns.net
+# > 证书与安全验证
 DOMAIN-SUFFIX,digicert.com
 DOMAIN-SUFFIX,entrust.net
-DOMAIN-SUFFIX,apple-dns.net
-DOMAIN-KEYWORD,apple-support
+# > 骨干网 IP 段（不解析 DNS）
+IP-CIDR,17.0.0.0/8,no-resolve
