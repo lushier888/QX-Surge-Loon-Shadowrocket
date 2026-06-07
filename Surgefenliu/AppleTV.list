@@ -1,15 +1,10 @@
-# > Apple TV+ 核心播放接口
-DOMAIN,tv.apple.com
-DOMAIN,tv.g.apple.com
-
-# > Apple TV 内容传输 (视频流核心)
+# AppleTV: 6
+# > Apple TV+ 核心服务与 API 接口
+DOMAIN-KEYWORD,itunes.apple.com
+DOMAIN-SUFFIX,tv.apple.com
+DOMAIN-SUFFIX,tv.applemusic.com
+# > Apple TV+ 4K 视频流与图片 CDN
 DOMAIN-SUFFIX,aaplimg.com
 DOMAIN-SUFFIX,apple-mapkit.com
-
-# > 特定播放请求域名
-DOMAIN-KEYWORD,hls-svod.itunes.apple.com
-DOMAIN-KEYWORD,hls-svod-ve.itunes.g.aaplimg.com
-
-# > 如果你在 Apple TV 硬件上使用，建议增加这些
-DOMAIN-SUFFIX,uts-api.itunes.apple.com
-DOMAIN-SUFFIX,play-edge.itunes.apple.com
+# > 骨干网 IP 段（不解析 DNS）
+IP-CIDR,17.0.0.0/8,no-resolve
