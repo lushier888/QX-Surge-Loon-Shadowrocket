@@ -1,9 +1,17 @@
-# GitHub
+# GitHub: 9
+# > GitHub 核心主站、API 与短网址
 DOMAIN-SUFFIX,github.com
-DOMAIN-SUFFIX,githubusercontent.com
-DOMAIN-SUFFIX,githubassets.com
 DOMAIN-SUFFIX,github.io
 DOMAIN-SUFFIX,githubapp.com
-DOMAIN-SUFFIX,githubcopilot.com
+
+# > GitHub 核心静态资源与多媒体内容分发
+DOMAIN-SUFFIX,githubassets.com
+DOMAIN-SUFFIX,githubusercontent.com
 DOMAIN-SUFFIX,actionsusercontent.com
+
+# > GitHub Copilot AI 核心服务
+DOMAIN-SUFFIX,githubcopilot.com
+
+# > 容器注册表、包管理与代码下载
 DOMAIN-SUFFIX,ghcr.io
+DOMAIN-SUFFIX,codeload.github.com
