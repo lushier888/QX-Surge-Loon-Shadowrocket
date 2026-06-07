@@ -1,10 +1,11 @@
-# > YouTube 核心
+# YouTube: 7
+# > YouTube 核心网页、App 接口与短网址
 DOMAIN-SUFFIX,youtube.com
 DOMAIN-SUFFIX,youtubei.googleapis.com
-DOMAIN-SUFFIX,ytimg.com
-DOMAIN-SUFFIX,ggpht.com
 DOMAIN-SUFFIX,youtu.be
-
-# > YouTube 视频流 (核心流量)
+DOMAIN-SUFFIX,yt.be
+# > YouTube 视频与高码率音频流 (大流量核心)
 DOMAIN-SUFFIX,googlevideo.com
-DOMAIN-KEYWORD,youtube
+DOMAIN-SUFFIX,ytimg.com
+# > YouTube 独立边缘节点与多国字幕分发
+DOMAIN-SUFFIX,nhacmp3youtube.com
