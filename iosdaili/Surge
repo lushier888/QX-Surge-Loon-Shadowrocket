@@ -252,14 +252,6 @@ RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Su
 RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Hijacking/Hijacking.list,REJECT // 反劫持
 RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/SystemOTA/SystemOTA.list,REJECT // 屏蔽𝒊𝒐𝒔系统升级
 
-# > ————国际服务与AI分流————
-RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
-RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Google.list,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑮𝒐𝒐𝒈𝒍𝒆谷歌服务
-RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/LSP.list,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑳𝑺𝑷网站
-RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Microsoft.list,💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 // 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 微软服务
-RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Github.list,💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 // 𝑮𝒊𝒕𝑯𝒖𝒃
-RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Apple.list,🍎𝑨𝒑𝒑𝒍𝒆 // 𝑨𝒑𝒑𝒍𝒆 苹果服务
-
 # > ————国外社交分流分流————
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Telegram.list,📲𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎 // 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Twitter.list,"📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)" // 𝑻𝒘𝒊𝒕𝒕𝒆𝒓(𝑿)
@@ -270,6 +262,9 @@ RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads
 # > ————游戏与AI工具分流————
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pixiv.list,🍄𝑷𝒊𝒙𝒊𝒗 // 𝑷𝒊𝒙𝒊𝒗
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Pinterest.list,🍄𝑷𝒊𝒙𝒊𝒗 // 𝑷𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒕
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Github.list,💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 // 𝑮𝒊𝒕𝑯𝒖𝒃
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Grok.list,"📰𝑻𝒘𝒊𝒕𝒕𝒆𝒓 (𝑿)" // 𝑮𝒓𝒐𝒌
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Gemini.list,🤖𝑨𝑰 // 𝑮𝒆𝒎𝒊𝒏𝒊
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChatGPT.list,🤖𝑨𝑰 // 𝑪𝒉𝒂𝒕𝑮𝑷𝑻
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Speedtest.list,♻️𝑭𝑰𝑵𝑨𝑳 // 𝐒𝐩𝐞𝐞𝐝𝐭𝐞𝐬𝐭
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Steam.list,🎮𝑺𝒕𝒆𝒂𝒎 // 𝑺𝒕𝒆𝒂𝒎
@@ -286,6 +281,11 @@ RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/YouTube.list,📹𝒀𝒐𝒖𝑻𝒖𝒃𝒆 // 𝒀𝒐𝒖𝑻𝒖𝒃𝒆
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Twitch.list,🖥️𝑻𝒘𝒊𝒕𝒄𝒉,extended-matching // 𝑻𝒘𝒊𝒕𝒄𝒉
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Bahamut.list,🧸𝑩𝒂𝒉𝒂𝒎𝒖𝒕 // 𝑩𝒂𝒉𝒂𝒎𝒖𝒕
+
+# > ————国际服务分流————
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Google.list,🌏𝑮𝒐𝒐𝒈𝒍𝒆 // 𝑮𝒐𝒐𝒈𝒍𝒆谷歌服务.
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Microsoft.list,💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 // 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕 微软服务
+RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Apple.list,🍎𝑨𝒑𝒑𝒍𝒆 // 𝑨𝒑𝒑𝒍𝒆 苹果服务
 
 # > ————国内媒体与社交分流————
 RULE-SET,https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Bilibili.list,📺𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊,no-resolve // 𝑩𝒊𝒍𝒊𝑩𝒊𝒍𝒊
