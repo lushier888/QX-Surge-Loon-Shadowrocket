@@ -1,14 +1,12 @@
-# > 核心前端网关 (保证 App 和网页入口)
+# Google-Gemini: 6
+# > Gemini 核心前端网页与 AI 实验室入口
 DOMAIN,gemini.google.com
-DOMAIN,robinfrontend-pa.googleapis.com
-
-# > 核心 API 通讯 (决定 Gemini 能否回答问题)
-DOMAIN,generativelanguage.googleapis.com
-DOMAIN,proactivebackend-pa.googleapis.com
-
-# > 内容生成与多模态扩展 (图片上传/代码生成)
 DOMAIN,aistudio.google.com
 DOMAIN,ai.google.dev
 
-# > 实时语音与交互反馈
-DOMAIN,speech-pa.googleapis.com
+# > DeepMind 核心架构与模型调度网关
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,deepmind.com
+
+# > Gemini 核心 API、多模态与语音全域交互 (降维拦截)
+DOMAIN-KEYWORD,-pa.googleapis.com
