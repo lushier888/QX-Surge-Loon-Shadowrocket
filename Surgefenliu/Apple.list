@@ -1,18 +1,23 @@
-# Apple: 13
-# > Apple 核心服务与全域关键词
-DOMAIN-KEYWORD,apple
+# Apple
+
 DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,apple.cn
+DOMAIN-SUFFIX,apple.com.cn
+
 DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,icloud.cn
 DOMAIN-SUFFIX,icloud-content.com
-DOMAIN-SUFFIX,mzstatic.com
+DOMAIN-SUFFIX,icloud-content.com.cn
+
+DOMAIN-SUFFIX,cdn-apple.com
+DOMAIN-SUFFIX,aaplimg.com
+DOMAIN-SUFFIX,appleimg.com
+
 DOMAIN-SUFFIX,apple-dns.net
-# > 运营商与第三方加速 CDN
-DOMAIN-SUFFIX,akadns.net
-DOMAIN-SUFFIX,edgekey.net
-# > 证书与安全验证
-DOMAIN-SUFFIX,digicert.com
-DOMAIN-SUFFIX,entrust.net
-# > 骨干网全域 IP 段（不解析 DNS）
+DOMAIN-SUFFIX,appstore.com
+DOMAIN-SUFFIX,appsto.re
+
+DOMAIN-SUFFIX,swift.org
+
 IP-CIDR,17.0.0.0/8,no-resolve
-IP-CIDR,139.178.128.0/18,no-resolve
 IP-CIDR6,2620:149::/32,no-resolve
