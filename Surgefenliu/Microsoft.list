@@ -1,32 +1,32 @@
-# > Microsoft 账户与身份验证 (核心：解决登录转圈)
+# Microsoft: 18
+# > 账户、登录与安全鉴权 (解决登录转圈与全域验证)
 DOMAIN-SUFFIX,microsoft.com
 DOMAIN-SUFFIX,live.com
+DOMAIN-SUFFIX,windows.net
 DOMAIN-SUFFIX,passport.net
 DOMAIN-SUFFIX,msauth.net
 DOMAIN-SUFFIX,msauthimages.net
 DOMAIN-SUFFIX,msftauth.net
 
-# > OneDrive 与 SharePoint (生产力：保证同步不掉线)
+# > OneDrive、SharePoint 与云存储 (保证大文件上传下载不掉线)
 DOMAIN-SUFFIX,onedrive.com
 DOMAIN-SUFFIX,1drv.ms
+DOMAIN-SUFFIX,skydrive.lnk.to
 DOMAIN-SUFFIX,sharepoint.com
 DOMAIN-SUFFIX,sharepointonline.com
 DOMAIN-SUFFIX,storage.live.com
 
-# > Office / Microsoft 365 (Word, Excel, Outlook)
+# > Office 365 与全家桶服务 (Word, Excel, Outlook 核心)
 DOMAIN-SUFFIX,office.com
-DOMAIN-SUFFIX,office365.com
 DOMAIN-SUFFIX,office.net
+DOMAIN-SUFFIX,office365.com
 DOMAIN-SUFFIX,outlook.com
-DOMAIN-SUFFIX,outlook.office365.com
 
-# > Windows 系统更新与应用商店
-DOMAIN-SUFFIX,microsoft.com.akadns.net
+# > Windows 系统更新、边缘 CDN 与公共资源
 DOMAIN-SUFFIX,windows.com
 DOMAIN-SUFFIX,windowsupdate.com
 DOMAIN-SUFFIX,mp.microsoft.com
-
-# > 微软静态资源与 CDN
+DOMAIN-SUFFIX,sfx.ms
 DOMAIN-SUFFIX,msedge.net
 DOMAIN-SUFFIX,msftstatic.com
 DOMAIN-SUFFIX,aspnetcdn.com
