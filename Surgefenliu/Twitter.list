@@ -1,21 +1,11 @@
-# Twitter: 17
-# > X (Twitter) 主站与 Grok AI
-DOMAIN-KEYWORD,twitter
-DOMAIN-KEYWORD,x.com
+# Twitter / X
+
 DOMAIN-SUFFIX,x.com
 DOMAIN-SUFFIX,twitter.com
 DOMAIN-SUFFIX,twimg.com
-DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,t.co
-# > 视频与媒体资源
+DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,twvid.com
-DOMAIN-SUFFIX,video.twimg.com
-# > 骨干网 IP 段（不解析 DNS）
+# Twitter ASN 历史核心段
 IP-CIDR,104.244.42.0/21,no-resolve
-IP-CIDR,192.133.76.0/22,no-resolve
 IP-CIDR,199.16.156.0/22,no-resolve
-IP-CIDR,199.59.148.0/22,no-resolve
-IP-CIDR,199.96.56.0/21,no-resolve
-IP-CIDR,202.160.128.0/22,no-resolve
-IP-CIDR,209.237.192.0/19,no-resolve
-IP-CIDR,69.195.160.0/19,no-resolve
