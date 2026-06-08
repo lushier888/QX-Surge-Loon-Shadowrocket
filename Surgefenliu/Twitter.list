@@ -1,21 +1,15 @@
-# Twitter-X: 20
+# Twitter-X: 14
 DOMAIN-SUFFIX,x.com
 DOMAIN-SUFFIX,twitter.com
 DOMAIN-SUFFIX,twimg.com
 DOMAIN-SUFFIX,t.co
 DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,twvid.com
-DOMAIN-SUFFIX,periscope.tv
-DOMAIN-SUFFIX,pscp.tv
-DOMAIN-SUFFIX,vine.co
+DOMAIN-SUFFIX,video.twimg.com
 DOMAIN-SUFFIX,abs.twimg.com
-DOMAIN-KEYWORD,twitter
-DOMAIN-KEYWORD,twimg
 IP-CIDR,104.244.42.0/21,no-resolve
 IP-CIDR,192.133.76.0/22,no-resolve
 IP-CIDR,199.16.156.0/22,no-resolve
 IP-CIDR,199.59.148.0/22,no-resolve
 IP-ASN,13414,no-resolve
 IP-ASN,35995,no-resolve
-IP-ASN,54888,no-resolve
-IP-ASN,62629,no-resolve
