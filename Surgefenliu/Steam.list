@@ -1,9 +1,17 @@
-# > Steam 商店与社区
+# Steam: 16
 DOMAIN-SUFFIX,steampowered.com
 DOMAIN-SUFFIX,steamcommunity.com
 DOMAIN-SUFFIX,steamstatic.com
 DOMAIN-SUFFIX,steamusercontent.com
-
-# > Steam 聊天与验证
 DOMAIN-SUFFIX,steam-chat.com
 DOMAIN-SUFFIX,steamserver.net
+DOMAIN-SUFFIX,steamcontent.com
+DOMAIN-SUFFIX,steamdeck.com
+DOMAIN-SUFFIX,steamgames.com
+DOMAIN-SUFFIX,valvesoftware.com
+DOMAIN-SUFFIX,valvecorp.com
+DOMAIN-SUFFIX,underlords.com
+DOMAIN-SUFFIX,artifacts.com
+DOMAIN-KEYWORD,steam
+DOMAIN-KEYWORD,valve
+DOMAIN,valve.com
