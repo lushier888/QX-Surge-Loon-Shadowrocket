@@ -1,10 +1,16 @@
-# > Discord 核心
+# Discord: 15
 DOMAIN-SUFFIX,discord.com
 DOMAIN-SUFFIX,discordapp.com
 DOMAIN-SUFFIX,discordapp.net
 DOMAIN-SUFFIX,discord.gg
 DOMAIN-SUFFIX,discord.media
-DOMAIN-SUFFIX,discord.v-gg
-
-# > Discord 静态资源
+DOMAIN-SUFFIX,discord.design
+DOMAIN-SUFFIX,discordstatus.com
+DOMAIN-SUFFIX,discordcdn.com
+DOMAIN-SUFFIX,discordmerch.com
+DOMAIN-SUFFIX,discordpartygames.com
+DOMAIN-SUFFIX,discord-activities.com
 DOMAIN-SUFFIX,discord-attachments-uploads-prd.s3.amazonaws.com
+DOMAIN-SUFFIX,dis.gd
+DOMAIN-SUFFIX,discord.co
+DOMAIN-SUFFIX,discord.v-gg
