@@ -1850,3 +1850,6 @@ modules:
 - name: '📺 BiliBili: ⚙️ Enhanced'
   url: https://github.com/BiliUniverse/Enhanced/releases/latest/download/BiliBili.Enhanced.sgmodule
   enabled: false
+- name: 油价
+  url: https://yfamilys.com/sgmodule/oil.sgmodule
+  enabled: false
