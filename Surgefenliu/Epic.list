@@ -1,7 +1,14 @@
-# > Epic Games 核心
+# EpicGames: 13
 DOMAIN-SUFFIX,epicgames.com
-DOMAIN-SUFFIX,entitlenetments.com
-DOMAIN-SUFFIX,help.epicgames.com
-
-# > Epic 静态资源
 DOMAIN-SUFFIX,unrealengine.com
+DOMAIN-SUFFIX,epicgames.dev
+DOMAIN-SUFFIX,epiconlineimages.com
+DOMAIN-SUFFIX,fortnite.com
+DOMAIN-SUFFIX,helpshift.com
+DOMAIN-SUFFIX,paragon.com
+DOMAIN-SUFFIX,playparagon.com
+DOMAIN-SUFFIX,shadowcomplex.com
+DOMAIN-SUFFIX,spyjinx.com
+DOMAIN-SUFFIX,unrealtournament.com
+DOMAIN-SUFFIX,entitlements.com
+DOMAIN,help.epicgames.com
