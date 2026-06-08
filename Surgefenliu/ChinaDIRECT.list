@@ -270,3 +270,19 @@ DOMAIN-KEYWORD,douyin
 DOMAIN-KEYWORD,bytedance
 IP-ASN,138692,no-resolve
 IP-ASN,204454,no-resolve
+# 小红书: 14
+DOMAIN-SUFFIX,xiaohongshu.com
+DOMAIN-SUFFIX,xhscdn.com
+DOMAIN-SUFFIX,xhscdn.net
+DOMAIN-SUFFIX,xiaohongshu.cn
+DOMAIN-SUFFIX,xhslink.com
+DOMAIN-SUFFIX,feigua.cn
+DOMAIN-SUFFIX,instreet.co
+DOMAIN-SUFFIX,stripv.com
+DOMAIN-KEYWORD,xiaohongshu
+DOMAIN-KEYWORD,xhscdn
+IP-ASN,136199,no-resolve
+IP-ASN,140227,no-resolve
+IP-ASN,140532,no-resolve
+IP-ASN,207305,no-resolve
+
