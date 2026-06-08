@@ -1,8 +1,25 @@
+# WeChat: 24
 DOMAIN-SUFFIX,weixin.com
 DOMAIN-SUFFIX,wechat.com
 DOMAIN-SUFFIX,tencent.com
 DOMAIN-SUFFIX,qlogo.cn
 DOMAIN-SUFFIX,qpic.cn
 DOMAIN-SUFFIX,servicewechat.com
+DOMAIN-SUFFIX,weixinbridge.com
+DOMAIN-SUFFIX,wechatlegal.net
+DOMAIN-SUFFIX,wechatpay.com
+DOMAIN-SUFFIX,tenpay.com
+DOMAIN-SUFFIX,qq.com
+DOMAIN-SUFFIX,gtimg.com
+DOMAIN-SUFFIX,gtimg.cn
+DOMAIN-SUFFIX,myqcloud.com
+DOMAIN-SUFFIX,wx.qq.com
+DOMAIN-SUFFIX,wxs.qq.com
+DOMAIN-SUFFIX,weixinimg.jaeapp.com
 DOMAIN-KEYWORD,wechat
 DOMAIN-KEYWORD,weixin
+DOMAIN-KEYWORD,tencent
+IP-ASN,132203,no-resolve
+IP-ASN,132591,no-resolve
+IP-ASN,45090,no-resolve
+IP-ASN,58543,no-resolve
