@@ -1,11 +1,15 @@
-# > ————国内直连分流规则————
-# > 𝑩𝑶𝑺𝑺直聘规则
+# BOSS直聘: 5
+DOMAIN-SUFFIX,zhipin.com
+DOMAIN-SUFFIX,bosszhipin.com
+DOMAIN-SUFFIX,kanzhun.com
+DOMAIN-SUFFIX,diandianpin.com
 DOMAIN-SUFFIX,img.bosszhipin.com
-# > 𝑨𝑮𝑬动漫规则
+# AGE动漫: 2
 DOMAIN-SUFFIX,agedm.vip
-# > 𝑫𝒆𝒆𝒑𝒔𝒆𝒆𝒌规则
+DOMAIN-SUFFIX,agedm.org
+# DeepSeek: 1
 DOMAIN-SUFFIX,deepseek.com
-# > 𝑫𝒐𝒖𝒃𝒂𝒐 (豆包) 分流规则
+# 豆包: 7
 DOMAIN-SUFFIX,doubao.com
 DOMAIN-SUFFIX,volces.com
 DOMAIN-SUFFIX,bytegecko.com
@@ -13,22 +17,25 @@ DOMAIN-SUFFIX,byteoversea.com
 DOMAIN-SUFFIX,ibyteimg.com
 DOMAIN-SUFFIX,doubao.net
 DOMAIN-KEYWORD,doubao
-# > 夸克规则
+# 夸克: 2
 DOMAIN-SUFFIX,quark.cn
 DOMAIN-SUFFIX,quark.net
-# > 𝑸𝑸规则
+# QQ: 7
 DOMAIN-SUFFIX,qq.com
-# > 𝑸𝑸空间规则
-DOMAIN-SUFFIX,qzone.qq.com
+DOMAIN-SUFFIX,qlogo.cn
+DOMAIN-SUFFIX,qpic.cn
+DOMAIN-SUFFIX,weixinbridge.com
 DOMAIN-SUFFIX,gtimg.cn
-# > 小黑盒规则
+DOMAIN,qzone.qq.com
+IP-CIDR,1.12.0.0/14,no-resolve
+# 小黑盒: 1
 DOMAIN-SUFFIX,xiaoheihe.cn
-# > 游民星空
+# 游民星空: 4
 DOMAIN-SUFFIX,gamersky.com
 DOMAIN-SUFFIX,gamersky.cn
 DOMAIN-SUFFIX,gsstatic.com
 DOMAIN-SUFFIX,gamerskystatic.com
-# > NGA玩家社区规则
+# NGA玩家社区: 8
 DOMAIN-SUFFIX,nga.cn
 DOMAIN-SUFFIX,178.com
 DOMAIN-SUFFIX,ngacn.cc
@@ -37,7 +44,7 @@ DOMAIN,nga.178.com
 DOMAIN,pic.nga.178.com
 DOMAIN,img.nga.178.com
 DOMAIN,attachments.nga.178.com
-# > 淘宝规则
+# 淘宝: 8
 DOMAIN-SUFFIX,taobao.com
 DOMAIN-SUFFIX,tmall.com
 DOMAIN-SUFFIX,alicdn.com
@@ -46,18 +53,20 @@ DOMAIN-SUFFIX,alimama.com
 DOMAIN-SUFFIX,tbcache.com
 DOMAIN-SUFFIX,tb.cn
 DOMAIN-KEYWORD,taobao
-# > 高德地图规则
+# 高德地图: 5
 DOMAIN-KEYWORD,amap
 DOMAIN-SUFFIX,amap.com
 DOMAIN-SUFFIX,autonavi.com
 DOMAIN-SUFFIX,amap.cn
 DOMAIN-SUFFIX,gaode.com
-# > 讯飞输入法规则
+# 讯飞输入法: 3
 DOMAIN-SUFFIX,iflytek.com
 DOMAIN-SUFFIX,voicecloud.cn
-# > 搜狗输入法规则
+DOMAIN-SUFFIX,xfyun.cn
+# 搜狗输入法: 2
 DOMAIN-SUFFIX,sogou.com
-# > 网易云音乐规则
+DOMAIN-SUFFIX,sogoucdn.com
+# 网易云音乐: 8
 DOMAIN-SUFFIX,music.163.com
 DOMAIN-SUFFIX,126.net
 DOMAIN-SUFFIX,163jiasu.com
@@ -65,3 +74,4 @@ DOMAIN-SUFFIX,ydstatic.com
 DOMAIN-SUFFIX,netease.com
 DOMAIN-KEYWORD,netease
 DOMAIN-KEYWORD,music.126
+IP-CIDR,120.232.0.0/16,no-resolve
