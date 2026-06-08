@@ -1,8 +1,9 @@
-# AppleTV: 5
-# > Apple TV+ 核心服务与 API 接口
+# AppleTV: 8
 DOMAIN-KEYWORD,itunes.apple.com
 DOMAIN-SUFFIX,tv.apple.com
 DOMAIN-SUFFIX,tv.applemusic.com
-# > Apple TV+ 4K 视频流与图片 CDN
 DOMAIN-SUFFIX,aaplimg.com
 DOMAIN-SUFFIX,apple-mapkit.com
+DOMAIN-SUFFIX,hls.itunes.apple.com
+DOMAIN-SUFFIX,hls-amt.itunes.apple.com
+DOMAIN-SUFFIX,play-edge.apple.com
