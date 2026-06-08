@@ -408,4 +408,12 @@ IP-ASN,136365,no-resolve
 DOMAIN-SUFFIX,douban.com
 DOMAIN-SUFFIX,doubanio.com
 DOMAIN-SUFFIX,douban.fm
+# 虎扑: 7
+DOMAIN-KEYWORD,hupu
+DOMAIN-SUFFIX,hoopchina.com
+DOMAIN-SUFFIX,kanqiu.com
+DOMAIN-SUFFIX,hpstatic.cn
+DOMAIN-SUFFIX,hupustatic.com
+DOMAIN-SUFFIX,shihuo.cn
+DOMAIN-SUFFIX,shihuoapi.com
 
