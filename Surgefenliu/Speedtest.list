@@ -1,4 +1,10 @@
-# > Speedtest 核心
+# Speedtest: 9
 DOMAIN-SUFFIX,speedtest.net
 DOMAIN-SUFFIX,ooklaserver.net
+DOMAIN-SUFFIX,ookla.com
+DOMAIN-SUFFIX,speedtestcustom.com
+DOMAIN-SUFFIX,downdetector.com
+DOMAIN-SUFFIX,downdetector.com.br
+DOMAIN-SUFFIX,downdetector.co.uk
 DOMAIN-KEYWORD,speedtest
+DOMAIN-KEYWORD,ookla
