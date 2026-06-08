@@ -1,7 +1,7 @@
-# > Instagram 核心
+# Instagram: 6
 DOMAIN-SUFFIX,instagram.com
 DOMAIN-SUFFIX,cdninstagram.com
 DOMAIN-SUFFIX,instagr.am
-
-# > Meta 静态资源 (Instagram 必选)
+DOMAIN-SUFFIX,instagr.com
+DOMAIN-SUFFIX,fbcdn.net
 DOMAIN-KEYWORD,instagram
