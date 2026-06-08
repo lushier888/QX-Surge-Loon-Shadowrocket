@@ -1,12 +1,11 @@
-# Google-Gemini: 6
-# > Gemini 核心前端网页与 AI 实验室入口
+# Google-Gemini: 10
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+DOMAIN-KEYWORD,-pa.googleapis.com
 DOMAIN,gemini.google.com
 DOMAIN,aistudio.google.com
 DOMAIN,ai.google.dev
-
-# > DeepMind 核心架构与模型调度网关
-DOMAIN-SUFFIX,deepmind.google
-DOMAIN-SUFFIX,deepmind.com
-
-# > Gemini 核心 API、多模态与语音全域交互 (降维拦截)
-DOMAIN-KEYWORD,-pa.googleapis.com
+DOMAIN,alkaliminer-pa.googleapis.com
+DOMAIN,notebooklm.google
