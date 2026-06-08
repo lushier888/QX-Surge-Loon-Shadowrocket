@@ -404,3 +404,8 @@ DOMAIN-SUFFIX,diiaa.com
 DOMAIN-SUFFIX,app-m.com
 DOMAIN-KEYWORD,diiaa
 IP-ASN,136365,no-resolve
+# 豆瓣: 3
+DOMAIN-SUFFIX,douban.com
+DOMAIN-SUFFIX,doubanio.com
+DOMAIN-SUFFIX,douban.fm
+
