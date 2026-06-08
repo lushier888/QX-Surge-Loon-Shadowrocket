@@ -16,7 +16,7 @@ udp_latency_test_url: google.com@8.8.8.8
 compat_route: false
 dns:
   upstreams:
-    阿里-腾讯（国内）:
+    阿里 - 腾讯（国内）:
     - quic://223.5.5.5:853
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
@@ -124,35 +124,35 @@ dns:
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Doubao.list
-      value: 阿里-腾讯（国内）
+      value: 阿里 - 腾讯（国内）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Bilibili.list
-      value: 阿里-腾讯（国内）
+      value: 阿里 - 腾讯（国内）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Weibo.list
-      value: 阿里-腾讯（国内）
+      value: 阿里 - 腾讯（国内）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/WeChat.list
-      value: 阿里-腾讯（国内）
+      value: 阿里 - 腾讯（国内）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Douban.list
-      value: 阿里-腾讯（国内）
+      value: 阿里 - 腾讯（国内）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/NGA.list
-      value: 阿里-腾讯（国内）
+      value: 阿里 - 腾讯（国内）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/Xunlei.list
-      value: 阿里-腾讯（国内）
+      value: 阿里 - 腾讯（国内）
       disabled: false
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChinaDIRECT.list
-      value: 阿里-腾讯（国内）
+      value: 阿里 - 腾讯（国内）
       disabled: false
   - domain_wildcard:
       match: '*'
