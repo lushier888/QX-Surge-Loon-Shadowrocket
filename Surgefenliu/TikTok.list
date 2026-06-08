@@ -1,23 +1,24 @@
-# TikTok: 12
-# > TikTok 核心品牌、API 与国际版路由
+# TikTok: 23
 DOMAIN-SUFFIX,tiktok.com
 DOMAIN-SUFFIX,tiktokv.com
 DOMAIN-SUFFIX,musical.ly
-
-# > 字节跳动海外骨干网与风控环境验证 (防锁区、解限流核心)
 DOMAIN-SUFFIX,byteoversea.com
 DOMAIN-SUFFIX,bytegecko.com
 DOMAIN-SUFFIX,bytekv.com
-
-# > TikTok 跨境电商与卖家服务 (小黄车、Shop 专属)
 DOMAIN-SUFFIX,tiktokshop.com
-
-# > 核心短视频、直播流与静态资源 CDN
 DOMAIN-SUFFIX,tiktokcdn.com
 DOMAIN-SUFFIX,ttwstatic.com
 DOMAIN-SUFFIX,ibyteimg.com
 DOMAIN-SUFFIX,ibytedtos.com
 DOMAIN-SUFFIX,tiktokwdata.com
-
-# > 第三方托管加速节点 (降维拦截 Akamai 穷举)
+DOMAIN-SUFFIX,tiktokv.us
+DOMAIN-SUFFIX,tiktokinit.com
+DOMAIN-SUFFIX,tiktokorg.com
+DOMAIN-SUFFIX,byteoversea.net
+DOMAIN-SUFFIX,byteicdn.com
+DOMAIN-SUFFIX,tik-tokapi.com
+DOMAIN-SUFFIX,ttplugins.com
+DOMAIN-SUFFIX,ttlivecdn.com
 DOMAIN-KEYWORD,tiktokcdn-com
+DOMAIN-KEYWORD,-tiktokcdn-
+DOMAIN-KEYWORD,tiktok
