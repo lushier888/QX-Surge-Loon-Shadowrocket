@@ -1,14 +1,4 @@
 # China-Direct
-# 苹果与中国特供加速节点: 9
-DOMAIN-SUFFIX,apple.cn
-DOMAIN-SUFFIX,apple.com.cn
-DOMAIN-SUFFIX,icloud.cn
-DOMAIN-SUFFIX,icloud-content.com.cn
-DOMAIN-SUFFIX,apple-mapkit.com
-DOMAIN-SUFFIX,google-analytics-cn.com
-DOMAIN-SUFFIX,recaptcha-cn.net
-DOMAIN-SUFFIX,dl.google.com
-DOMAIN-SUFFIX,dl.google.com.hk
 # 手机硬件与系统推送服务: 13
 DOMAIN-SUFFIX,mi-img.com
 DOMAIN-SUFFIX,xiaomi.com
