@@ -153,7 +153,7 @@ dns:
   - proxy_rule_set:
       match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChinaDIRECT.list
       value: 阿里-腾讯（国内）
-      disabled: true
+      disabled: false
   - domain_wildcard:
       match: '*'
       value: 谷歌 - 𝑪𝑫𝑵（国外）
@@ -1114,7 +1114,7 @@ rules:
     disabled: false
 - rule_set:
     name: 国内部分直连
-    match: https://github.com/lushier888/QX-Surge-Loon-Shadowrocket/raw/refs/heads/main/Surgefenliu/ChinaDIRECT.list
+    match: https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
     policy: 🛜国内直连
     disabled: false
 - rule_set:
@@ -1200,8 +1200,6 @@ scriptings:
     name: '测试网络下载速度小组件 '
     script_url: https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/NetSpeed_Widget.JS
 mitm:
-  ca_p12: 
-  ca_passphrase: 
   hostnames:
     includes:
     - w2.qy12a.cc
@@ -1855,5 +1853,4 @@ modules:
 - name: 油价
   url: https://yfamilys.com/sgmodule/oil.sgmodule
   enabled: false
-  url: https://yfamilys.com/sgmodule/oil.sgmodule
   enabled: false
