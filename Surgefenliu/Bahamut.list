@@ -1,6 +1,9 @@
-# Bahamut: 3
-# > 巴哈姆特动画疯主站与哈啦区
+# Bahamut: 8
 DOMAIN-SUFFIX,gamer.com.tw
 DOMAIN-SUFFIX,bahamut.com.tw
-# > 动画疯 4K/1080P 核心视频流 CDN
 DOMAIN-SUFFIX,cdn.hinet.net
+DOMAIN-SUFFIX,hinet.net
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,digicert.com
+DOMAIN-SUFFIX,viblast.com
+DOMAIN-SUFFIX,gvt1.com
