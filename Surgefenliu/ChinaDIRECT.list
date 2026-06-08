@@ -19,29 +19,34 @@ DOMAIN-SUFFIX,bosszhipin.com
 DOMAIN-SUFFIX,kanzhun.com
 DOMAIN-SUFFIX,diandianpin.com
 DOMAIN-SUFFIX,img.bosszhipin.com
-# AGE动漫: 2
+# AGE动漫: 4
 DOMAIN-SUFFIX,agedm.vip
 DOMAIN-SUFFIX,agedm.org
-# DeepSeek: 1
+DOMAIN-SUFFIX,agedm.com
+DOMAIN-KEYWORD,agedm
+# DeepSeek: 5
 DOMAIN-SUFFIX,deepseek.com
-# 豆包: 7
-DOMAIN-SUFFIX,doubao.com
-DOMAIN-SUFFIX,volces.com
-DOMAIN-SUFFIX,bytegecko.com
-DOMAIN-SUFFIX,byteoversea.com
-DOMAIN-SUFFIX,ibyteimg.com
-DOMAIN-SUFFIX,doubao.net
-DOMAIN-KEYWORD,doubao
+DOMAIN-SUFFIX,chat.deepseek.com
+DOMAIN-SUFFIX,api.deepseek.com
+DOMAIN-SUFFIX,auth.deepseek.com
+IP-ASN,134763,no-resolve
 # 夸克: 2
 DOMAIN-SUFFIX,quark.cn
 DOMAIN-SUFFIX,quark.net
-# 小黑盒: 1
+# 小黑盒: 5
 DOMAIN-SUFFIX,xiaoheihe.cn
-# 游民星空: 4
+DOMAIN-SUFFIX,xiaoheihe.com
+DOMAIN-SUFFIX,xiaoheihe.net
+DOMAIN-KEYWORD,xiaoheihe
+IP-ASN,135246,no-resolve
+# 游民星空: 7
 DOMAIN-SUFFIX,gamersky.com
 DOMAIN-SUFFIX,gamersky.cn
 DOMAIN-SUFFIX,gsstatic.com
 DOMAIN-SUFFIX,gamerskystatic.com
+DOMAIN-KEYWORD,gamersky
+IP-ASN,136896,no-resolve
+IP-ASN,135544,no-resolve
 # 淘宝与阿里系: 8
 DOMAIN-SUFFIX,taobao.com
 DOMAIN-SUFFIX,tmall.com
@@ -51,19 +56,29 @@ DOMAIN-SUFFIX,alimama.com
 DOMAIN-SUFFIX,tbcache.com
 DOMAIN-SUFFIX,tb.cn
 DOMAIN-KEYWORD,taobao
-# 高德地图: 5
+# 高德地图: 9
 DOMAIN-SUFFIX,amap.com
 DOMAIN-SUFFIX,autonavi.com
 DOMAIN-SUFFIX,amap.cn
 DOMAIN-SUFFIX,gaode.com
 DOMAIN-KEYWORD,amap
-# 讯飞输入法: 3
+DOMAIN-KEYWORD,autonavi
+IP-ASN,136938,no-resolve
+IP-ASN,137021,no-resolve
+IP-ASN,135933,no-resolve
+# 输入法 (讯飞/搜狗): 12
 DOMAIN-SUFFIX,iflytek.com
 DOMAIN-SUFFIX,voicecloud.cn
 DOMAIN-SUFFIX,xfyun.cn
-# 搜狗输入法: 2
 DOMAIN-SUFFIX,sogou.com
 DOMAIN-SUFFIX,sogoucdn.com
+DOMAIN-SUFFIX,sogo.com
+DOMAIN-KEYWORD,iflytek
+DOMAIN-KEYWORD,xfyun
+DOMAIN-KEYWORD,sogou
+IP-ASN,134768,no-resolve
+IP-ASN,135327,no-resolve
+IP-ASN,136262,no-resolve
 # 网易云音乐: 15
 DOMAIN-SUFFIX,music.163.com
 DOMAIN-SUFFIX,163.com
