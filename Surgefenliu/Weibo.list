@@ -1,6 +1,16 @@
+# Weibo: 15
 DOMAIN-SUFFIX,weibo.cn
 DOMAIN-SUFFIX,weibo.com
 DOMAIN-SUFFIX,weibocdn.com
 DOMAIN-SUFFIX,weibocdn.cn
 DOMAIN-SUFFIX,sinaimg.cn
 DOMAIN-SUFFIX,sinajs.cn
+DOMAIN-SUFFIX,sina.com.cn
+DOMAIN-SUFFIX,sina.cn
+DOMAIN-SUFFIX,sina.com
+DOMAIN-SUFFIX,sinacn.com
+DOMAIN-SUFFIX,miaopai.com
+DOMAIN-SUFFIX,xiaokaxiu.com
+DOMAIN-KEYWORD,weibo
+DOMAIN-KEYWORD,sinaimg
+IP-ASN,23724,no-resolve
