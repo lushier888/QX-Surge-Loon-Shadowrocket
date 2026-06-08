@@ -1,30 +1,32 @@
-# Google-Base: 18
-# > Google 核心品牌与跨域登录 (含国行设备 GMS 基础激活)
+# Google-Base: 31
 DOMAIN-SUFFIX,google.com
 DOMAIN-SUFFIX,google.org
 DOMAIN-SUFFIX,google.cn
-
-# > 核心服务、全局安全验证与基础 API 
+DOMAIN-SUFFIX,google.com.hk
+DOMAIN-SUFFIX,google.com.tw
+DOMAIN-SUFFIX,google.co.jp
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,ggpht.com
 DOMAIN-SUFFIX,recaptcha.net
-
-# > 媒体、动态资源与组件分流 (利用关键词降维拦截)
-DOMAIN-KEYWORD,gvt
+DOMAIN-SUFFIX,recaptcha-cn.net
 DOMAIN-SUFFIX,chrome.com
-
-# > 云端服务与生产力基础设施 (仅基础版)
-DOMAIN-SUFFIX,drive.google.com
 DOMAIN-SUFFIX,googledrive.com
 DOMAIN-SUFFIX,firebaseio.com
+DOMAIN-SUFFIX,firebaseapi.com
 DOMAIN-SUFFIX,googlezip.net
-
-# > 广告、追踪与数据上报 (方便单独丢进 REJECT 拦截策略)
 DOMAIN-SUFFIX,googlesyndication.com
 DOMAIN-SUFFIX,doubleclick.net
 DOMAIN-SUFFIX,google-analytics.com
 DOMAIN-SUFFIX,googletagmanager.com
 DOMAIN-SUFFIX,googleoptimize.com
 DOMAIN-SUFFIX,app-measurement.com
+DOMAIN-SUFFIX,gvt0.com
+DOMAIN-SUFFIX,gvt1.com
+DOMAIN-SUFFIX,gvt2.com
+DOMAIN-SUFFIX,gvt3.com
+DOMAIN-SUFFIX,1e100.net
+DOMAIN-SUFFIX,google-analytics-cn.com
+DOMAIN-KEYWORD,gvt
+DOMAIN,drive.google.com
