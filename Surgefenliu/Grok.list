@@ -1,7 +1,7 @@
-# > Grok 核心接口
-DOMAIN,grok.com
-DOMAIN,api.grok.com
-
-# > X 内部 Grok 专用分发 (防止在 X App 内调用时失效)
+# Grok: 6
+DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,x-ai.com
+DOMAIN-SUFFIX,xai.com
 DOMAIN-KEYWORD,grok-api
+DOMAIN,api.grok.com
+DOMAIN,assets.grok.com
