@@ -285,4 +285,19 @@ IP-ASN,136199,no-resolve
 IP-ASN,140227,no-resolve
 IP-ASN,140532,no-resolve
 IP-ASN,207305,no-resolve
+# 京东: 14
+DOMAIN-SUFFIX,jd.com
+DOMAIN-SUFFIX,360buyimg.com
+DOMAIN-SUFFIX,360buy.com
+DOMAIN-SUFFIX,jdpay.com
+DOMAIN-SUFFIX,jcloud.com
+DOMAIN-SUFFIX,jdcloud.com
+DOMAIN-SUFFIX,jd-app.com
+DOMAIN-SUFFIX,jdfcloud.com
+DOMAIN-SUFFIX,jdcache.com
+DOMAIN-SUFFIX,jdcloud-api.com
+DOMAIN-KEYWORD,360buy
+DOMAIN-KEYWORD,jdcloud
+IP-ASN,136932,no-resolve
+IP-ASN,140510,no-resolve
 
