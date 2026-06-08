@@ -1,18 +1,20 @@
-# GitHub
-# 核心站点
+# GitHub: 19
 DOMAIN-SUFFIX,github.com
 DOMAIN-SUFFIX,github.io
-# 静态资源
 DOMAIN-SUFFIX,githubassets.com
 DOMAIN-SUFFIX,githubusercontent.com
-# Actions
 DOMAIN-SUFFIX,actions.githubusercontent.com
 DOMAIN-SUFFIX,actionsusercontent.com
-# Copilot
 DOMAIN-SUFFIX,githubcopilot.com
 DOMAIN-SUFFIX,githubcopilotusercontent.com
-# 容器与包管理
 DOMAIN-SUFFIX,ghcr.io
 DOMAIN-SUFFIX,pkg.github.com
-# GitHub 短链接
 DOMAIN-SUFFIX,git.io
+DOMAIN-SUFFIX,githubapp.com
+DOMAIN-SUFFIX,githubclis.com
+DOMAIN-SUFFIX,githubstatus.com
+DOMAIN-SUFFIX,copilot-proxy.githubusercontent.com
+DOMAIN-SUFFIX,api.github.com
+DOMAIN,raw.githubusercontent.com
+DOMAIN,gist.github.com
+DOMAIN,uploads.github.com
