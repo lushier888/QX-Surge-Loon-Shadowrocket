@@ -1,3 +1,13 @@
+# NGA: 12
 DOMAIN-SUFFIX,nga.cn
 DOMAIN-SUFFIX,ngabbs.com
 DOMAIN-SUFFIX,178.com
+DOMAIN-SUFFIX,nga.178.com
+DOMAIN-SUFFIX,ngacn.cc
+DOMAIN-SUFFIX,biglobe.ne.jp
+DOMAIN-SUFFIX,pic.backblazeb2.com
+DOMAIN-SUFFIX,img9.nga.178.com
+DOMAIN-KEYWORD,ngabbs
+DOMAIN-KEYWORD,ngacn
+IP-ASN,135904,no-resolve
+IP-ASN,4808,no-resolve
