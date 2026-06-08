@@ -1,11 +1,23 @@
-# YouTube: 7
-# > YouTube 核心网页、App 接口与短网址
+# YouTube: 22
 DOMAIN-SUFFIX,youtube.com
 DOMAIN-SUFFIX,youtubei.googleapis.com
 DOMAIN-SUFFIX,youtu.be
 DOMAIN-SUFFIX,yt.be
-# > YouTube 视频与高码率音频流 (大流量核心)
 DOMAIN-SUFFIX,googlevideo.com
 DOMAIN-SUFFIX,ytimg.com
-# > YouTube 独立边缘节点与多国字幕分发
 DOMAIN-SUFFIX,nhacmp3youtube.com
+DOMAIN-SUFFIX,youtube-nocookie.com
+DOMAIN-SUFFIX,youtube-ui.l.google.com
+DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com
+DOMAIN-SUFFIX,yt4.ggpht.com
+DOMAIN-SUFFIX,ggpht.com
+DOMAIN-SUFFIX,android.pool.ntp.org
+DOMAIN-KEYWORD,youtube
+DOMAIN-KEYWORD,googlevideo
+DOMAIN-KEYWORD,-youtube-
+IP-ASN,15169,no-resolve
+IP-ASN,19527,no-resolve
+IP-ASN,36040,no-resolve
+IP-ASN,43515,no-resolve
+IP-ASN,139070,no-resolve
+IP-ASN,139190,no-resolve
