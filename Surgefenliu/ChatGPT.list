@@ -1,14 +1,10 @@
 # OpenAI: 9
-# > OpenAI 核心品牌、API 与 ChatGPT 官方主入口
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chatgpt.com
-# > OpenAI 核心静态资源、多模态内容与 CDN 分发
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
-# > OpenAI 2026 核心战略级生态 (Sora 视频与 SearchGPT 搜索)
 DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,searchgpt.com
-# > 独立账户、核心鉴权与风控安全验证 (解决登录、发不出消息转圈的死穴)
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,arkoselabs.com
 DOMAIN-SUFFIX,identrust.com
