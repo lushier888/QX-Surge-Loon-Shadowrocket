@@ -1,8 +1,13 @@
-# > Pixiv 核心
+# Pixiv: 12
 DOMAIN-SUFFIX,pixiv.net
 DOMAIN-SUFFIX,pixiv.me
 DOMAIN-SUFFIX,pximg.net
-
-# > Pixiv 辅助
 DOMAIN-SUFFIX,pixiv.org
+DOMAIN-SUFFIX,pixiv.co.jp
+DOMAIN-SUFFIX,pixiv.net.co
+DOMAIN-SUFFIX,fanbox.cc
+DOMAIN-SUFFIX,booth.pm
+DOMAIN-SUFFIX,comic-art.com
+DOMAIN-SUFFIX,sketch.pixiv.net
 DOMAIN-KEYWORD,pixiv
+DOMAIN-KEYWORD,pximg
