@@ -1,6 +1,17 @@
-# > Disney+ 核心
+# DisneyPlus: 16
 DOMAIN-SUFFIX,disneyplus.com
 DOMAIN-SUFFIX,disney-plus.net
 DOMAIN-SUFFIX,disneymedia.com
 DOMAIN-SUFFIX,dssott.com
 DOMAIN-SUFFIX,bamgrid.com
+DOMAIN-SUFFIX,disney.com
+DOMAIN-SUFFIX,disneyplus.co
+DOMAIN-SUFFIX,disney-portal.my.oneid.digicert.com
+DOMAIN-SUFFIX,disneystreaming.com
+DOMAIN-SUFFIX,cdn.registerdisney.go.com
+DOMAIN-SUFFIX,execute-api.us-east-1.amazonaws.com
+DOMAIN,js-agent.newrelic.com
+DOMAIN,disney.connections.mparticle.com
+DOMAIN,disney-plus.enonic.cloud
+DOMAIN,watson.telemetry.disney.com
+DOMAIN,adobedtm.com
