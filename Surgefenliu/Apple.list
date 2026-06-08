@@ -1,23 +1,21 @@
-# Apple
-
+# Apple: 20
 DOMAIN-SUFFIX,apple.com
 DOMAIN-SUFFIX,apple.cn
 DOMAIN-SUFFIX,apple.com.cn
-
 DOMAIN-SUFFIX,icloud.com
 DOMAIN-SUFFIX,icloud.cn
 DOMAIN-SUFFIX,icloud-content.com
 DOMAIN-SUFFIX,icloud-content.com.cn
-
+DOMAIN-SUFFIX,apple-cloudkit.com
 DOMAIN-SUFFIX,cdn-apple.com
 DOMAIN-SUFFIX,aaplimg.com
 DOMAIN-SUFFIX,appleimg.com
-
+DOMAIN-SUFFIX,mzstatic.com
+DOMAIN-SUFFIX,me.com
 DOMAIN-SUFFIX,apple-dns.net
 DOMAIN-SUFFIX,appstore.com
 DOMAIN-SUFFIX,appsto.re
-
 DOMAIN-SUFFIX,swift.org
-
+DOMAIN,itunes.apple.com
 IP-CIDR,17.0.0.0/8,no-resolve
 IP-CIDR6,2620:149::/32,no-resolve
