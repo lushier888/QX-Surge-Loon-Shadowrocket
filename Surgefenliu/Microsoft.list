@@ -1,5 +1,4 @@
-# Microsoft: 18
-# > 账户、登录与安全鉴权 (解决登录转圈与全域验证)
+# Microsoft: 42
 DOMAIN-SUFFIX,microsoft.com
 DOMAIN-SUFFIX,live.com
 DOMAIN-SUFFIX,windows.net
@@ -7,22 +6,16 @@ DOMAIN-SUFFIX,passport.net
 DOMAIN-SUFFIX,msauth.net
 DOMAIN-SUFFIX,msauthimages.net
 DOMAIN-SUFFIX,msftauth.net
-
-# > OneDrive、SharePoint 与云存储 (保证大文件上传下载不掉线)
 DOMAIN-SUFFIX,onedrive.com
 DOMAIN-SUFFIX,1drv.ms
 DOMAIN-SUFFIX,skydrive.lnk.to
 DOMAIN-SUFFIX,sharepoint.com
 DOMAIN-SUFFIX,sharepointonline.com
 DOMAIN-SUFFIX,storage.live.com
-
-# > Office 365 与全家桶服务 (Word, Excel, Outlook 核心)
 DOMAIN-SUFFIX,office.com
 DOMAIN-SUFFIX,office.net
 DOMAIN-SUFFIX,office365.com
 DOMAIN-SUFFIX,outlook.com
-
-# > Windows 系统更新、边缘 CDN 与公共资源
 DOMAIN-SUFFIX,windows.com
 DOMAIN-SUFFIX,windowsupdate.com
 DOMAIN-SUFFIX,mp.microsoft.com
@@ -31,3 +24,20 @@ DOMAIN-SUFFIX,msedge.net
 DOMAIN-SUFFIX,msftstatic.com
 DOMAIN-SUFFIX,aspnetcdn.com
 DOMAIN-SUFFIX,msecnd.net
+DOMAIN-SUFFIX,microsoftonline.com
+DOMAIN-SUFFIX,microsoftidentity.com
+DOMAIN-SUFFIX,msidentity.com
+DOMAIN-SUFFIX,msftconnecttest.com
+DOMAIN-SUFFIX,azure.com
+DOMAIN-SUFFIX,azure.net
+DOMAIN-SUFFIX,azureedge.net
+DOMAIN-SUFFIX,visualstudio.com
+DOMAIN-SUFFIX,microsoft-eshop.com
+DOMAIN-SUFFIX,skype.com
+DOMAIN-SUFFIX,skypeassets.com
+DOMAIN-SUFFIX,msn.com
+DOMAIN-SUFFIX,msn.cn
+DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,bing.net
+DOMAIN-SUFFIX,bingimages.net
+DOMAIN-SUFFIX,edgeservices.bing.com.edgekey.net
