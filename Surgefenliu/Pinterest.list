@@ -1,12 +1,5 @@
-# > Pinterest 核心
-DOMAIN-SUFFIX,pinterest.com
-DOMAIN-SUFFIX,pinterest.at
-DOMAIN-SUFFIX,pinterest.ca
-DOMAIN-SUFFIX,pinterest.co.uk
-DOMAIN-SUFFIX,pinterest.de
-DOMAIN-SUFFIX,pinterest.fr
-DOMAIN-SUFFIX,pinterest.jp
-
-# > Pinterest 图片托管
+# Pinterest: 4
 DOMAIN-SUFFIX,pinimg.com
+DOMAIN-SUFFIX,pinit.com
+DOMAIN-SUFFIX,pin.it
 DOMAIN-KEYWORD,pinterest
