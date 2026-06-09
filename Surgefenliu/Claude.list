@@ -1,9 +1,6 @@
-# Claude: 8
-DOMAIN-KEYWORD,claude
+# Claude: 5
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,anthropic.cn
-DOMAIN-SUFFIX,usebutton.com
-DOMAIN-SUFFIX,statsigapi.net
-DOMAIN-SUFFIX,sentry.io
-DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN-SUFFIX,claude-files.com
