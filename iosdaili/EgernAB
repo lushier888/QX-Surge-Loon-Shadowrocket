@@ -23,6 +23,7 @@ dns:
     谷歌 - 𝑪𝑫𝑵（国外）:
     - https://dns.google/dns-query
     - https://cloudflare-dns.com/dns-query
+    - https://dns.switch.ch/dns-query
     - https://dns.nextdns.io
     - https://dns.adguard.com/dns-query
   forward:
