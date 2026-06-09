@@ -173,22 +173,6 @@ policy_groups:
     latency_test_url: http://cp.cloudflare.com/generate_204
     icon: https://s1.imagehub.cc/images/2026/03/25/b2126dc8e764a3576c3f7e60f164cf2f.png
     hidden: false
-- select:
-    name: 🌐𝑷𝒓𝒐𝒙𝒚
-    policies:
-    - 我的机场𝑨
-    - 我的机场𝑩
-    - 🇭🇰香港𝑨𝑩
-    - 🇺🇸美国𝑨𝑩
-    - 🇭🇰香港纯净𝑨
-    - 🇯🇵日本𝑨
-    - 🇸🇬新加坡𝑨
-    - 🇻🇳越南𝑨
-    - 🇰🇭柬埔寨𝑨
-    flatten: false
-    latency_test_url: http://cp.cloudflare.com/generate_204
-    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Egern.png
-    hidden: false
 - smart:
     name: 🇭🇰香港纯净𝑨
     policies:
@@ -381,6 +365,22 @@ policy_groups:
     policies:
     - DIRECT
     hidden: true
+- select:
+    name: 🌐𝑷𝒓𝒐𝒙𝒚
+    policies:
+    - 我的机场𝑨
+    - 我的机场𝑩
+    - 🇭🇰香港𝑨𝑩
+    - 🇺🇸美国𝑨𝑩
+    - 🇭🇰香港纯净𝑨
+    - 🇯🇵日本𝑨
+    - 🇸🇬新加坡𝑨
+    - 🇻🇳越南𝑨
+    - 🇰🇭柬埔寨𝑨
+    flatten: false
+    latency_test_url: http://cp.cloudflare.com/generate_204
+    icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/02ProxySoftLogo/Egern.png
+    hidden: false
 - select:
     name: 🍎𝑨𝒑𝒑𝒍𝒆
     policies:
