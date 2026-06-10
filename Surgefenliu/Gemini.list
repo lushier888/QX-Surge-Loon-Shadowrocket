@@ -1,11 +1,14 @@
-# Google-Gemini: 10
-DOMAIN-SUFFIX,deepmind.google
-DOMAIN-SUFFIX,deepmind.com
-DOMAIN-SUFFIX,generativeai.google
-DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
-DOMAIN-KEYWORD,-pa.googleapis.com
+# Google-Gemini: 13
 DOMAIN,gemini.google.com
 DOMAIN,aistudio.google.com
 DOMAIN,ai.google.dev
-DOMAIN,alkaliminer-pa.googleapis.com
 DOMAIN,notebooklm.google
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,gvt1.com
+DOMAIN-SUFFIX,gvt2.com
