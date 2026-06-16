@@ -321,22 +321,19 @@ DOMAIN-SUFFIX,rail.mos.12306.cn
 DOMAIN-SUFFIX,music.12306.cn
 DOMAIN-KEYWORD,12306
 IP-ASN,136891,no-resolve
-# 美团: 15
+# 美团美团外卖: 12
 DOMAIN-SUFFIX,meituan.com
 DOMAIN-SUFFIX,meituan.net
+DOMAIN-SUFFIX,meituanapi.com
+DOMAIN-SUFFIX,sankuai.com
+DOMAIN-SUFFIX,sankuai.info
+DOMAIN-SUFFIX,sankuaiapi.com
 DOMAIN-SUFFIX,dianping.com
 DOMAIN-SUFFIX,dpfile.com
-DOMAIN-SUFFIX,ele.me
-DOMAIN-SUFFIX,elemecdn.com
-DOMAIN-SUFFIX,meituan.com.cn
-DOMAIN-SUFFIX,meituan.io
+DOMAIN-SUFFIX,51ping.com
+DOMAIN-SUFFIX,kuxun.cn
 DOMAIN-SUFFIX,maoyan.com
-DOMAIN-SUFFIX,sankuai.com
-DOMAIN-SUFFIX,sankuai.io
-DOMAIN-KEYWORD,meituan
-DOMAIN-KEYWORD,dianping
-IP-ASN,136894,no-resolve
-IP-ASN,138096,no-resolve
+DOMAIN-SUFFIX,neixin.cn
 # 中国移动、联通与电信: 24
 DOMAIN-SUFFIX,10086.cn
 DOMAIN-SUFFIX,chinamobile.com
