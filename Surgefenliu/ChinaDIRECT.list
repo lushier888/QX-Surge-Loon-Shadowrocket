@@ -13,22 +13,25 @@ DOMAIN-SUFFIX,vivo.com
 DOMAIN-SUFFIX,vivoglobal.com
 DOMAIN-SUFFIX,meizu.com
 DOMAIN-SUFFIX,oneplus.com
-# BOSS直聘: 5
+# BOSS直聘: 7
 DOMAIN-SUFFIX,zhipin.com
 DOMAIN-SUFFIX,bosszhipin.com
 DOMAIN-SUFFIX,kanzhun.com
 DOMAIN-SUFFIX,diandianpin.com
 DOMAIN-SUFFIX,img.bosszhipin.com
+DOMAIN-SUFFIX,bosszhipin.cn
+DOMAIN-SUFFIX,zhipinimg.com
 # AGE动漫: 4
 DOMAIN-SUFFIX,agedm.vip
 DOMAIN-SUFFIX,agedm.org
 DOMAIN-SUFFIX,agedm.com
 DOMAIN-KEYWORD,agedm
-# DeepSeek: 5
+# DeepSeek: 6
 DOMAIN-SUFFIX,deepseek.com
-DOMAIN-SUFFIX,chat.deepseek.com
-DOMAIN-SUFFIX,api.deepseek.com
-DOMAIN-SUFFIX,auth.deepseek.com
+DOMAIN-SUFFIX,deepseek.cn
+DOMAIN,chat.deepseek.com
+DOMAIN,api.deepseek.com
+DOMAIN,auth.deepseek.com
 IP-ASN,134763,no-resolve
 # 夸克: 2
 DOMAIN-SUFFIX,quark.cn
@@ -56,13 +59,15 @@ DOMAIN-SUFFIX,alimama.com
 DOMAIN-SUFFIX,tbcache.com
 DOMAIN-SUFFIX,tb.cn
 DOMAIN-KEYWORD,taobao
-# 高德地图: 9
+# 高德地图: 11
 DOMAIN-SUFFIX,amap.com
 DOMAIN-SUFFIX,autonavi.com
 DOMAIN-SUFFIX,amap.cn
 DOMAIN-SUFFIX,gaode.com
 DOMAIN-KEYWORD,amap
 DOMAIN-KEYWORD,autonavi
+DOMAIN-SUFFIX,amapapis.com
+DOMAIN-SUFFIX,aoscdn.com
 IP-ASN,136938,no-resolve
 IP-ASN,137021,no-resolve
 IP-ASN,135933,no-resolve
@@ -79,11 +84,10 @@ DOMAIN-KEYWORD,sogou
 IP-ASN,134768,no-resolve
 IP-ASN,135327,no-resolve
 IP-ASN,136262,no-resolve
-# 网易云音乐: 15
+# 网易云音乐: 14
 DOMAIN-SUFFIX,music.163.com
 DOMAIN-SUFFIX,163.com
 DOMAIN-SUFFIX,126.net
-DOMAIN-SUFFIX,netease.com
 DOMAIN-SUFFIX,163jiasu.com
 DOMAIN-SUFFIX,ydstatic.com
 DOMAIN-SUFFIX,nosdn.127.net
@@ -95,34 +99,16 @@ DOMAIN-KEYWORD,music.163
 IP-ASN,16396,no-resolve
 IP-ASN,135904,no-resolve
 IP-ASN,135906,no-resolve
-# 百度与生活服务核心: 11
+# 百度与生活服务核心: 9
 DOMAIN-SUFFIX,baidu.com
 DOMAIN-SUFFIX,baidubutton.com
 DOMAIN-SUFFIX,bdstatic.com
 DOMAIN-SUFFIX,bdimg.com
 DOMAIN-SUFFIX,bcebos.com
-DOMAIN-SUFFIX,meituan.com
-DOMAIN-SUFFIX,meituan.net
-DOMAIN-SUFFIX,dianping.com
-DOMAIN-SUFFIX,dpfile.com
-DOMAIN-SUFFIX,ele.me
-DOMAIN-SUFFIX,elemecdn.com
-# 京东与拼多多电商: 4
-DOMAIN-SUFFIX,jd.com
-DOMAIN-SUFFIX,360buyimg.com
-DOMAIN-SUFFIX,pinduoduo.com
-DOMAIN-SUFFIX,yangkeduo.com
-# 快手与新浪基础: 3
-DOMAIN-SUFFIX,kuaishou.com
-DOMAIN-SUFFIX,gifshow.com
-DOMAIN-SUFFIX,ksapisrv.com
-# 常用工具与社区: 6
-DOMAIN-SUFFIX,zhihu.com
-DOMAIN-SUFFIX,zhimg.com
-DOMAIN-SUFFIX,xiaohongshu.com
-DOMAIN-SUFFIX,xhscdn.com
-DOMAIN-SUFFIX,douban.com
-DOMAIN-SUFFIX,doubanio.com
+DOMAIN-SUFFIX,baidustatic.com
+DOMAIN-SUFFIX,baidupcs.com
+DOMAIN-SUFFIX,tieba.com
+DOMAIN-SUFFIX,tieba.baidu.com
 # 爱优腾与流媒体: 8
 DOMAIN-SUFFIX,qiyi.com
 DOMAIN-SUFFIX,qyimg.com
@@ -132,10 +118,7 @@ DOMAIN-SUFFIX,mgtv.com
 DOMAIN-SUFFIX,hunantv.com
 DOMAIN-SUFFIX,acfun.cn
 DOMAIN-SUFFIX,ixigua.com
-# 政务、出行与快递: 9
-DOMAIN-SUFFIX,12306.cn
-DOMAIN-SUFFIX,12306.com
-DOMAIN-SUFFIX,dynamic.12306.cn
+# 政务、出行与快递: 6
 DOMAIN-SUFFIX,gov.cn
 DOMAIN-SUFFIX,chinatax.gov.cn
 DOMAIN-SUFFIX,sf-express.com
@@ -174,15 +157,13 @@ DOMAIN-SUFFIX,unionpayflash.com
 DOMAIN-SUFFIX,ntp.aliyun.com
 DOMAIN-SUFFIX,ntp.tencent.com
 DOMAIN-SUFFIX,lanyingbone.com
-# NGA: 16
+# NGA: 14
 DOMAIN-SUFFIX,nga.cn
 DOMAIN-SUFFIX,ngabbs.com
 DOMAIN-SUFFIX,178.com
 DOMAIN-SUFFIX,nga.178.com
 DOMAIN-SUFFIX,ngacn.cc
 DOMAIN-SUFFIX,msga.cc
-DOMAIN-SUFFIX,biglobe.ne.jp
-DOMAIN-SUFFIX,pic.backblazeb2.com
 DOMAIN-SUFFIX,img9.nga.178.com
 DOMAIN,nga.178.com
 DOMAIN,pic.nga.178.com
@@ -207,7 +188,7 @@ DOMAIN-SUFFIX,onethingpcs.com
 DOMAIN-KEYWORD,xunlei
 DOMAIN-KEYWORD,thunder
 IP-ASN,135905,no-resolve
-# 微博: 15
+# 微博: 14
 DOMAIN-SUFFIX,weibo.cn
 DOMAIN-SUFFIX,weibo.com
 DOMAIN-SUFFIX,weibocdn.com
@@ -216,14 +197,13 @@ DOMAIN-SUFFIX,sinaimg.cn
 DOMAIN-SUFFIX,sinajs.cn
 DOMAIN-SUFFIX,sina.com.cn
 DOMAIN-SUFFIX,sina.cn
-DOMAIN-SUFFIX,sina.com
 DOMAIN-SUFFIX,sinacn.com
 DOMAIN-SUFFIX,miaopai.com
 DOMAIN-SUFFIX,xiaokaxiu.com
 DOMAIN-KEYWORD,weibo
 DOMAIN-KEYWORD,sinaimg
 IP-ASN,23724,no-resolve
-# 微信: 24
+# 微信: 23
 DOMAIN-SUFFIX,weixin.com
 DOMAIN-SUFFIX,wechat.com
 DOMAIN-SUFFIX,tencent.com
@@ -244,7 +224,6 @@ DOMAIN-SUFFIX,weixinimg.jaeapp.com
 DOMAIN,qzone.qq.com
 DOMAIN-KEYWORD,wechat
 DOMAIN-KEYWORD,weixin
-DOMAIN-KEYWORD,tencent
 IP-CIDR,1.12.0.0/14,no-resolve
 IP-ASN,132203,no-resolve
 IP-ASN,132591,no-resolve
@@ -297,7 +276,7 @@ IP-ASN,136199,no-resolve
 IP-ASN,140227,no-resolve
 IP-ASN,140532,no-resolve
 IP-ASN,207305,no-resolve
-# 京东: 14
+# 京东: 17
 DOMAIN-SUFFIX,jd.com
 DOMAIN-SUFFIX,360buyimg.com
 DOMAIN-SUFFIX,360buy.com
@@ -309,6 +288,9 @@ DOMAIN-SUFFIX,jdfcloud.com
 DOMAIN-SUFFIX,jdcache.com
 DOMAIN-SUFFIX,jdcloud-api.com
 DOMAIN-KEYWORD,360buy
+DOMAIN-SUFFIX,jd.hk
+DOMAIN-SUFFIX,paipai.com
+DOMAIN-SUFFIX,jingxi.com
 DOMAIN-KEYWORD,jdcloud
 IP-ASN,136932,no-resolve
 IP-ASN,140510,no-resolve
@@ -321,7 +303,7 @@ DOMAIN-SUFFIX,rail.mos.12306.cn
 DOMAIN-SUFFIX,music.12306.cn
 DOMAIN-KEYWORD,12306
 IP-ASN,136891,no-resolve
-# 美团美团外卖: 12
+# 美团美团外卖: 16
 DOMAIN-SUFFIX,meituan.com
 DOMAIN-SUFFIX,meituan.net
 DOMAIN-SUFFIX,meituanapi.com
@@ -334,6 +316,10 @@ DOMAIN-SUFFIX,51ping.com
 DOMAIN-SUFFIX,kuxun.cn
 DOMAIN-SUFFIX,maoyan.com
 DOMAIN-SUFFIX,neixin.cn
+DOMAIN-SUFFIX,meituan.net.cn
+DOMAIN-SUFFIX,meituanusercontent.com
+DOMAIN-SUFFIX,meituanimg.com
+DOMAIN-KEYWORD,sankuai
 # 中国移动、联通与电信: 24
 DOMAIN-SUFFIX,10086.cn
 DOMAIN-SUFFIX,chinamobile.com
