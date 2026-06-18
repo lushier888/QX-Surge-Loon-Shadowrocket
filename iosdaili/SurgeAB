@@ -145,7 +145,7 @@ dns-server = 1.12.12.12, 1.1.1.1, 8.8.8.8
 
 # > ————国际服务与媒体策略组————
 # > 𝑮𝒐𝒐𝒈𝒍𝒆（谷歌服务）
-🌏𝑮𝒐𝒐𝒈𝒍𝒆 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/google(1).png, persistent=0
+🔍𝑮𝒐𝒐𝒈𝒍𝒆 = select, 🇭🇰香港𝑨𝑩, 🇺🇸美国𝑨𝑩, 🇯🇵日本𝑨𝑩, 🇨🇳台湾𝑨𝑩, 🇸🇬新加坡𝑨𝑩, 🇰🇷韩国𝑨𝑩, 🇭🇰香港𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑨, 🇺🇸美国𝑩, 🇯🇵日本𝑨, 🇯🇵日本𝑩, 🇨🇳台湾𝑨, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑨, 🇸🇬新加坡𝑩, no-alert=1, hidden=0, include-all-proxies=0, icon-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/google(1).png, persistent=0
 
 
 # > 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕（微软服务）
