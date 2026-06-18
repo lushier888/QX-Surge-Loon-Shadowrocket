@@ -123,7 +123,7 @@ static=🕹手动切换, direct, server-tag-regex=., img-url=https://raw.githubu
 static=🍎𝑨𝒑𝒑𝒍𝒆, direct, 🇭🇰香港𝑨, 🇺🇸美国𝑨, 🇨🇳台湾𝑨, 🇯🇵日本𝑨, 🇸🇬新加坡𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑩, 🇰🇷韩国𝑩, 🇯🇵日本𝑩, 🇨🇳台湾𝑩, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Apple_Classic.png
 
 # 𝑮𝒐𝒐𝒈𝒍𝒆（谷歌服务）
-static=🌏𝑮𝒐𝒐𝒈𝒍𝒆, 🇭🇰香港𝑨, 🇺🇸美国𝑨, 🇨🇳台湾𝑨, 🇯🇵日本𝑨, 🇸🇬新加坡𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑩, 🇯🇵日本𝑩, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑩, 🇰🇷韩国𝑩, proxy, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Google.png
+static=🔍𝑮𝒐𝒐𝒈𝒍𝒆, 🇭🇰香港𝑨, 🇺🇸美国𝑨, 🇨🇳台湾𝑨, 🇯🇵日本𝑨, 🇸🇬新加坡𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑩, 🇯🇵日本𝑩, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑩, 🇰🇷韩国𝑩, proxy, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Google.png
 
 # 𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕（微软服务）
 static=💻𝑴𝒊𝒄𝒓𝒐𝒔𝒐𝒇𝒕, 🇭🇰香港𝑨, 🇺🇸美国𝑨, 🇨🇳台湾𝑨, 🇯🇵日本𝑨, 🇸🇬新加坡𝑨, 🇭🇰香港𝑩, 🇺🇸美国𝑩, 🇯🇵日本𝑩, 🇨🇳台湾𝑩, 🇸🇬新加坡𝑩, 🇰🇷韩国𝑩, img-url=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/03CNSoft/microsoft.png
