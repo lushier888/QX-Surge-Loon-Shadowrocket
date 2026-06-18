@@ -405,7 +405,7 @@ policy_groups:
     icon: https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Apple_Classic.png
     hidden: false
 - select:
-    name: 🌏𝑮𝒐𝒐𝒈𝒍𝒆
+    name: 🔍𝑮𝒐𝒐𝒈𝒍𝒆
     policies:
     - 🇭🇰香港纯净𝑨
     - 🇭🇰香港𝑨𝑩
