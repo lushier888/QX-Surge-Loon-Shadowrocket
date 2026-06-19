@@ -290,6 +290,7 @@ function renderWidget(cfg, payload, stale, staleMsg) {
   const items = Array.isArray(payload.items) ? payload.items : [];
   const fam = cfg.family;
 
+  // 1. 锁屏与灵动岛小组件环境
   if (fam === 'accessoryInline') {
     return {
       type: 'widget',
@@ -307,14 +308,18 @@ function renderWidget(cfg, payload, stale, staleMsg) {
 
   const children = [];
 
+  // 2. 桌面【小号组件 - systemSmall】
   if (fam === 'systemSmall') {
+    // 隐藏主页眉页脚，使用极致压缩的紧凑宫格排版
     children.push(renderSmallCard(items[0], stale, payload.at));
     return root(cfg, children, stale, [10, 10, 10, 10], 4);
   }
 
+  // 3. 桌面【中号组件 - systemMedium】
   if (fam === 'systemMedium') {
     children.push(header(cfg, payload, stale));
     
+    // 强制限制最多展示 2 个订阅，并且不渲染合计卡片，给横向平铺腾出纵向安全空间
     const shown = items.slice(0, 2);
     for (const item of shown) {
       children.push(renderCard(item));
@@ -325,8 +330,10 @@ function renderWidget(cfg, payload, stale, staleMsg) {
     return root(cfg, children, stale, [10, 14, 8, 14], 6);
   }
 
+  // 4. 桌面【大号 / 特大号组件 - systemLarge / systemExtraLarge】
   children.push(header(cfg, payload, stale));
 
+  // 仅在大号以上尺寸展示聚合统计卡片
   if (items.length > 1) {
     children.push(summaryCard(aggregate(items)));
   }
@@ -375,9 +382,9 @@ function header(cfg, payload, stale) {
         width: 12,
         height: 12,
       },
-      text(stale ? cfg.title + ' · 缓存' : cfg.title, 'footnote', 'bold', { light: '#1C1C1E', dark: '#E5E7EB' }, 0.8),
+      text(stale ? cfg.title + ' · 缓存' : cfg.title, 'footnote', 'bold', { light: '#1C1C1E', dark: '#E5E7EB' }, 1.0),
       { type: 'spacer' },
-      text(fmtClock(payload.at || Date.now()), 'caption1', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.8),
+      text(fmtClock(payload.at || Date.now()), 'caption1', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 1.0),
     ],
   };
 }
@@ -395,9 +402,9 @@ function summaryCard(summary) {
     borderRadius: 5,
     children: [
       { type: 'image', src: 'sf-symbol:sum', color: { light: '#0284C7', dark: '#BAE6FD' }, width: 12, height: 12 },
-      text('合计剩余', 'footnote', 'semibold', { light: '#0369A1', dark: '#BAE6FD' }, 0.8),
+      text('合计剩余', 'footnote', 'semibold', { light: '#0369A1', dark: '#BAE6FD' }, 1.0),
       { type: 'spacer' },
-      text(textVal, 'body', 'bold', colorVal, 0.6),
+      text(textVal, 'body', 'bold', colorVal, 1.0),
     ],
   };
 }
@@ -406,14 +413,20 @@ function renderCard(item) {
   if (!item) return missingCard('未选择订阅');
   if (item.error) return errorCard(item.name || '订阅', item.error);
 
-  // 将所有底部详细信息拼接为一整个字符串，避免多个组件互相挤压
-  let subInfoStr = '已用 ' + formatBytes(item.used) + ' / ' + totalText(item);
+  const sublineChildren = [
+    text('已用 ' + formatBytes(item.used) + ' / ' + totalText(item), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85)
+  ];
+
   if (item.resetDay) {
-    subInfoStr += ' | 重置: 每月 ' + item.resetDay + ' 号';
+    sublineChildren.push(text('  |  重置: 每月 ' + item.resetDay + ' 号', 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85));
   }
+
   if (item.expireAt && !isNaN(item.expireAt.getTime())) {
-    subInfoStr += ' | 到期: ' + fmtDate(item.expireAt);
+    sublineChildren.push(text('  |  到期: ' + fmtDate(item.expireAt), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85));
   }
+
+  sublineChildren.push({ type: 'spacer' });
+  sublineChildren.push(text(ratioText(item.remainRatio), 'caption2', 'semibold', colorForRemain(item.remainRatio), 0.9));
 
   return {
     type: 'stack',
@@ -426,9 +439,9 @@ function renderCard(item) {
         direction: 'row',
         alignItems: 'center',
         children: [
-          text(displayName(item), 'body', 'bold', { light: '#111827', dark: '#FFFFFF' }, 0.5), // 增强缩放
+          text(displayName(item), 'body', 'bold', { light: '#111827', dark: '#FFFFFF' }, 1.0),
           { type: 'spacer' },
-          text(remainText(item), 'body', 'bold', colorForRemain(item.remainRatio), 0.6) // 增强缩放
+          text(remainText(item), 'body', 'bold', colorForRemain(item.remainRatio), 1.0)
         ]
       },
       
@@ -438,11 +451,7 @@ function renderCard(item) {
         type: 'stack',
         direction: 'row',
         alignItems: 'center',
-        children: [
-          text(subInfoStr, 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.4), // 极致缩放
-          { type: 'spacer' },
-          text(ratioText(item.remainRatio), 'caption2', 'semibold', colorForRemain(item.remainRatio), 0.8)
-        ]
+        children: sublineChildren
       }
     ],
   };
@@ -452,10 +461,11 @@ function renderSmallCard(item, stale, timestamp) {
   if (!item) return missingCard('未选择订阅');
   if (item.error) return errorCard(item.name || '订阅', item.error);
 
-  // 拼接底部信息
-  let bottomInfoStr = '已用 ' + formatBytes(item.used);
+  const bottomChildren = [
+    text('已用 ' + formatBytes(item.used), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85)
+  ];
   if (item.resetDay) {
-    bottomInfoStr += ' | 隔 ' + item.resetDay + '号';
+    bottomChildren.push(text(' | 隔 ' + item.resetDay + '号', 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.8));
   }
 
   return {
@@ -469,7 +479,7 @@ function renderSmallCard(item, stale, timestamp) {
         direction: 'row',
         alignItems: 'center',
         children: [
-          text(displayName(item), 'caption1', 'bold', { light: '#111827', dark: '#FFFFFF' }, 0.5), // 增强缩放
+          text(displayName(item), 'caption1', 'bold', { light: '#111827', dark: '#FFFFFF' }, 0.85),
           { type: 'spacer' },
           text(fmtClock(timestamp || Date.now()), 'caption2', 'regular', { light: '#9CA3AF', dark: '#71717A' }, 0.8)
         ]
@@ -479,7 +489,7 @@ function renderSmallCard(item, stale, timestamp) {
         direction: 'row',
         alignItems: 'baseline',
         children: [
-          text(remainText(item), 'title2', 'bold', colorForRemain(item.remainRatio), 0.5), // 增强缩放
+          text(remainText(item), 'title2', 'bold', colorForRemain(item.remainRatio), 1.0),
           { type: 'spacer' },
           text(ratioText(item.remainRatio), 'caption1', 'semibold', colorForRemain(item.remainRatio), 0.9)
         ]
@@ -490,9 +500,9 @@ function renderSmallCard(item, stale, timestamp) {
         direction: 'row',
         alignItems: 'center',
         children: [
-          text(bottomInfoStr, 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.4), // 极致缩放
+          ...bottomChildren,
           { type: 'spacer' },
-          text('共 ' + totalText(item), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.5)
+          text('共' + totalText(item), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85)
         ]
       }
     ],
@@ -500,10 +510,10 @@ function renderSmallCard(item, stale, timestamp) {
 }
 
 function renderInline(cfg, item, stale) {
-  if (!item) return text('未选择订阅', 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 0.8);
-  if (item.error) return text(displayName(item) + ' · ' + item.error, 'caption1', 'semibold', '#EF4444', 0.8);
+  if (!item) return text('未选择订阅', 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 1.0);
+  if (item.error) return text(displayName(item) + ' · ' + item.error, 'caption1', 'semibold', '#EF4444', 1.0);
   const body = displayName(item) + ' 剩余 ' + remainText(item);
-  return text(body, 'caption1', 'semibold', stale ? '#D97706' : { light: '#111827', dark: '#FFFFFF' }, 0.6);
+  return text(body, 'caption1', 'semibold', stale ? '#D97706' : { light: '#111827', dark: '#FFFFFF' }, 1.0);
 }
 
 function renderCircular(item, stale, cfg) {
@@ -517,7 +527,7 @@ function renderCircular(item, stale, cfg) {
     backgroundColor: 'rgba(0,0,0,0)',
     children: [
       { type: 'image', src: 'sf-symbol:chart.pie.fill', color: stale ? '#F59E0B' : colorForRemain(item && item.remainRatio), width: 16, height: 16 },
-      text(pct, 'headline', 'bold', { light: '#111827', dark: '#FFFFFF' }, 0.6, { textAlign: 'center' }),
+      text(pct, 'headline', 'bold', { light: '#111827', dark: '#FFFFFF' }, 1.0, { textAlign: 'center' }),
     ],
   };
 }
@@ -533,8 +543,8 @@ function renderAccessoryRectangular(cfg, item, stale) {
     backgroundColor: { light: '#F3F4F6', dark: '#FFFFFF10' },
     borderRadius: 8,
     children: [
-      text(displayName(item), 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 0.5),
-      text(remainText(item), 'headline', 'bold', colorForRemain(item.remainRatio), 0.5)
+      text(displayName(item), 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 1.0),
+      text(remainText(item), 'headline', 'bold', colorForRemain(item.remainRatio), 1.0)
     ],
   };
 }
@@ -542,7 +552,7 @@ function renderAccessoryRectangular(cfg, item, stale) {
 function footer(cfg, payload, stale, staleMsg) {
   const source = payload.source || cfg.baseUrl;
   const msg = stale ? '缓存模式 · ' + (staleMsg || '最新请求失败') : '数据源 ' + source;
-  return text(msg, 'caption2', 'regular', stale ? '#D97706' : { light: '#9CA3AF', dark: '#71717A' }, 0.8);
+  return text(msg, 'caption2', 'regular', stale ? '#D97706' : { light: '#9CA3AF', dark: '#71717A' }, 1.0);
 }
 
 function errorWidget(cfg, title, msg) {
@@ -561,10 +571,10 @@ function errorWidget(cfg, title, msg) {
         gap: 6,
         children: [
           { type: 'image', src: 'sf-symbol:exclamationmark.triangle.fill', color: '#EF4444', width: 14, height: 14 },
-          text(title, 'headline', 'bold', { light: '#991B1B', dark: '#FFFFFF' }, 0.8),
+          text(title, 'headline', 'bold', { light: '#991B1B', dark: '#FFFFFF' }, 1.0),
         ],
       },
-      text(msg, 'caption1', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 0.8),
+      text(msg, 'caption1', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 1.0),
     ],
   };
 }
@@ -578,8 +588,8 @@ function missingCard(msg) {
     backgroundColor: { light: '#E5E7EB', dark: '#FFFFFF12' },
     borderRadius: 8,
     children: [
-      text('提示', 'caption1', 'semibold', { light: '#374151', dark: '#FFFFFF' }, 0.8),
-      text(msg, 'caption2', 'regular', { light: '#4B5563', dark: '#CBD5E1' }, 0.8),
+      text('提示', 'caption1', 'semibold', { light: '#374151', dark: '#FFFFFF' }, 1.0),
+      text(msg, 'caption2', 'regular', { light: '#4B5563', dark: '#CBD5E1' }, 1.0),
     ],
   };
 }
@@ -593,8 +603,8 @@ function errorCard(title, msg) {
     backgroundColor: { light: '#FEE2E2', dark: '#7F1D1D55' },
     borderRadius: 8,
     children: [
-      text(title, 'caption1', 'semibold', { light: '#991B1B', dark: '#FFFFFF' }, 0.8),
-      text(msg, 'caption2', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 0.8),
+      text(title, 'caption1', 'semibold', { light: '#991B1B', dark: '#FFFFFF' }, 1.0),
+      text(msg, 'caption2', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 1.0),
     ],
   };
 }
@@ -608,7 +618,7 @@ function progressBar(usedRatio, remainRatio) {
       gap: 4,
       children: [
         { type: 'image', src: 'sf-symbol:infinity', color: '#10B981', width: 10, height: 10 },
-        text('无限流量', 'caption2', 'semibold', '#10B981', 0.8),
+        text('无限流量', 'caption2', 'semibold', '#10B981', 1.0),
       ],
     };
   }
