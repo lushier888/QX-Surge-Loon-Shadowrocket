@@ -1,5 +1,5 @@
 /**
- * Sub-Store 流量查询小组件（中号多机场大字号 V8 - 纯净流量版）
+ * Sub-Store 流量查询小组件（中号多机场大字号 V8 - 纯净流量版 - 支持显示重置日）
  *
  * 环境变量示例：
  * SUB_NAMES=机场A,机场B                            # 指定显示的订阅名称
@@ -215,6 +215,10 @@ function decorateItem(sub, flow, cfg) {
   const usedRatio = Number.isFinite(total) && total > 0 ? clamp(used / total, 0, 1) : NaN;
   const remainRatio = Number.isFinite(usedRatio) ? 1 - usedRatio : NaN;
 
+  // 提取订阅链接中的 resetDay 参数
+  const args = parseArgs(sub.url || sub.subUserinfo || '');
+  const resetDay = args.resetDay ? String(args.resetDay) : null;
+
   return {
     name: String(sub.name || '订阅'),
     planName: flow.planName || '',
@@ -227,6 +231,7 @@ function decorateItem(sub, flow, cfg) {
     remainRatio,
     expireAt: Number.isFinite(flow.expires) && flow.expires > 0 ? new Date(flow.expires * 1000) : null,
     appUrl: flow.appUrl || '',
+    resetDay, // 将重置日传给渲染层
   };
 }
 
@@ -384,6 +389,11 @@ function renderCard(item) {
   const sublineChildren = [
     text('已用 ' + formatBytes(item.used) + ' / ' + totalText(item), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85)
   ];
+
+  // 如果链接里配置了重置日，展示到副标题中
+  if (item.resetDay) {
+    sublineChildren.push(text('  |  重置: 每月 ' + item.resetDay + ' 号', 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85));
+  }
 
   if (item.expireAt && !isNaN(item.expireAt.getTime())) {
     sublineChildren.push(text('  |  到期: ' + fmtDate(item.expireAt), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85));
