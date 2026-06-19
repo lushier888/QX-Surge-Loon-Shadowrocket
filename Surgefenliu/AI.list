@@ -1,0 +1,58 @@
+# Google-Gemini: 10
+DOMAIN,gemini.google.com
+DOMAIN,aistudio.google.com
+DOMAIN,ai.google.dev
+DOMAIN,notebooklm.google
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,googleusercontent.com
+# OpenAI: 14
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,sora.com
+DOMAIN-SUFFIX,searchgpt.com
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,arkoselabs.com
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,stripe.com
+# Grok: 6
+DOMAIN-SUFFIX,grok.com
+DOMAIN-SUFFIX,x-ai.com
+DOMAIN-SUFFIX,xai.com
+DOMAIN-KEYWORD,grok-api
+DOMAIN,api.grok.com
+DOMAIN,assets.grok.com
+# Claude: 5
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,anthropic.cn
+DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN-SUFFIX,claude-files.com
+# Microsoft-Copilot: 18
+DOMAIN-SUFFIX,copilot.microsoft.com
+DOMAIN-SUFFIX,bingimages.microsoft.com
+DOMAIN-SUFFIX,ai.microsoft.com
+DOMAIN-SUFFIX,cdn.openai.com
+DOMAIN-SUFFIX,openai.azure.com
+DOMAIN-SUFFIX,openaicom.imgix.net
+DOMAIN-SUFFIX,azureedge.net
+DOMAIN-SUFFIX,msn.com
+DOMAIN-SUFFIX,msn.cn
+DOMAIN-SUFFIX,edge.microsoft.com
+DOMAIN-SUFFIX,sydney.bing.com
+DOMAIN-SUFFIX,copilot.microsoft365.com
+DOMAIN-SUFFIX,edgeservices.bing.com.edgekey.net
+DOMAIN-SUFFIX,skype.com
+DOMAIN-SUFFIX,skypeassets.com
+DOMAIN,chat.bing.com
+DOMAIN,edgeservices.bing.com
+DOMAIN,api.bing.microsoft.com
