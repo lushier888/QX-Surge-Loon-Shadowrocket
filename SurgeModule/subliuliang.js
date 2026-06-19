@@ -283,14 +283,10 @@ function parseFlowString(raw) {
   });
 }
 
-// ==========================================
-// 重构后的核心尺寸适配渲染逻辑
-// ==========================================
 function renderWidget(cfg, payload, stale, staleMsg) {
   const items = Array.isArray(payload.items) ? payload.items : [];
   const fam = cfg.family;
 
-  // 1. 锁屏与灵动岛小组件环境
   if (fam === 'accessoryInline') {
     return {
       type: 'widget',
@@ -299,64 +295,48 @@ function renderWidget(cfg, payload, stale, staleMsg) {
       children: [renderInline(cfg, items[0], stale)],
     };
   }
+
   if (fam === 'accessoryCircular') {
     return root(cfg, [renderCircular(items[0], stale, cfg)], stale);
   }
+
   if (fam === 'accessoryRectangular') {
     return root(cfg, [renderAccessoryRectangular(cfg, items[0], stale)], stale);
   }
 
   const children = [];
 
-  // 2. 桌面【小号组件 - systemSmall】
+  // 【小号组件适配逻辑】
   if (fam === 'systemSmall') {
-    // 隐藏主页眉页脚，使用极致压缩的紧凑宫格排版
     children.push(renderSmallCard(items[0], stale, payload.at));
-    return root(cfg, children, stale, [10, 10, 10, 10], 4);
+    return root(cfg, children, stale, [10, 10, 10, 10]);
   }
 
-  // 3. 桌面【中号组件 - systemMedium】
-  if (fam === 'systemMedium') {
-    children.push(header(cfg, payload, stale));
-    
-    // 强制限制最多展示 2 个订阅，并且不渲染合计卡片，给横向平铺腾出纵向安全空间
-    const shown = items.slice(0, 2);
-    for (const item of shown) {
-      children.push(renderCard(item));
-    }
-    
-    children.push({ type: 'spacer' });
-    children.push(footer(cfg, payload, stale, staleMsg));
-    return root(cfg, children, stale, [10, 14, 8, 14], 6);
-  }
-
-  // 4. 桌面【大号 / 特大号组件 - systemLarge / systemExtraLarge】
+  // 【中、大、特大号组件适配逻辑】
   children.push(header(cfg, payload, stale));
 
-  // 仅在大号以上尺寸展示聚合统计卡片
   if (items.length > 1) {
     children.push(summaryCard(aggregate(items)));
   }
 
-  const limit = fam === 'systemExtraLarge' ? 7 : 5;
+  const limit = fam === 'systemLarge' || fam === 'systemExtraLarge' ? 5 : 2;
   const shown = items.slice(0, limit);
 
   for (const item of shown) {
     children.push(renderCard(item));
   }
 
-  children.push({ type: 'spacer' });
   children.push(footer(cfg, payload, stale, staleMsg));
-  return root(cfg, children, stale, [12, 16, 10, 16], 6);
+  return root(cfg, children, stale);
 }
 
-function root(cfg, children, stale, customPadding, customGap) {
+function root(cfg, children, stale, customPadding) {
   return {
     type: 'widget',
     url: cfg.openUrl,
     refreshAfter: refreshISO(cfg.refreshMinutes),
     padding: customPadding || [6, 14, 4, 14], 
-    gap: customGap || 4,                  
+    gap: 4,                  
     backgroundColor: stale ? {
       light: '#FFFBEB',
       dark: '#2B1B0F'
