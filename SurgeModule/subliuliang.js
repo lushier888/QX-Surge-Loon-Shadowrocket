@@ -128,10 +128,7 @@ function isRemoteSub(sub) {
 async function fetchFlowItem(ctx, cfg, sub) {
   const name = String(sub && sub.name ? sub.name : '未命名订阅');
   if (sub.missing) {
-    return {
-      name,
-      error: '订阅不存在',
-    };
+    return { name, error: '订阅不存在' };
   }
 
   try {
@@ -159,10 +156,7 @@ async function fetchFlowItem(ctx, cfg, sub) {
       const directFlow = await fetchDirectFlow(ctx, cfg, sub);
       if (hasUsableFlow(directFlow)) return decorateItem(sub, directFlow, cfg);
     } catch (_) {}
-    return {
-      name,
-      error: shortError(e),
-    };
+    return { name, error: shortError(e) };
   }
 }
 
@@ -174,9 +168,7 @@ async function fetchDirectFlow(ctx, cfg, sub) {
   if (args.noFlow) throw new Error('noFlow');
 
   const url = args.flowUrl || parts.url;
-  const headers = {
-    'User-Agent': args.flowUserAgent || cfg.flowUserAgent,
-  };
+  const headers = { 'User-Agent': args.flowUserAgent || cfg.flowUserAgent };
   Object.assign(headers, parseHeaderObject(args.flowHeaders || args.headers));
 
   const opt = {
@@ -221,13 +213,7 @@ function decorateItem(sub, flow, cfg) {
   return {
     name: String(sub.name || '订阅'),
     planName: flow.planName || '',
-    total,
-    upload,
-    download,
-    used,
-    remain,
-    usedRatio,
-    remainRatio,
+    total, upload, download, used, remain, usedRatio, remainRatio,
     expireAt: Number.isFinite(flow.expires) && flow.expires > 0 ? new Date(flow.expires * 1000) : null,
     appUrl: flow.appUrl || '',
     resetDay, 
@@ -274,76 +260,90 @@ function parseFlowString(raw) {
     return safeDecode(m[1]);
   };
   return normalizeFlow({
-    upload: field('upload'),
-    download: field('download'),
-    total: field('total'),
-    expire: field('expire'),
-    app_url: strField('app_url'),
-    plan_name: strField('plan_name'),
+    upload: field('upload'), download: field('download'), total: field('total'),
+    expire: field('expire'), app_url: strField('app_url'), plan_name: strField('plan_name'),
   });
 }
 
+// ==========================================
+// 重构后的核心尺寸适配渲染逻辑（包含注释方便修改）
+// ==========================================
 function renderWidget(cfg, payload, stale, staleMsg) {
   const items = Array.isArray(payload.items) ? payload.items : [];
   const fam = cfg.family;
 
   if (fam === 'accessoryInline') {
-    return {
-      type: 'widget',
-      refreshAfter: refreshISO(cfg.refreshMinutes),
-      url: cfg.openUrl,
-      children: [renderInline(cfg, items[0], stale)],
-    };
+    return { type: 'widget', refreshAfter: refreshISO(cfg.refreshMinutes), url: cfg.openUrl, children: [renderInline(cfg, items[0], stale)] };
   }
-
   if (fam === 'accessoryCircular') {
     return root(cfg, [renderCircular(items[0], stale, cfg)], stale);
   }
-
   if (fam === 'accessoryRectangular') {
     return root(cfg, [renderAccessoryRectangular(cfg, items[0], stale)], stale);
   }
 
   const children = [];
 
-  // 【小号组件适配逻辑】
+  // ================= 小号组件 =================
   if (fam === 'systemSmall') {
     children.push(renderSmallCard(items[0], stale, payload.at));
-    return root(cfg, children, stale, [10, 10, 10, 10]);
+    // [10, 10, 10, 10] 是整体边距：[上, 右, 下, 左]
+    // 4 是组件垂直间距（gap）
+    return root(cfg, children, stale, [10, 10, 10, 10], 4);
   }
 
-  // 【中、大、特大号组件适配逻辑】
-  children.push(header(cfg, payload, stale));
+  // ================= 中号组件 =================
+  if (fam === 'systemMedium') {
+    children.push(header(cfg, payload, stale));
+    
+    // 如果有多个订阅，加入合计面板
+    if (items.length > 1) {
+      children.push(summaryCard(aggregate(items)));
+    }
+    
+    // 中号最多只渲染两个卡片，防止内容溢出屏幕
+    const shown = items.slice(0, 2);
+    for (const item of shown) {
+      children.push(renderCard(item));
+    }
+    
+    children.push({ type: 'spacer' });
+    children.push(footer(cfg, payload, stale, staleMsg));
+    
+    // 【修改点】：控制中号组件的全局边距和堆叠间隙
+    // 参数1：[8, 12, 6, 12] 分别对应 [上边距, 右边距, 下边距, 左边距]
+    // 参数2：3 代表标题、合计卡、订阅卡、底部信息之间的【垂直间距】。调小间距让中号不会太拥挤。
+    return root(cfg, children, stale, [8, 12, 6, 12], 3);
+  }
 
+  // ================= 大号 / 特大号组件 =================
+  children.push(header(cfg, payload, stale));
   if (items.length > 1) {
     children.push(summaryCard(aggregate(items)));
   }
 
-  const limit = fam === 'systemLarge' || fam === 'systemExtraLarge' ? 5 : 2;
+  const limit = fam === 'systemExtraLarge' ? 7 : 5;
   const shown = items.slice(0, limit);
-
   for (const item of shown) {
     children.push(renderCard(item));
   }
 
+  children.push({ type: 'spacer' });
   children.push(footer(cfg, payload, stale, staleMsg));
-  return root(cfg, children, stale);
+  
+  // 大号组件空间大，边距和间距可以宽裕一些
+  return root(cfg, children, stale, [12, 16, 10, 16], 6);
 }
 
-function root(cfg, children, stale, customPadding) {
+// 根组件组装函数
+function root(cfg, children, stale, customPadding, customGap) {
   return {
     type: 'widget',
     url: cfg.openUrl,
     refreshAfter: refreshISO(cfg.refreshMinutes),
-    padding: customPadding || [6, 14, 4, 14], 
-    gap: 4,                  
-    backgroundColor: stale ? {
-      light: '#FFFBEB',
-      dark: '#2B1B0F'
-    } : {
-      light: '#FFFFFF',
-      dark: '#1C1C1E'
-    },
+    padding: customPadding || [6, 14, 4, 14],  // 默认全局内边距
+    gap: customGap || 4,                       // 默认全局垂直元素间距
+    backgroundColor: stale ? { light: '#FFFBEB', dark: '#2B1B0F' } : { light: '#FFFFFF', dark: '#1C1C1E' },
     children,
   };
 }
@@ -353,22 +353,17 @@ function header(cfg, payload, stale) {
     type: 'stack',
     direction: 'row',
     alignItems: 'center',
-    gap: 6,
+    gap: 4, // 标题行内部的图标与文字间距
     children: [
-      {
-        type: 'image',
-        src: stale ? 'sf-symbol:exclamationmark.triangle.fill' : 'sf-symbol:chart.bar.xaxis',
-        color: stale ? '#F59E0B' : '#3B82F6',
-        width: 12,
-        height: 12,
-      },
-      text(stale ? cfg.title + ' · 缓存' : cfg.title, 'footnote', 'bold', { light: '#1C1C1E', dark: '#E5E7EB' }, 1.0),
+      { type: 'image', src: stale ? 'sf-symbol:exclamationmark.triangle.fill' : 'sf-symbol:chart.bar.xaxis', color: stale ? '#F59E0B' : '#3B82F6', width: 12, height: 12 },
+      text(stale ? cfg.title + ' · 缓存' : cfg.title, 'footnote', 'bold', { light: '#1C1C1E', dark: '#E5E7EB' }, 0.8),
       { type: 'spacer' },
-      text(fmtClock(payload.at || Date.now()), 'caption1', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 1.0),
+      text(fmtClock(payload.at || Date.now()), 'caption1', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.8),
     ],
   };
 }
 
+// “合计剩余”的独立卡片
 function summaryCard(summary) {
   const textVal = summary ? summary.text : '--';
   const colorVal = summary ? summary.color : '#10B981';
@@ -376,62 +371,55 @@ function summaryCard(summary) {
     type: 'stack',
     direction: 'row',
     alignItems: 'center',
-    gap: 8,
-    padding: [4, 10],
+    gap: 6, // 内部图标与文字间距。调小省空间。
+    padding: [2, 8], // 【修改点】合计卡片自身的内边距：[上/下边距, 左/右边距]，由 [4,10] 调小为 [2,8] 节省中号垂直空间
     backgroundColor: { light: '#E0F2FE65', dark: '#0EA5E910' },
     borderRadius: 5,
     children: [
       { type: 'image', src: 'sf-symbol:sum', color: { light: '#0284C7', dark: '#BAE6FD' }, width: 12, height: 12 },
-      text('合计剩余', 'footnote', 'semibold', { light: '#0369A1', dark: '#BAE6FD' }, 1.0),
+      text('合计剩余', 'footnote', 'semibold', { light: '#0369A1', dark: '#BAE6FD' }, 0.9), // 最后的 0.9 是 minScale(缩放比例)，超长时最小缩至 90%
       { type: 'spacer' },
-      text(textVal, 'body', 'bold', colorVal, 1.0),
+      text(textVal, 'body', 'bold', colorVal, 0.8),
     ],
   };
 }
 
+// 单个订阅卡片显示逻辑
 function renderCard(item) {
   if (!item) return missingCard('未选择订阅');
   if (item.error) return errorCard(item.name || '订阅', item.error);
 
-  const sublineChildren = [
-    text('已用 ' + formatBytes(item.used) + ' / ' + totalText(item), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85)
-  ];
-
-  if (item.resetDay) {
-    sublineChildren.push(text('  |  重置: 每月 ' + item.resetDay + ' 号', 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85));
-  }
-
-  if (item.expireAt && !isNaN(item.expireAt.getTime())) {
-    sublineChildren.push(text('  |  到期: ' + fmtDate(item.expireAt), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85));
-  }
-
-  sublineChildren.push({ type: 'spacer' });
-  sublineChildren.push(text(ratioText(item.remainRatio), 'caption2', 'semibold', colorForRemain(item.remainRatio), 0.9));
+  let subInfoStr = '已用 ' + formatBytes(item.used) + ' / ' + totalText(item);
+  if (item.resetDay) subInfoStr += ' | 重置: ' + item.resetDay + ' 号';
+  if (item.expireAt && !isNaN(item.expireAt.getTime())) subInfoStr += ' | 到期: ' + fmtDate(item.expireAt);
 
   return {
     type: 'stack',
     direction: 'column',
-    gap: 2, 
-    padding: [2, 0, 2, 0],
+    gap: 2, // 【修改点】卡片内部 三行信息（名字、进度条、详情）的垂直间隙。数字越小卡片越扁平紧凑。
+    padding: [2, 0, 2, 0], // 单个订阅区域的内边距：[上边距, 右边距, 下边距, 左边距]
     children: [
       {
         type: 'stack',
         direction: 'row',
         alignItems: 'center',
         children: [
-          text(displayName(item), 'body', 'bold', { light: '#111827', dark: '#FFFFFF' }, 1.0),
+          text(displayName(item), 'body', 'bold', { light: '#111827', dark: '#FFFFFF' }, 0.8), 
           { type: 'spacer' },
-          text(remainText(item), 'body', 'bold', colorForRemain(item.remainRatio), 1.0)
+          text(remainText(item), 'body', 'bold', colorForRemain(item.remainRatio), 0.8) 
         ]
       },
-      
       progressBar(item.usedRatio, item.remainRatio),
-      
       {
         type: 'stack',
         direction: 'row',
         alignItems: 'center',
-        children: sublineChildren
+        children: [
+          // 最后的 0.6 是 minScale，文字超长会挤压缩小到原字体的 60%，防止被切掉
+          text(subInfoStr, 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.6), 
+          { type: 'spacer' },
+          text(ratioText(item.remainRatio), 'caption2', 'semibold', colorForRemain(item.remainRatio), 0.9)
+        ]
       }
     ],
   };
@@ -441,12 +429,8 @@ function renderSmallCard(item, stale, timestamp) {
   if (!item) return missingCard('未选择订阅');
   if (item.error) return errorCard(item.name || '订阅', item.error);
 
-  const bottomChildren = [
-    text('已用 ' + formatBytes(item.used), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85)
-  ];
-  if (item.resetDay) {
-    bottomChildren.push(text(' | 隔 ' + item.resetDay + '号', 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.8));
-  }
+  let bottomInfoStr = '已用 ' + formatBytes(item.used);
+  if (item.resetDay) bottomInfoStr += ' | 隔 ' + item.resetDay + '号';
 
   return {
     type: 'stack',
@@ -455,34 +439,28 @@ function renderSmallCard(item, stale, timestamp) {
     padding: [2, 2, 2, 2],
     children: [
       {
-        type: 'stack',
-        direction: 'row',
-        alignItems: 'center',
+        type: 'stack', direction: 'row', alignItems: 'center',
         children: [
-          text(displayName(item), 'caption1', 'bold', { light: '#111827', dark: '#FFFFFF' }, 0.85),
+          text(displayName(item), 'caption1', 'bold', { light: '#111827', dark: '#FFFFFF' }, 0.5),
           { type: 'spacer' },
           text(fmtClock(timestamp || Date.now()), 'caption2', 'regular', { light: '#9CA3AF', dark: '#71717A' }, 0.8)
         ]
       },
       {
-        type: 'stack',
-        direction: 'row',
-        alignItems: 'baseline',
+        type: 'stack', direction: 'row', alignItems: 'baseline',
         children: [
-          text(remainText(item), 'title2', 'bold', colorForRemain(item.remainRatio), 1.0),
+          text(remainText(item), 'title2', 'bold', colorForRemain(item.remainRatio), 0.5),
           { type: 'spacer' },
           text(ratioText(item.remainRatio), 'caption1', 'semibold', colorForRemain(item.remainRatio), 0.9)
         ]
       },
       progressBar(item.usedRatio, item.remainRatio),
       {
-        type: 'stack',
-        direction: 'row',
-        alignItems: 'center',
+        type: 'stack', direction: 'row', alignItems: 'center',
         children: [
-          ...bottomChildren,
+          text(bottomInfoStr, 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.4),
           { type: 'spacer' },
-          text('共' + totalText(item), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85)
+          text('共 ' + totalText(item), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.5)
         ]
       }
     ],
@@ -490,24 +468,19 @@ function renderSmallCard(item, stale, timestamp) {
 }
 
 function renderInline(cfg, item, stale) {
-  if (!item) return text('未选择订阅', 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 1.0);
-  if (item.error) return text(displayName(item) + ' · ' + item.error, 'caption1', 'semibold', '#EF4444', 1.0);
+  if (!item) return text('未选择订阅', 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 0.8);
+  if (item.error) return text(displayName(item) + ' · ' + item.error, 'caption1', 'semibold', '#EF4444', 0.8);
   const body = displayName(item) + ' 剩余 ' + remainText(item);
-  return text(body, 'caption1', 'semibold', stale ? '#D97706' : { light: '#111827', dark: '#FFFFFF' }, 1.0);
+  return text(body, 'caption1', 'semibold', stale ? '#D97706' : { light: '#111827', dark: '#FFFFFF' }, 0.6);
 }
 
 function renderCircular(item, stale, cfg) {
   const pct = Number.isFinite(item && item.remainRatio) ? Math.round(item.remainRatio * 100) + '%' : '--';
   return {
-    type: 'widget',
-    url: cfg.openUrl,
-    refreshAfter: refreshISO(cfg.refreshMinutes),
-    padding: 4,
-    gap: 2,
-    backgroundColor: 'rgba(0,0,0,0)',
+    type: 'widget', url: cfg.openUrl, refreshAfter: refreshISO(cfg.refreshMinutes), padding: 4, gap: 2, backgroundColor: 'rgba(0,0,0,0)',
     children: [
       { type: 'image', src: 'sf-symbol:chart.pie.fill', color: stale ? '#F59E0B' : colorForRemain(item && item.remainRatio), width: 16, height: 16 },
-      text(pct, 'headline', 'bold', { light: '#111827', dark: '#FFFFFF' }, 1.0, { textAlign: 'center' }),
+      text(pct, 'headline', 'bold', { light: '#111827', dark: '#FFFFFF' }, 0.6, { textAlign: 'center' }),
     ],
   };
 }
@@ -516,15 +489,10 @@ function renderAccessoryRectangular(cfg, item, stale) {
   if (!item) return missingCard('未选择订阅');
   if (item.error) return errorCard(item.name || '订阅', item.error);
   return {
-    type: 'stack',
-    direction: 'column',
-    gap: 2,
-    padding: 6,
-    backgroundColor: { light: '#F3F4F6', dark: '#FFFFFF10' },
-    borderRadius: 8,
+    type: 'stack', direction: 'column', gap: 2, padding: 6, backgroundColor: { light: '#F3F4F6', dark: '#FFFFFF10' }, borderRadius: 8,
     children: [
-      text(displayName(item), 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 1.0),
-      text(remainText(item), 'headline', 'bold', colorForRemain(item.remainRatio), 1.0)
+      text(displayName(item), 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 0.5),
+      text(remainText(item), 'headline', 'bold', colorForRemain(item.remainRatio), 0.5)
     ],
   };
 }
@@ -532,74 +500,42 @@ function renderAccessoryRectangular(cfg, item, stale) {
 function footer(cfg, payload, stale, staleMsg) {
   const source = payload.source || cfg.baseUrl;
   const msg = stale ? '缓存模式 · ' + (staleMsg || '最新请求失败') : '数据源 ' + source;
-  return text(msg, 'caption2', 'regular', stale ? '#D97706' : { light: '#9CA3AF', dark: '#71717A' }, 1.0);
+  return text(msg, 'caption2', 'regular', stale ? '#D97706' : { light: '#9CA3AF', dark: '#71717A' }, 0.8);
 }
 
 function errorWidget(cfg, title, msg) {
   return {
-    type: 'widget',
-    url: cfg.openUrl,
-    refreshAfter: refreshISO(cfg.refreshMinutes),
-    padding: 12,
-    gap: 6,
-    backgroundColor: { light: '#FEF2F2', dark: '#2D1A1A' },
+    type: 'widget', url: cfg.openUrl, refreshAfter: refreshISO(cfg.refreshMinutes), padding: 12, gap: 6, backgroundColor: { light: '#FEF2F2', dark: '#2D1A1A' },
     children: [
       {
-        type: 'stack',
-        direction: 'row',
-        alignItems: 'center',
-        gap: 6,
-        children: [
-          { type: 'image', src: 'sf-symbol:exclamationmark.triangle.fill', color: '#EF4444', width: 14, height: 14 },
-          text(title, 'headline', 'bold', { light: '#991B1B', dark: '#FFFFFF' }, 1.0),
-        ],
+        type: 'stack', direction: 'row', alignItems: 'center', gap: 6,
+        children: [{ type: 'image', src: 'sf-symbol:exclamationmark.triangle.fill', color: '#EF4444', width: 14, height: 14 }, text(title, 'headline', 'bold', { light: '#991B1B', dark: '#FFFFFF' }, 0.8)],
       },
-      text(msg, 'caption1', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 1.0),
+      text(msg, 'caption1', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 0.8),
     ],
   };
 }
 
 function missingCard(msg) {
   return {
-    type: 'stack',
-    direction: 'column',
-    gap: 4,
-    padding: [6, 8],
-    backgroundColor: { light: '#E5E7EB', dark: '#FFFFFF12' },
-    borderRadius: 8,
-    children: [
-      text('提示', 'caption1', 'semibold', { light: '#374151', dark: '#FFFFFF' }, 1.0),
-      text(msg, 'caption2', 'regular', { light: '#4B5563', dark: '#CBD5E1' }, 1.0),
-    ],
+    type: 'stack', direction: 'column', gap: 4, padding: [6, 8], backgroundColor: { light: '#E5E7EB', dark: '#FFFFFF12' }, borderRadius: 8,
+    children: [text('提示', 'caption1', 'semibold', { light: '#374151', dark: '#FFFFFF' }, 0.8), text(msg, 'caption2', 'regular', { light: '#4B5563', dark: '#CBD5E1' }, 0.8)],
   };
 }
 
 function errorCard(title, msg) {
   return {
-    type: 'stack',
-    direction: 'column',
-    gap: 4,
-    padding: [6, 8],
-    backgroundColor: { light: '#FEE2E2', dark: '#7F1D1D55' },
-    borderRadius: 8,
-    children: [
-      text(title, 'caption1', 'semibold', { light: '#991B1B', dark: '#FFFFFF' }, 1.0),
-      text(msg, 'caption2', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 1.0),
-    ],
+    type: 'stack', direction: 'column', gap: 4, padding: [6, 8], backgroundColor: { light: '#FEE2E2', dark: '#7F1D1D55' }, borderRadius: 8,
+    children: [text(title, 'caption1', 'semibold', { light: '#991B1B', dark: '#FFFFFF' }, 0.8), text(msg, 'caption2', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 0.8)],
   };
 }
 
+// 进度条渲染逻辑
 function progressBar(usedRatio, remainRatio) {
   if (!Number.isFinite(usedRatio)) {
     return {
-      type: 'stack',
-      direction: 'row',
-      alignItems: 'center',
-      gap: 4,
-      children: [
-        { type: 'image', src: 'sf-symbol:infinity', color: '#10B981', width: 10, height: 10 },
-        text('无限流量', 'caption2', 'semibold', '#10B981', 1.0),
-      ],
+      type: 'stack', direction: 'row', alignItems: 'center', gap: 4,
+      children: [{ type: 'image', src: 'sf-symbol:infinity', color: '#10B981', width: 10, height: 10 }, text('无限流量', 'caption2', 'semibold', '#10B981', 0.8)],
     };
   }
   const pct = clamp(usedRatio, 0, 1);
@@ -607,13 +543,13 @@ function progressBar(usedRatio, remainRatio) {
     type: 'stack',
     direction: 'row',
     alignItems: 'center',
-    height: 6, 
+    height: 5, // 【修改点】控制整体进度条的高度（粗细）。原为 6，改为 5 更细致省空间。
     backgroundColor: { light: '#E5E7EB', dark: '#FFFFFF15' },
     borderRadius: 3,
     children: [
       {
         type: 'stack',
-        height: 6,
+        height: 5, // 控制当前用量颜色条的高度
         backgroundColor: colorForRemain(remainRatio),
         borderRadius: 3,
         flex: pct > 0.02 ? pct : 0.02,
@@ -630,10 +566,7 @@ function aggregate(items) {
   const remain = finite.reduce((sum, i) => sum + i.remain, 0);
   const total = finite.reduce((sum, i) => sum + i.total, 0);
   const ratio = total > 0 ? remain / total : NaN;
-  return {
-    text: formatBytes(remain),
-    color: colorForRemain(ratio),
-  };
+  return { text: formatBytes(remain), color: colorForRemain(ratio) };
 }
 
 function remainText(item) {
@@ -670,12 +603,10 @@ function parseArgs(rawUrl) {
   if (idx < 0) return {};
   const frag = url.slice(idx + 1).trim();
   if (!frag) return {};
-
   try {
     const obj = JSON.parse(safeDecode(frag));
     if (obj && typeof obj === 'object' && !Array.isArray(obj)) return obj;
   } catch (_) {}
-
   const out = {};
   for (const part of frag.split('&')) {
     if (!part) continue;
@@ -688,26 +619,11 @@ function parseArgs(rawUrl) {
 }
 
 function requestJson(ctx, url, cfg) {
-  return ctx.http
-    .get(url, {
-      headers: {
-        Accept: 'application/json',
-        'User-Agent': 'Egern-SubStore-Widget',
-      },
-      timeout: cfg.timeout,
-      redirect: 'follow',
-      insecureTls: cfg.insecureTls,
-    })
+  return ctx.http.get(url, { headers: { Accept: 'application/json', 'User-Agent': 'Egern-SubStore-Widget' }, timeout: cfg.timeout, redirect: 'follow', insecureTls: cfg.insecureTls })
     .then(async (resp) => {
       const text = await safeText(resp);
-      if (resp.status < 200 || resp.status >= 300) {
-        throw new Error('HTTP ' + resp.status + ' ' + preview(text, 120));
-      }
-      try {
-        return JSON.parse(text);
-      } catch (_) {
-        throw new Error('JSON 解析失败 ' + preview(text, 120));
-      }
+      if (resp.status < 200 || resp.status >= 300) throw new Error('HTTP ' + resp.status + ' ' + preview(text, 120));
+      try { return JSON.parse(text); } catch (_) { throw new Error('JSON 解析失败 ' + preview(text, 120)); }
     });
 }
 
@@ -733,9 +649,7 @@ function normalizeBaseUrl(url) {
 
 function unique(arr) {
   const out = [];
-  for (const item of arr) {
-    if (item && !out.includes(item)) out.push(item);
-  }
+  for (const item of arr) { if (item && !out.includes(item)) out.push(item); }
   return out;
 }
 
@@ -757,9 +671,7 @@ function parseHeaderObject(raw) {
   try {
     const obj = JSON.parse(String(raw));
     return obj && typeof obj === 'object' && !Array.isArray(obj) ? obj : {};
-  } catch (_) {
-    return {};
-  }
+  } catch (_) { return {}; }
 }
 
 function getHeaderValue(headers, name) {
@@ -855,6 +767,7 @@ function bool(v, def) {
   return ['1', 'true', 'yes', 'on', 'y'].includes(s);
 }
 
+// 文本渲染底层函数
 function text(value, size, weight, color, minScale) {
   return {
     type: 'text',
@@ -862,6 +775,8 @@ function text(value, size, weight, color, minScale) {
     font: { size: size || 'body', weight: weight || 'regular' },
     textColor: color || '#FFFFFF',
     maxLines: 1,
+    // 【修改点】minScale 用来控制当文字太多一行放不下时，允许缩小的最低比例。
+    // 如果想要文字自动变得更小而不被截断，调低这个值（比如从 0.8 调到 0.5）。
     minScale: minScale || 1.0, 
   };
 }
