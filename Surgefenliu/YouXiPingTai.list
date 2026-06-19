@@ -1,0 +1,31 @@
+# Steam: 16
+DOMAIN-SUFFIX,steampowered.com
+DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN-SUFFIX,steamstatic.com
+DOMAIN-SUFFIX,steamusercontent.com
+DOMAIN-SUFFIX,steam-chat.com
+DOMAIN-SUFFIX,steamserver.net
+DOMAIN-SUFFIX,steamcontent.com
+DOMAIN-SUFFIX,steamdeck.com
+DOMAIN-SUFFIX,steamgames.com
+DOMAIN-SUFFIX,valvesoftware.com
+DOMAIN-SUFFIX,valvecorp.com
+DOMAIN-SUFFIX,underlords.com
+DOMAIN-SUFFIX,artifacts.com
+DOMAIN-KEYWORD,steam
+DOMAIN-KEYWORD,valve
+DOMAIN,valve.com
+# EpicGames: 13
+DOMAIN-SUFFIX,epicgames.com
+DOMAIN-SUFFIX,unrealengine.com
+DOMAIN-SUFFIX,epicgames.dev
+DOMAIN-SUFFIX,epiconlineimages.com
+DOMAIN-SUFFIX,fortnite.com
+DOMAIN-SUFFIX,helpshift.com
+DOMAIN-SUFFIX,paragon.com
+DOMAIN-SUFFIX,playparagon.com
+DOMAIN-SUFFIX,shadowcomplex.com
+DOMAIN-SUFFIX,spyjinx.com
+DOMAIN-SUFFIX,unrealtournament.com
+DOMAIN-SUFFIX,entitlements.com
+DOMAIN,help.epicgames.com
