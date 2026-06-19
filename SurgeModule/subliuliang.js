@@ -1,5 +1,5 @@
 /**
- * Sub-Store 流量查询小组件（中号多机场大字号 V8 - 纯净流量版 - 支持显示重置日）
+ * Sub-Store 流量查询小组件（全尺寸完美适配版 - 支持显示重置日）
  *
  * 环境变量示例：
  * SUB_NAMES=机场A,机场B                            # 指定显示的订阅名称
@@ -215,7 +215,6 @@ function decorateItem(sub, flow, cfg) {
   const usedRatio = Number.isFinite(total) && total > 0 ? clamp(used / total, 0, 1) : NaN;
   const remainRatio = Number.isFinite(usedRatio) ? 1 - usedRatio : NaN;
 
-  // 提取订阅链接中的 resetDay 参数
   const args = parseArgs(sub.url || sub.subUserinfo || '');
   const resetDay = args.resetDay ? String(args.resetDay) : null;
 
@@ -231,7 +230,7 @@ function decorateItem(sub, flow, cfg) {
     remainRatio,
     expireAt: Number.isFinite(flow.expires) && flow.expires > 0 ? new Date(flow.expires * 1000) : null,
     appUrl: flow.appUrl || '',
-    resetDay, // 将重置日传给渲染层
+    resetDay, 
   };
 }
 
@@ -284,6 +283,9 @@ function parseFlowString(raw) {
   });
 }
 
+// ==========================================
+// 重构后的核心尺寸适配渲染逻辑
+// ==========================================
 function renderWidget(cfg, payload, stale, staleMsg) {
   const items = Array.isArray(payload.items) ? payload.items : [];
   const fam = cfg.family;
@@ -296,40 +298,58 @@ function renderWidget(cfg, payload, stale, staleMsg) {
       children: [renderInline(cfg, items[0], stale)],
     };
   }
-
   if (fam === 'accessoryCircular') {
     return root(cfg, [renderCircular(items[0], stale, cfg)], stale);
   }
-
   if (fam === 'accessoryRectangular') {
     return root(cfg, [renderAccessoryRectangular(cfg, items[0], stale)], stale);
   }
 
-  const limit = fam === 'systemLarge' || fam === 'systemExtraLarge' ? 5 : fam === 'systemSmall' ? 1 : 2;
-  const shown = items.slice(0, limit);
-  const children = [header(cfg, payload, stale)];
+  const children = [];
+
+  if (fam === 'systemSmall') {
+    children.push(renderSmallCard(items[0], stale, payload.at));
+    return root(cfg, children, stale, [10, 10, 10, 10], 4);
+  }
+
+  if (fam === 'systemMedium') {
+    children.push(header(cfg, payload, stale));
+    
+    const shown = items.slice(0, 2);
+    for (const item of shown) {
+      children.push(renderCard(item));
+    }
+    
+    children.push({ type: 'spacer' });
+    children.push(footer(cfg, payload, stale, staleMsg));
+    return root(cfg, children, stale, [10, 14, 8, 14], 6);
+  }
+
+  children.push(header(cfg, payload, stale));
 
   if (items.length > 1) {
     children.push(summaryCard(aggregate(items)));
   }
 
-  if (fam === 'systemSmall') {
-    children.push(renderSmallCard(shown[0]));
-  } else {
-    for (const item of shown) children.push(renderCard(item));
+  const limit = fam === 'systemExtraLarge' ? 7 : 5;
+  const shown = items.slice(0, limit);
+
+  for (const item of shown) {
+    children.push(renderCard(item));
   }
 
+  children.push({ type: 'spacer' });
   children.push(footer(cfg, payload, stale, staleMsg));
-  return root(cfg, children, stale);
+  return root(cfg, children, stale, [12, 16, 10, 16], 6);
 }
 
-function root(cfg, children, stale) {
+function root(cfg, children, stale, customPadding, customGap) {
   return {
     type: 'widget',
     url: cfg.openUrl,
     refreshAfter: refreshISO(cfg.refreshMinutes),
-    padding: [6, 14, 4, 14], 
-    gap: 4,                  
+    padding: customPadding || [6, 14, 4, 14], 
+    gap: customGap || 4,                  
     backgroundColor: stale ? {
       light: '#FFFBEB',
       dark: '#2B1B0F'
@@ -355,9 +375,9 @@ function header(cfg, payload, stale) {
         width: 12,
         height: 12,
       },
-      text(stale ? cfg.title + ' · 缓存' : cfg.title, 'footnote', 'bold', { light: '#1C1C1E', dark: '#E5E7EB' }, 1.0),
+      text(stale ? cfg.title + ' · 缓存' : cfg.title, 'footnote', 'bold', { light: '#1C1C1E', dark: '#E5E7EB' }, 0.8),
       { type: 'spacer' },
-      text(fmtClock(payload.at || Date.now()), 'caption1', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 1.0),
+      text(fmtClock(payload.at || Date.now()), 'caption1', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.8),
     ],
   };
 }
@@ -375,9 +395,9 @@ function summaryCard(summary) {
     borderRadius: 5,
     children: [
       { type: 'image', src: 'sf-symbol:sum', color: { light: '#0284C7', dark: '#BAE6FD' }, width: 12, height: 12 },
-      text('合计剩余', 'footnote', 'semibold', { light: '#0369A1', dark: '#BAE6FD' }, 1.0),
+      text('合计剩余', 'footnote', 'semibold', { light: '#0369A1', dark: '#BAE6FD' }, 0.8),
       { type: 'spacer' },
-      text(textVal, 'body', 'bold', colorVal, 1.0),
+      text(textVal, 'body', 'bold', colorVal, 0.6),
     ],
   };
 }
@@ -386,21 +406,14 @@ function renderCard(item) {
   if (!item) return missingCard('未选择订阅');
   if (item.error) return errorCard(item.name || '订阅', item.error);
 
-  const sublineChildren = [
-    text('已用 ' + formatBytes(item.used) + ' / ' + totalText(item), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85)
-  ];
-
-  // 如果链接里配置了重置日，展示到副标题中
+  // 将所有底部详细信息拼接为一整个字符串，避免多个组件互相挤压
+  let subInfoStr = '已用 ' + formatBytes(item.used) + ' / ' + totalText(item);
   if (item.resetDay) {
-    sublineChildren.push(text('  |  重置: 每月 ' + item.resetDay + ' 号', 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85));
+    subInfoStr += ' | 重置: 每月 ' + item.resetDay + ' 号';
   }
-
   if (item.expireAt && !isNaN(item.expireAt.getTime())) {
-    sublineChildren.push(text('  |  到期: ' + fmtDate(item.expireAt), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.85));
+    subInfoStr += ' | 到期: ' + fmtDate(item.expireAt);
   }
-
-  sublineChildren.push({ type: 'spacer' });
-  sublineChildren.push(text(ratioText(item.remainRatio), 'caption2', 'semibold', colorForRemain(item.remainRatio), 0.9));
 
   return {
     type: 'stack',
@@ -413,9 +426,9 @@ function renderCard(item) {
         direction: 'row',
         alignItems: 'center',
         children: [
-          text(displayName(item), 'body', 'bold', { light: '#111827', dark: '#FFFFFF' }, 1.0),
+          text(displayName(item), 'body', 'bold', { light: '#111827', dark: '#FFFFFF' }, 0.5), // 增强缩放
           { type: 'spacer' },
-          text(remainText(item), 'body', 'bold', colorForRemain(item.remainRatio), 1.0)
+          text(remainText(item), 'body', 'bold', colorForRemain(item.remainRatio), 0.6) // 增强缩放
         ]
       },
       
@@ -425,36 +438,72 @@ function renderCard(item) {
         type: 'stack',
         direction: 'row',
         alignItems: 'center',
-        children: sublineChildren
+        children: [
+          text(subInfoStr, 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.4), // 极致缩放
+          { type: 'spacer' },
+          text(ratioText(item.remainRatio), 'caption2', 'semibold', colorForRemain(item.remainRatio), 0.8)
+        ]
       }
     ],
   };
 }
 
-function renderSmallCard(item) {
+function renderSmallCard(item, stale, timestamp) {
   if (!item) return missingCard('未选择订阅');
   if (item.error) return errorCard(item.name || '订阅', item.error);
+
+  // 拼接底部信息
+  let bottomInfoStr = '已用 ' + formatBytes(item.used);
+  if (item.resetDay) {
+    bottomInfoStr += ' | 隔 ' + item.resetDay + '号';
+  }
 
   return {
     type: 'stack',
     direction: 'column',
     gap: 4,
-    padding: [6, 8],
-    backgroundColor: { light: '#F3F4F6', dark: '#FFFFFF12' },
-    borderRadius: 8,
+    padding: [2, 2, 2, 2],
     children: [
-      text(displayName(item), 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 1.0),
-      text(remainText(item), 'subheadline', 'bold', colorForRemain(item.remainRatio), 1.0),
-      progressBar(item.usedRatio, item.remainRatio)
+      {
+        type: 'stack',
+        direction: 'row',
+        alignItems: 'center',
+        children: [
+          text(displayName(item), 'caption1', 'bold', { light: '#111827', dark: '#FFFFFF' }, 0.5), // 增强缩放
+          { type: 'spacer' },
+          text(fmtClock(timestamp || Date.now()), 'caption2', 'regular', { light: '#9CA3AF', dark: '#71717A' }, 0.8)
+        ]
+      },
+      {
+        type: 'stack',
+        direction: 'row',
+        alignItems: 'baseline',
+        children: [
+          text(remainText(item), 'title2', 'bold', colorForRemain(item.remainRatio), 0.5), // 增强缩放
+          { type: 'spacer' },
+          text(ratioText(item.remainRatio), 'caption1', 'semibold', colorForRemain(item.remainRatio), 0.9)
+        ]
+      },
+      progressBar(item.usedRatio, item.remainRatio),
+      {
+        type: 'stack',
+        direction: 'row',
+        alignItems: 'center',
+        children: [
+          text(bottomInfoStr, 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.4), // 极致缩放
+          { type: 'spacer' },
+          text('共 ' + totalText(item), 'caption2', 'regular', { light: '#6B7280', dark: '#94A3B8' }, 0.5)
+        ]
+      }
     ],
   };
 }
 
 function renderInline(cfg, item, stale) {
-  if (!item) return text('未选择订阅', 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 1.0);
-  if (item.error) return text(displayName(item) + ' · ' + item.error, 'caption1', 'semibold', '#EF4444', 1.0);
+  if (!item) return text('未选择订阅', 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 0.8);
+  if (item.error) return text(displayName(item) + ' · ' + item.error, 'caption1', 'semibold', '#EF4444', 0.8);
   const body = displayName(item) + ' 剩余 ' + remainText(item);
-  return text(body, 'caption1', 'semibold', stale ? '#D97706' : { light: '#111827', dark: '#FFFFFF' }, 1.0);
+  return text(body, 'caption1', 'semibold', stale ? '#D97706' : { light: '#111827', dark: '#FFFFFF' }, 0.6);
 }
 
 function renderCircular(item, stale, cfg) {
@@ -468,7 +517,7 @@ function renderCircular(item, stale, cfg) {
     backgroundColor: 'rgba(0,0,0,0)',
     children: [
       { type: 'image', src: 'sf-symbol:chart.pie.fill', color: stale ? '#F59E0B' : colorForRemain(item && item.remainRatio), width: 16, height: 16 },
-      text(pct, 'headline', 'bold', { light: '#111827', dark: '#FFFFFF' }, 1.0, { textAlign: 'center' }),
+      text(pct, 'headline', 'bold', { light: '#111827', dark: '#FFFFFF' }, 0.6, { textAlign: 'center' }),
     ],
   };
 }
@@ -484,8 +533,8 @@ function renderAccessoryRectangular(cfg, item, stale) {
     backgroundColor: { light: '#F3F4F6', dark: '#FFFFFF10' },
     borderRadius: 8,
     children: [
-      text(displayName(item), 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 1.0),
-      text(remainText(item), 'headline', 'bold', colorForRemain(item.remainRatio), 1.0)
+      text(displayName(item), 'caption1', 'semibold', { light: '#111827', dark: '#FFFFFF' }, 0.5),
+      text(remainText(item), 'headline', 'bold', colorForRemain(item.remainRatio), 0.5)
     ],
   };
 }
@@ -493,7 +542,7 @@ function renderAccessoryRectangular(cfg, item, stale) {
 function footer(cfg, payload, stale, staleMsg) {
   const source = payload.source || cfg.baseUrl;
   const msg = stale ? '缓存模式 · ' + (staleMsg || '最新请求失败') : '数据源 ' + source;
-  return text(msg, 'caption2', 'regular', stale ? '#D97706' : { light: '#9CA3AF', dark: '#71717A' }, 1.0);
+  return text(msg, 'caption2', 'regular', stale ? '#D97706' : { light: '#9CA3AF', dark: '#71717A' }, 0.8);
 }
 
 function errorWidget(cfg, title, msg) {
@@ -512,10 +561,10 @@ function errorWidget(cfg, title, msg) {
         gap: 6,
         children: [
           { type: 'image', src: 'sf-symbol:exclamationmark.triangle.fill', color: '#EF4444', width: 14, height: 14 },
-          text(title, 'headline', 'bold', { light: '#991B1B', dark: '#FFFFFF' }, 1.0),
+          text(title, 'headline', 'bold', { light: '#991B1B', dark: '#FFFFFF' }, 0.8),
         ],
       },
-      text(msg, 'caption1', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 1.0),
+      text(msg, 'caption1', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 0.8),
     ],
   };
 }
@@ -529,8 +578,8 @@ function missingCard(msg) {
     backgroundColor: { light: '#E5E7EB', dark: '#FFFFFF12' },
     borderRadius: 8,
     children: [
-      text('提示', 'caption1', 'semibold', { light: '#374151', dark: '#FFFFFF' }, 1.0),
-      text(msg, 'caption2', 'regular', { light: '#4B5563', dark: '#CBD5E1' }, 1.0),
+      text('提示', 'caption1', 'semibold', { light: '#374151', dark: '#FFFFFF' }, 0.8),
+      text(msg, 'caption2', 'regular', { light: '#4B5563', dark: '#CBD5E1' }, 0.8),
     ],
   };
 }
@@ -544,8 +593,8 @@ function errorCard(title, msg) {
     backgroundColor: { light: '#FEE2E2', dark: '#7F1D1D55' },
     borderRadius: 8,
     children: [
-      text(title, 'caption1', 'semibold', { light: '#991B1B', dark: '#FFFFFF' }, 1.0),
-      text(msg, 'caption2', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 1.0),
+      text(title, 'caption1', 'semibold', { light: '#991B1B', dark: '#FFFFFF' }, 0.8),
+      text(msg, 'caption2', 'regular', { light: '#B91C1C', dark: '#FCA5A5' }, 0.8),
     ],
   };
 }
@@ -559,7 +608,7 @@ function progressBar(usedRatio, remainRatio) {
       gap: 4,
       children: [
         { type: 'image', src: 'sf-symbol:infinity', color: '#10B981', width: 10, height: 10 },
-        text('无限流量', 'caption2', 'semibold', '#10B981', 1.0),
+        text('无限流量', 'caption2', 'semibold', '#10B981', 0.8),
       ],
     };
   }
@@ -614,8 +663,8 @@ function ratioText(remainRatio) {
 }
 
 function displayName(item) {
-  if (!item) return '订阅';
-  return item.name || '订阅';
+  if (!item) return '🌐 订阅';
+  return '🌐 ' + (item.name || '订阅');
 }
 
 function colorForRemain(remainRatio) {
@@ -692,7 +741,7 @@ function normalizeBaseUrl(url) {
   return String(url || '').trim().replace(/\/+$/, '');
 }
 
- function unique(arr) {
+function unique(arr) {
   const out = [];
   for (const item of arr) {
     if (item && !out.includes(item)) out.push(item);
@@ -753,7 +802,7 @@ function readStoredSubscriptions(ctx) {
   const storage = ctx && ctx.storage;
   if (!storage) return [];
   const candidates = [];
-  const keys = ['subs', 'sub-store', 'Sub-Store', 'substore', 'SubStore', 'subscriptions'];
+  const keys = ['subs', 'sub-store', 'Sub-Store', 'substori', 'SubStore', 'subscriptions'];
   for (const key of keys) {
     try { if (typeof storage.getJSON === 'function') candidates.push(storage.getJSON(key)); } catch (_) {}
     try { if (typeof storage.get === 'function') candidates.push(parseMaybeJSON(storage.get(key))); } catch (_) {}
