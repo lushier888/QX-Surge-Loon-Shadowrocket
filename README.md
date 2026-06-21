@@ -40,6 +40,106 @@ https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/surge-loon-to-eg
 以下收集一些Surge、Loon、Quantumult X通用订阅图标合集
 图标数据合集，所有图标通用
 
+#图标  #图标集
+
+https://raw.githubusercontent.com/IBL3ND/icons-json/refs/heads/main/iBL3ND.json
+
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/icons-all.json
+
+https://raw.githubusercontent.com/Softlyx/Fileball/main/YUAN/tubiao.json
+
+https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Semporia.json
+
+https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/combined.json
+
+https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon-surge.json
+
+https://raw.githubusercontent.com/lige47/QuanX-icon-rule/refs/heads/main/lige-emby-icon.json
+
+https://raw.githubusercontent.com/tugepaopao/Image-Storage/master/other/Colorful.json
+
+https://raw.githubusercontent.com/tugepaopao/Image-Storage/master/other/Cute.json
+
+https://raw.githubusercontent.com/tugepaopao/Image-Storage/master/other/hand-painted.json
+
+
+1️⃣整合图标合集 包含（①-⑭彩色图标分类）https://raw.githubusercontent.com/weigeshen/-/main/TuBiao/TuBiaoDingYue.json
+
+2️⃣ fmz200の图标合集 https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/icons-all.json
+
+3️⃣ 图标合集：https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor.json
+
+4️⃣黑白图标集 https://raw.githubusercontent.com/Koolson/Qure/master/Other/Quremini.json
+
+5️⃣透明图标集 https://github.com/Koolson/Qure/raw/master/Other/QureLight-All.json
+
+6️⃣离歌图标集 https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/ligeicon-surge.json
+
+7️⃣可莉的旗帜图标 https://gitlab.com/lodepuly/iconlibrary/-/raw/main/Flag_icon/ColorfulStaticFlag.json
+
+下面👇👇👇👇👇👇👇👇是彩色图标分类
+
+①彩色小图标 https://raw.githubusercontent.com/Orz-3/mini/master/mini.json
+
+②Color+ https://raw.githubusercontent.com/Orz-3/mini/master/Color%2B.json
+
+③mini Color https://raw.githubusercontent.com/Orz-3/mini/master/miniColor.json
+
+④其它图标 https://raw.githubusercontent.com/Orz-3/mini/master/mini%2B.json
+
+⑤应用与游戏 https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-AppGame.json
+
+⑥归档 https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Archived.json
+
+⑦地区国旗 https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Area.json
+
+⑧常用 https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Common.json
+
+⑨默认 https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Default.json
+
+⑩禁止 https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Inhibition.json
+
+⑪流媒体 https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Media.json
+
+⑫其它 https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Other.json
+
+⑬服务器 https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Server.json
+
+⑭服务 https://raw.githubusercontent.com/Koolson/Qure/master/Other/QureColor-Service.json
+
+白糖图标库
+圆形
+https://raw.githubusercontent.com/baiitang/Sakura/main/Fileball/Yuan/tubiao.json
+
+方形
+https://raw.githubusercontent.com/baiitang/Sakura/main/Fileball/Fang/tubiao.json
+
+离歌图标库
+https://raw.githubusercontent.com/lige47/QuanX-icon-rule/refs/heads/main/lige-emby-icon.json
+
+GiNi的透明图标
+https://raw.githubusercontent.com/ginibond/ginibond/main/Icons/Forward/tubiao.json
+
+Tfel的透明图标
+https://raw.githubusercontent.com/TFEL00/Emby/refs/heads/main/TFEL-Emby.json
+
+Gdnonono的透明图标
+https://raw.githubusercontent.com/Grindoo/icon/refs/heads/main/icon.json
+
+108×108透明图标
+https://raw.githubusercontent.com/baiitang/Sakura/main/Fileball/Toun/tubiao.json
+
+180×180透明图标
+https://raw.githubusercontent.com/baiitang/Sakura/main/Fileball/Toun/Fwicon/tubiao.json
+
+拿她练技术 https://raw.githubusercontent.com/LovedGM/Quantumult-X-TuBiao/main/zishi-cs.json
+
+合集网址
+https://getupnote.com/share/notes/zSn1ShBmzNYISKcTgjXE5oHMrNf2/2e609f81-3980-4c7a-a4ec-394939481d42
+
+单个查找🔎
+https://velvetcodeloom.github.io/icloud/icon.html
+
 图标数据合集
 https://velvetcodeloom.github.io/icloud/icons.json
 
