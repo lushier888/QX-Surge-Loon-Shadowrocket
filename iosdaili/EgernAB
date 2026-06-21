@@ -547,7 +547,7 @@ policy_groups:
     icon: https://raw.githubusercontent.com/anybodyiskiller-cpu/icons-escapism/main/icons/reddit.png
     hidden: false
 - select:
-    name: 🐦𝑫𝒊𝒔𝒄𝒐𝒓𝒅
+    name: 🎙𝑫𝒊𝒔𝒄𝒐𝒓𝒅
     policies:
     - 🇭🇰香港𝑨𝑩
     - 🇺🇸美国𝑨𝑩
