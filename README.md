@@ -37,7 +37,7 @@ Surge和Loon模块插件一键转换到Egern（这是直接安装的Egern模块�
 https://raw.githubusercontent.com/IBL3ND/module/refs/heads/main/surge-loon-to-egern.yaml
 
 
-以下收集一些Surge、Loon、Quantumult X通用订阅图标合集
+以下收集一些Surge、Egern、Loon、Quantumult X通用订阅图标合集
 图标数据合集，所有图标通用
 
 #图标  #图标集
