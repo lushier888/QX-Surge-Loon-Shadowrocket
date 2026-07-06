@@ -21,10 +21,9 @@ dns:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
     谷歌 - 𝑪𝑫𝑵（国外）:
-    - https://dns.google/dns-query
+    - https://1.1.1.1/dns-query
     - https://cloudflare-dns.com/dns-query
-    - https://dns.switch.ch/dns-query
-    - https://dns.nextdns.io
+    - https://dns.google/dns-query
     - https://dns.adguard.com/dns-query
   forward:
   - proxy_rule_set:
@@ -159,6 +158,11 @@ dns:
       match: '*'
       value: 谷歌 - 𝑪𝑫𝑵（国外）
       disabled: false
+  proxy_nameservers:
+  - https://doh.pub/dns-query
+  - https://dns.alidns.com/dns-query
+  - https://cloudflare-dns.com/dns-query
+  - https://dns.google/dns-query
 policy_groups:
 - external:
     name: 我的机场𝑨
