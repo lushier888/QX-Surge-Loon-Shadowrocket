@@ -919,7 +919,7 @@ rules:
     disabled: false
 - rule_set:
     name: 奶思去广告合集
-    match: http://script.hub/file/_start_/https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/rejectAd.list/_end_/rejectAd.list?type=rule-set&target=surge-rule-set&del=true
+    match: https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/rejectAd.list
     policy: REJECT
     disabled: false
 - rule_set:
