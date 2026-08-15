@@ -29,13 +29,6 @@ DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
 DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,stripe.com
-# Grok: 6
-DOMAIN-SUFFIX,grok.com
-DOMAIN-SUFFIX,x-ai.com
-DOMAIN-SUFFIX,xai.com
-DOMAIN-KEYWORD,grok-api
-DOMAIN,api.grok.com
-DOMAIN,assets.grok.com
 # Claude: 5
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,anthropic.com
