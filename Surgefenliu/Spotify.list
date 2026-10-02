@@ -1,12 +1,16 @@
-# Spotify: 11
+# Spotify：15
 DOMAIN-SUFFIX,spotify.com
 DOMAIN-SUFFIX,scdn.co
 DOMAIN-SUFFIX,spoti.fi
 DOMAIN-SUFFIX,spotifycdn.com
 DOMAIN-SUFFIX,spotifycdn.net
-DOMAIN-SUFFIX,spotify.design
-DOMAIN-SUFFIX,spotifycharts.com
-DOMAIN-SUFFIX,spotifyjobs.com
+DOMAIN-SUFFIX,pscdn.co
+DOMAIN-SUFFIX,spotify.link
+DOMAIN-SUFFIX,spotifycodes.com
+DOMAIN-SUFFIX,spotify-everywhere.com
+DOMAIN-SUFFIX,byspotify.com
+DOMAIN-SUFFIX,lifeatspotify.com
 DOMAIN-KEYWORD,spotify
 DOMAIN-KEYWORD,audio-ak-spotify
 DOMAIN-KEYWORD,heads-ak-spotify
+DOMAIN-SUFFIX,spotify.map.fastly.net
