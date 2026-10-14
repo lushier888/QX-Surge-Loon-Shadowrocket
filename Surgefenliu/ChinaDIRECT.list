@@ -21,11 +21,6 @@ DOMAIN-SUFFIX,diandianpin.com
 DOMAIN-SUFFIX,img.bosszhipin.com
 DOMAIN-SUFFIX,bosszhipin.cn
 DOMAIN-SUFFIX,zhipinimg.com
-# AGE动漫: 4
-DOMAIN-SUFFIX,agedm.vip
-DOMAIN-SUFFIX,agedm.org
-DOMAIN-SUFFIX,agedm.com
-DOMAIN-KEYWORD,agedm
 # DeepSeek: 6
 DOMAIN-SUFFIX,deepseek.com
 DOMAIN-SUFFIX,deepseek.cn
