@@ -5,6 +5,7 @@ DOMAIN,aistudio.google.com
 DOMAIN,ai.google.dev
 DOMAIN,notebooklm.google.com
 DOMAIN,notebooklm.google
+DOMAIN-SUFFIX, googleapis.com
 DOMAIN-SUFFIX,generativeai.google
 DOMAIN-SUFFIX,deepmind.google
 DOMAIN-SUFFIX,deepmind.com
